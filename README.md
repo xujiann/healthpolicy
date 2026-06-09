@@ -2,6 +2,10 @@
 
 一个用于梳理 2016-2026 年卫生健康相关政策文件的静态可视化网站。
 
+## 在线访问
+
+[https://xujiann.github.io/healthpolicy/](https://xujiann.github.io/healthpolicy/)
+
 ## 功能
 
 - 部委 → 司局 → 处室 → 政策文件四层导图
@@ -27,7 +31,9 @@ index.html
 3. Branch 选择 `main`
 4. Folder 选择 `/root`
 
-启用后访问 GitHub Pages 提供的地址即可。
+启用后访问：
+
+[https://xujiann.github.io/healthpolicy/](https://xujiann.github.io/healthpolicy/)
 
 ## 数据维护
 
