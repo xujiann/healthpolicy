@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>近十年卫生健康政策脉络图</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">2016-2026 / 中国卫生健康政策</p>
+        <h1>近十年卫生健康政策脉络图</h1>
+      </div>
+      <div class="top-actions">
+        <button class="icon-button" id="resetView" title="重置视图" aria-label="重置视图">
+          <span aria-hidden="true">↺</span>
+        </button>
+        <a class="source-link" href="#sources">官方来源</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro-band">
+        <div class="intro-copy">
+          <p>
+            以“健康中国”为中心，把公共卫生、医疗资源、规划、医改、医保、基层卫生等具体政策文件放在同一张动态网络里。
+            分类参考国家卫健委、国家医保局、国家疾控局司局与处室职能；每条记录都对应具体文件标题、年份、归口处室和官方链接。
+          </p>
+        </div>
+        <div class="stat-grid" aria-label="政策统计">
+          <div>
+            <strong id="statDocs">0</strong>
+            <span>份政策文件</span>
+          </div>
+          <div>
+            <strong id="statFiltered">0</strong>
+            <span>当前命中</span>
+          </div>
+          <div>
+            <strong id="statTopics">0</strong>
+            <span>个司局分类</span>
+          </div>
+          <div>
+            <strong id="statYears">0</strong>
+            <span>年跨度</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="filters" aria-label="筛选器">
+          <label>
+            <span>关键词</span>
+            <input id="searchInput" type="search" placeholder="搜索：医保、疾控、基层..." />
+          </label>
+
+          <label>
+            <span>司局</span>
+            <select id="topicFilter"></select>
+          </label>
+
+          <label>
+            <span>处室</span>
+            <select id="secondaryFilter"></select>
+          </label>
+
+          <label>
+            <span>年份</span>
+            <select id="yearFilter"></select>
+          </label>
+
+          <label>
+            <span>重点机关</span>
+            <select id="agencyFilter"></select>
+          </label>
+
+          <label>
+            <span>文件类型</span>
+            <select id="levelFilter"></select>
+          </label>
+
+          <label>
+            <span>清单排序</span>
+            <select id="sortFilter">
+              <option value="date-desc">时间新到旧</option>
+              <option value="date-asc">时间旧到新</option>
+              <option value="category">司局</option>
+              <option value="agency">发文机关</option>
+            </select>
+          </label>
+
+          <p class="filter-count" id="filterCount">当前显示全部政策文件</p>
+          <div class="secondary-chips" id="secondaryChips"></div>
+          <div class="legend" id="legend"></div>
+        </aside>
+
+        <section class="map-panel" aria-label="政策思维导图">
+          <div class="map-status" id="mapStatus">正在生成政策网络</div>
+          <svg id="policyMap" role="img" aria-label="卫生健康政策思维导图"></svg>
+        </section>
+
+        <aside class="detail-panel" aria-live="polite">
+          <p class="detail-kicker" id="detailTopic">点击一个节点</p>
+          <h2 id="detailTitle">查看政策详情</h2>
+          <p class="detail-date" id="detailDate">节点会轻微漂移；点击后自动置中。</p>
+          <p id="detailSummary">
+            当前政策库包含具体政策文件，可按类别、年份和关键词筛选；点击节点会自动置中。
+          </p>
+          <dl id="detailMeta"></dl>
+          <a id="detailUrl" class="detail-url" href="#sources">查看官方来源</a>
+        </aside>
+      </section>
+
+      <section class="matrix-section">
+        <div class="section-head">
+          <h2>司局年份分布</h2>
+          <p>一级为司局，二级为处室或业务处室；颜色越深表示该司局口径在该年份收录的文件越多。</p>
+        </div>
+        <div class="matrix" id="matrix"></div>
+      </section>
+
+      <section class="continuity-section">
+        <div class="section-head">
+          <h2>关键词连续性</h2>
+          <p>输入“护理”“医保目录”“医养结合”等关键词，可查看近十年相关政策在年份、司局、处室之间的连续变化。</p>
+        </div>
+        <div class="continuity-tools">
+          <label>
+            <span>研究关键词</span>
+            <input id="continuityInput" type="search" value="护理" placeholder="例如：护理、基层、医保目录、托育" />
+          </label>
+          <button class="source-link" id="applyContinuity" type="button">分析关键词</button>
+        </div>
+        <div class="continuity-grid">
+          <div class="continuity-chart" id="continuityChart"></div>
+          <div class="continuity-panel">
+            <h3 id="continuityTitle">关键词政策变化</h3>
+            <p id="continuitySummary"></p>
+            <div class="continuity-tags" id="continuityTags"></div>
+          </div>
+        </div>
+        <div class="continuity-list" id="continuityList"></div>
+      </section>
+
+      <section class="taxonomy-section">
+        <div class="section-head">
+          <h2>机构分类依据</h2>
+          <p>司局和处室口径按官方机构设置、三定规定及公开职能文件整理；补充政策支持人工归口，旧数据保留规则归口并可逐步校核。</p>
+        </div>
+        <div class="taxonomy-list" id="taxonomyList"></div>
+      </section>
+
+      <section class="timeline-section">
+        <div class="section-head">
+          <h2>时间线</h2>
+          <p>从顶层战略到专项制度，政策重心从“建框架”逐步转向“强体系、提质量、控费用、下基层”。</p>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="sources-section" id="sources">
+        <div class="section-head">
+          <h2>政策清单与官方链接</h2>
+          <p id="sourceCount">每条记录均为具体政策文件，链接指向国务院政策库或相关官方发布页面。</p>
+        </div>
+        <div class="source-toolbar">
+          <button class="source-link" id="exportCsv" type="button">导出CSV</button>
+          <button class="source-link" id="toggleSources" type="button">显示全部</button>
+        </div>
+        <div class="source-list" id="sourceList"></div>
+      </section>
+    </main>
+
+    <script src="policy-data.js"></script>
+    <script src="policy-supplement.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

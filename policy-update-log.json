@@ -1,0 +1,313 @@
+{
+  "generatedAt": "2026-06-09T09:45:43.374Z",
+  "mode": "draft",
+  "maxPerSeed": 1,
+  "seeds": [
+    {
+      "name": "护理与康复",
+      "query": "国家卫生健康委 护理 康复 安宁疗护 政策 通知 site:www.gov.cn/zhengce",
+      "searched": [
+        {
+          "type": "search",
+          "source": "国家卫生健康委 护理 康复 安宁疗护 政策 通知 site:www.gov.cn/zhengce",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0
+        }
+      ],
+      "candidates": 0,
+      "added": 0,
+      "skippedExisting": 0,
+      "errors": [
+        {
+          "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "fetch failed"
+        }
+      ]
+    },
+    {
+      "name": "医疗质量",
+      "query": "国家卫生健康委 医疗质量 医疗安全 质控指标 政策 site:www.gov.cn/zhengce",
+      "searched": [
+        {
+          "type": "search",
+          "source": "国家卫生健康委 医疗质量 医疗安全 质控指标 政策 site:www.gov.cn/zhengce",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0
+        }
+      ],
+      "candidates": 0,
+      "added": 0,
+      "skippedExisting": 0,
+      "errors": [
+        {
+          "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "fetch failed"
+        }
+      ]
+    },
+    {
+      "name": "基层卫生",
+      "query": "国家卫生健康委 基层卫生 家庭医生 基本公共卫生 政策 site:www.gov.cn/zhengce",
+      "searched": [
+        {
+          "type": "search",
+          "source": "国家卫生健康委 基层卫生 家庭医生 基本公共卫生 政策 site:www.gov.cn/zhengce",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.nhc.gov.cn/jws/s7874/new_list.shtml",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0
+        }
+      ],
+      "candidates": 0,
+      "added": 0,
+      "skippedExisting": 0,
+      "errors": [
+        {
+          "url": "https://www.nhc.gov.cn/jws/s7874/new_list.shtml",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "fetch failed"
+        }
+      ]
+    },
+    {
+      "name": "医保目录支付",
+      "query": "国家医保局 医保目录 支付方式 DRG DIP 政策 site:www.gov.cn/zhengce",
+      "searched": [
+        {
+          "type": "search",
+          "source": "国家医保局 医保目录 支付方式 DRG DIP 政策 site:www.gov.cn/zhengce",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.nhsa.gov.cn/col/col104/index.html",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0
+        }
+      ],
+      "candidates": 0,
+      "added": 0,
+      "skippedExisting": 0,
+      "errors": [
+        {
+          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "fetch failed"
+        }
+      ]
+    },
+    {
+      "name": "价格招采",
+      "query": "国家医保局 医药集中采购 医疗服务价格 政策 site:www.gov.cn/zhengce",
+      "searched": [
+        {
+          "type": "search",
+          "source": "国家医保局 医药集中采购 医疗服务价格 政策 site:www.gov.cn/zhengce",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.nhsa.gov.cn/col/col104/index.html",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0
+        }
+      ],
+      "candidates": 0,
+      "added": 0,
+      "skippedExisting": 0,
+      "errors": [
+        {
+          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "fetch failed"
+        }
+      ]
+    },
+    {
+      "name": "基金监管",
+      "query": "国家医保局 医保基金监管 飞行检查 政策 site:www.gov.cn/zhengce",
+      "searched": [
+        {
+          "type": "search",
+          "source": "国家医保局 医保基金监管 飞行检查 政策 site:www.gov.cn/zhengce",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.nhsa.gov.cn/col/col104/index.html",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0
+        }
+      ],
+      "candidates": 0,
+      "added": 0,
+      "skippedExisting": 0,
+      "errors": [
+        {
+          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "fetch failed"
+        }
+      ]
+    },
+    {
+      "name": "疾控监测预警",
+      "query": "国家疾控局 监测预警 传染病 疫情 政策 site:www.gov.cn/zhengce",
+      "searched": [
+        {
+          "type": "search",
+          "source": "国家疾控局 监测预警 传染病 疫情 政策 site:www.gov.cn/zhengce",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0
+        }
+      ],
+      "candidates": 0,
+      "added": 0,
+      "skippedExisting": 0,
+      "errors": [
+        {
+          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "fetch failed"
+        }
+      ]
+    },
+    {
+      "name": "食品安全标准",
+      "query": "国家卫生健康委 食品安全国家标准 风险监测 评估 政策 site:www.gov.cn/zhengce",
+      "searched": [
+        {
+          "type": "search",
+          "source": "国家卫生健康委 食品安全国家标准 风险监测 评估 政策 site:www.gov.cn/zhengce",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0
+        }
+      ],
+      "candidates": 0,
+      "added": 0,
+      "skippedExisting": 0,
+      "errors": [
+        {
+          "url": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "fetch failed"
+        }
+      ]
+    },
+    {
+      "name": "人口家庭",
+      "query": "国家卫生健康委 生育支持 人口监测 家庭发展 政策 site:www.gov.cn/zhengce",
+      "searched": [
+        {
+          "type": "search",
+          "source": "国家卫生健康委 生育支持 人口监测 家庭发展 政策 site:www.gov.cn/zhengce",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0
+        }
+      ],
+      "candidates": 0,
+      "added": 0,
+      "skippedExisting": 0,
+      "errors": [
+        {
+          "url": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "fetch failed"
+        }
+      ]
+    }
+  ]
+}

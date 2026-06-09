@@ -1,0 +1,92 @@
+[
+  {
+    "name": "护理与康复",
+    "query": "国家卫生健康委 护理 康复 安宁疗护 政策 通知 site:www.gov.cn/zhengce",
+    "sourceUrls": [
+      "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
+      "https://www.gov.cn/zhengce/zhengceku/"
+    ],
+    "topic": "nhc_medical",
+    "secondary": "护理与康复处"
+  },
+  {
+    "name": "医疗质量",
+    "query": "国家卫生健康委 医疗质量 医疗安全 质控指标 政策 site:www.gov.cn/zhengce",
+    "sourceUrls": [
+      "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
+      "https://www.gov.cn/zhengce/zhengceku/"
+    ],
+    "topic": "nhc_medical",
+    "secondary": "医疗管理处"
+  },
+  {
+    "name": "基层卫生",
+    "query": "国家卫生健康委 基层卫生 家庭医生 基本公共卫生 政策 site:www.gov.cn/zhengce",
+    "sourceUrls": [
+      "https://www.nhc.gov.cn/jws/s7874/new_list.shtml",
+      "https://www.gov.cn/zhengce/zhengceku/"
+    ],
+    "topic": "nhc_primary",
+    "secondary": "基本公共卫生处"
+  },
+  {
+    "name": "医保目录支付",
+    "query": "国家医保局 医保目录 支付方式 DRG DIP 政策 site:www.gov.cn/zhengce",
+    "sourceUrls": [
+      "https://www.nhsa.gov.cn/col/col104/index.html",
+      "https://www.gov.cn/zhengce/zhengceku/"
+    ],
+    "topic": "nhsa_services",
+    "secondary": "医保目录处"
+  },
+  {
+    "name": "价格招采",
+    "query": "国家医保局 医药集中采购 医疗服务价格 政策 site:www.gov.cn/zhengce",
+    "sourceUrls": [
+      "https://www.nhsa.gov.cn/col/col104/index.html",
+      "https://www.gov.cn/zhengce/zhengceku/"
+    ],
+    "topic": "nhsa_price",
+    "secondary": "药品耗材招采处"
+  },
+  {
+    "name": "基金监管",
+    "query": "国家医保局 医保基金监管 飞行检查 政策 site:www.gov.cn/zhengce",
+    "sourceUrls": [
+      "https://www.nhsa.gov.cn/col/col104/index.html",
+      "https://www.gov.cn/zhengce/zhengceku/"
+    ],
+    "topic": "nhsa_fund",
+    "secondary": "基金监管处"
+  },
+  {
+    "name": "疾控监测预警",
+    "query": "国家疾控局 监测预警 传染病 疫情 政策 site:www.gov.cn/zhengce",
+    "sourceUrls": [
+      "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
+      "https://www.gov.cn/zhengce/zhengceku/"
+    ],
+    "topic": "cdc_monitoring",
+    "secondary": "传染病监测处"
+  },
+  {
+    "name": "食品安全标准",
+    "query": "国家卫生健康委 食品安全国家标准 风险监测 评估 政策 site:www.gov.cn/zhengce",
+    "sourceUrls": [
+      "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
+      "https://www.gov.cn/zhengce/zhengceku/"
+    ],
+    "topic": "nhc_food",
+    "secondary": "食品安全标准管理处"
+  },
+  {
+    "name": "人口家庭",
+    "query": "国家卫生健康委 生育支持 人口监测 家庭发展 政策 site:www.gov.cn/zhengce",
+    "sourceUrls": [
+      "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
+      "https://www.gov.cn/zhengce/zhengceku/"
+    ],
+    "topic": "nhc_population",
+    "secondary": "政策协调处"
+  }
+]
