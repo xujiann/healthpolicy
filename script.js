@@ -915,8 +915,7 @@ function renderSourceList() {
       <a class="source-item" href="${policy.url}" target="_blank" rel="noreferrer" style="border-top:4px solid ${topic.color}">
         <span class="source-title">${policy.title}</span>
         <span class="source-no">${policy.documentNo}</span>
-        <span class="source-meta">${policy.date} / ${topic.name} / ${policy.secondary} / ${policy.agency}</span>
-        <p class="source-summary">${policy.summary}</p>
+        <p class="source-summary"><strong>主要内容、目标摘要：</strong>${policy.summary}</p>
       </a>
     `;
   }).join("");
