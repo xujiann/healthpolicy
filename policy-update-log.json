@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-09T09:45:43.374Z",
-  "mode": "draft",
-  "maxPerSeed": 1,
+  "generatedAt": "2026-06-10T19:55:02.573Z",
+  "mode": "apply",
+  "maxPerSeed": 8,
   "seeds": [
     {
       "name": "护理与康复",
@@ -10,7 +10,7 @@
         {
           "type": "search",
           "source": "国家卫生健康委 护理 康复 安宁疗护 政策 通知 site:www.gov.cn/zhengce",
-          "hits": 0
+          "hits": 1
         },
         {
           "type": "source",
@@ -23,17 +23,17 @@
           "hits": 0
         }
       ],
-      "candidates": 0,
-      "added": 0,
+      "candidates": 1,
+      "added": 1,
       "skippedExisting": 0,
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "fetch failed"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "fetch failed"
+          "error": "403 Forbidden"
         }
       ]
     },
@@ -44,7 +44,7 @@
         {
           "type": "search",
           "source": "国家卫生健康委 医疗质量 医疗安全 质控指标 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "hits": 1
         },
         {
           "type": "source",
@@ -57,17 +57,17 @@
           "hits": 0
         }
       ],
-      "candidates": 0,
+      "candidates": 1,
       "added": 0,
       "skippedExisting": 0,
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "fetch failed"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "fetch failed"
+          "error": "403 Forbidden"
         }
       ]
     },
@@ -78,7 +78,7 @@
         {
           "type": "search",
           "source": "国家卫生健康委 基层卫生 家庭医生 基本公共卫生 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "hits": 1
         },
         {
           "type": "source",
@@ -91,17 +91,17 @@
           "hits": 0
         }
       ],
-      "candidates": 0,
+      "candidates": 1,
       "added": 0,
       "skippedExisting": 0,
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/jws/s7874/new_list.shtml",
-          "error": "fetch failed"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "fetch failed"
+          "error": "403 Forbidden"
         }
       ]
     },
@@ -112,32 +112,18 @@
         {
           "type": "search",
           "source": "国家医保局 医保目录 支付方式 DRG DIP 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "hits": 1
         },
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 0
-        },
-        {
-          "type": "source",
-          "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 64
         }
       ],
-      "candidates": 0,
-      "added": 0,
+      "candidates": 8,
+      "added": 7,
       "skippedExisting": 0,
-      "errors": [
-        {
-          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "error": "fetch failed"
-        },
-        {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "fetch failed"
-        }
-      ]
+      "errors": []
     },
     {
       "name": "价格招采",
@@ -146,32 +132,18 @@
         {
           "type": "search",
           "source": "国家医保局 医药集中采购 医疗服务价格 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "hits": 1
         },
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 0
-        },
-        {
-          "type": "source",
-          "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 64
         }
       ],
-      "candidates": 0,
+      "candidates": 8,
       "added": 0,
       "skippedExisting": 0,
-      "errors": [
-        {
-          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "error": "fetch failed"
-        },
-        {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "fetch failed"
-        }
-      ]
+      "errors": []
     },
     {
       "name": "基金监管",
@@ -180,32 +152,18 @@
         {
           "type": "search",
           "source": "国家医保局 医保基金监管 飞行检查 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "hits": 1
         },
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 0
-        },
-        {
-          "type": "source",
-          "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 64
         }
       ],
-      "candidates": 0,
+      "candidates": 8,
       "added": 0,
       "skippedExisting": 0,
-      "errors": [
-        {
-          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "error": "fetch failed"
-        },
-        {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "fetch failed"
-        }
-      ]
+      "errors": []
     },
     {
       "name": "疾控监测预警",
@@ -214,32 +172,18 @@
         {
           "type": "search",
           "source": "国家疾控局 监测预警 传染病 疫情 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "hits": 1
         },
         {
           "type": "source",
           "source": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "hits": 0
-        },
-        {
-          "type": "source",
-          "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 13
         }
       ],
-      "candidates": 0,
-      "added": 0,
+      "candidates": 8,
+      "added": 7,
       "skippedExisting": 0,
-      "errors": [
-        {
-          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "error": "fetch failed"
-        },
-        {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "fetch failed"
-        }
-      ]
+      "errors": []
     },
     {
       "name": "食品安全标准",
@@ -248,7 +192,7 @@
         {
           "type": "search",
           "source": "国家卫生健康委 食品安全国家标准 风险监测 评估 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "hits": 1
         },
         {
           "type": "source",
@@ -261,17 +205,17 @@
           "hits": 0
         }
       ],
-      "candidates": 0,
+      "candidates": 1,
       "added": 0,
       "skippedExisting": 0,
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
-          "error": "fetch failed"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "fetch failed"
+          "error": "403 Forbidden"
         }
       ]
     },
@@ -282,7 +226,7 @@
         {
           "type": "search",
           "source": "国家卫生健康委 生育支持 人口监测 家庭发展 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "hits": 1
         },
         {
           "type": "source",
@@ -295,17 +239,17 @@
           "hits": 0
         }
       ],
-      "candidates": 0,
+      "candidates": 1,
       "added": 0,
       "skippedExisting": 0,
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
-          "error": "fetch failed"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "fetch failed"
+          "error": "403 Forbidden"
         }
       ]
     }
