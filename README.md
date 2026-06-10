@@ -13,6 +13,7 @@
 - 关键词连续性分析，例如查看“护理”“医保目录”“医养结合”等政策变化
 - 政策清单与官方链接
 - 规则归口审核清单与自动补充候选流程
+- GitHub Actions 每日自动抓取新增政策候选并更新网站
 
 ## 本地预览
 
@@ -36,6 +37,14 @@ index.html
 [https://xujiann.github.io/healthpolicy/](https://xujiann.github.io/healthpolicy/)
 
 ## 数据维护
+
+仓库包含每日自动更新工作流：
+
+```text
+.github/workflows/daily-policy-update.yml
+```
+
+该工作流每天北京时间 01:30 运行，也可在 GitHub Actions 页面手动触发。
 
 生成自动补充候选：
 

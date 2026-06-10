@@ -132,6 +132,21 @@ function classifyPolicy(policy) {
   return { topic, secondary, assignment: "规则归口" };
 }
 
+function extractDocumentNo(policy) {
+  const text = `${policy.documentNo || ""} ${policy.keywords || ""} ${policy.summary || ""} ${policy.title || ""}`;
+  const patterns = [
+    /(?:国卫|国中医药|医保|国疾控|国办|国发|财社|人社部发|卫办|发改社会|药监)[^，。；;\s（）()《》]{0,18}[〔\[]\d{4}[〕\]][^，。；;\s（）()《》]{0,8}号/g,
+    /[A-Z]{1,4}\s?\d{3,5}[—-]\d{4}/g,
+    /GB\s?\d{3,5}(?:\.\d+)?[—-]\d{4}/gi,
+    /WS\/T\s?\d{3,5}[—-]\d{4}/gi
+  ];
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (match?.[0]) return match[0].replace(/\s+/g, "");
+  }
+  return "文号待核";
+}
+
 const rawPolicyDocuments = [
   ...policyDocuments,
   ...(typeof policySupplementDocuments === "undefined" ? [] : policySupplementDocuments)
@@ -144,7 +159,8 @@ const policies = rawPolicyDocuments.map((policy, index) => ({
   ...policy,
   ...classifyPolicy(policy),
   id: policy.id || `doc-${String(index + 1).padStart(3, "0")}`,
-  sourceType: "具体文件"
+  sourceType: "具体文件",
+  documentNo: policy.documentNo || extractDocumentNo(policy)
 }));
 
 const years = [...new Set(policies.map((policy) => policy.year))].sort((a, b) => a - b);
@@ -423,6 +439,7 @@ function buildGraphData() {
     nodes.push(node);
   });
 
+  const policyNodes = [];
   maxNodes.forEach((policy, index) => {
     const topic = topicById.get(policy.topic);
     const officeNode = officeNodeByKey.get(`${policy.topic}::${policy.secondary}`);
@@ -444,10 +461,37 @@ function buildGraphData() {
       anchorY: officeNode.anchorY + Math.sin(angle) * (radius + 18)
     };
     nodes.push(node);
+    policyNodes.push(node);
     links.push({ source: officeNode, target: node, topic: policy.topic, color: topic.color, type: "policy-link", strength: 0.018 });
   });
+  addPolicyRelationLinks(policyNodes, links);
 
   return { nodes, links, visibleCount: visible.length, renderedCount: maxNodes.length, officeCount: officeNodes.length, topicCount: topicNodes.length, ministryCount: ministryNodes.length };
+}
+
+function addPolicyRelationLinks(policyNodes, links) {
+  const byOffice = new Map();
+  for (const node of policyNodes) {
+    const key = `${node.topic}::${node.secondary}`;
+    if (!byOffice.has(key)) byOffice.set(key, []);
+    byOffice.get(key).push(node);
+  }
+  for (const items of byOffice.values()) {
+    const sorted = items.sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title, "zh-Hans-CN"));
+    for (let index = 1; index < sorted.length; index += 1) {
+      const source = sorted[index - 1];
+      const target = sorted[index];
+      links.push({
+        source,
+        target,
+        topic: target.topic,
+        color: topicById.get(target.topic)?.color || "#7d8797",
+        type: "policy-relation",
+        strength: 0.004,
+        relation: "同处室政策连续"
+      });
+    }
+  }
 }
 
 function renderMap() {
@@ -470,6 +514,11 @@ function renderMap() {
   graph.links.forEach((link) => {
     const line = svgEl("line", `link ${link.type || ""}`);
     line.setAttribute("stroke", link.color || topicById.get(link.topic)?.color || "#b9c3cf");
+    if (link.relation) {
+      const title = svgEl("title");
+      title.textContent = link.relation;
+      line.appendChild(title);
+    }
     linkLayer.appendChild(line);
     graph.linkEls.push({ link, line });
   });
@@ -680,6 +729,7 @@ function setDetail(policy) {
   els.detailDate.textContent = `${policy.date} / ${policy.agency}`;
   els.detailSummary.textContent = policy.summary;
   els.detailMeta.innerHTML = `
+    <dt>文号</dt><dd>${policy.documentNo}</dd>
     <dt>层级</dt><dd>${policy.level}</dd>
     <dt>司局</dt><dd>${topic.name}</dd>
     <dt>处室</dt><dd>${policy.secondary}</dd>
@@ -864,6 +914,7 @@ function renderSourceList() {
     return `
       <a class="source-item" href="${policy.url}" target="_blank" rel="noreferrer" style="border-top:4px solid ${topic.color}">
         <span class="source-title">${policy.title}</span>
+        <span class="source-no">${policy.documentNo}</span>
         <span class="source-meta">${policy.date} / ${topic.name} / ${policy.secondary} / ${policy.agency}</span>
         <p class="source-summary">${policy.summary}</p>
       </a>
@@ -931,10 +982,10 @@ function escapeAttr(value) {
 
 function exportCurrentCsv() {
   const rows = sortPolicies(getFilteredPolicies());
-  const header = ["年份", "日期", "司局", "处室", "归口方式", "发文机关", "文件层级", "标题", "摘要", "链接"];
+  const header = ["年份", "日期", "文号", "司局", "处室", "归口方式", "发文机关", "文件层级", "标题", "摘要", "链接"];
   const lines = [header, ...rows.map((policy) => {
     const topic = topicById.get(policy.topic);
-    return [policy.year, policy.date, topic.name, policy.secondary, policy.assignment, policy.agency, policy.level, policy.title, policy.summary, policy.url];
+    return [policy.year, policy.date, policy.documentNo, topic.name, policy.secondary, policy.assignment, policy.agency, policy.level, policy.title, policy.summary, policy.url];
   })].map((row) => row.map(csvCell).join(","));
   const blob = new Blob([`\uFEFF${lines.join("\n")}`], { type: "text/csv;charset=utf-8" });
   const url = URL.createObjectURL(blob);
