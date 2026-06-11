@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T19:55:02.573Z",
+  "generatedAt": "2026-06-11T19:59:22.253Z",
   "mode": "apply",
   "maxPerSeed": 8,
   "seeds": [
@@ -24,8 +24,8 @@
         }
       ],
       "candidates": 1,
-      "added": 1,
-      "skippedExisting": 0,
+      "added": 0,
+      "skippedExisting": 1,
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
@@ -59,7 +59,7 @@
       ],
       "candidates": 1,
       "added": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 1,
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
@@ -93,7 +93,7 @@
       ],
       "candidates": 1,
       "added": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 1,
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/jws/s7874/new_list.shtml",
@@ -121,8 +121,8 @@
         }
       ],
       "candidates": 8,
-      "added": 7,
-      "skippedExisting": 0,
+      "added": 0,
+      "skippedExisting": 8,
       "errors": []
     },
     {
@@ -142,7 +142,7 @@
       ],
       "candidates": 8,
       "added": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 8,
       "errors": []
     },
     {
@@ -162,7 +162,7 @@
       ],
       "candidates": 8,
       "added": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 8,
       "errors": []
     },
     {
@@ -181,8 +181,8 @@
         }
       ],
       "candidates": 8,
-      "added": 7,
-      "skippedExisting": 0,
+      "added": 0,
+      "skippedExisting": 8,
       "errors": []
     },
     {
@@ -207,7 +207,7 @@
       ],
       "candidates": 1,
       "added": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 1,
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
@@ -241,7 +241,7 @@
       ],
       "candidates": 1,
       "added": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 1,
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
