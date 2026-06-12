@@ -756,5 +756,35 @@ const policySupplementDocuments = [
     "keywords": "疾控监测预警 国家疾控局 监测预警 传染病 疫情 政策 site:www.gov.cn/zhengce",
     "reviewStatus": "待人工审核",
     "assignment": "人工归口候选"
+  },
+  {
+    "id": "auto-001",
+    "year": 2026,
+    "date": "2026-02-02",
+    "topic": "nhsa_services",
+    "secondary": "医保目录处",
+    "title": "《国家医疗保障局 内设机构》",
+    "agency": "国家医疗保障局",
+    "level": "政策文件",
+    "summary": "办公室主要职能：负责机关日常运转，承担安全、保密、信访、政务公开和国际合作交流等工作。承担局党组、局领导交办的其他事项。",
+    "url": "https://www.nhsa.gov.cn/col/col125/index.html",
+    "keywords": "医保目录支付 国家医保局 医保目录 支付方式 DRG DIP 政策 site:www.gov.cn/zhengce",
+    "reviewStatus": "待人工审核",
+    "assignment": "人工归口候选"
+  },
+  {
+    "id": "auto-002",
+    "year": 2024,
+    "date": "2024-07-23",
+    "topic": "cdc_monitoring",
+    "secondary": "传染病监测处",
+    "title": "《规划计划-国家疾病预防控制局》",
+    "agency": "国家疾病预防控制局",
+    "level": "规划",
+    "summary": "政务公开",
+    "url": "https://www.ndcpa.gov.cn/jbkzzx/c100030/second/list.html",
+    "keywords": "疾控监测预警 国家疾控局 监测预警 传染病 疫情 政策 site:www.gov.cn/zhengce",
+    "reviewStatus": "待人工审核",
+    "assignment": "人工归口候选"
   }
 ];
