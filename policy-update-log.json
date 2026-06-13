@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T19:31:56.079Z",
+  "generatedAt": "2026-06-13T18:53:44.248Z",
   "mode": "apply",
   "maxPerSeed": 8,
   "seeds": [
@@ -121,8 +121,8 @@
         }
       ],
       "candidates": 8,
-      "added": 1,
-      "skippedExisting": 7,
+      "added": 0,
+      "skippedExisting": 8,
       "errors": []
     },
     {
@@ -142,7 +142,7 @@
       ],
       "candidates": 8,
       "added": 0,
-      "skippedExisting": 7,
+      "skippedExisting": 8,
       "errors": []
     },
     {
@@ -162,7 +162,7 @@
       ],
       "candidates": 8,
       "added": 0,
-      "skippedExisting": 7,
+      "skippedExisting": 8,
       "errors": []
     },
     {
@@ -181,8 +181,8 @@
         }
       ],
       "candidates": 8,
-      "added": 1,
-      "skippedExisting": 7,
+      "added": 0,
+      "skippedExisting": 8,
       "errors": []
     },
     {
