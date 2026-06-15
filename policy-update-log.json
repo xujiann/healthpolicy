@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T18:52:15.586Z",
+  "generatedAt": "2026-06-15T20:38:24.422Z",
   "mode": "apply",
   "maxPerSeed": 8,
   "seeds": [
@@ -177,13 +177,27 @@
         {
           "type": "source",
           "source": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "hits": 13
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0
         }
       ],
-      "candidates": 8,
+      "candidates": 0,
       "added": 0,
-      "skippedExisting": 8,
-      "errors": []
+      "skippedExisting": 0,
+      "errors": [
+        {
+          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "403 Forbidden"
+        }
+      ]
     },
     {
       "name": "食品安全标准",
