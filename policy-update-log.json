@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T20:26:10.356Z",
+  "generatedAt": "2026-06-17T19:37:54.280Z",
   "mode": "apply",
   "maxPerSeed": 8,
   "seeds": [
@@ -29,7 +29,7 @@
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "fetch failed"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -63,7 +63,7 @@
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "fetch failed"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -97,7 +97,7 @@
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/jws/s7874/new_list.shtml",
-          "error": "fetch failed"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -117,13 +117,27 @@
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 64
+          "hits": 0
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0
         }
       ],
-      "candidates": 8,
+      "candidates": 0,
       "added": 0,
-      "skippedExisting": 8,
-      "errors": []
+      "skippedExisting": 0,
+      "errors": [
+        {
+          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
+          "error": "fetch failed"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "403 Forbidden"
+        }
+      ]
     },
     {
       "name": "价格招采",
@@ -177,27 +191,13 @@
         {
           "type": "source",
           "source": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "hits": 0
-        },
-        {
-          "type": "source",
-          "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 13
         }
       ],
-      "candidates": 0,
+      "candidates": 8,
       "added": 0,
-      "skippedExisting": 0,
-      "errors": [
-        {
-          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "error": "fetch failed"
-        },
-        {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "403 Forbidden"
-        }
-      ]
+      "skippedExisting": 8,
+      "errors": []
     },
     {
       "name": "食品安全标准",
@@ -225,7 +225,7 @@
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
-          "error": "fetch failed"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -259,7 +259,7 @@
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
-          "error": "fetch failed"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
