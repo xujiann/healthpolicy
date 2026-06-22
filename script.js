@@ -37,6 +37,9 @@ const keywordAliases = {
   "医养结合": ["医养结合", "老年健康", "养老机构", "失能老年人"],
   "飞行检查": ["飞行检查", "专项检查", "现场检查", "医保基金监管"]
 };
+const blockedPolicyUrlPattern = /(download\.html|\/col\/col\d+\/index\.html|\/common\/(?:list|second\/list)\.html|\/index\.html(?:$|[?#])|new_list\.shtml)/i;
+const blockedPolicyTextPattern = /(客户端下载页|索引\s*标题\s*发文字号\s*发布日期|政策解读|政府信息公开指南|政府信息公开制度|机构职能|内设机构|主要职责|政务公开|手机版|微信公众号|首页|栏目|列表页|党建工作-|通知公告-|法律法规$|其他$)/;
+const concretePolicySignalPattern = /(国卫|医保|国中医药|国疾控|卫办|医保办|发改|财社|国办发|国发|令第|公告|通知|意见|办法|规划|方案|标准|指南|目录|细则|决定|批复|函|令|公报|工作要点|实施方案|行动计划|监测指标体系|设置标准)/;
 const categoryRules = [
   ["nhc_medical", "医疗管理处", /检查检验结果互认|合理医疗检查|医疗质量行动|医疗质量安全改进|质控指标/],
   ["nhc_population", "政策协调处", /优化生育政策|生育支持|生育友好|人口长期均衡|人口高质量发展|三孩/],
@@ -155,10 +158,19 @@ function extractDocumentNo(policy) {
   return "文号待核";
 }
 
+function isConcretePolicyDocument(policy) {
+  const url = policy.url || "";
+  const text = `${policy.title || ""} ${policy.summary || ""}`;
+  const signalText = `${policy.title || ""} ${policy.summary || ""} ${policy.documentNo || ""} ${policy.level || ""}`;
+  if (blockedPolicyUrlPattern.test(url)) return false;
+  if (blockedPolicyTextPattern.test(text)) return false;
+  return concretePolicySignalPattern.test(signalText);
+}
+
 const rawPolicyDocuments = [
   ...policyDocuments,
   ...(typeof policySupplementDocuments === "undefined" ? [] : policySupplementDocuments)
-].filter((policy, index, items) => {
+].filter(isConcretePolicyDocument).filter((policy, index, items) => {
   const key = `${policy.url || ""}::${policy.title}`;
   return items.findIndex((item) => `${item.url || ""}::${item.title}` === key) === index;
 });

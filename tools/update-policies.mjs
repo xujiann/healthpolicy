@@ -12,6 +12,9 @@ const logPath = path.join(root, "policy-update-log.json");
 const args = new Set(process.argv.slice(2));
 const mode = args.has("--apply") ? "apply" : "draft";
 const maxPerSeed = Number(process.argv.find((arg) => arg.startsWith("--max="))?.split("=")[1] || 8);
+const blockedPolicyUrlPattern = /(download\.html|\/col\/col\d+\/index\.html|\/common\/(?:list|second\/list)\.html|\/index\.html(?:$|[?#])|new_list\.shtml)/i;
+const blockedPolicyTextPattern = /(客户端下载页|索引\s*标题\s*发文字号\s*发布日期|政策解读|政府信息公开指南|政府信息公开制度|机构职能|内设机构|主要职责|政务公开|手机版|微信公众号|首页|栏目|列表页|党建工作-|通知公告-|法律法规$|其他$)/;
+const concretePolicySignalPattern = /(国卫|医保|国中医药|国疾控|卫办|医保办|发改|财社|国办发|国发|令第|公告|通知|意见|办法|规划|方案|标准|指南|目录|细则|决定|批复|函|令|公报|工作要点|实施方案|行动计划|监测指标体系|设置标准)/;
 
 const seeds = JSON.parse(await fs.readFile(seedsPath, "utf8"));
 const existing = await loadExistingDocuments();
@@ -26,7 +29,7 @@ const runLog = {
 };
 
 for (const seed of seeds) {
-  const seedLog = { name: seed.name, query: seed.query, searched: [], candidates: 0, added: 0, skippedExisting: 0, errors: [] };
+  const seedLog = { name: seed.name, query: seed.query, searched: [], candidates: 0, added: 0, skippedExisting: 0, skippedNonPolicy: 0, errors: [] };
   const urls = await collectSeedUrls(seed, maxPerSeed, seedLog);
   seedLog.candidates = urls.length;
   for (const url of urls) {
@@ -49,6 +52,11 @@ for (const seed of seeds) {
       reviewStatus: "待人工核验"
     }));
     if (doc.reviewStatus === "待人工核验") seedLog.errors.push({ url, error: doc.summary });
+    if (!isConcretePolicyDocument(doc)) {
+      seedLog.skippedNonPolicy += 1;
+      seedLog.errors.push({ url, error: "跳过非具体政策文件页面" });
+      continue;
+    }
     const key = documentKey(doc);
     if (!existingKeys.has(key) && !candidates.some((item) => documentKey(item) === key)) {
       candidates.push(doc);
@@ -134,10 +142,15 @@ async function collectSeedUrls(seed, limit, seedLog) {
 async function fetchPolicy(url, seed) {
   const html = await fetchText(url);
   const title = cleanText(
-    firstMatch(html, /<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i)
+    firstMatch(html, /<h1[^>]*>([\s\S]*?)<\/h1>/i)
+    || firstMatch(html, /<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i)
     || firstMatch(html, /<title>([^<]+)<\/title>/i)
     || seed.name
-  ).replace(/_中国政府网$/, "");
+  )
+    .replace(/_中国政府网$/, "")
+    .replace(/^国家医疗保障局\s+政策法规\s+/, "")
+    .replace(/-国家疾病预防控制局$/, "")
+    .replace(/-国家卫生健康委员会$/, "");
   const date = normalizeDate(
     firstMatch(html, /(\d{4})[-年](\d{1,2})[-月](\d{1,2})日?/)
     || firstMatch(html, /(\d{4})[-年](\d{1,2})/)
@@ -202,8 +215,18 @@ function extractPolicyUrls(html, baseUrl) {
 }
 
 function isPolicyLikeUrl(url) {
-  return /(?:www|app|big5\.www)\.gov\.cn\/(?:zhengce|govdata|lianbo)/.test(url)
-    || /(?:nhc|nhsa|ndcpa|natcm)\.gov\.cn\/.*(?:content|art|article|\.shtml|\.html|\.pdf)/.test(url);
+  if (blockedPolicyUrlPattern.test(url)) return false;
+  return /(?:www|big5\.www)\.gov\.cn\/(?:zhengce|lianbo)\/.*(?:content_\d+|P\d+.*\.pdf|\.htm)/.test(url)
+    || /(?:nhc|nhsa|ndcpa|natcm)\.gov\.cn\/.*(?:content|art|article|P\d+.*\.pdf|\.shtml|\.pdf)/.test(url);
+}
+
+function isConcretePolicyDocument(doc) {
+  const url = doc.url || "";
+  const text = `${doc.title || ""} ${doc.summary || ""}`;
+  const signalText = `${doc.title || ""} ${doc.summary || ""} ${doc.documentNo || ""} ${doc.level || ""}`;
+  if (blockedPolicyUrlPattern.test(url)) return false;
+  if (blockedPolicyTextPattern.test(text)) return false;
+  return concretePolicySignalPattern.test(signalText);
 }
 
 function matchesSeed(url, html, seed) {
