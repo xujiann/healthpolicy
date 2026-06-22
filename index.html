@@ -89,6 +89,50 @@
         </article>
       </section>
 
+      <section class="ops-dashboard" aria-label="平台运行驾驶舱">
+        <article class="latest-panel">
+          <div class="panel-head">
+            <div>
+              <span>最新入库</span>
+              <h2>政策动态</h2>
+            </div>
+            <a href="#sources">查看清单</a>
+          </div>
+          <div class="latest-list" id="latestList"></div>
+        </article>
+        <article class="quality-panel">
+          <div class="panel-head">
+            <div>
+              <span>数据治理</span>
+              <h2>归口质量</h2>
+            </div>
+            <a href="policy-assignment-audit.csv">审核清单</a>
+          </div>
+          <div class="quality-grid">
+            <div>
+              <strong id="qualityManual">0</strong>
+              <span>人工归口</span>
+            </div>
+            <div>
+              <strong id="qualityRule">0</strong>
+              <span>规则归口</span>
+            </div>
+            <div>
+              <strong id="qualitySources">0</strong>
+              <span>官方来源</span>
+            </div>
+            <div>
+              <strong id="qualityLatest">-</strong>
+              <span>最新月份</span>
+            </div>
+          </div>
+          <div class="interface-status">
+            <span>自动更新日志</span>
+            <a href="policy-update-log.json">policy-update-log.json</a>
+          </div>
+        </article>
+      </section>
+
       <section class="workspace">
         <aside class="filters" aria-label="筛选器">
           <label>

@@ -189,6 +189,11 @@ const els = {
   moduleCollected: document.querySelector("#moduleCollected"),
   moduleMapped: document.querySelector("#moduleMapped"),
   moduleRelations: document.querySelector("#moduleRelations"),
+  latestList: document.querySelector("#latestList"),
+  qualityManual: document.querySelector("#qualityManual"),
+  qualityRule: document.querySelector("#qualityRule"),
+  qualitySources: document.querySelector("#qualitySources"),
+  qualityLatest: document.querySelector("#qualityLatest"),
   filterCount: document.querySelector("#filterCount"),
   mapStatus: document.querySelector("#mapStatus"),
   matrix: document.querySelector("#matrix"),
@@ -283,6 +288,7 @@ function initControls() {
   els.statYears.textContent = years.length;
   els.moduleCollected.textContent = policies.length;
   els.moduleMapped.textContent = topics.length;
+  renderPlatformDashboard();
   els.topicFilter.innerHTML = ['<option value="all">全部司局</option>', ...topics.map((topic) => `<option value="${topic.id}">${topic.name}</option>`)].join("");
   updateSecondaryOptions();
   els.yearFilter.innerHTML = ['<option value="all">全部年份</option>', ...years.map((year) => `<option value="${year}">${year}</option>`)].join("");
@@ -316,6 +322,33 @@ function renderLegend() {
       update();
     });
   });
+}
+
+function renderPlatformDashboard() {
+  const latest = sortPolicies(policies).slice(0, 5);
+  const manualCount = policies.filter((policy) => policy.assignment === "人工归口").length;
+  const ruleCount = policies.filter((policy) => policy.assignment === "规则归口").length;
+  const sourceHosts = new Set(policies.map((policy) => {
+    try {
+      return new URL(policy.url).hostname;
+    } catch {
+      return "unknown";
+    }
+  }));
+  els.qualityManual.textContent = manualCount;
+  els.qualityRule.textContent = ruleCount;
+  els.qualitySources.textContent = sourceHosts.size;
+  els.qualityLatest.textContent = latest[0]?.date || "-";
+  els.latestList.innerHTML = latest.map((policy) => {
+    const topic = topicById.get(policy.topic);
+    return `
+      <a href="${policy.url}" target="_blank" rel="noreferrer" class="latest-item" style="border-left:4px solid ${topic.color}">
+        <span>${policy.date} / ${policy.documentNo}</span>
+        <strong>${policy.title}</strong>
+        <em>${topic.name} / ${policy.secondary}</em>
+      </a>
+    `;
+  }).join("");
 }
 
 function getFilteredPolicies() {
