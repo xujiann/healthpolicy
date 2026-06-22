@@ -186,6 +186,9 @@ const els = {
   statFiltered: document.querySelector("#statFiltered"),
   statTopics: document.querySelector("#statTopics"),
   statYears: document.querySelector("#statYears"),
+  moduleCollected: document.querySelector("#moduleCollected"),
+  moduleMapped: document.querySelector("#moduleMapped"),
+  moduleRelations: document.querySelector("#moduleRelations"),
   filterCount: document.querySelector("#filterCount"),
   mapStatus: document.querySelector("#mapStatus"),
   matrix: document.querySelector("#matrix"),
@@ -278,6 +281,8 @@ function initControls() {
   els.statDocs.textContent = policies.length;
   els.statTopics.textContent = topics.length;
   els.statYears.textContent = years.length;
+  els.moduleCollected.textContent = policies.length;
+  els.moduleMapped.textContent = topics.length;
   els.topicFilter.innerHTML = ['<option value="all">全部司局</option>', ...topics.map((topic) => `<option value="${topic.id}">${topic.name}</option>`)].join("");
   updateSecondaryOptions();
   els.yearFilter.innerHTML = ['<option value="all">全部年份</option>', ...years.map((year) => `<option value="${year}">${year}</option>`)].join("");
@@ -510,6 +515,7 @@ function renderMap() {
   els.svg.appendChild(viewport);
   graph = { ...buildGraphData(), nodeEls: new Map(), linkEls: [], labelEls: new Map(), viewport };
   els.mapStatus.textContent = `部委 ${graph.ministryCount} / 司局 ${graph.topicCount} / 处室 ${graph.officeCount} / 政策 ${graph.renderedCount}/${graph.visibleCount}`;
+  els.moduleRelations.textContent = graph.links.filter((link) => link.type === "policy-relation").length;
 
   graph.links.forEach((link) => {
     const line = svgEl("line", `link ${link.type || ""}`);

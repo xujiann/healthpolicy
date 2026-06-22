@@ -9,12 +9,28 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <aside class="platform-rail" aria-label="卫生健康信息平台导航">
+      <div class="platform-brand">
+        <img src="assets/favicon.png" alt="" />
+        <strong>卫健信息平台</strong>
+        <span>模拟环境</span>
+      </div>
+      <nav>
+        <a href="#overview" class="is-active">政策知识库</a>
+        <a href="#map">政策图谱</a>
+        <a href="#continuity">连续性分析</a>
+        <a href="#sources">文件清单</a>
+        <a href="#governance">数据治理</a>
+      </nav>
+    </aside>
+
     <header class="topbar">
       <div>
-        <p class="eyebrow">2016-2026 / 中国卫生健康政策</p>
-        <h1>近十年卫生健康政策脉络图</h1>
+        <p class="eyebrow">卫生健康信息平台模拟 / 政策知识库</p>
+        <h1>卫生健康政策智能研判模块</h1>
       </div>
       <div class="top-actions">
+        <span class="platform-status">数据服务运行中</span>
         <button class="icon-button" id="resetView" title="重置视图" aria-label="重置视图">
           <span aria-hidden="true">↺</span>
         </button>
@@ -23,11 +39,11 @@
     </header>
 
     <main>
-      <section class="intro-band">
+      <section class="intro-band" id="overview">
         <div class="intro-copy">
           <p>
-            以“健康中国”为中心，把公共卫生、医疗资源、规划、医改、医保、基层卫生等具体政策文件放在同一张动态网络里。
-            分类参考国家卫健委、国家医保局、国家疾控局司局与处室职能；每条记录都对应具体文件标题、年份、归口处室和官方链接。
+            面向卫生健康信息平台的政策知识库模拟模块，汇聚公共卫生、医疗资源、医改、医保、基层卫生等具体政策文件，
+            将文件按部委、司局、处室归口，并提供图谱检索、连续性分析、清单追溯和每日自动更新能力。
           </p>
         </div>
         <div class="stat-grid" aria-label="政策统计">
@@ -48,6 +64,29 @@
             <span>年跨度</span>
           </div>
         </div>
+      </section>
+
+      <section class="module-strip" aria-label="平台模块状态">
+        <article>
+          <span>政策采集</span>
+          <strong id="moduleCollected">0</strong>
+          <em>官方文件入库</em>
+        </article>
+        <article>
+          <span>归口映射</span>
+          <strong id="moduleMapped">0</strong>
+          <em>部委/司局/处室</em>
+        </article>
+        <article>
+          <span>关系计算</span>
+          <strong id="moduleRelations">0</strong>
+          <em>同处室连续政策</em>
+        </article>
+        <article>
+          <span>更新任务</span>
+          <strong>每日</strong>
+          <em>01:30 自动检查</em>
+        </article>
       </section>
 
       <section class="workspace">
@@ -97,7 +136,7 @@
           <div class="legend" id="legend"></div>
         </aside>
 
-        <section class="map-panel" aria-label="政策思维导图">
+        <section class="map-panel" id="map" aria-label="政策思维导图">
           <div class="map-status" id="mapStatus">正在生成政策网络</div>
           <svg id="policyMap" role="img" aria-label="卫生健康政策思维导图"></svg>
         </section>
@@ -122,7 +161,7 @@
         <div class="matrix" id="matrix"></div>
       </section>
 
-      <section class="continuity-section">
+      <section class="continuity-section" id="continuity">
         <div class="section-head">
           <h2>关键词连续性</h2>
           <p>输入“护理”“医保目录”“医养结合”等关键词，可查看近十年相关政策在年份、司局、处室之间的连续变化。</p>
@@ -151,6 +190,31 @@
           <p>司局和处室口径按官方机构设置、三定规定及公开职能文件整理；补充政策支持人工归口，旧数据保留规则归口并可逐步校核。</p>
         </div>
         <div class="taxonomy-list" id="taxonomyList"></div>
+      </section>
+
+      <section class="governance-section" id="governance">
+        <div class="section-head">
+          <h2>平台数据治理</h2>
+          <p>模拟卫生健康信息平台的数据接入、归口审核、知识图谱计算和公开链接追溯流程。</p>
+        </div>
+        <div class="governance-grid">
+          <article>
+            <h3>接入源</h3>
+            <p>国务院政策库、国家卫健委、国家医保局、国家疾控局、国家中医药局等官方渠道。</p>
+          </article>
+          <article>
+            <h3>归口规则</h3>
+            <p>人工归口优先，规则归口进入审核清单；所有文件均落到部委、司局、处室层级。</p>
+          </article>
+          <article>
+            <h3>自动任务</h3>
+            <p>GitHub Actions 每日定时运行更新脚本，生成日志并在发现变化时提交入库。</p>
+          </article>
+          <article>
+            <h3>追溯能力</h3>
+            <p>每张卡片保留文件名、文号、摘要和官方全文链接，可导出 CSV 进行二次分析。</p>
+          </article>
+        </div>
       </section>
 
       <section class="timeline-section">
