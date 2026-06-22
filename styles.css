@@ -797,6 +797,31 @@ dd {
   font-weight: 800;
 }
 
+.trend-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: -2px 0 12px;
+}
+
+.trend-presets button {
+  min-height: 32px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #3f4652;
+  padding: 0 10px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.trend-presets button:hover,
+.trend-presets button.is-active {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: #f4f8f8;
+}
+
 .continuity-grid {
   display: grid;
   grid-template-columns: minmax(420px, 1.3fr) minmax(280px, 0.7fr);
@@ -832,6 +857,7 @@ dd {
   justify-items: center;
   color: #3f4652;
   cursor: pointer;
+  position: relative;
 }
 
 .continuity-bar span {
@@ -839,6 +865,19 @@ dd {
   align-self: end;
   background: linear-gradient(180deg, #2f6fed, #1f8a84);
   border: 1px solid rgba(32, 33, 36, 0.12);
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 2;
+}
+
+.continuity-bar i {
+  width: 92%;
+  align-self: end;
+  background: rgba(31, 138, 132, 0.12);
+  border: 1px dashed rgba(31, 138, 132, 0.35);
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 1;
 }
 
 .continuity-bar:hover span {
@@ -868,6 +907,33 @@ dd {
   color: var(--muted);
 }
 
+.trend-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.trend-metrics div {
+  min-height: 64px;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  background: #f8fafb;
+  border: 1px solid #e7edf2;
+  text-align: center;
+}
+
+.trend-metrics strong {
+  font-size: 16px;
+}
+
+.trend-metrics span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .continuity-tags {
   display: flex;
   flex-wrap: wrap;
@@ -893,6 +959,47 @@ dd {
   margin-top: 12px;
   background: var(--line);
   overflow: hidden;
+}
+
+.trend-stage-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.trend-stage {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 12px;
+}
+
+.trend-stage div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.trend-stage div strong {
+  font-size: 18px;
+}
+
+.trend-stage div span {
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.trend-stage ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #3f4652;
+  font-size: 12px;
+}
+
+.trend-stage li + li {
+  margin-top: 4px;
 }
 
 .continuity-item {

@@ -207,24 +207,34 @@
 
       <section class="continuity-section" id="continuity">
         <div class="section-head">
-          <h2>关键词连续性</h2>
-          <p>输入“护理”“医保目录”“医养结合”等关键词，可查看近十年相关政策在年份、司局、处室之间的连续变化。</p>
+          <h2>政策关键词趋势</h2>
+          <p>输入“医共体”“区域医疗中心”“护理”“医保目录”等关键词，可查看政策从首次出现到持续推进的年度变化趋势。</p>
         </div>
         <div class="continuity-tools">
           <label>
             <span>研究关键词</span>
-            <input id="continuityInput" type="search" value="护理" placeholder="例如：护理、基层、医保目录、托育" />
+            <input id="continuityInput" type="search" value="医共体" placeholder="例如：医共体、区域医疗中心、护理、医保目录" />
           </label>
           <button class="source-link" id="applyContinuity" type="button">分析关键词</button>
+        </div>
+        <div class="trend-presets" id="trendPresets">
+          <button type="button" data-keyword="医共体">医共体</button>
+          <button type="button" data-keyword="区域医疗中心">区域医疗中心</button>
+          <button type="button" data-keyword="护理">护理</button>
+          <button type="button" data-keyword="医保目录">医保目录</button>
+          <button type="button" data-keyword="医养结合">医养结合</button>
+          <button type="button" data-keyword="飞行检查">飞行检查</button>
         </div>
         <div class="continuity-grid">
           <div class="continuity-chart" id="continuityChart"></div>
           <div class="continuity-panel">
             <h3 id="continuityTitle">关键词政策变化</h3>
             <p id="continuitySummary"></p>
+            <div class="trend-metrics" id="trendMetrics"></div>
             <div class="continuity-tags" id="continuityTags"></div>
           </div>
         </div>
+        <div class="trend-stage-list" id="trendStageList"></div>
         <div class="continuity-list" id="continuityList"></div>
       </section>
 

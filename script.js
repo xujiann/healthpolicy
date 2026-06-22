@@ -29,6 +29,14 @@ const topics = [
 ];
 
 const defaultChild = "综合处";
+const keywordAliases = {
+  "医共体": ["医共体", "医疗卫生共同体", "紧密型县域医疗卫生共同体", "县域医疗卫生共同体", "医疗共同体"],
+  "区域医疗中心": ["区域医疗中心", "国家区域医疗中心", "国家医学中心", "医学中心", "医疗资源区域布局"],
+  "护理": ["护理", "护士", "老年护理", "长期护理", "安宁疗护"],
+  "医保目录": ["医保目录", "药品目录", "国家基本医疗保险", "谈判药品", "限定支付"],
+  "医养结合": ["医养结合", "老年健康", "养老机构", "失能老年人"],
+  "飞行检查": ["飞行检查", "专项检查", "现场检查", "医保基金监管"]
+};
 const categoryRules = [
   ["nhc_medical", "医疗管理处", /检查检验结果互认|合理医疗检查|医疗质量行动|医疗质量安全改进|质控指标/],
   ["nhc_population", "政策协调处", /优化生育政策|生育支持|生育友好|人口长期均衡|人口高质量发展|三孩/],
@@ -209,7 +217,10 @@ const els = {
   continuityChart: document.querySelector("#continuityChart"),
   continuityTitle: document.querySelector("#continuityTitle"),
   continuitySummary: document.querySelector("#continuitySummary"),
+  trendMetrics: document.querySelector("#trendMetrics"),
   continuityTags: document.querySelector("#continuityTags"),
+  trendPresets: document.querySelector("#trendPresets"),
+  trendStageList: document.querySelector("#trendStageList"),
   continuityList: document.querySelector("#continuityList"),
   taxonomyList: document.querySelector("#taxonomyList"),
   timeline: document.querySelector("#timeline"),
@@ -801,8 +812,8 @@ function renderTimeline() {
 }
 
 function renderContinuity() {
-  const term = (els.continuityInput?.value || "护理").trim();
-  const query = term || "护理";
+  const term = (els.continuityInput?.value || "医共体").trim();
+  const query = term || "医共体";
   const matched = sortPolicies(policies.filter((policy) => matchPolicyKeyword(policy, query)));
   const byYear = new Map(years.map((year) => [year, []]));
   matched.forEach((policy) => {
@@ -810,26 +821,61 @@ function renderContinuity() {
     byYear.get(policy.year).push(policy);
   });
   const max = Math.max(1, ...[...byYear.values()].map((items) => items.length));
+  let cumulative = 0;
+  const yearStats = years.map((year) => {
+    const count = byYear.get(year)?.length || 0;
+    cumulative += count;
+    return { year, count, cumulative, items: byYear.get(year) || [] };
+  });
+  const activeYears = yearStats.filter((item) => item.count > 0);
+  const peak = activeYears.reduce((best, item) => item.count > (best?.count || 0) ? item : best, null);
+  const first = activeYears[0];
+  const latest = activeYears[activeYears.length - 1];
   const touchedTopics = new Map();
   matched.forEach((policy) => {
     const topic = topicById.get(policy.topic);
     const key = `${topic.name} / ${policy.secondary}`;
     touchedTopics.set(key, (touchedTopics.get(key) || 0) + 1);
   });
-  els.continuityTitle.textContent = `“${query}”政策连续性`;
+  els.continuityTitle.textContent = `“${query}”政策变化趋势`;
   els.continuitySummary.textContent = matched.length
-    ? `共命中 ${matched.length} 份文件，覆盖 ${touchedTopics.size} 个司局/处室组合；柱形越高表示该年份相关文件越集中。`
+    ? `共命中 ${matched.length} 份文件，覆盖 ${activeYears.length} 个年份、${touchedTopics.size} 个司局/处室组合；可观察政策从提出、扩围到制度化推进的时间变化。`
     : "当前政策库未命中该关键词，可换用同义词或扩大关键词。";
-  els.continuityChart.innerHTML = years.map((year) => {
-    const count = byYear.get(year)?.length || 0;
+  els.trendMetrics.innerHTML = [
+    ["首次出现", first ? `${first.year}年` : "-"],
+    ["峰值年份", peak ? `${peak.year}年 / ${peak.count}份` : "-"],
+    ["最近年份", latest ? `${latest.year}年` : "-"],
+    ["累计文件", `${matched.length}份`]
+  ].map(([label, value]) => `<div><strong>${value}</strong><span>${label}</span></div>`).join("");
+  els.trendPresets.querySelectorAll("button").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.keyword === query);
+  });
+  els.continuityChart.innerHTML = yearStats.map(({ year, count, cumulative }) => {
     const height = Math.max(6, Math.round((count / max) * 132));
-    return `<button class="continuity-bar" type="button" data-year="${year}" title="${year}年：${count}份"><span style="height:${height}px"></span><strong>${count}</strong><em>${year}</em></button>`;
+    const cumulativeHeight = Math.max(4, Math.round((cumulative / Math.max(1, matched.length)) * 132));
+    return `
+      <button class="continuity-bar" type="button" data-year="${year}" title="${year}年：新增${count}份 / 累计${cumulative}份">
+        <i style="height:${cumulativeHeight}px"></i>
+        <span style="height:${height}px"></span>
+        <strong>${count}</strong>
+        <em>${year}</em>
+      </button>
+    `;
   }).join("");
   els.continuityTags.innerHTML = [...touchedTopics.entries()]
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "zh-Hans-CN"))
     .slice(0, 14)
     .map(([label, count]) => `<span>${label}<strong>${count}</strong></span>`)
     .join("");
+  els.trendStageList.innerHTML = activeYears.map(({ year, count, items }) => {
+    const topItems = sortPolicies(items).slice(0, 3);
+    return `
+      <article class="trend-stage">
+        <div><strong>${year}</strong><span>${count}份</span></div>
+        <ul>${topItems.map((policy) => `<li>${policy.documentNo} ${shortLabel(policy.title.replace(/[《》]/g, ""), 32)}</li>`).join("")}</ul>
+      </article>
+    `;
+  }).join("") || '<p class="empty-note">没有形成年度趋势。</p>';
   els.continuityList.innerHTML = matched.slice(0, 80).map((policy) => {
     const topic = topicById.get(policy.topic);
     return `
@@ -880,7 +926,11 @@ function matchPolicyKeyword(policy, term) {
   const normalized = term.trim().toLowerCase();
   if (!normalized) return true;
   const haystack = `${policy.title} ${policy.summary} ${policy.keywords} ${policy.agency} ${policy.level} ${topicById.get(policy.topic)?.name || ""} ${policy.secondary}`.toLowerCase();
-  return normalized.split(/\s+/).every((piece) => haystack.includes(piece));
+  const phrases = normalized.split(/[，,；;、|]+/).map((item) => item.trim()).filter(Boolean);
+  return phrases.every((phrase) => {
+    const aliases = keywordAliases[phrase] || [phrase];
+    return aliases.some((alias) => alias.toLowerCase().split(/\s+/).every((piece) => haystack.includes(piece)));
+  });
 }
 
 function renderMatrix() {
@@ -1057,6 +1107,12 @@ els.searchInput.addEventListener("input", update);
 els.applyContinuity.addEventListener("click", renderContinuity);
 els.continuityInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") renderContinuity();
+});
+els.trendPresets.querySelectorAll("button").forEach((button) => {
+  button.addEventListener("click", () => {
+    els.continuityInput.value = button.dataset.keyword;
+    renderContinuity();
+  });
 });
 els.resetView.addEventListener("click", reset);
 els.exportCsv.addEventListener("click", exportCurrentCsv);
