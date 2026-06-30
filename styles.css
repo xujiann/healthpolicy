@@ -1007,6 +1007,87 @@ dd {
   color: var(--teal);
 }
 
+.forecast-box {
+  margin-top: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 16px;
+}
+
+.forecast-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 12px;
+}
+
+.forecast-head span {
+  display: block;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.forecast-head h3 {
+  margin: 2px 0 0;
+  font-size: 20px;
+}
+
+.forecast-head dl {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+}
+
+.forecast-head dl div {
+  min-width: 84px;
+  padding: 8px 10px;
+  background: #f8fafb;
+  border: 1px solid #e7edf2;
+  text-align: center;
+}
+
+.forecast-head dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.forecast-head dd {
+  margin: 2px 0 0;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.forecast-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.forecast-cards article {
+  min-height: 112px;
+  padding: 12px;
+  background: #f8fafb;
+  border: 1px solid #e7edf2;
+}
+
+.forecast-cards strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #1f2933;
+  font-size: 15px;
+}
+
+.forecast-cards p {
+  margin: 0;
+  color: #3f4652;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 .continuity-list {
   display: grid;
   gap: 1px;
@@ -1448,6 +1529,19 @@ dd {
   .continuity-tools,
   .continuity-grid {
     grid-template-columns: 1fr;
+  }
+
+  .forecast-head {
+    display: grid;
+  }
+
+  .forecast-head dl,
+  .forecast-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-head dl {
+    display: grid;
   }
 
   .continuity-chart {

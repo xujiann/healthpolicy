@@ -37,6 +37,38 @@ const keywordAliases = {
   "医养结合": ["医养结合", "老年健康", "养老机构", "失能老年人"],
   "飞行检查": ["飞行检查", "专项检查", "现场检查", "医保基金监管"]
 };
+const policyForecasts = {
+  "医共体": [
+    ["运行评价", "从建设方案转向监测指标、绩效评价和连续服务质量评价。"],
+    ["资源下沉", "县域医共体会继续围绕基层能力、人员流动、检查检验共享和信息化协同深化。"],
+    ["医保协同", "支付方式、总额预算和基金监管会更深嵌入县域医共体治理。"]
+  ],
+  "区域医疗中心": [
+    ["均衡布局", "重点会从设置中心转向跨区域服务能力、疑难重症承接和输出医院责任。"],
+    ["专科能力", "儿童、肿瘤、骨科、中西医结合等专科中心将继续成为政策抓手。"],
+    ["绩效评估", "未来更可能强化服务半径、转诊结构、学科带动和区域协同成效评价。"]
+  ],
+  "护理": [
+    ["供给扩容", "护理服务将继续向老年护理、康复护理、安宁疗护和居家护理延伸。"],
+    ["人才建设", "护士队伍、专科护士、护理质量控制和薪酬激励会成为持续政策主题。"],
+    ["支付衔接", "长期护理保险、互联网护理和医疗服务价格项目会影响护理服务落地。"]
+  ],
+  "医保目录": [
+    ["动态调整", "目录管理将继续强调准入谈判、续约、限定支付范围和真实世界证据。"],
+    ["多元支付", "医保目录会与商保创新药目录、DRG/DIP支付和药品供应保障联动。"],
+    ["精细监管", "未来重点会落到目录执行、处方流转、外配药和基金使用风险控制。"]
+  ],
+  "医养结合": [
+    ["服务融合", "政策会继续推动医疗机构、养老机构、社区和家庭之间的连续服务。"],
+    ["失能照护", "失能老年人评估、长期照护服务和长期护理保险会成为关键连接点。"],
+    ["基层承接", "家庭医生、社区卫生服务和老年健康管理将承担更多前端支撑功能。"]
+  ],
+  "飞行检查": [
+    ["常态监管", "飞行检查会从专项行动转向医保基金使用的常态化、穿透式监管。"],
+    ["智能审核", "大数据筛查、信用管理和经办稽核会成为发现问题的重要前置机制。"],
+    ["闭环整改", "未来会更强调检查、曝光、追回、处罚和制度修复的闭环。"]
+  ]
+};
 const blockedPolicyUrlPattern = /(download\.html|\/col\/col\d+\/index\.html|\/common\/(?:list|second\/list)\.html|\/index\.html(?:$|[?#])|new_list\.shtml)/i;
 const blockedPolicyTextPattern = /(客户端下载页|索引\s*标题\s*发文字号\s*发布日期|政策解读|政府信息公开指南|政府信息公开制度|机构职能|内设机构|主要职责|政务公开|手机版|微信公众号|首页|栏目|列表页|党建工作-|通知公告-|法律法规$|其他$)/;
 const concretePolicySignalPattern = /(国卫|医保|国中医药|国疾控|卫办|医保办|发改|财社|国办发|国发|令第|公告|通知|意见|办法|规划|方案|标准|指南|目录|细则|决定|批复|函|令|公报|工作要点|实施方案|行动计划|监测指标体系|设置标准)/;
@@ -231,6 +263,7 @@ const els = {
   continuitySummary: document.querySelector("#continuitySummary"),
   trendMetrics: document.querySelector("#trendMetrics"),
   continuityTags: document.querySelector("#continuityTags"),
+  forecastPanel: document.querySelector("#forecastPanel"),
   trendPresets: document.querySelector("#trendPresets"),
   trendStageList: document.querySelector("#trendStageList"),
   continuityList: document.querySelector("#continuityList"),
@@ -879,6 +912,7 @@ function renderContinuity() {
     .slice(0, 14)
     .map(([label, count]) => `<span>${label}<strong>${count}</strong></span>`)
     .join("");
+  els.forecastPanel.innerHTML = renderForecastPanel(query, matched, activeYears, touchedTopics);
   els.trendStageList.innerHTML = activeYears.map(({ year, count, items }) => {
     const topItems = sortPolicies(items).slice(0, 3);
     return `
@@ -943,6 +977,52 @@ function matchPolicyKeyword(policy, term) {
     const aliases = keywordAliases[phrase] || [phrase];
     return aliases.some((alias) => alias.toLowerCase().split(/\s+/).every((piece) => haystack.includes(piece)));
   });
+}
+
+function renderForecastPanel(query, matched, activeYears, touchedTopics) {
+  const safeQuery = escapeHtml(query);
+  const forecastKey = Object.keys(policyForecasts).find((key) => {
+    const aliases = keywordAliases[key] || [key];
+    return key === query || aliases.includes(query);
+  });
+  const latestYear = activeYears.at(-1)?.year;
+  const recentCount = activeYears.filter((item) => item.year >= Math.max(...years) - 2).reduce((sum, item) => sum + item.count, 0);
+  const isRecent = latestYear && latestYear >= Math.max(...years) - 2;
+  const crossOffice = touchedTopics.size > 2;
+  const evidence = matched.length >= 10 ? "高" : matched.length >= 4 ? "中" : matched.length > 0 ? "低" : "-";
+  const generic = [
+    ["政策延续", isRecent ? "近三年仍有政策命中，说明该主题仍处在持续推进或制度完善阶段。" : "近三年命中较少，后续可重点观察是否出现新的专项文件或评价指标。"],
+    ["协同重点", crossOffice ? "该主题涉及多个司局/处室，后续更可能体现跨部门、跨业务协同治理。" : "该主题当前归口较集中，后续可重点跟踪主管处室的专项通知、标准和评价文件。"],
+    ["研究提示", "建议结合文件文号、发布机关、关键词和年度阶段，持续补充政策目标、工具和约束条件。"]
+  ];
+  const cards = forecastKey ? policyForecasts[forecastKey] : generic;
+  return `
+    <section class="forecast-box" aria-label="未来方向研判">
+      <div class="forecast-head">
+        <div>
+          <span>未来方向研判</span>
+          <h3>${matched.length ? `“${safeQuery}”后续观察重点` : "暂无足够样本形成预测"}</h3>
+        </div>
+        <dl>
+          <div><dt>证据强度</dt><dd>${evidence}</dd></div>
+          <div><dt>近三年命中</dt><dd>${recentCount}份</dd></div>
+          <div><dt>归口跨度</dt><dd>${touchedTopics.size}组</dd></div>
+        </dl>
+      </div>
+      <div class="forecast-cards">
+        ${cards.map(([title, text]) => `<article><strong>${escapeHtml(title)}</strong><p>${escapeHtml(text)}</p></article>`).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 function renderMatrix() {
