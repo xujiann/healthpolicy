@@ -1194,6 +1194,107 @@ dd {
   font-weight: 800;
 }
 
+.milestone-list {
+  display: grid;
+  gap: 12px;
+}
+
+.milestone-card {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.milestone-year {
+  display: grid;
+  align-content: space-between;
+  gap: 18px;
+  padding: 16px;
+  background: #0f766e;
+  color: #fff;
+}
+
+.milestone-year strong {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.milestone-year span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.milestone-body {
+  padding: 16px;
+}
+
+.milestone-stage {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 9px;
+  background: #eef8f7;
+  color: #145f5a;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.milestone-body h3 {
+  margin: 10px 0 8px;
+  font-size: 18px;
+}
+
+.milestone-body p {
+  margin: 0;
+  color: #3f4652;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.milestone-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.milestone-tags span {
+  padding: 5px 8px;
+  background: #f4f6f8;
+  color: #394150;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.milestone-body dl {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 6px 10px;
+  margin: 12px 0;
+  color: #4b5563;
+  font-size: 13px;
+}
+
+.milestone-body dt {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.milestone-body dd {
+  margin: 0;
+}
+
+.milestone-body a {
+  color: var(--teal);
+  font-weight: 900;
+}
+
 .governance-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1538,6 +1639,16 @@ dd {
   .forecast-head dl,
   .forecast-cards {
     grid-template-columns: 1fr;
+  }
+
+  .milestone-card {
+    grid-template-columns: 1fr;
+  }
+
+  .milestone-year {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    align-content: center;
   }
 
   .forecast-head dl {

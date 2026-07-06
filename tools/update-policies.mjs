@@ -14,7 +14,9 @@ const mode = args.has("--apply") ? "apply" : "draft";
 const maxPerSeed = Number(process.argv.find((arg) => arg.startsWith("--max="))?.split("=")[1] || 8);
 const blockedPolicyUrlPattern = /(download\.html|\/col\/col\d+\/index\.html|\/common\/(?:list|second\/list)\.html|\/index\.html(?:$|[?#])|new_list\.shtml)/i;
 const blockedPolicyTextPattern = /(客户端下载页|索引\s*标题\s*发文字号\s*发布日期|政策解读|政府信息公开指南|政府信息公开制度|机构职能|内设机构|主要职责|政务公开|手机版|微信公众号|首页|栏目|列表页|党建工作-|通知公告-|法律法规$|其他$)/;
+const blockedInterpretationPattern = /(\/zhengce\/jiedu\/|\/zhengce\/tujie\/|一图读懂|图表：|详解《|聚焦《|出炉，|新华社权威快报|新闻发布会)/;
 const concretePolicySignalPattern = /(国卫|医保|国中医药|国疾控|卫办|医保办|发改|财社|国办发|国发|令第|公告|通知|意见|办法|规划|方案|标准|指南|目录|细则|决定|批复|函|令|公报|工作要点|实施方案|行动计划|监测指标体系|设置标准)/;
+const invalidAgencyPattern = /^(\d+|中国政府网|.*官网|来源.*)$/;
 
 const seeds = JSON.parse(await fs.readFile(seedsPath, "utf8"));
 const existing = await loadExistingDocuments();
@@ -224,8 +226,11 @@ function isConcretePolicyDocument(doc) {
   const url = doc.url || "";
   const text = `${doc.title || ""} ${doc.summary || ""}`;
   const signalText = `${doc.title || ""} ${doc.summary || ""} ${doc.documentNo || ""} ${doc.level || ""}`;
+  const agency = String(doc.agency || "").trim();
   if (blockedPolicyUrlPattern.test(url)) return false;
   if (blockedPolicyTextPattern.test(text)) return false;
+  if (blockedInterpretationPattern.test(`${url} ${text}`)) return false;
+  if (!agency || invalidAgencyPattern.test(agency)) return false;
   return concretePolicySignalPattern.test(signalText);
 }
 

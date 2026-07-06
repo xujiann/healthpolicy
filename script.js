@@ -69,9 +69,85 @@ const policyForecasts = {
     ["闭环整改", "未来会更强调检查、曝光、追回、处罚和制度修复的闭环。"]
   ]
 };
+const policyMilestones = [
+  {
+    year: 2009,
+    stage: "医改启动",
+    title: "医药卫生体制改革近期重点实施方案（2009-2011年）",
+    summary: "围绕基本医保、国家基本药物、基层医疗卫生服务体系、基本公共卫生均等化和公立医院改革试点五项重点改革，推动基本医疗卫生制度框架成形。",
+    tags: ["公平可及", "基层强基", "基本公共卫生"],
+    themes: ["医改", "基层卫生", "基本医保"],
+    source: "https://www.nhc.gov.cn/tigs/c100053/200904/8b35e426c95b41e88a30a9091e18dbd1.shtml"
+  },
+  {
+    year: 2016,
+    stage: "战略上升",
+    title: "“健康中国2030”规划纲要",
+    summary: "将健康优先纳入国家战略，提出全生命周期健康服务、健康环境、健康产业和主要健康指标目标，成为后续健康中国行动和专项规划的上位框架。",
+    tags: ["健康优先", "全生命周期", "2030目标"],
+    themes: ["健康中国", "战略规划", "健康指标"],
+    source: "https://www.nhsa.gov.cn/art/2016/10/25/art_104_6428.html"
+  },
+  {
+    year: 2019,
+    stage: "行动化",
+    title: "健康中国行动与组织实施考核",
+    summary: "从战略纲要转向可执行专项行动，围绕健康知识普及、合理膳食、全民健身、慢病防控、重点人群健康等方向建立行动体系和考核机制。",
+    tags: ["专项行动", "考核评价", "慢病防控"],
+    themes: ["健康中国行动", "慢病管理", "健康促进"],
+    source: "https://www.scio.gov.cn/gwyzclxcfh/cfh/2019n_15127/2019n07y15r/wjxgzc_15510/202208/t20220808_303202.html"
+  },
+  {
+    year: 2021,
+    stage: "高质量发展",
+    title: "推动公立医院高质量发展",
+    summary: "政策重心从规模扩张转向体系重塑、能力提升、运营管理、绩效评价和公益性维护，推动公立医院成为优质高效医疗服务体系的主体支撑。",
+    tags: ["公立医院", "质量效率", "公益性"],
+    themes: ["公立医院改革", "医疗质量", "绩效评价"],
+    source: "https://www.scio.gov.cn/gwyzclxcfh/cfh/2021n_16129/2021n06y07rxw/xgbdbj_16313/202208/t20220808_306994.html"
+  },
+  {
+    year: 2022,
+    stage: "规划统筹",
+    title: "“十四五”国民健康规划",
+    summary: "面向2025年统筹公共卫生、医疗服务、中医药、老龄健康、健康产业和治理能力，强调预防为主、基层强化、资源均衡和改革创新。",
+    tags: ["资源均衡", "公共卫生", "老龄健康"],
+    themes: ["国民健康规划", "公共卫生", "资源配置"],
+    source: "https://www.mee.gov.cn/zcwj/gwywj/202205/t20220520_982776.shtml"
+  },
+  {
+    year: 2022,
+    stage: "数字治理",
+    title: "“十四五”全民健康信息化规划",
+    summary: "推动全民健康信息平台、互联互通、数据治理、便民服务和网络安全建设，为政策监测、绩效评价和跨机构协同提供数字底座。",
+    tags: ["信息化", "数据治理", "互联互通"],
+    themes: ["健康信息化", "数据治理", "平台互联"],
+    source: "https://www.ndcpa.gov.cn/jbkzzx/c100030/common/content/content_1658745812574605312.html"
+  },
+  {
+    year: 2024,
+    stage: "三医协同",
+    title: "深化医药卫生体制改革2024年重点工作任务",
+    summary: "围绕三医协同发展和治理，继续推进三明医改经验、分级诊疗、药品耗材治理、医保支付和公立医院改革等重点任务联动。",
+    tags: ["三医协同", "三明医改", "分级诊疗"],
+    themes: ["医改任务", "医保支付", "分级诊疗"],
+    source: "https://www.mee.gov.cn/zcwj/gwywj/202406/t20240607_1075327.shtml"
+  },
+  {
+    year: 2025,
+    stage: "深化推进",
+    title: "2025年全国卫生健康体改工作会议",
+    summary: "体改工作进一步强调以地市为单元推进改革、坚持公益性导向、把强基层作为重点，并持续深化公立医院改革和医防协同。",
+    tags: ["地市单元", "公益性改革", "基层重点"],
+    themes: ["体制改革", "基层卫生", "公立医院"],
+    source: "https://www.nhc.gov.cn/tigs/c100052/202501/4355b79ee84247af9c4a9befbd1a55a1.shtml"
+  }
+];
 const blockedPolicyUrlPattern = /(download\.html|\/col\/col\d+\/index\.html|\/common\/(?:list|second\/list)\.html|\/index\.html(?:$|[?#])|new_list\.shtml)/i;
 const blockedPolicyTextPattern = /(客户端下载页|索引\s*标题\s*发文字号\s*发布日期|政策解读|政府信息公开指南|政府信息公开制度|机构职能|内设机构|主要职责|政务公开|手机版|微信公众号|首页|栏目|列表页|党建工作-|通知公告-|法律法规$|其他$)/;
+const blockedInterpretationPattern = /(\/zhengce\/jiedu\/|\/zhengce\/tujie\/|一图读懂|图表：|详解《|聚焦《|出炉，|新华社权威快报|新闻发布会)/;
 const concretePolicySignalPattern = /(国卫|医保|国中医药|国疾控|卫办|医保办|发改|财社|国办发|国发|令第|公告|通知|意见|办法|规划|方案|标准|指南|目录|细则|决定|批复|函|令|公报|工作要点|实施方案|行动计划|监测指标体系|设置标准)/;
+const invalidAgencyPattern = /^(\d+|中国政府网|.*官网|来源.*)$/;
 const categoryRules = [
   ["nhc_medical", "医疗管理处", /检查检验结果互认|合理医疗检查|医疗质量行动|医疗质量安全改进|质控指标/],
   ["nhc_population", "政策协调处", /优化生育政策|生育支持|生育友好|人口长期均衡|人口高质量发展|三孩/],
@@ -194,8 +270,11 @@ function isConcretePolicyDocument(policy) {
   const url = policy.url || "";
   const text = `${policy.title || ""} ${policy.summary || ""}`;
   const signalText = `${policy.title || ""} ${policy.summary || ""} ${policy.documentNo || ""} ${policy.level || ""}`;
+  const agency = String(policy.agency || "").trim();
   if (blockedPolicyUrlPattern.test(url)) return false;
   if (blockedPolicyTextPattern.test(text)) return false;
+  if (blockedInterpretationPattern.test(`${url} ${text}`)) return false;
+  if (!agency || invalidAgencyPattern.test(agency)) return false;
   return concretePolicySignalPattern.test(signalText);
 }
 
@@ -268,6 +347,7 @@ const els = {
   trendStageList: document.querySelector("#trendStageList"),
   continuityList: document.querySelector("#continuityList"),
   taxonomyList: document.querySelector("#taxonomyList"),
+  milestoneList: document.querySelector("#milestoneList"),
   timeline: document.querySelector("#timeline"),
   sourceList: document.querySelector("#sourceList"),
   sourceCount: document.querySelector("#sourceCount"),
@@ -968,6 +1048,30 @@ function renderTaxonomyList() {
   }).join("");
 }
 
+function renderMilestones() {
+  els.milestoneList.innerHTML = policyMilestones.map((item, index) => `
+    <article class="milestone-card">
+      <div class="milestone-year">
+        <strong>${item.year}</strong>
+        <span>${String(index + 1).padStart(2, "0")}</span>
+      </div>
+      <div class="milestone-body">
+        <div class="milestone-stage">${item.stage}</div>
+        <h3>${item.title}</h3>
+        <p>${item.summary}</p>
+        <div class="milestone-tags">
+          ${item.tags.map((tag) => `<span>${tag}</span>`).join("")}
+        </div>
+        <dl>
+          <dt>关联主题</dt>
+          <dd>${item.themes.join(" / ")}</dd>
+        </dl>
+        <a href="${item.source}" target="_blank" rel="noreferrer">查看官方来源</a>
+      </div>
+    </article>
+  `).join("");
+}
+
 function matchPolicyKeyword(policy, term) {
   const normalized = term.trim().toLowerCase();
   if (!normalized) return true;
@@ -1113,6 +1217,7 @@ function update() {
   renderContinuity();
   renderTimeline();
   renderSourceList();
+  renderMilestones();
 }
 
 function describeFilters(count) {
