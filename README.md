@@ -5,7 +5,7 @@
 ## 在线访问
 
 - 总入口：[https://xujiann.github.io/healthpolicy/](https://xujiann.github.io/healthpolicy/)
-- 政策智能分析：[https://xujiann.github.io/healthpolicy/policy.html](https://xujiann.github.io/healthpolicy/policy.html)
+- 政策智能分析：[https://xujiann.github.io/health_policy](https://xujiann.github.io/health_policy)
 
 ## 功能
 
