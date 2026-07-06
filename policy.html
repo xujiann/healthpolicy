@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>卫生健康政策智能分析</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="platform-rail" aria-label="卫生健康信息平台导航">
+      <div class="platform-brand">
+        <img src="assets/favicon.png" alt="" />
+        <strong>卫健信息平台</strong>
+        <span>模拟环境</span>
+      </div>
+      <nav>
+        <a href="index.html">首页</a>
+        <a href="#overview" class="is-active">政策知识库</a>
+        <a href="#map">政策图谱</a>
+        <a href="#continuity">连续性分析</a>
+        <a href="#milestones">政策脉络</a>
+        <a href="#sources">文件清单</a>
+        <a href="#governance">数据治理</a>
+        <a href="about.html">关于</a>
+      </nav>
+    </aside>
+
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">卫生健康信息平台模拟 / 政策知识库</p>
+        <h1>卫生健康政策智能分析</h1>
+      </div>
+      <div class="top-actions">
+        <span class="platform-status">数据服务运行中</span>
+        <button class="icon-button" id="resetView" title="重置视图" aria-label="重置视图">
+          <span aria-hidden="true">↺</span>
+        </button>
+        <a class="source-link" href="#sources">官方来源</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro-band" id="overview">
+        <div class="intro-copy">
+          <div class="intro-badge">政策知识库 / 历史演进 / 发展预测</div>
+          <h2>为关键政策建立演进趋势与未来方向分析</h2>
+          <p>
+            面向卫生健康信息平台的政策智能分析模块，汇聚公共卫生、医疗资源、医改、医保、基层卫生等具体政策文件，
+            将文件按部委、司局、处室归口，最终目标是为每一项关键政策研究历史演进趋势，并预测未来发展方向。
+          </p>
+          <div class="intro-actions">
+            <a class="primary-action" href="#map">进入导图</a>
+            <a class="source-link" href="#continuity">演进趋势</a>
+            <a class="source-link" href="#sources">政策清单</a>
+          </div>
+        </div>
+        <div class="stat-grid" aria-label="政策统计">
+          <div>
+            <strong id="statDocs">0</strong>
+            <span>份政策文件</span>
+          </div>
+          <div>
+            <strong id="statFiltered">0</strong>
+            <span>当前命中</span>
+          </div>
+          <div>
+            <strong id="statTopics">0</strong>
+            <span>个司局分类</span>
+          </div>
+          <div>
+            <strong id="statYears">0</strong>
+            <span>年跨度</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="module-strip" aria-label="平台模块状态">
+        <article>
+          <span>政策采集</span>
+          <strong id="moduleCollected">0</strong>
+          <em>官方文件入库</em>
+        </article>
+        <article>
+          <span>归口映射</span>
+          <strong id="moduleMapped">0</strong>
+          <em>部委/司局/处室</em>
+        </article>
+        <article>
+          <span>趋势分析</span>
+          <strong id="moduleRelations">0</strong>
+          <em>演进线索与关联政策</em>
+        </article>
+        <article>
+          <span>方向预测</span>
+          <strong>每日</strong>
+          <em>持续更新预测依据</em>
+        </article>
+      </section>
+
+      <section class="ops-dashboard" aria-label="平台运行驾驶舱">
+        <article class="latest-panel">
+          <div class="panel-head">
+            <div>
+              <span>最新入库</span>
+              <h2>政策动态</h2>
+            </div>
+            <a href="#sources">查看清单</a>
+          </div>
+          <div class="latest-list" id="latestList"></div>
+        </article>
+        <article class="quality-panel">
+          <div class="panel-head">
+            <div>
+              <span>数据治理</span>
+              <h2>归口质量</h2>
+            </div>
+            <a href="policy-assignment-audit.csv">审核清单</a>
+          </div>
+          <div class="quality-grid">
+            <div>
+              <strong id="qualityManual">0</strong>
+              <span>人工归口</span>
+            </div>
+            <div>
+              <strong id="qualityRule">0</strong>
+              <span>规则归口</span>
+            </div>
+            <div>
+              <strong id="qualitySources">0</strong>
+              <span>官方来源</span>
+            </div>
+            <div>
+              <strong id="qualityLatest">-</strong>
+              <span>最新月份</span>
+            </div>
+          </div>
+          <div class="interface-status">
+            <span>自动更新日志</span>
+            <a href="policy-update-log.json">policy-update-log.json</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <aside class="filters" aria-label="筛选器">
+          <label>
+            <span>关键词</span>
+            <input id="searchInput" type="search" placeholder="搜索：医保、疾控、基层..." />
+          </label>
+
+          <label>
+            <span>司局</span>
+            <select id="topicFilter"></select>
+          </label>
+
+          <label>
+            <span>处室</span>
+            <select id="secondaryFilter"></select>
+          </label>
+
+          <label>
+            <span>年份</span>
+            <select id="yearFilter"></select>
+          </label>
+
+          <label>
+            <span>重点机关</span>
+            <select id="agencyFilter"></select>
+          </label>
+
+          <label>
+            <span>文件类型</span>
+            <select id="levelFilter"></select>
+          </label>
+
+          <label>
+            <span>清单排序</span>
+            <select id="sortFilter">
+              <option value="date-desc">时间新到旧</option>
+              <option value="date-asc">时间旧到新</option>
+              <option value="category">司局</option>
+              <option value="agency">发文机关</option>
+            </select>
+          </label>
+
+          <p class="filter-count" id="filterCount">当前显示全部政策文件</p>
+          <div class="secondary-chips" id="secondaryChips"></div>
+          <div class="legend" id="legend"></div>
+        </aside>
+
+        <section class="map-panel" id="map" aria-label="政策思维导图">
+          <div class="map-status" id="mapStatus">正在生成政策网络</div>
+          <svg id="policyMap" role="img" aria-label="卫生健康政策思维导图"></svg>
+        </section>
+
+        <aside class="detail-panel" aria-live="polite">
+          <p class="detail-kicker" id="detailTopic">点击一个节点</p>
+          <h2 id="detailTitle">查看政策详情</h2>
+          <p class="detail-date" id="detailDate">节点会轻微漂移；点击后自动置中。</p>
+          <p id="detailSummary">
+            当前政策库包含具体政策文件，可按类别、年份和关键词筛选；点击节点会自动置中。
+          </p>
+          <dl id="detailMeta"></dl>
+          <a id="detailUrl" class="detail-url" href="#sources">查看官方来源</a>
+        </aside>
+      </section>
+
+      <section class="matrix-section">
+        <div class="section-head">
+          <h2>司局年份分布</h2>
+          <p>一级为司局，二级为处室或业务处室；颜色越深表示该司局口径在该年份收录的文件越多。</p>
+        </div>
+        <div class="matrix" id="matrix"></div>
+      </section>
+
+      <section class="continuity-section" id="continuity">
+        <div class="section-head">
+          <h2>关键政策演进趋势</h2>
+          <p>输入“医共体”“区域医疗中心”“护理”“医保目录”等关键词，可查看政策从首次出现、持续推进到制度化发展的年度变化，并为后续方向预测提供依据。</p>
+        </div>
+        <div class="continuity-tools">
+          <label>
+            <span>研究关键词</span>
+            <input id="continuityInput" type="search" value="医共体" placeholder="例如：医共体、区域医疗中心、护理、医保目录" />
+          </label>
+          <button class="source-link" id="applyContinuity" type="button">分析关键词</button>
+        </div>
+        <div class="trend-presets" id="trendPresets">
+          <button type="button" data-keyword="医共体">医共体</button>
+          <button type="button" data-keyword="区域医疗中心">区域医疗中心</button>
+          <button type="button" data-keyword="护理">护理</button>
+          <button type="button" data-keyword="医保目录">医保目录</button>
+          <button type="button" data-keyword="医养结合">医养结合</button>
+          <button type="button" data-keyword="飞行检查">飞行检查</button>
+        </div>
+        <div class="continuity-grid">
+          <div class="continuity-chart" id="continuityChart"></div>
+          <div class="continuity-panel">
+            <h3 id="continuityTitle">关键词政策变化</h3>
+            <p id="continuitySummary"></p>
+            <div class="trend-metrics" id="trendMetrics"></div>
+            <div class="continuity-tags" id="continuityTags"></div>
+          </div>
+        </div>
+        <div class="forecast-panel" id="forecastPanel"></div>
+        <div class="trend-stage-list" id="trendStageList"></div>
+        <div class="continuity-list" id="continuityList"></div>
+      </section>
+
+      <section class="taxonomy-section">
+        <div class="section-head">
+          <h2>机构分类依据</h2>
+          <p>司局和处室口径按官方机构设置、三定规定及公开职能文件整理；补充政策支持人工归口，旧数据保留规则归口并可逐步校核。</p>
+        </div>
+        <div class="taxonomy-list" id="taxonomyList"></div>
+      </section>
+
+      <section class="milestone-section" id="milestones">
+        <div class="section-head">
+          <h2>卫生健康主要政策发展历程</h2>
+          <p>以医改和健康中国为主线，梳理关键制度节点、政策阶段和可继续追踪的主题标签；该专题用于历史脉络研究，不计入具体政策文件清单。</p>
+        </div>
+        <div class="milestone-list" id="milestoneList"></div>
+      </section>
+
+      <section class="governance-section" id="governance">
+        <div class="section-head">
+          <h2>平台数据治理</h2>
+          <p>模拟卫生健康信息平台的数据接入、归口审核、知识图谱计算和公开链接追溯流程。</p>
+        </div>
+        <div class="governance-grid">
+          <article>
+            <h3>接入源</h3>
+            <p>国务院政策库、国家卫健委、国家医保局、国家疾控局、国家中医药局等官方渠道。</p>
+          </article>
+          <article>
+            <h3>归口规则</h3>
+            <p>人工归口优先，规则归口进入审核清单；所有文件均落到部委、司局、处室层级。</p>
+          </article>
+          <article>
+            <h3>自动任务</h3>
+            <p>GitHub Actions 每日定时运行更新脚本，生成日志并在发现变化时提交入库。</p>
+          </article>
+          <article>
+            <h3>追溯能力</h3>
+            <p>每张卡片保留文件名、文号、摘要和官方全文链接，可导出 CSV 进行二次分析。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="timeline-section">
+        <div class="section-head">
+          <h2>时间线</h2>
+          <p>从顶层战略到专项制度，政策重心从“建框架”逐步转向“强体系、提质量、控费用、下基层”。</p>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="sources-section" id="sources">
+        <div class="section-head">
+          <h2>政策清单与官方链接</h2>
+          <p id="sourceCount">每条记录均为具体政策文件，链接指向国务院政策库或相关官方发布页面。</p>
+        </div>
+        <div class="source-toolbar">
+          <button class="source-link" id="exportCsv" type="button">导出CSV</button>
+          <button class="source-link" id="toggleSources" type="button">显示全部</button>
+        </div>
+        <div class="source-list" id="sourceList"></div>
+      </section>
+    </main>
+
+    <script src="policy-data.js"></script>
+    <script src="policy-supplement.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

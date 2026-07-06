@@ -1,10 +1,11 @@
 # 近十年卫生健康政策脉络图
 
-一个用于梳理 2016-2026 年卫生健康相关政策文件的静态可视化网站，已包装为“卫生健康信息平台模拟”中的政策知识库模块。
+一个用于进入卫生健康政策汇总、数据可视化和健康平台的静态总入口。其中政策智能分析系统用于梳理 2016-2026 年卫生健康相关政策文件，已包装为“卫生健康信息平台模拟”中的政策知识库模块。
 
 ## 在线访问
 
-[https://xujiann.github.io/healthpolicy/](https://xujiann.github.io/healthpolicy/)
+- 总入口：[https://xujiann.github.io/healthpolicy/](https://xujiann.github.io/healthpolicy/)
+- 政策智能分析：[https://xujiann.github.io/healthpolicy/policy.html](https://xujiann.github.io/healthpolicy/policy.html)
 
 ## 功能
 
@@ -15,6 +16,7 @@
 - 规则归口审核清单与自动补充候选流程
 - GitHub Actions 每日自动抓取新增政策候选并更新网站
 - 卫生健康信息平台模拟导航、数据治理状态和政策知识库模块入口
+- 手机优先的三项目总入口，连接政策汇总、数据可视化和健康平台
 
 ## 本地预览
 
