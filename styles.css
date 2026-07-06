@@ -1508,15 +1508,15 @@ dd {
 }
 
 .portal-main {
-  width: min(1080px, 100%);
+  width: min(1180px, 100%);
   margin: 0 auto;
-  padding: clamp(16px, 4vw, 42px);
+  padding: clamp(22px, 4vw, 54px);
 }
 
 .portal-hero {
-  min-height: 260px;
+  min-height: 238px;
   display: grid;
-  align-items: end;
+  align-items: center;
   padding: clamp(22px, 5vw, 42px);
   background: #fff;
   border: 1px solid var(--line);
@@ -1542,19 +1542,45 @@ dd {
   font-size: 17px;
 }
 
+.portal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.portal-meta span {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  border: 1px solid #d6e5e2;
+  background: #f7fbfa;
+  color: #3f4652;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.portal-meta strong {
+  color: var(--teal);
+  font-size: 18px;
+}
+
 .portal-grid {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   margin-top: 18px;
 }
 
 .portal-card {
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 14px;
-  min-height: 118px;
-  padding: 16px;
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 18px;
+  min-height: 244px;
+  padding: 18px;
   background: #fff;
   border: 1px solid var(--line);
   color: var(--ink);
@@ -1603,11 +1629,11 @@ dd {
 
 .portal-card-body {
   display: grid;
-  gap: 6px;
+  gap: 10px;
 }
 
 .portal-card-body strong {
-  font-size: 20px;
+  font-size: 21px;
   line-height: 1.25;
 }
 
@@ -1619,6 +1645,8 @@ dd {
 }
 
 .portal-arrow {
+  justify-self: end;
+  margin-top: auto;
   color: var(--teal);
   font-size: 34px;
   line-height: 1;
@@ -1629,10 +1657,14 @@ dd {
   padding: 18px;
   background: #15202b;
   color: #fff;
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
 }
 
 .portal-note h2 {
-  margin-bottom: 8px;
+  margin-bottom: 0;
   font-size: 18px;
 }
 
@@ -1822,8 +1854,23 @@ dd {
     font-size: 15px;
   }
 
+  .portal-meta {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .portal-meta span {
+    min-height: 34px;
+    font-size: 12px;
+  }
+
+  .portal-grid {
+    grid-template-columns: 1fr;
+  }
+
   .portal-card {
     grid-template-columns: 50px minmax(0, 1fr) auto;
+    align-content: center;
     gap: 12px;
     min-height: 108px;
     padding: 14px;
@@ -1848,7 +1895,12 @@ dd {
   }
 
   .portal-note {
+    display: block;
     padding: 16px;
+  }
+
+  .portal-note h2 {
+    margin-bottom: 8px;
   }
 
   .topbar,
