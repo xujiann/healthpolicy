@@ -1522,6 +1522,10 @@ dd {
     padding-left: 0;
   }
 
+  section {
+    scroll-margin-top: 132px;
+  }
+
   .platform-rail {
     position: sticky;
     top: 0;
@@ -1535,18 +1539,26 @@ dd {
     padding: 2px 2px 10px;
   }
 
+  .platform-brand span {
+    display: none;
+  }
+
   .platform-rail nav {
     display: flex;
     overflow-x: auto;
     padding-top: 10px;
     gap: 8px;
     scrollbar-width: thin;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
   }
 
   .platform-rail nav a {
     min-width: max-content;
+    min-height: 38px;
     border-left: 0;
     border-bottom: 3px solid transparent;
+    scroll-snap-align: start;
   }
 
   .platform-rail nav a:hover,
@@ -1576,34 +1588,41 @@ dd {
   }
 
   .topbar {
-    padding: 16px 12px 12px;
+    position: static;
+    padding: 14px 12px 10px;
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .top-actions {
-    margin-top: 16px;
+    margin-top: 12px;
     flex-wrap: wrap;
+  }
+
+  .top-actions .platform-status {
+    width: 100%;
+    justify-content: center;
   }
 
   .stat-grid {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 16px;
+    margin-top: 12px;
   }
 
   .intro-copy {
     min-height: auto;
-    padding: 18px;
+    padding: 16px;
+    box-shadow: 0 10px 24px rgba(31, 41, 55, 0.08);
   }
 
   .intro-copy h2 {
-    font-size: 26px;
+    font-size: 23px;
   }
 
   .intro-copy p {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .intro-actions .source-link,
@@ -1617,6 +1636,19 @@ dd {
   .governance-grid,
   .about-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .module-strip {
+    gap: 8px;
+  }
+
+  .module-strip article {
+    min-height: 118px;
+    padding: 12px;
+  }
+
+  .module-strip strong {
+    font-size: 22px;
   }
 
   .workspace {
@@ -1656,15 +1688,60 @@ dd {
   }
 
   .continuity-chart {
-    grid-template-columns: repeat(11, minmax(46px, 1fr));
+    grid-template-columns: repeat(11, minmax(42px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 8px;
   }
 
   .map-panel {
-    min-height: 520px;
+    min-height: 440px;
   }
 
   #policyMap {
-    height: 520px;
+    height: 440px;
+  }
+
+  .source-list,
+  .taxonomy-list {
+    grid-template-columns: 1fr;
+  }
+
+  .source-item {
+    min-height: auto;
+    padding: 14px;
+  }
+
+  .source-title {
+    font-size: 15px;
+  }
+
+  .source-no {
+    min-height: 28px;
+    font-size: 12px;
+  }
+
+  .milestone-body {
+    padding: 14px;
+  }
+
+  .milestone-body h3 {
+    font-size: 16px;
+  }
+
+  .milestone-body p {
+    font-size: 13px;
+  }
+
+  .about-hero {
+    padding: 20px 0 14px;
+  }
+
+  .about-hero > div {
+    padding: 18px;
+  }
+
+  .about-hero h2 {
+    font-size: 26px;
   }
 
   .section-head p {
@@ -1673,15 +1750,40 @@ dd {
 }
 
 @media (max-width: 520px) {
+  main {
+    padding-inline: 10px;
+  }
+
+  section {
+    scroll-margin-top: 118px;
+  }
+
+  .platform-rail {
+    padding: 8px 10px 9px;
+  }
+
+  .platform-brand {
+    padding-bottom: 8px;
+  }
+
   .platform-brand img {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .platform-brand strong {
+    font-size: 15px;
+  }
+
+  .platform-rail nav {
+    gap: 6px;
+    padding-top: 8px;
   }
 
   .platform-rail nav a {
-    min-height: 36px;
-    padding: 0 10px;
-    font-size: 13px;
+    min-height: 34px;
+    padding: 0 9px;
+    font-size: 12px;
   }
 
   .stat-grid,
@@ -1695,6 +1797,44 @@ dd {
 
   .stat-grid div {
     min-height: 86px;
+  }
+
+  .intro-actions {
+    gap: 8px;
+  }
+
+  .intro-actions .source-link,
+  .intro-actions .primary-action,
+  .top-actions .source-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .filters,
+  .detail-panel,
+  .latest-panel,
+  .quality-panel,
+  .source-item,
+  .taxonomy-card,
+  .governance-grid article,
+  .about-grid article {
+    border-radius: 0;
+  }
+
+  .milestone-year {
+    padding: 12px 14px;
+  }
+
+  .milestone-year strong {
+    font-size: 21px;
+  }
+
+  .milestone-body dl {
+    grid-template-columns: 1fr;
+  }
+
+  .source-summary {
+    font-size: 12px;
   }
 
   .panel-head,
