@@ -1,74 +1,107 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>关于 - 卫生健康政策智能分析</title>
+    <title>关于 - 卫生健康信息化项目入口</title>
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="apple-touch-icon" href="assets/favicon.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <aside class="platform-rail" aria-label="卫生健康信息平台导航">
-      <div class="platform-brand">
+  <body class="portal-shell">
+    <header class="portal-header">
+      <a class="portal-brand" href="index.html" aria-label="卫生健康信息化项目入口">
         <img src="assets/favicon.png" alt="" />
-        <strong>卫健信息平台</strong>
-        <span>模拟环境</span>
-      </div>
-      <nav>
-        <a href="index.html">首页</a>
-        <a href="https://xujiann.github.io/health-policy/">政策知识库</a>
-        <a href="https://xujiann.github.io/health-policy/">政策图谱</a>
-        <a href="https://xujiann.github.io/health-policy/">连续性分析</a>
-        <a href="https://xujiann.github.io/health-policy/">政策脉络</a>
-        <a href="https://xujiann.github.io/health-policy/">文件清单</a>
-        <a href="https://xujiann.github.io/health-policy/">数据治理</a>
+        <span>卫生健康信息化项目入口</span>
+      </a>
+      <nav aria-label="总入口导航">
+        <a href="index.html">主页</a>
+        <a href="https://xujiann.github.io/health-policy/">政策汇总</a>
+        <a href="https://xujiann.github.io/health-indicators/">数据可视化</a>
+        <a href="https://xujiann.github.io/chronic-care-platform/login.html">健康平台</a>
         <a href="about.html" class="is-active">关于</a>
       </nav>
-    </aside>
-
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">卫生健康政策智能分析 / 关于</p>
-        <h1>关于</h1>
-      </div>
-      <div class="top-actions">
-        <a class="source-link" href="index.html">返回首页</a>
-        <a class="source-link" href="https://xujiann.github.io/health-policy/">政策系统</a>
-        <a class="source-link" href="https://github.com/xujiann/healthpolicy" target="_blank" rel="noreferrer">项目仓库</a>
-      </div>
     </header>
 
-    <main>
-      <section class="about-hero">
+    <main class="portal-main">
+      <section class="portal-hero about-portal-hero" aria-labelledby="aboutTitle">
         <div>
-          <div class="intro-badge">项目说明 / 开发者 / 数据边界</div>
-          <h2>卫生健康政策智能分析</h2>
+          <p class="portal-kicker">关于 / 开发者 / 项目边界</p>
+          <h1 id="aboutTitle">一个面向微信阅读的卫生健康信息化入口</h1>
           <p>
-            本网站用于卫生健康政策文件的结构化归集、分类映射、历史演进趋势研究、未来发展方向预测和官方链接追溯。
-            最终目标是为每一项关键政策建立可持续更新的演进脉络，并辅助判断未来政策方向。
+            本入口用于集中访问卫生健康政策汇总、卫生健康数据可视化和卫生健康信息平台模拟三个项目，
+            方便在手机、微信和桌面端快速切换。
           </p>
+          <div class="portal-meta" aria-label="项目说明">
+            <span><strong>Dr.Xu</strong> 开发维护</span>
+            <span><strong>3</strong> 个项目统一入口</span>
+            <span><strong>GitHub Pages</strong> 静态发布</span>
+          </div>
         </div>
       </section>
 
-      <section class="about-section">
+      <section class="about-section" aria-label="项目说明">
         <div class="about-grid">
           <article>
             <h3>开发者</h3>
             <p class="about-name">Dr.Xu</p>
-            <p>面向卫生健康信息化、政策研究和数据治理场景持续优化。</p>
+            <p>面向卫生健康信息化、政策研究、数据治理和业务流程模拟场景持续优化。</p>
           </article>
           <article>
-            <h3>数据边界</h3>
-            <p>仅收录具体政策文件，自动更新会过滤客户端下载页、栏目页、索引页、政策解读页和机构介绍页。</p>
+            <h3>项目组成</h3>
+            <p>政策汇总用于政策文件归集和趋势研究；数据可视化用于指标查询和区域对比；健康平台用于业务场景模拟。</p>
           </article>
           <article>
-            <h3>项目地址</h3>
-            <p><a href="https://github.com/xujiann/healthpolicy" target="_blank" rel="noreferrer">github.com/xujiann/healthpolicy</a></p>
-            <p><a href="https://xujiann.github.io/healthpolicy/" target="_blank" rel="noreferrer">xujiann.github.io/healthpolicy</a></p>
-            <p><a href="https://xujiann.github.io/health-policy/">进入政策智能分析系统</a></p>
+            <h3>访问方式</h3>
+            <p>建议将总入口加入浏览器收藏或微信收藏，再从本页进入三个项目。</p>
           </article>
         </div>
+      </section>
+
+      <section class="portal-grid compact-portal-grid" aria-label="相关入口">
+        <a class="portal-card portal-card-policy" href="https://xujiann.github.io/health-policy/">
+          <span class="portal-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M7 3h7l4 4v14H7z" />
+              <path d="M14 3v5h5" />
+              <path d="M10 12h6M10 16h6M10 8h2" />
+            </svg>
+          </span>
+          <span class="portal-card-body">
+            <strong>政策汇总</strong>
+            <em>政策文件、归口分类、关键词趋势和官方链接。</em>
+          </span>
+          <span class="portal-arrow" aria-hidden="true">›</span>
+        </a>
+
+        <a class="portal-card portal-card-data" href="https://xujiann.github.io/health-indicators/">
+          <span class="portal-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M4 19h16" />
+              <path d="M7 16V9M12 16V5M17 16v-4" />
+              <path d="M5 5v14h14" />
+            </svg>
+          </span>
+          <span class="portal-card-body">
+            <strong>数据可视化</strong>
+            <em>公开指标、趋势查询、区域对比和材料摘录。</em>
+          </span>
+          <span class="portal-arrow" aria-hidden="true">›</span>
+        </a>
+
+        <a class="portal-card portal-card-platform" href="https://xujiann.github.io/chronic-care-platform/login.html">
+          <span class="portal-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M12 4v16M4 12h16" />
+              <path d="M7 7h10v10H7z" />
+            </svg>
+          </span>
+          <span class="portal-card-body">
+            <strong>健康平台</strong>
+            <em>区域协同、慢病随访、护理服务和健康管理模拟。</em>
+          </span>
+          <span class="portal-arrow" aria-hidden="true">›</span>
+        </a>
       </section>
     </main>
   </body>

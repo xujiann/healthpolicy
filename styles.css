@@ -1501,7 +1501,8 @@ dd {
   font-weight: 800;
 }
 
-.portal-header nav a:hover {
+.portal-header nav a:hover,
+.portal-header nav a.is-active {
   border-color: #bfd5d2;
   background: #eef8f7;
   color: #145f5a;
@@ -1672,6 +1673,14 @@ dd {
   margin-bottom: 0;
   color: rgba(255, 255, 255, 0.76);
   font-size: 14px;
+}
+
+.about-portal-hero {
+  min-height: 300px;
+}
+
+.compact-portal-grid .portal-card {
+  min-height: 208px;
 }
 
 .about-section {
