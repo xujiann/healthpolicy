@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T19:18:13.244Z",
+  "generatedAt": "2026-07-07T19:21:27.950Z",
   "mode": "apply",
   "maxPerSeed": 8,
   "seeds": [
@@ -65,7 +65,7 @@
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "fetch failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -268,7 +268,7 @@
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "fetch failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
