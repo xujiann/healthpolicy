@@ -1646,6 +1646,33 @@ dd {
   line-height: 1.5;
 }
 
+.portal-card-body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.portal-card-body li {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.portal-card-body li::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  vertical-align: middle;
+}
+
 .portal-home-simple .portal-header {
   justify-content: center;
 }
@@ -1959,6 +1986,16 @@ dd {
   .portal-card-body em {
     font-size: 12px;
     line-height: 1.45;
+  }
+
+  .portal-card-body ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px 8px;
+  }
+
+  .portal-card-body li {
+    font-size: 12px;
+    line-height: 1.35;
   }
 
   .portal-note {
