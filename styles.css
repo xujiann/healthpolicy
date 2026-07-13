@@ -1646,6 +1646,29 @@ dd {
   line-height: 1.5;
 }
 
+.portal-home-simple .portal-header {
+  justify-content: center;
+}
+
+.portal-home-simple .portal-main {
+  max-width: 980px;
+}
+
+.portal-home-simple .portal-hero {
+  min-height: 0;
+  padding-block: clamp(20px, 4vw, 34px);
+  text-align: center;
+}
+
+.portal-home-simple .portal-hero h1,
+.portal-home-simple .portal-hero p {
+  margin-inline: auto;
+}
+
+.portal-home-simple .portal-grid {
+  margin-top: 14px;
+}
+
 .portal-arrow {
   justify-self: end;
   margin-top: auto;
@@ -1816,6 +1839,10 @@ dd {
 }
 
 @media (max-width: 760px) {
+  .portal-home-simple .portal-header {
+    justify-items: center;
+  }
+
   .portal-header {
     display: grid;
     gap: 8px;
@@ -1871,6 +1898,16 @@ dd {
     margin-bottom: 8px;
     font-size: 25px;
     line-height: 1.18;
+  }
+
+  .portal-home-simple .portal-hero {
+    padding: 14px;
+    text-align: left;
+  }
+
+  .portal-home-simple .portal-hero h1,
+  .portal-home-simple .portal-hero p {
+    margin-inline: 0;
   }
 
   .portal-hero p {
