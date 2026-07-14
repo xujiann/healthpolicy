@@ -1,5 +1,21 @@
 const policySupplementDocuments = [
   {
+    "id": "supp-050",
+    "year": 2026,
+    "date": "2026-07-07",
+    "topic": "nhc_planning",
+    "secondary": "发展规划处",
+    "title": "《国务院关于印发〈国民健康“十五五”规划〉的通知》",
+    "agency": "国务院",
+    "level": "通知",
+    "summary": "国务院关于印发《国民健康“十五五”规划》的通知，文号国发〔2026〕23号。规划围绕优化全人群全方位全周期健康服务、筑牢卫生健康安全屏障、完善优质高效整合型医疗卫生服务体系、培育卫生健康高质量发展新动能和推进以健康为中心的高效能治理等部署未来五年国民健康工作。",
+    "url": "https://sousuo.www.gov.cn/zcwjk/policyDocumentLibrary?t=zhengcelibrary_gw",
+    "keywords": "国发〔2026〕23号 国民健康十五五规划 健康中国 全生命周期健康服务 医疗医保疾控协同 数智化转型 国务院文件",
+    "documentNo": "国发〔2026〕23号",
+    "reviewStatus": "已人工核验",
+    "assignment": "人工归口"
+  },
+  {
     "id": "supp-001",
     "year": 2025,
     "date": "2025-08",
