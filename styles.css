@@ -1515,6 +1515,23 @@ dd {
   padding: clamp(22px, 4vw, 54px);
 }
 
+.portal-intro {
+  max-width: 760px;
+  margin: 0 auto clamp(18px, 3vw, 30px);
+  text-align: center;
+}
+
+.portal-intro h1 {
+  margin-bottom: 8px;
+  font-size: clamp(28px, 4.2vw, 48px);
+}
+
+.portal-intro p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
 .portal-hero {
   min-height: 238px;
   display: grid;
@@ -1572,7 +1589,7 @@ dd {
 .portal-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 16px;
   margin-top: 18px;
 }
 
@@ -1581,12 +1598,13 @@ dd {
   grid-template-columns: 1fr;
   align-content: start;
   gap: 16px;
-  min-height: 236px;
-  padding: 18px;
+  min-height: 278px;
+  padding: 22px;
   background: #fff;
   border: 1px solid var(--line);
   color: var(--ink);
   text-decoration: none;
+  box-shadow: 0 8px 22px rgba(31, 41, 55, 0.05);
   transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
 }
 
@@ -1636,7 +1654,7 @@ dd {
 }
 
 .portal-card-body strong {
-  font-size: 21px;
+  font-size: 23px;
   line-height: 1.25;
 }
 
@@ -1652,8 +1670,8 @@ dd {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 6px;
+  grid-template-columns: 1fr;
+  gap: 7px;
 }
 
 .portal-card-body li {
@@ -1675,11 +1693,11 @@ dd {
 }
 
 .portal-home-simple .portal-header {
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .portal-home-simple .portal-main {
-  max-width: 980px;
+  max-width: 1120px;
   padding-top: clamp(16px, 4vw, 42px);
 }
 
@@ -1695,7 +1713,7 @@ dd {
 }
 
 .portal-home-simple .portal-grid {
-  margin-top: 14px;
+  margin-top: 0;
 }
 
 .portal-arrow {
@@ -1934,6 +1952,21 @@ dd {
     padding-top: 10px;
   }
 
+  .portal-intro {
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  .portal-intro h1 {
+    margin-bottom: 4px;
+    font-size: 26px;
+  }
+
+  .portal-intro p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
   .portal-hero {
     min-height: 0;
     padding: 16px;
@@ -2009,8 +2042,8 @@ dd {
   }
 
   .portal-card-body ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4px 8px;
+    grid-template-columns: 1fr;
+    gap: 3px;
   }
 
   .portal-card-body li {
