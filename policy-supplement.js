@@ -667,5 +667,20 @@ const policySupplementDocuments = [
     "keywords": "医保目录支付 国家医保局 医保目录 支付方式 DRG DIP 政策 site:www.gov.cn/zhengce",
     "reviewStatus": "待人工审核",
     "assignment": "人工归口候选"
+  },
+  {
+    "id": "auto-001",
+    "year": 2026,
+    "date": "2026-07-17",
+    "topic": "nhsa_services",
+    "secondary": "医保目录处",
+    "title": "《国家医保局办公室 国家卫生健康委办公厅关于确定医保支持基层医疗卫生服务发展重点联系点的通知》",
+    "agency": "国家医疗保障局",
+    "level": "通知",
+    "summary": "",
+    "url": "https://www.nhsa.gov.cn/art/2026/7/17/art_104_21472.html",
+    "keywords": "医保目录支付 国家医保局 医保目录 支付方式 DRG DIP 政策 site:www.gov.cn/zhengce",
+    "reviewStatus": "待人工审核",
+    "assignment": "人工归口候选"
   }
 ];
