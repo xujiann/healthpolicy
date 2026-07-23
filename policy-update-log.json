@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T18:43:17.562Z",
+  "generatedAt": "2026-07-23T18:46:57.327Z",
   "mode": "apply",
   "maxPerSeed": 8,
   "seeds": [
@@ -120,28 +120,14 @@
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 0
-        },
-        {
-          "type": "source",
-          "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 45
         }
       ],
-      "candidates": 0,
+      "candidates": 8,
       "added": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 8,
       "skippedNonPolicy": 0,
-      "errors": [
-        {
-          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "error": "fetch failed"
-        },
-        {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "403 Forbidden"
-        }
-      ]
+      "errors": []
     },
     {
       "name": "价格招采",
@@ -155,28 +141,14 @@
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 0
-        },
-        {
-          "type": "source",
-          "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 45
         }
       ],
-      "candidates": 0,
+      "candidates": 8,
       "added": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 8,
       "skippedNonPolicy": 0,
-      "errors": [
-        {
-          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "error": "fetch failed"
-        },
-        {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "403 Forbidden"
-        }
-      ]
+      "errors": []
     },
     {
       "name": "基金监管",
@@ -190,28 +162,14 @@
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 0
-        },
-        {
-          "type": "source",
-          "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 45
         }
       ],
-      "candidates": 0,
+      "candidates": 8,
       "added": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 8,
       "skippedNonPolicy": 0,
-      "errors": [
-        {
-          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "error": "fetch failed"
-        },
-        {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "403 Forbidden"
-        }
-      ]
+      "errors": []
     },
     {
       "name": "疾控监测预警",
