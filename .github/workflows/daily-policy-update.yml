@@ -22,7 +22,7 @@ jobs:
           node-version: "22"
 
       - name: Fetch and apply new policy candidates
-        run: node tools/update-policies.mjs --apply --max=8
+        run: node tools/update-policies.mjs --apply --max=8 --deadline-ms=420000
 
       - name: Refresh assignment audit
         run: node tools/generate-assignment-audit.mjs

@@ -143,6 +143,62 @@ const policyMilestones = [
     source: "https://www.nhc.gov.cn/tigs/c100052/202501/4355b79ee84247af9c4a9befbd1a55a1.shtml"
   }
 ];
+const nationalHealthPlanTasks = [
+  {
+    id: "life-cycle",
+    stage: "优化全生命周期健康服务",
+    task: "完善妇幼、儿童青少年、职业人群、老年人和重点慢病人群连续健康服务",
+    lead: [["nhc_maternal", "妇女卫生处"], ["nhc_maternal", "儿童卫生处"], ["nhc_ageing", "健康服务处"], ["nhc_occupational", "预防处"]],
+    levers: ["服务规范", "重点人群健康管理", "医养结合", "职业健康保护"],
+    keywords: ["妇幼", "儿童健康", "老年健康", "医养结合", "职业健康", "慢病管理"],
+    output: "形成重点人群服务包、能力标准、绩效指标和监测评价口径"
+  },
+  {
+    id: "public-health-security",
+    stage: "筑牢卫生健康安全屏障",
+    task: "强化传染病监测预警、突发公共卫生事件处置、免疫规划和医防协同",
+    lead: [["cdc_monitoring", "传染病监测处"], ["cdc_monitoring", "预警处"], ["cdc_emergency", "应急处置处"], ["cdc_immunization", "免疫规划处"], ["nhc_emergency", "公共卫生医疗管理处"]],
+    levers: ["监测预警规则", "应急预案", "免疫规划", "医防协同流程"],
+    keywords: ["疾控", "传染病", "监测预警", "免疫规划", "应急处置", "公共卫生"],
+    output: "形成风险清单、预警触发、联动处置和复盘评估闭环"
+  },
+  {
+    id: "integrated-care",
+    stage: "完善优质高效整合型医疗卫生服务体系",
+    task: "推动优质医疗资源扩容下沉、分级诊疗、医共体和基层服务能力提升",
+    lead: [["nhc_planning", "发展规划处"], ["nhc_medical", "医疗资源处"], ["nhc_primary", "运行评价处"], ["nhc_primary", "家庭医生处"], ["nhc_reform", "综合协调处"]],
+    levers: ["资源配置规划", "区域医疗中心", "县域医共体", "家庭医生签约", "基层绩效评价"],
+    keywords: ["区域医疗中心", "医疗资源", "分级诊疗", "医共体", "基层", "家庭医生"],
+    output: "形成区域资源布局、转诊规则、县域评价和基层能力清单"
+  },
+  {
+    id: "quality-reform",
+    stage: "推进医疗质量和公立医院高质量发展",
+    task: "提升医疗质量安全、合理检查用药、公立医院运营绩效和现代医院管理水平",
+    lead: [["nhc_medical", "医疗管理处"], ["nhc_drug", "药物政策处"], ["nhc_reform", "公立医院改革处"], ["nhc_finance", "经济管理处"]],
+    levers: ["质控指标", "合理医疗检查", "合理用药", "绩效考核", "运营管理"],
+    keywords: ["医疗质量", "医疗安全", "合理医疗检查", "合理用药", "公立医院", "绩效考核"],
+    output: "形成质量安全指标、控费改进清单和医院运营评价口径"
+  },
+  {
+    id: "medical-security",
+    stage: "深化医保、医药和医疗协同治理",
+    task: "完善医保目录、支付方式、医疗服务价格、药品耗材招采和基金监管协同机制",
+    lead: [["nhsa_services", "医保目录处"], ["nhsa_services", "支付方式改革处"], ["nhsa_price", "医疗服务价格处"], ["nhsa_price", "药品耗材招采处"], ["nhsa_fund", "基金监管处"]],
+    levers: ["目录准入", "DRG/DIP", "价格项目", "集中采购", "飞行检查"],
+    keywords: ["医保目录", "DRG", "DIP", "医疗服务价格", "集采", "基金监管"],
+    output: "形成医保政策工具包、价格支付联动和基金风险治理闭环"
+  },
+  {
+    id: "digital-governance",
+    stage: "培育卫生健康高质量发展新动能",
+    task: "推动全民健康信息平台、数据治理、智慧医院、人工智能和统计监测能力建设",
+    lead: [["nhc_planning", "信息统计处"], ["nhsa_planning", "信息化处"], ["cdc_monitoring", "信息平台处"], ["nhc_science", "项目一处"]],
+    levers: ["数据标准", "平台互联互通", "智慧医院", "人工智能应用", "统计监测"],
+    keywords: ["信息化", "健康医疗大数据", "互联互通", "智慧医院", "人工智能", "统计"],
+    output: "形成数据目录、共享接口、应用场景和安全治理规则"
+  }
+];
 const blockedPolicyUrlPattern = /(download\.html|\/col\/col\d+\/index\.html|\/common\/(?:list|second\/list)\.html|\/index\.html(?:$|[?#])|new_list\.shtml)/i;
 const blockedPolicyTextPattern = /(客户端下载页|索引\s*标题\s*发文字号\s*发布日期|政策解读|政府信息公开指南|政府信息公开制度|机构职能|内设机构|主要职责|政务公开|手机版|微信公众号|首页|栏目|列表页|党建工作-|通知公告-|法律法规$|其他$)/;
 const blockedInterpretationPattern = /(\/zhengce\/jiedu\/|\/zhengce\/tujie\/|一图读懂|图表：|详解《|聚焦《|出炉，|新华社权威快报|新闻发布会)/;
@@ -347,6 +403,8 @@ const els = {
   trendStageList: document.querySelector("#trendStageList"),
   continuityList: document.querySelector("#continuityList"),
   taxonomyList: document.querySelector("#taxonomyList"),
+  taskOverview: document.querySelector("#taskOverview"),
+  taskBoard: document.querySelector("#taskBoard"),
   milestoneList: document.querySelector("#milestoneList"),
   timeline: document.querySelector("#timeline"),
   sourceList: document.querySelector("#sourceList"),
@@ -1218,6 +1276,7 @@ function update() {
   renderTimeline();
   renderSourceList();
   renderMilestones();
+  renderPlanTasks();
 }
 
 function describeFilters(count) {
@@ -1248,6 +1307,71 @@ function reset() {
   els.detailUrl.href = "#sources";
   els.detailUrl.textContent = "查看官方来源";
   update();
+}
+
+function taskMatchedPolicies(task) {
+  return policies.filter((policy) => {
+    const text = `${policy.title} ${policy.summary} ${policy.keywords} ${policy.documentNo} ${policy.secondary}`;
+    return task.keywords.some((keyword) => text.includes(keyword))
+      || task.lead.some(([topicId, secondary]) => policy.topic === topicId && policy.secondary === secondary);
+  }).sort((a, b) => b.date.localeCompare(a.date));
+}
+
+function renderPlanTasks() {
+  if (!els.taskBoard) return;
+  const allOffices = new Set(nationalHealthPlanTasks.flatMap((task) => task.lead.map(([, office]) => office)));
+  const allBureaus = new Set(nationalHealthPlanTasks.flatMap((task) => task.lead.map(([topicId]) => topicId)));
+  const matchedTotal = new Set(nationalHealthPlanTasks.flatMap((task) => taskMatchedPolicies(task).map((policy) => policy.id))).size;
+  els.taskOverview.innerHTML = `
+    <article><strong>${nationalHealthPlanTasks.length}</strong><span>规划任务</span></article>
+    <article><strong>${allBureaus.size}</strong><span>牵头司局</span></article>
+    <article><strong>${allOffices.size}</strong><span>落实处室</span></article>
+    <article><strong>${matchedTotal}</strong><span>关联政策</span></article>
+  `;
+  els.taskBoard.innerHTML = nationalHealthPlanTasks.map((task) => {
+    const matched = taskMatchedPolicies(task);
+    const leadHtml = task.lead.map(([topicId, office]) => {
+      const topic = topicById.get(topicId);
+      return `<button type="button" data-task-topic="${topicId}" data-task-office="${office}"><span>${topic.name}</span><strong>${office}</strong></button>`;
+    }).join("");
+    const policyHtml = matched.slice(0, 4).map((policy) => `<a href="${policy.url}" target="_blank" rel="noreferrer">${policy.date} ${policy.title}</a>`).join("");
+    return `
+      <article class="task-card" data-task="${task.id}">
+        <div class="task-head">
+          <span>${task.stage}</span>
+          <strong>${task.task}</strong>
+        </div>
+        <div class="task-leads">${leadHtml}</div>
+        <div class="task-levers">${task.levers.map((item) => `<em>${item}</em>`).join("")}</div>
+        <p><b>落地输出：</b>${task.output}</p>
+        <div class="task-evidence">
+          <strong>关联政策 ${matched.length} 份</strong>
+          ${policyHtml || `<span class="muted">暂无直接命中，需人工补充证据。</span>`}
+        </div>
+        <button type="button" class="task-filter" data-task-keywords="${task.keywords.join(" ")}">按任务查看政策</button>
+      </article>
+    `;
+  }).join("");
+  els.taskBoard.querySelectorAll("[data-task-topic]").forEach((button) => {
+    button.addEventListener("click", () => {
+      els.topicFilter.value = button.dataset.taskTopic;
+      updateSecondaryOptions();
+      els.secondaryFilter.value = button.dataset.taskOffice;
+      els.searchInput.value = "";
+      update();
+      document.querySelector("#sources")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+  els.taskBoard.querySelectorAll(".task-filter").forEach((button) => {
+    button.addEventListener("click", () => {
+      els.topicFilter.value = "all";
+      updateSecondaryOptions();
+      els.secondaryFilter.value = "all";
+      els.searchInput.value = button.dataset.taskKeywords.split(" ")[0];
+      update();
+      document.querySelector("#sources")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
 }
 
 function shortLabel(text, length) {

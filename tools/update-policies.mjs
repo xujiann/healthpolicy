@@ -12,6 +12,9 @@ const logPath = path.join(root, "policy-update-log.json");
 const args = new Set(process.argv.slice(2));
 const mode = args.has("--apply") ? "apply" : "draft";
 const maxPerSeed = Number(process.argv.find((arg) => arg.startsWith("--max="))?.split("=")[1] || 8);
+const seedLimit = Number(process.argv.find((arg) => arg.startsWith("--seed-limit="))?.split("=")[1] || 0);
+const deadlineMs = Number(process.argv.find((arg) => arg.startsWith("--deadline-ms="))?.split("=")[1] || 0);
+const startedAt = Date.now();
 const blockedPolicyUrlPattern = /(download\.html|\/col\/col\d+\/index\.html|\/common\/(?:list|second\/list)\.html|\/index\.html(?:$|[?#])|new_list\.shtml)/i;
 const blockedPolicyTextPattern = /(客户端下载页|索引\s*标题\s*发文字号\s*发布日期|政策解读|政府信息公开指南|政府信息公开制度|机构职能|内设机构|主要职责|政务公开|手机版|微信公众号|首页|栏目|列表页|党建工作-|通知公告-|法律法规$|其他$)/;
 const blockedInterpretationPattern = /(\/zhengce\/jiedu\/|\/zhengce\/tujie\/|一图读懂|图表：|详解《|聚焦《|出炉，|新华社权威快报|新闻发布会)/;
@@ -19,6 +22,7 @@ const concretePolicySignalPattern = /(国卫|医保|国中医药|国疾控|卫�
 const invalidAgencyPattern = /^(\d+|中国政府网|.*官网|来源.*)$/;
 
 const seeds = JSON.parse(await fs.readFile(seedsPath, "utf8"));
+const activeSeeds = seedLimit > 0 ? seeds.slice(0, seedLimit) : seeds;
 const existing = await loadExistingDocuments();
 const existingKeys = new Set(existing.map(documentKey));
 const existingUrls = new Set(existing.map((item) => item.url).filter(Boolean));
@@ -27,10 +31,16 @@ const runLog = {
   generatedAt: new Date().toISOString(),
   mode,
   maxPerSeed,
+  seedLimit: seedLimit || seeds.length,
+  deadlineMs: deadlineMs || null,
   seeds: []
 };
 
-for (const seed of seeds) {
+for (const seed of activeSeeds) {
+  if (isPastDeadline()) {
+    runLog.deadlineReached = true;
+    break;
+  }
   const seedLog = { name: seed.name, query: seed.query, searched: [], candidates: 0, added: 0, skippedExisting: 0, skippedNonPolicy: 0, errors: [] };
   const urls = await collectSeedUrls(seed, maxPerSeed, seedLog);
   seedLog.candidates = urls.length;
@@ -108,6 +118,7 @@ async function searchGov(query, limit) {
   ];
   const found = [];
   for (const searchUrl of searchUrls) {
+    if (isPastDeadline()) return found;
     const html = await fetchText(searchUrl).catch(() => "");
     for (const url of extractPolicyUrls(html, searchUrl)) {
       if (!found.includes(url)) found.push(url);
@@ -130,6 +141,7 @@ async function collectSeedUrls(seed, limit, seedLog) {
   seedLog.searched.push({ type: "search", source: seed.query, hits: searchHits.length });
   if (addUrls(searchHits)) return found;
   for (const sourceUrl of seed.sourceUrls || []) {
+    if (isPastDeadline()) return found;
     const html = await fetchText(sourceUrl).catch((error) => {
       seedLog.errors.push({ url: sourceUrl, error: error.message });
       return "";
@@ -184,14 +196,25 @@ async function fetchPolicy(url, seed) {
 }
 
 async function fetchText(url) {
-  const response = await fetch(url, {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+  try {
+    const response = await fetch(url, {
     headers: {
       "user-agent": "Mozilla/5.0 policy-updater"
-    }
-  });
-  if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-  const arrayBuffer = await response.arrayBuffer();
-  return new TextDecoder("utf-8").decode(arrayBuffer);
+    },
+    signal: controller.signal
+    });
+    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+    const arrayBuffer = await response.arrayBuffer();
+    return new TextDecoder("utf-8").decode(arrayBuffer);
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function isPastDeadline() {
+  return deadlineMs > 0 && Date.now() - startedAt > deadlineMs;
 }
 
 function extractPolicyUrls(html, baseUrl) {
