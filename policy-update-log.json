@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T19:07:38.072Z",
+  "generatedAt": "2026-08-04T19:09:19.288Z",
   "mode": "apply",
   "maxPerSeed": 8,
   "seedLimit": 9,
@@ -32,7 +32,7 @@
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "404 Not Found"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -67,7 +67,7 @@
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "404 Not Found"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -102,7 +102,7 @@
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/jws/s7874/new_list.shtml",
-          "error": "404 Not Found"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -235,7 +235,7 @@
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
-          "error": "404 Not Found"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -270,7 +270,7 @@
       "errors": [
         {
           "url": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
-          "error": "404 Not Found"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
