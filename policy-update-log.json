@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T18:26:41.210Z",
+  "generatedAt": "2026-08-12T18:27:42.967Z",
   "mode": "apply",
   "maxPerSeed": 8,
   "seedLimit": 9,
@@ -185,7 +185,7 @@
         {
           "type": "source",
           "source": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "hits": 0
+          "hits": 1
         },
         {
           "type": "source",
@@ -193,18 +193,18 @@
           "hits": 0
         }
       ],
-      "candidates": 0,
+      "candidates": 1,
       "added": 0,
       "skippedExisting": 0,
-      "skippedNonPolicy": 0,
+      "skippedNonPolicy": 1,
       "errors": [
-        {
-          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "error": "fetch failed"
-        },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
           "error": "403 Forbidden"
+        },
+        {
+          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100071/common/content/content_1656508289844580352.html",
+          "error": "跳过非具体政策文件页面"
         }
       ]
     },
