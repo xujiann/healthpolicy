@@ -1,0 +1,43 @@
+name: Policy quality gate
+
+on:
+  pull_request:
+    paths:
+      - "policy-lifecycle/**"
+      - "policy-reviewed.js"
+      - "policy-materials.js"
+      - "policy-governance.js"
+      - "policy-review-queue.md"
+      - "policy-data.js"
+      - "policy-supplement.js"
+      - "script.js"
+      - "policy.html"
+      - "tools/**"
+
+permissions:
+  contents: read
+
+jobs:
+  verify-policy-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Rebuild generated artifacts
+        run: |
+          node tools/build-policy-artifacts.mjs
+          node tools/generate-review-queue.mjs
+
+      - name: Require committed generated artifacts
+        run: git diff --exit-code -- policy-reviewed.js policy-materials.js policy-governance.js policy-review-queue.md
+
+      - name: Run policy quality tests
+        run: |
+          node tools/test-policy-update.mjs
+          node tools/verify-policy-site.mjs

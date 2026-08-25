@@ -1,0 +1,123 @@
+// 由 tools/build-policy-artifacts.mjs 生成，请勿直接编辑。
+const policyRelatedMaterials = [
+  {
+    "id": "material-001",
+    "year": 2024,
+    "date": "2024-11",
+    "title": "《2024年版国家医保药品目录出炉，新增91种药品——让参保人用上更多新药好药》",
+    "agency": "国家医疗保障局,人力资源和社会保障部",
+    "summary": "解读2024年国家医保药品目录调整及新增药品情况。",
+    "url": "https://www.gov.cn/zhengce/202411/content_6989980.htm",
+    "documentType": "政策解读",
+    "relatedPolicyTitle": "《国家基本医疗保险、工伤保险和生育保险药品目录（2024年）》",
+    "audit": {
+      "batchId": "p2-material-separation-2026-08-19",
+      "sourceId": "gov-cn",
+      "collectedAt": "2026-08-19T23:59:00+08:00",
+      "reviewer": "P2 数据迁移",
+      "reviewedAt": "2026-08-19T23:59:00+08:00",
+      "basis": "政府网政策解读页面，与正式政策分库展示。",
+      "status": "separated"
+    }
+  },
+  {
+    "id": "material-002",
+    "year": 2023,
+    "date": "2023-07",
+    "title": "《图表：2023年继续提高居民医保筹资标准至1020元》",
+    "agency": "国家医疗保障局,财政部,国家税务总局",
+    "summary": "图解2023年城乡居民医保筹资标准及财政补助、个人缴费变化。",
+    "url": "https://www.gov.cn/zhengce/jiedu/tujie/202307/content_6895407.htm",
+    "documentType": "政策解读",
+    "relatedPolicyTitle": "《关于做好2023年城乡居民基本医疗保障工作的通知》",
+    "audit": {
+      "batchId": "p2-material-separation-2026-08-19",
+      "sourceId": "gov-cn",
+      "collectedAt": "2026-08-19T23:59:00+08:00",
+      "reviewer": "P2 数据迁移",
+      "reviewedAt": "2026-08-19T23:59:00+08:00",
+      "basis": "政府网图解页面，与正式政策分库展示。",
+      "status": "separated"
+    }
+  },
+  {
+    "id": "material-003",
+    "year": 2022,
+    "date": "2022-07",
+    "title": "《2022年继续提高城乡居民医保筹资标准》",
+    "agency": "国家医疗保障局,财政部,国家税务总局",
+    "summary": "解读2022年城乡居民医保筹资标准调整。",
+    "url": "https://www.gov.cn/zhengce/2022-07/13/content_5700784.htm",
+    "documentType": "政策解读",
+    "relatedPolicyTitle": "《关于做好2022年城乡居民基本医疗保障工作的通知》",
+    "audit": {
+      "batchId": "p2-material-separation-2026-08-19",
+      "sourceId": "gov-cn",
+      "collectedAt": "2026-08-19T23:59:00+08:00",
+      "reviewer": "P2 数据迁移",
+      "reviewedAt": "2026-08-19T23:59:00+08:00",
+      "basis": "政府网政策解读页面，与正式政策分库展示。",
+      "status": "separated"
+    }
+  },
+  {
+    "id": "material-004",
+    "year": 2021,
+    "date": "2021-09",
+    "title": "《国家医保局详解〈“十四五”全民医疗保障规划〉：多层次 重治理 强服务》",
+    "agency": "国家医疗保障局",
+    "summary": "解读“十四五”全民医疗保障规划的制度重点。",
+    "url": "https://www.gov.cn/zhengce/2021-09/30/content_5640421.htm",
+    "documentType": "政策解读",
+    "relatedPolicyTitle": "《“十四五”全民医疗保障规划》",
+    "audit": {
+      "batchId": "p2-material-separation-2026-08-19",
+      "sourceId": "gov-cn",
+      "collectedAt": "2026-08-19T23:59:00+08:00",
+      "reviewer": "P2 数据迁移",
+      "reviewedAt": "2026-08-19T23:59:00+08:00",
+      "basis": "政府网政策解读页面，与正式政策分库展示。",
+      "status": "separated"
+    }
+  },
+  {
+    "id": "material-005",
+    "year": 2020,
+    "date": "2020-12",
+    "title": "《聚焦〈关于深入推进“互联网+医疗健康”“五个一”服务行动的通知〉》",
+    "agency": "国家卫生健康委员会,国家医疗保障局,国家中医药管理局",
+    "summary": "解读互联网医疗健康“五个一”服务行动及便民举措。",
+    "url": "https://www.gov.cn/zhengce/2020-12/11/content_5568929.htm",
+    "documentType": "政策解读",
+    "relatedPolicyTitle": "《关于深入推进“互联网+医疗健康”“五个一”服务行动的通知》",
+    "audit": {
+      "batchId": "p2-material-separation-2026-08-19",
+      "sourceId": "gov-cn",
+      "collectedAt": "2026-08-19T23:59:00+08:00",
+      "reviewer": "P2 数据迁移",
+      "reviewedAt": "2026-08-19T23:59:00+08:00",
+      "basis": "政府网政策解读页面，与正式政策分库展示。",
+      "status": "separated"
+    }
+  },
+  {
+    "id": "material-006",
+    "year": 2026,
+    "date": "2026-08-19",
+    "title": "《全民医疗保障“十五五”规划》解读",
+    "agency": "国家医疗保障局",
+    "summary": "解读规划编制考虑、八章26节总体结构、8项主要指标及多层次医保、长期护理保险、医药服务改革、基金治理和公共服务等重点任务。",
+    "url": "https://www.nhsa.gov.cn/art/2026/8/19/art_105_21829.html",
+    "documentType": "政策解读",
+    "relatedPolicyTitle": "《国家医疗保障局关于印发〈全民医疗保障“十五五”规划〉的通知》",
+    "audit": {
+      "batchId": "manual-update-2026-08-25",
+      "sourceId": "nhsa",
+      "collectedAt": "2026-08-25T18:00:00+08:00",
+      "reviewer": "政策库维护组",
+      "reviewedAt": "2026-08-25T18:00:00+08:00",
+      "basis": "国家医疗保障局官方政策解读，与正式政策分库展示并建立标题关联。",
+      "status": "separated"
+    }
+  }
+];

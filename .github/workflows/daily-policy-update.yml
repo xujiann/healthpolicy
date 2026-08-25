@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update-policies:
@@ -21,8 +22,16 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Fetch and apply new policy candidates
-        run: node tools/update-policies.mjs --apply --max=8 --deadline-ms=420000
+      - name: Test policy update quality rules
+        run: node tools/test-policy-update.mjs
+
+      - name: Fetch policy candidates (draft only)
+        run: node tools/update-policies.mjs --draft --max=8 --deadline-ms=420000
+
+      - name: Build reviewed data and review queue
+        run: |
+          node tools/build-policy-artifacts.mjs
+          node tools/generate-review-queue.mjs
 
       - name: Refresh assignment audit
         run: node tools/generate-assignment-audit.mjs
@@ -30,14 +39,20 @@ jobs:
       - name: Verify policy-only site data
         run: node tools/verify-policy-site.mjs
 
-      - name: Commit changes
+      - name: Open or update candidate review pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add policy-supplement.js policy-update-log.json policy-assignment-audit.csv
+          git add policy-update-log.json policy-lifecycle/candidates.json policy-lifecycle/source-health.json policy-governance.js policy-review-queue.md
           if git diff --cached --quiet; then
-            echo "No policy updates."
+            echo "No candidate updates."
           else
-            git commit -m "Daily policy update"
-            git push
+            git fetch origin automation/policy-candidates || true
+            git commit -m "Daily policy candidate review"
+            git push origin HEAD:automation/policy-candidates --force-with-lease
+            if ! gh pr view automation/policy-candidates --json number >/dev/null 2>&1; then
+              gh pr create --base "${GITHUB_REF_NAME}" --head automation/policy-candidates --title "每日政策候选审核" --body-file policy-review-queue.md
+            fi
           fi

@@ -1,16 +1,31 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import vm from "node:vm";
+import {
+  addPolicyToIndexes,
+  classifyRunStatus,
+  createPolicyIndexes,
+  createStableCandidateId,
+  findDuplicateReason,
+  normalizePolicyUrl
+} from "./policy-quality.mjs";
+import { createCandidateItem, inferSourceId } from "./lifecycle-core.mjs";
+import { policySources } from "./sources/registry.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const seedsPath = path.join(root, "policy-update-seeds.json");
-const dataPath = path.join(root, "policy-data.js");
-const supplementPath = path.join(root, "policy-supplement.js");
-const draftPath = path.join(root, "policy-auto-draft.js");
+const lifecycleDir = path.join(root, "policy-lifecycle");
+const reviewedPath = path.join(lifecycleDir, "reviewed.json");
+const candidatesPath = path.join(lifecycleDir, "candidates.json");
+const rejectedPath = path.join(lifecycleDir, "rejected.json");
+const sourceHealthPath = path.join(lifecycleDir, "source-health.json");
 const logPath = path.join(root, "policy-update-log.json");
 
 const args = new Set(process.argv.slice(2));
-const mode = args.has("--apply") ? "apply" : "draft";
+if (args.has("--apply")) {
+  console.error("--apply 已禁用：自动任务只能生成候选草稿，人工审核后才能更新正式库。");
+  process.exit(64);
+}
+const mode = "draft";
 const maxPerSeed = Number(process.argv.find((arg) => arg.startsWith("--max="))?.split("=")[1] || 8);
 const seedLimit = Number(process.argv.find((arg) => arg.startsWith("--seed-limit="))?.split("=")[1] || 0);
 const deadlineMs = Number(process.argv.find((arg) => arg.startsWith("--deadline-ms="))?.split("=")[1] || 0);
@@ -22,16 +37,36 @@ const concretePolicySignalPattern = /(国卫|医保|国中医药|国疾控|卫�
 const invalidAgencyPattern = /^(\d+|中国政府网|.*官网|来源.*)$/;
 
 const seeds = JSON.parse(await fs.readFile(seedsPath, "utf8"));
-const activeSeeds = seedLimit > 0 ? seeds.slice(0, seedLimit) : seeds;
+const adapterSeeds = policySources.map((source) => ({
+  name: `官方来源：${source.name}`,
+  query: "",
+  sourceUrls: source.listUrls,
+  topic: source.defaultTopic,
+  secondary: source.defaultSecondary,
+  sourceAdapter: source
+}));
+const selectedSeeds = seedLimit > 0 ? seeds.slice(0, seedLimit) : seeds;
+const activeSeeds = [...adapterSeeds, ...selectedSeeds];
 const existing = await loadExistingDocuments();
-const existingKeys = new Set(existing.map(documentKey));
-const existingUrls = new Set(existing.map((item) => item.url).filter(Boolean));
+const existingIndexes = createPolicyIndexes(existing);
+const rejectedSnapshot = await readJson(rejectedPath).catch(() => ({ items: [] }));
+const rejectedIndexes = createPolicyIndexes(rejectedSnapshot.items.map((item) => item.policy));
+const previousCandidates = await readJson(candidatesPath).catch(() => ({
+  schemaVersion: 1,
+  layer: "candidates",
+  updatedAt: new Date().toISOString(),
+  items: []
+}));
+const candidateIndexes = createPolicyIndexes(previousCandidates.items.map((item) => item.policy));
 const candidates = [];
+const previousLog = await readJson(logPath).catch(() => ({}));
 const runLog = {
   generatedAt: new Date().toISOString(),
+  ...(previousLog.manualReview ? { manualReview: previousLog.manualReview } : {}),
   mode,
   maxPerSeed,
   seedLimit: seedLimit || seeds.length,
+  adapters: policySources.map((source) => source.id),
   deadlineMs: deadlineMs || null,
   seeds: []
 };
@@ -41,11 +76,24 @@ for (const seed of activeSeeds) {
     runLog.deadlineReached = true;
     break;
   }
-  const seedLog = { name: seed.name, query: seed.query, searched: [], candidates: 0, added: 0, skippedExisting: 0, skippedNonPolicy: 0, errors: [] };
+  const seedLog = {
+    name: seed.name,
+    query: seed.query,
+    searched: [],
+    requests: { attempted: 0, succeeded: 0, failed: 0 },
+    candidates: 0,
+    added: 0,
+    skippedExisting: 0,
+    skippedRejected: 0,
+    skippedDuplicate: 0,
+    skippedNonPolicy: 0,
+    duplicateReasons: {},
+    errors: []
+  };
   const urls = await collectSeedUrls(seed, maxPerSeed, seedLog);
   seedLog.candidates = urls.length;
   for (const url of urls) {
-    if (existingUrls.has(url)) {
+    if (existingIndexes.urls.has(normalizePolicyUrl(url))) {
       seedLog.skippedExisting += 1;
       continue;
     }
@@ -69,47 +117,78 @@ for (const seed of activeSeeds) {
       seedLog.errors.push({ url, error: "跳过非具体政策文件页面" });
       continue;
     }
-    const key = documentKey(doc);
-    if (!existingKeys.has(key) && !candidates.some((item) => documentKey(item) === key)) {
-      candidates.push(doc);
-      seedLog.added += 1;
+    doc.id = createStableCandidateId(doc);
+    const existingReason = findDuplicateReason(doc, existingIndexes);
+    const rejectedReason = findDuplicateReason(doc, rejectedIndexes);
+    const candidateReason = findDuplicateReason(doc, candidateIndexes);
+    const duplicateReason = existingReason || rejectedReason || candidateReason;
+    if (duplicateReason) {
+      if (existingReason) seedLog.skippedExisting += 1;
+      else if (rejectedReason) seedLog.skippedRejected += 1;
+      else seedLog.skippedDuplicate += 1;
+      seedLog.duplicateReasons[duplicateReason] = (seedLog.duplicateReasons[duplicateReason] || 0) + 1;
+      continue;
     }
+    candidates.push(doc);
+    addPolicyToIndexes(doc, candidateIndexes);
+    seedLog.added += 1;
   }
   runLog.seeds.push(seedLog);
 }
 
-const normalized = candidates.map((item, index) => ({
-  id: `auto-${String(index + 1).padStart(3, "0")}`,
+const normalized = candidates.map((item) => ({
   ...item,
+  id: createStableCandidateId(item),
   reviewStatus: item.reviewStatus || "待人工审核",
   assignment: "人工归口候选"
 }));
+const batchId = `policy-scan-${runLog.generatedAt.slice(0, 10)}`;
+const candidateItems = normalized.map((policy) => createCandidateItem(policy, {
+  batchId,
+  sourceId: inferSourceId(policy.url),
+  sourceUrl: policy.url,
+  collectedAt: runLog.generatedAt
+}));
 
-if (mode === "apply") {
-  await appendToSupplement(normalized);
-  console.log(`Applied ${normalized.length} candidate documents to ${supplementPath}`);
+const requestSummary = runLog.seeds.reduce((summary, seed) => ({
+  attempted: summary.attempted + seed.requests.attempted,
+  succeeded: summary.succeeded + seed.requests.succeeded,
+  failed: summary.failed + seed.requests.failed
+}), { attempted: 0, succeeded: 0, failed: 0 });
+runLog.summary = {
+  ...requestSummary,
+  candidates: candidateItems.length,
+  pendingCandidates: previousCandidates.items.length + candidateItems.length,
+  deadlineReached: Boolean(runLog.deadlineReached)
+};
+runLog.status = classifyRunStatus(runLog.summary);
+const sourceHealth = buildSourceHealth(runLog, existing);
+await fs.writeFile(sourceHealthPath, `${JSON.stringify(sourceHealth, null, 2)}\n`, "utf8");
+
+if (runLog.status === "source_failure" || runLog.status === "deadline_reached") {
+  console.error(`Policy update did not complete: ${runLog.status}. Existing candidate queue was preserved.`);
+} else if (candidateItems.length) {
+  const snapshot = {
+    ...previousCandidates,
+    updatedAt: runLog.generatedAt,
+    items: [...previousCandidates.items, ...candidateItems]
+  };
+  await fs.writeFile(candidatesPath, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
+  console.log(`Added ${candidateItems.length} documents to ${candidatesPath}`);
 } else {
-  if (normalized.length) {
-    await writeDraft(normalized);
-    console.log(`Wrote ${normalized.length} candidate documents to ${draftPath}`);
-  } else {
-    await fs.rm(draftPath, { force: true });
-    console.log("No candidate documents found; draft file was not created.");
-  }
+  console.log(`No new policy documents found; ${previousCandidates.items.length} pending candidates were preserved.`);
 }
 await fs.writeFile(logPath, JSON.stringify(runLog, null, 2), "utf8");
 console.log(`Wrote update log to ${logPath}`);
+if (runLog.status === "source_failure") process.exitCode = 2;
+if (runLog.status === "deadline_reached") process.exitCode = 3;
 
 async function loadExistingDocuments() {
-  const context = {};
-  vm.createContext(context);
-  const data = await fs.readFile(dataPath, "utf8");
-  const supplement = await fs.readFile(supplementPath, "utf8").catch(() => "const policySupplementDocuments = [];");
-  vm.runInContext(`${data}\n${supplement}\nthis.docs = [...policyDocuments, ...policySupplementDocuments];`, context);
-  return context.docs || [];
+  const reviewed = await readJson(reviewedPath);
+  return reviewed.items.map((item) => item.policy);
 }
 
-async function searchGov(query, limit) {
+async function searchGov(query, limit, seedLog) {
   const encoded = encodeURIComponent(query);
   const searchUrls = [
     `https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=${encoded}`,
@@ -119,13 +198,20 @@ async function searchGov(query, limit) {
   const found = [];
   for (const searchUrl of searchUrls) {
     if (isPastDeadline()) return found;
-    const html = await fetchText(searchUrl).catch(() => "");
+    const html = await fetchLogged(searchUrl, seedLog, "search");
+    if (!html) continue;
+    const before = found.length;
     for (const url of extractPolicyUrls(html, searchUrl)) {
       if (!found.includes(url)) found.push(url);
       if (found.length >= limit) return found;
     }
+    seedLog.searched.push({ type: "search", source: searchUrl, hits: found.length - before, status: "ok" });
   }
   return found;
+}
+
+async function readJson(filePath) {
+  return JSON.parse(await fs.readFile(filePath, "utf8"));
 }
 
 async function collectSeedUrls(seed, limit, seedLog) {
@@ -137,20 +223,35 @@ async function collectSeedUrls(seed, limit, seedLog) {
     }
     return false;
   };
-  const searchHits = await searchGov(seed.query, limit);
-  seedLog.searched.push({ type: "search", source: seed.query, hits: searchHits.length });
-  if (addUrls(searchHits)) return found;
+  if (!seed.sourceAdapter) {
+    const searchHits = await searchGov(seed.query, limit, seedLog);
+    if (addUrls(searchHits)) return found;
+  }
   for (const sourceUrl of seed.sourceUrls || []) {
     if (isPastDeadline()) return found;
-    const html = await fetchText(sourceUrl).catch((error) => {
-      seedLog.errors.push({ url: sourceUrl, error: error.message });
-      return "";
-    });
-    const urls = extractPolicyUrls(html, sourceUrl).filter((url) => matchesSeed(url, html, seed));
-    seedLog.searched.push({ type: "source", source: sourceUrl, hits: urls.length });
+    const html = await fetchLogged(sourceUrl, seedLog, "source");
+    if (!html) continue;
+    const urls = seed.sourceAdapter
+      ? seed.sourceAdapter.extractUrls(html, sourceUrl)
+      : extractPolicyUrls(html, sourceUrl).filter((url) => matchesSeed(url, html, seed));
+    seedLog.searched.push({ type: "source", source: sourceUrl, hits: urls.length, status: "ok" });
     if (addUrls(urls)) return found;
   }
   return found;
+}
+
+async function fetchLogged(url, seedLog, type) {
+  seedLog.requests.attempted += 1;
+  try {
+    const html = await fetchText(url);
+    seedLog.requests.succeeded += 1;
+    return html;
+  } catch (error) {
+    seedLog.requests.failed += 1;
+    seedLog.searched.push({ type, source: url, hits: 0, status: "failed" });
+    seedLog.errors.push({ url, error: error.message });
+    return "";
+  }
 }
 
 async function fetchPolicy(url, seed) {
@@ -170,16 +271,20 @@ async function fetchPolicy(url, seed) {
     || firstMatch(html, /(\d{4})[-年](\d{1,2})/)
     || String(new Date().getFullYear())
   );
-  const agency = cleanText(
+  const extractedAgency = cleanText(
     firstMatch(html, /来源：\s*([^<\n]+)/)
     || firstMatch(html, /发布机构：\s*([^<\n]+)/)
-    || inferAgency(title, seed)
   );
-  const summary = cleanText(
+  const agency = !extractedAgency || invalidAgencyPattern.test(extractedAgency)
+    ? inferAgency(title, seed)
+    : extractedAgency;
+  const extractedSummary = cleanText(
     firstMatch(html, /<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i)
     || firstParagraph(html)
     || title
   ).slice(0, 260);
+  const summary = /^(?:来源|文件下载链接)[:：]/.test(extractedSummary) ? title : extractedSummary;
+  const documentNo = extractDocumentNo(`${html} ${title}`);
   return {
     year: Number(date.slice(0, 4)),
     date,
@@ -191,6 +296,7 @@ async function fetchPolicy(url, seed) {
     summary,
     url,
     keywords: `${seed.name} ${seed.query}`,
+    documentNo,
     reviewStatus: "待人工审核"
   };
 }
@@ -263,10 +369,6 @@ function matchesSeed(url, html, seed) {
     || seed.query.toLowerCase().split(/\s+/).slice(0, 4).some((part) => part.length > 1 && text.includes(part));
 }
 
-function documentKey(doc) {
-  return `${doc.url || ""}::${doc.title || ""}`;
-}
-
 function firstMatch(text, pattern) {
   const match = text.match(pattern);
   if (!match) return "";
@@ -299,10 +401,25 @@ function normalizeDate(value) {
 }
 
 function inferAgency(title, seed) {
+  if (title.includes("国务院")) return "国务院";
   if (title.includes("国家医保局") || seed.topic.startsWith("nhsa_")) return "国家医疗保障局";
   if (title.includes("国家疾控局") || seed.topic.startsWith("cdc_")) return "国家疾病预防控制局";
   if (title.includes("中医药")) return "国家中医药管理局";
   return "国家卫生健康委员会";
+}
+
+function extractDocumentNo(value) {
+  const text = cleanText(value);
+  const patterns = [
+    /(?:国卫|国中医药|医保|国疾控|国办|国发|财社|人社部发|卫办|发改社会|药监)[^，。；;\s（）()《》]{0,18}[〔\[]\d{4}[〕\]][^，。；;\s（）()《》]{0,8}号/,
+    /国家药品监督管理局公告\d{4}年第\d+号/,
+    /(?:GB|WS\/T)\s?\d{3,5}(?:\.\d+)?[—-]\d{4}/i
+  ];
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (match?.[0]) return match[0].replace(/\s+/g, "");
+  }
+  return "";
 }
 
 function inferLevel(title) {
@@ -317,15 +434,41 @@ function wrapTitle(title) {
   return `《${trimmed}》`;
 }
 
-async function writeDraft(documents) {
-  const body = `const policyAutoDraftDocuments = ${JSON.stringify(documents, null, 2)};\n`;
-  await fs.writeFile(draftPath, body, "utf8");
-}
-
-async function appendToSupplement(documents) {
-  if (!documents.length) return;
-  const current = await fs.readFile(supplementPath, "utf8");
-  const insert = documents.map((doc) => `,\n  ${JSON.stringify(doc, null, 2).replace(/\n/g, "\n  ")}`).join("");
-  const updated = current.replace(/\n\];\s*$/, `${insert}\n];\n`);
-  await fs.writeFile(supplementPath, updated, "utf8");
+function buildSourceHealth(log, reviewedDocuments) {
+  const checkedAt = log.generatedAt;
+  const sources = policySources.map((source) => {
+    const seedLog = log.seeds.find((seed) => seed.name === `官方来源：${source.name}`);
+    const requests = seedLog?.requests || { attempted: 0, succeeded: 0, failed: 0 };
+    const status = requests.succeeded === 0
+      ? "unavailable"
+      : requests.failed > 0
+        ? "degraded"
+        : "healthy";
+    const knownDates = reviewedDocuments
+      .filter((policy) => inferSourceId(policy.url) === source.id)
+      .map((policy) => policy.date)
+      .filter(Boolean)
+      .sort();
+    return {
+      id: source.id,
+      name: source.name,
+      homepage: source.homepage,
+      policyList: source.listUrls[0],
+      status,
+      checkedAt,
+      requests,
+      documentsDiscovered: seedLog?.candidates || 0,
+      newCandidates: seedLog?.added || 0,
+      latestKnownPolicyDate: knownDates.at(-1) || null,
+      reviewedDocuments: knownDates.length
+    };
+  });
+  const healthyCount = sources.filter((source) => source.status === "healthy").length;
+  const availableCount = sources.filter((source) => source.status !== "unavailable").length;
+  return {
+    schemaVersion: 1,
+    generatedAt: checkedAt,
+    overallStatus: healthyCount === sources.length ? "healthy" : availableCount > 0 ? "degraded" : "unavailable",
+    sources
+  };
 }

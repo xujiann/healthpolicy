@@ -335,8 +335,12 @@ function isConcretePolicyDocument(policy) {
 }
 
 const rawPolicyDocuments = [
-  ...policyDocuments,
-  ...(typeof policySupplementDocuments === "undefined" ? [] : policySupplementDocuments)
+  ...(typeof policyReviewedDocuments !== "undefined"
+    ? policyReviewedDocuments
+    : [
+        ...(typeof policyDocuments === "undefined" ? [] : policyDocuments),
+        ...(typeof policySupplementDocuments === "undefined" ? [] : policySupplementDocuments)
+      ])
 ].filter(isConcretePolicyDocument).filter((policy, index, items) => {
   const key = `${policy.url || ""}::${policy.title}`;
   return items.findIndex((item) => `${item.url || ""}::${item.title}` === key) === index;
@@ -349,6 +353,7 @@ const policies = rawPolicyDocuments.map((policy, index) => ({
   sourceType: "具体文件",
   documentNo: policy.documentNo || extractDocumentNo(policy)
 }));
+const relatedMaterials = typeof policyRelatedMaterials === "undefined" ? [] : policyRelatedMaterials;
 
 const years = [...new Set(policies.map((policy) => policy.year))].sort((a, b) => a - b);
 const levelOrder = ["通知", "意见", "方案", "规划", "公告", "办法", "条例", "规定", "决定", "批复", "工作要点", "指南", "标准", "目录", "函", "政策文件"];
@@ -358,6 +363,8 @@ const levels = [...new Set(policies.map((policy) => policy.level || "政策文�
   if (ai !== -1 || bi !== -1) return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
   return a.localeCompare(b, "zh-Hans-CN");
 });
+const validityOrder = ["现行有效", "尚未施行", "已废止", "已失效", "征求意见", "待核验", "不适用"];
+const documentTypeOrder = ["正式政策", "征求意见", "政策解读", "公示公告", "统计信息", "其他资料"];
 
 const els = {
   svg: document.querySelector("#policyMap"),
@@ -366,8 +373,11 @@ const els = {
   yearFilter: document.querySelector("#yearFilter"),
   agencyFilter: document.querySelector("#agencyFilter"),
   levelFilter: document.querySelector("#levelFilter"),
+  validityFilter: document.querySelector("#validityFilter"),
+  documentTypeFilter: document.querySelector("#documentTypeFilter"),
   sortFilter: document.querySelector("#sortFilter"),
   searchInput: document.querySelector("#searchInput"),
+  topSearchResult: document.querySelector("#topSearchResult"),
   legend: document.querySelector("#legend"),
   statDocs: document.querySelector("#statDocs"),
   statFiltered: document.querySelector("#statFiltered"),
@@ -381,6 +391,10 @@ const els = {
   qualityRule: document.querySelector("#qualityRule"),
   qualitySources: document.querySelector("#qualitySources"),
   qualityLatest: document.querySelector("#qualityLatest"),
+  governanceDataThrough: document.querySelector("#governanceDataThrough"),
+  governanceReviewedAt: document.querySelector("#governanceReviewedAt"),
+  governanceCandidateCount: document.querySelector("#governanceCandidateCount"),
+  sourceHealthList: document.querySelector("#sourceHealthList"),
   filterCount: document.querySelector("#filterCount"),
   mapStatus: document.querySelector("#mapStatus"),
   matrix: document.querySelector("#matrix"),
@@ -405,6 +419,10 @@ const els = {
   taxonomyList: document.querySelector("#taxonomyList"),
   taskOverview: document.querySelector("#taskOverview"),
   taskBoard: document.querySelector("#taskBoard"),
+  structureMetrics: document.querySelector("#structureMetrics"),
+  relationList: document.querySelector("#relationList"),
+  materialSummary: document.querySelector("#materialSummary"),
+  materialList: document.querySelector("#materialList"),
   milestoneList: document.querySelector("#milestoneList"),
   timeline: document.querySelector("#timeline"),
   sourceList: document.querySelector("#sourceList"),
@@ -488,6 +506,8 @@ function initControls() {
   els.yearFilter.innerHTML = ['<option value="all">全部年份</option>', ...years.map((year) => `<option value="${year}">${year}</option>`)].join("");
   els.agencyFilter.innerHTML = ['<option value="all">全部重点机关</option>', ...agencyGroups.map((agency) => `<option value="${escapeAttr(agency.id)}">${agency.name}</option>`)].join("");
   els.levelFilter.innerHTML = ['<option value="all">全部文件类型</option>', ...levels.map((level) => `<option value="${escapeAttr(level)}">${level}</option>`)].join("");
+  els.validityFilter.innerHTML = ['<option value="all">全部效力状态</option>', ...validityOrder.map((status) => `<option value="${status}">${status}</option>`)].join("");
+  els.documentTypeFilter.innerHTML = ['<option value="all">全部资料类型</option>', ...documentTypeOrder.map((type) => `<option value="${type}">${type}</option>`)].join("");
   renderLegend();
   renderTaxonomyList();
 }
@@ -533,6 +553,7 @@ function renderPlatformDashboard() {
   els.qualityRule.textContent = ruleCount;
   els.qualitySources.textContent = sourceHosts.size;
   els.qualityLatest.textContent = latest[0]?.date || "-";
+  renderGovernanceStatus(latest[0]?.date || null);
   els.latestList.innerHTML = latest.map((policy) => {
     const topic = topicById.get(policy.topic);
     return `
@@ -545,12 +566,47 @@ function renderPlatformDashboard() {
   }).join("");
 }
 
+function renderGovernanceStatus(fallbackDate) {
+  const governance = typeof policyGovernance === "undefined" ? null : policyGovernance;
+  if (els.governanceDataThrough) els.governanceDataThrough.textContent = governance?.dataThrough || fallbackDate || "-";
+  if (els.governanceReviewedAt) els.governanceReviewedAt.textContent = String(governance?.lastReviewedAt || "-").slice(0, 10);
+  if (els.governanceCandidateCount) {
+    const count = governance?.counts?.candidates || 0;
+    els.governanceCandidateCount.textContent = `${count} 条待审核`;
+  }
+  if (!els.sourceHealthList) return;
+  const sources = governance?.sourceHealth?.sources || [];
+  const statusLabels = {
+    verified: "人工核验",
+    healthy: "正常",
+    degraded: "部分异常",
+    unavailable: "不可用",
+    unknown: "未检测"
+  };
+  els.sourceHealthList.innerHTML = sources.map((source) => `
+    <article class="source-health source-health--${escapeAttr(source.status || "unknown")}">
+      <div>
+        <span>${statusLabels[source.status] || source.status}</span>
+        <strong>${source.name}</strong>
+      </div>
+      <dl>
+        <dt>最近检测</dt><dd>${String(source.checkedAt || "-").slice(0, 10)}</dd>
+        <dt>最新政策</dt><dd>${source.latestKnownPolicyDate || "待核"}</dd>
+        <dt>已审记录</dt><dd>${source.reviewedDocuments ?? 0}</dd>
+      </dl>
+      <a href="${source.policyList || source.homepage}" target="_blank" rel="noreferrer">查看官方政策源</a>
+    </article>
+  `).join("") || '<p class="empty-note">暂无来源健康记录。</p>';
+}
+
 function getFilteredPolicies() {
   const topic = els.topicFilter.value;
   const secondary = els.secondaryFilter.value;
   const year = els.yearFilter.value;
   const agency = els.agencyFilter.value;
   const level = els.levelFilter.value;
+  const validity = els.validityFilter.value;
+  const documentType = els.documentTypeFilter.value;
   const term = els.searchInput.value.trim().toLowerCase();
   return policies.filter((policy) => {
     const byTopic = topic === "all" || policy.topic === topic;
@@ -558,15 +614,17 @@ function getFilteredPolicies() {
     const byYear = year === "all" || String(policy.year) === year;
     const byAgency = agency === "all" || policy.agency.includes(agency);
     const byLevel = level === "all" || policy.level === level;
-    const haystack = `${policy.title} ${policy.summary} ${policy.agency} ${policy.level} ${policy.keywords} ${policy.sourceType}`.toLowerCase();
-    return byTopic && bySecondary && byYear && byAgency && byLevel && (!term || haystack.includes(term));
+    const byValidity = validity === "all" || policy.validity?.status === validity;
+    const byDocumentType = documentType === "all" || policy.documentType === documentType;
+    const haystack = `${policy.title} ${policy.summary} ${policy.agency} ${policy.agencies?.join(" ")} ${policy.level} ${policy.keywords} ${policy.sourceType} ${policy.validity?.status} ${policy.documentType}`.toLowerCase();
+    return byTopic && bySecondary && byYear && byAgency && byLevel && byValidity && byDocumentType && (!term || haystack.includes(term));
   });
 }
 
 function getKeywordPolicies() {
   const term = els.searchInput.value.trim().toLowerCase();
   return policies.filter((policy) => {
-    const haystack = `${policy.title} ${policy.summary} ${policy.agency} ${policy.level} ${policy.keywords} ${policy.sourceType}`.toLowerCase();
+    const haystack = `${policy.title} ${policy.summary} ${policy.agency} ${policy.agencies?.join(" ")} ${policy.level} ${policy.keywords} ${policy.sourceType} ${policy.validity?.status} ${policy.documentType}`.toLowerCase();
     return !term || haystack.includes(term);
   });
 }
@@ -964,9 +1022,18 @@ function setDetail(policy) {
   els.detailMeta.innerHTML = `
     <dt>文号</dt><dd>${policy.documentNo}</dd>
     <dt>层级</dt><dd>${policy.level}</dd>
+    <dt>资料类型</dt><dd>${policy.documentType}</dd>
+    <dt>效力状态</dt><dd>${policy.validity?.status || "待核验"}</dd>
+    <dt>施行日期</dt><dd>${policy.validity?.effectiveDate || "未提取"}</dd>
+    <dt>效力依据</dt><dd>${policy.validity?.basis || "待补充"}</dd>
+    <dt>联合发文</dt><dd>${policy.agencies?.join("、") || policy.agency}</dd>
+    <dt>政策关系</dt><dd>${policy.relations?.length ? policy.relations.map((relation) => `${relation.type} ${relation.targetTitle || relation.targetDocumentNo || "前版文件"}`).join("；") : "暂无结构化关系"}</dd>
     <dt>司局</dt><dd>${topic.name}</dd>
     <dt>处室</dt><dd>${policy.secondary}</dd>
     <dt>归口</dt><dd>${policy.assignment}</dd>
+    <dt>采集批次</dt><dd>${policy.audit?.batchId || "历史记录"}</dd>
+    <dt>审核记录</dt><dd>${policy.audit?.reviewer || "待补齐"} / ${String(policy.audit?.reviewedAt || "-").slice(0, 10)}</dd>
+    <dt>归口依据</dt><dd>${policy.audit?.basis || "待补齐"}</dd>
     <dt>关键词</dt><dd>${policy.keywords}</dd>
   `;
   els.detailUrl.href = policy.url;
@@ -1020,6 +1087,8 @@ function renderContinuity() {
     const key = `${topic.name} / ${policy.secondary}`;
     touchedTopics.set(key, (touchedTopics.get(key) || 0) + 1);
   });
+  const relationCount = matched.reduce((count, policy) => count + (policy.relations?.length || 0), 0);
+  const verifiedValidityCount = matched.filter((policy) => policy.validity?.status !== "待核验").length;
   els.continuityTitle.textContent = `“${query}”政策变化趋势`;
   els.continuitySummary.textContent = matched.length
     ? `共命中 ${matched.length} 份文件，覆盖 ${activeYears.length} 个年份、${touchedTopics.size} 个司局/处室组合；可观察政策从提出、扩围到制度化推进的时间变化。`
@@ -1028,7 +1097,9 @@ function renderContinuity() {
     ["首次出现", first ? `${first.year}年` : "-"],
     ["峰值年份", peak ? `${peak.year}年 / ${peak.count}份` : "-"],
     ["最近年份", latest ? `${latest.year}年` : "-"],
-    ["累计文件", `${matched.length}份`]
+    ["累计文件", `${matched.length}份`],
+    ["制度关系", `${relationCount}条`],
+    ["效力已识别", `${verifiedValidityCount}份`]
   ].map(([label, value]) => `<div><strong>${value}</strong><span>${label}</span></div>`).join("");
   els.trendPresets.querySelectorAll("button").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.keyword === query);
@@ -1258,21 +1329,83 @@ function renderSourceList() {
       <a class="source-item" href="${policy.url}" target="_blank" rel="noreferrer" style="border-top:4px solid ${topic.color}">
         <span class="source-title">${policy.title}</span>
         <span class="source-no">${policy.documentNo}</span>
+        <span class="source-meta">${policy.documentType} / ${policy.validity?.status || "待核验"} / ${policy.agencies?.length || 1} 个发文机关${policy.validity?.effectiveDate ? ` / ${policy.validity.effectiveDate}施行` : ""}</span>
         <p class="source-summary"><strong>主要内容、目标摘要：</strong>${policy.summary}</p>
       </a>
     `;
   }).join("");
 }
 
+function renderPolicyStructure(filtered = policies) {
+  if (!els.structureMetrics || !els.relationList) return;
+  const fieldChecks = filtered.flatMap((policy) => [
+    policy.documentNo && policy.documentNo !== "文号待核",
+    policy.agencies?.length > 0,
+    Boolean(policy.documentType),
+    Boolean(policy.validity?.status && policy.validity?.basis),
+    Array.isArray(policy.relations)
+  ]);
+  const completeness = fieldChecks.length ? (fieldChecks.filter(Boolean).length / fieldChecks.length * 100).toFixed(1) : "0.0";
+  const jointCount = filtered.filter((policy) => policy.agencies?.length > 1).length;
+  const effectiveDateCount = filtered.filter((policy) => policy.validity?.effectiveDate).length;
+  const relations = filtered.flatMap((policy) => (policy.relations || []).map((relation) => ({ policy, relation })));
+  const verifiedValidity = filtered.filter((policy) => policy.validity?.status !== "待核验").length;
+  els.structureMetrics.innerHTML = [
+    [`${completeness}%`, "核心字段完整率"],
+    [`${jointCount}份`, "联合发文"],
+    [`${effectiveDateCount}份`, "明确施行日期"],
+    [`${relations.length}条`, "废止/修订关系"],
+    [`${verifiedValidity}份`, "效力状态已识别"]
+  ].map(([value, label]) => `<article><strong>${value}</strong><span>${label}</span></article>`).join("");
+  els.relationList.innerHTML = relations.map(({ policy, relation }) => {
+    const target = relation.targetId ? policies.find((item) => item.id === relation.targetId) : null;
+    return `
+      <article class="relation-card">
+        <span>${relation.type} / ${relation.verification === "machine_extracted" ? "机器提取" : "已关联"}</span>
+        <a href="${policy.url}" target="_blank" rel="noreferrer">${escapeHtml(policy.title)}</a>
+        <p>关联至 ${escapeHtml(relation.targetTitle || relation.targetDocumentNo || "前版文件")}</p>
+        ${target ? `<a class="relation-target" href="${target.url}" target="_blank" rel="noreferrer">打开库内关联文件：${escapeHtml(target.documentNo)}</a>` : `<em>目标文件尚未在库内唯一匹配</em>`}
+      </article>
+    `;
+  }).join("") || '<p class="empty-note">当前筛选范围暂无已提取的废止或修订关系。</p>';
+  renderRelatedMaterials();
+}
+
+function renderRelatedMaterials() {
+  if (!els.materialList || !els.materialSummary) return;
+  const type = els.documentTypeFilter.value;
+  const year = els.yearFilter.value;
+  const agency = els.agencyFilter.value;
+  const term = els.searchInput.value.trim().toLowerCase();
+  const visible = relatedMaterials.filter((material) => {
+    const byType = type === "all" || material.documentType === type;
+    const byYear = year === "all" || String(material.year) === year;
+    const byAgency = agency === "all" || material.agency.includes(agency);
+    const haystack = `${material.title} ${material.summary} ${material.agency} ${material.relatedPolicyTitle} ${material.documentType}`.toLowerCase();
+    return byType && byYear && byAgency && (!term || haystack.includes(term));
+  });
+  els.materialSummary.textContent = `关联资料共 ${relatedMaterials.length} 条，当前筛选显示 ${visible.length} 条；不计入正式政策统计。`;
+  els.materialList.innerHTML = visible.map((material) => `
+    <a class="material-card" href="${material.url}" target="_blank" rel="noreferrer">
+      <span>${material.documentType} / ${material.date}</span>
+      <strong>${escapeHtml(material.title)}</strong>
+      <p>${escapeHtml(material.summary)}</p>
+      <em>关联政策：${escapeHtml(material.relatedPolicyTitle || "待关联")}</em>
+    </a>
+  `).join("") || '<p class="empty-note">当前筛选范围没有关联资料。</p>';
+}
+
 function update() {
   const filtered = getFilteredPolicies();
   els.statFiltered.textContent = filtered.length;
+  els.topSearchResult.textContent = els.searchInput.value.trim() ? `${filtered.length} 份命中` : `${policies.length} 份政策`;
   els.filterCount.textContent = describeFilters(filtered.length);
   showAllSources = false;
   renderSecondaryChips();
   renderMap();
   renderMatrix();
   renderContinuity();
+  renderPolicyStructure(filtered);
   renderTimeline();
   renderSourceList();
   renderMilestones();
@@ -1285,8 +1418,11 @@ function describeFilters(count) {
   const year = els.yearFilter.value === "all" ? "全部年份" : `${els.yearFilter.value}年`;
   const agency = els.agencyFilter.value === "all" ? "全部重点机关" : agencyGroups.find((item) => item.id === els.agencyFilter.value)?.name || els.agencyFilter.value;
   const level = els.levelFilter.value === "all" ? "全部文件类型" : els.levelFilter.value;
+  const validity = els.validityFilter.value === "all" ? "全部效力状态" : els.validityFilter.value;
+  const documentType = els.documentTypeFilter.value === "all" ? "全部资料类型" : els.documentTypeFilter.value;
   const term = els.searchInput.value.trim();
-  return term ? `${topic} / ${secondary} / ${year} / ${agency} / ${level} / “${term}”：${count}份` : `${topic} / ${secondary} / ${year} / ${agency} / ${level}：${count}份`;
+  const description = `${topic} / ${secondary} / ${year} / ${agency} / ${level} / ${validity} / ${documentType}`;
+  return term ? `${description} / “${term}”：${count}份` : `${description}：${count}份`;
 }
 
 function reset() {
@@ -1296,6 +1432,8 @@ function reset() {
   els.yearFilter.value = "all";
   els.agencyFilter.value = "all";
   els.levelFilter.value = "all";
+  els.validityFilter.value = "all";
+  els.documentTypeFilter.value = "all";
   els.sortFilter.value = "date-desc";
   els.searchInput.value = "";
   activeId = null;
@@ -1317,19 +1455,41 @@ function taskMatchedPolicies(task) {
   }).sort((a, b) => b.date.localeCompare(a.date));
 }
 
+function calculateTaskCoverage(task, matched) {
+  const texts = matched.map((policy) => `${policy.title} ${policy.summary} ${policy.keywords} ${policy.documentNo} ${policy.secondary}`);
+  const coveredKeywords = task.keywords.filter((keyword) => texts.some((text) => text.includes(keyword)));
+  const coveredLeads = task.lead.filter(([topicId, secondary]) => matched.some((policy) => policy.topic === topicId && policy.secondary === secondary));
+  const totalDimensions = task.keywords.length + task.lead.length;
+  const coveredDimensions = coveredKeywords.length + coveredLeads.length;
+  const gaps = [
+    ...task.keywords.filter((keyword) => !coveredKeywords.includes(keyword)),
+    ...task.lead.filter((lead) => !coveredLeads.includes(lead)).map(([topicId, secondary]) => `${topicById.get(topicId)?.name || topicId}/${secondary}`)
+  ];
+  return {
+    percent: Math.round(coveredDimensions / Math.max(1, totalDimensions) * 100),
+    gaps,
+    lastUpdated: matched[0]?.date || "暂无"
+  };
+}
+
 function renderPlanTasks() {
   if (!els.taskBoard) return;
   const allOffices = new Set(nationalHealthPlanTasks.flatMap((task) => task.lead.map(([, office]) => office)));
   const allBureaus = new Set(nationalHealthPlanTasks.flatMap((task) => task.lead.map(([topicId]) => topicId)));
   const matchedTotal = new Set(nationalHealthPlanTasks.flatMap((task) => taskMatchedPolicies(task).map((policy) => policy.id))).size;
+  const taskResults = nationalHealthPlanTasks.map((task) => {
+    const matched = taskMatchedPolicies(task);
+    return { task, matched, coverage: calculateTaskCoverage(task, matched) };
+  });
+  const averageCoverage = Math.round(taskResults.reduce((sum, item) => sum + item.coverage.percent, 0) / Math.max(1, taskResults.length));
   els.taskOverview.innerHTML = `
     <article><strong>${nationalHealthPlanTasks.length}</strong><span>规划任务</span></article>
     <article><strong>${allBureaus.size}</strong><span>牵头司局</span></article>
     <article><strong>${allOffices.size}</strong><span>落实处室</span></article>
     <article><strong>${matchedTotal}</strong><span>关联政策</span></article>
+    <article><strong>${averageCoverage}%</strong><span>平均证据覆盖率</span></article>
   `;
-  els.taskBoard.innerHTML = nationalHealthPlanTasks.map((task) => {
-    const matched = taskMatchedPolicies(task);
+  els.taskBoard.innerHTML = taskResults.map(({ task, matched, coverage }) => {
     const leadHtml = task.lead.map(([topicId, office]) => {
       const topic = topicById.get(topicId);
       return `<button type="button" data-task-topic="${topicId}" data-task-office="${office}"><span>${topic.name}</span><strong>${office}</strong></button>`;
@@ -1339,14 +1499,17 @@ function renderPlanTasks() {
       <article class="task-card" data-task="${task.id}">
         <div class="task-head">
           <span>${task.stage}</span>
+          <em>${coverage.percent}% 证据覆盖</em>
           <strong>${task.task}</strong>
         </div>
+        <div class="coverage-bar" aria-label="政策证据覆盖率 ${coverage.percent}%"><i style="width:${coverage.percent}%"></i></div>
         <div class="task-leads">${leadHtml}</div>
         <div class="task-levers">${task.levers.map((item) => `<em>${item}</em>`).join("")}</div>
         <p><b>落地输出：</b>${task.output}</p>
         <div class="task-evidence">
-          <strong>关联政策 ${matched.length} 份</strong>
+          <strong>关联政策 ${matched.length} 份 / 最近更新 ${coverage.lastUpdated}</strong>
           ${policyHtml || `<span class="muted">暂无直接命中，需人工补充证据。</span>`}
+          <span class="task-gaps"><b>证据缺口：</b>${coverage.gaps.length ? coverage.gaps.slice(0, 4).join("、") : "当前维度均有政策命中"}</span>
         </div>
         <button type="button" class="task-filter" data-task-keywords="${task.keywords.join(" ")}">按任务查看政策</button>
       </article>
@@ -1391,10 +1554,10 @@ function escapeAttr(value) {
 
 function exportCurrentCsv() {
   const rows = sortPolicies(getFilteredPolicies());
-  const header = ["年份", "日期", "文号", "司局", "处室", "归口方式", "发文机关", "文件层级", "标题", "摘要", "链接"];
+  const header = ["年份", "日期", "文号", "效力状态", "施行日期", "资料类型", "联合发文机关", "政策关系", "司局", "处室", "归口方式", "文件层级", "标题", "摘要", "链接", "采集批次", "审核时间"];
   const lines = [header, ...rows.map((policy) => {
     const topic = topicById.get(policy.topic);
-    return [policy.year, policy.date, policy.documentNo, topic.name, policy.secondary, policy.assignment, policy.agency, policy.level, policy.title, policy.summary, policy.url];
+    return [policy.year, policy.date, policy.documentNo, policy.validity?.status, policy.validity?.effectiveDate, policy.documentType, policy.agencies?.join("；"), policy.relations?.map((relation) => `${relation.type}:${relation.targetTitle || relation.targetDocumentNo}`).join("；"), topic.name, policy.secondary, policy.assignment, policy.level, policy.title, policy.summary, policy.url, policy.audit?.batchId, policy.audit?.reviewedAt];
   })].map((row) => row.map(csvCell).join(","));
   const blob = new Blob([`\uFEFF${lines.join("\n")}`], { type: "text/csv;charset=utf-8" });
   const url = URL.createObjectURL(blob);
@@ -1423,6 +1586,8 @@ els.secondaryFilter.addEventListener("change", update);
 els.yearFilter.addEventListener("change", update);
 els.agencyFilter.addEventListener("change", update);
 els.levelFilter.addEventListener("change", update);
+els.validityFilter.addEventListener("change", update);
+els.documentTypeFilter.addEventListener("change", update);
 els.sortFilter.addEventListener("change", update);
 els.searchInput.addEventListener("input", update);
 els.applyContinuity.addEventListener("click", renderContinuity);

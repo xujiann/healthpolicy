@@ -1,5 +1,15 @@
 {
   "generatedAt": "2026-08-18T17:55:49.882Z",
+  "manualReview": {
+    "reviewedAt": "2026-08-25",
+    "status": "completed",
+    "officialLatestPolicyDate": "2026-08-19",
+    "reviewedCandidates": 17,
+    "approvedCandidates": 17,
+    "pendingCandidates": 0,
+    "newDocumentsAdded": 8,
+    "notes": "截至2026-08-25复核国家医保局、国家卫生健康委和国家疾控局官方公开来源；本轮新增国家医保局《全民医疗保障“十五五”规划》1份正式政策，并将官方解读纳入关联资料分库。8月20日至25日的动态、政策解读、公示、征集、建议答复和统计数据未作为正式政策入库。"
+  },
   "mode": "apply",
   "maxPerSeed": 8,
   "seedLimit": 9,
@@ -11,25 +21,59 @@
       "searched": [
         {
           "type": "search",
-          "source": "国家卫生健康委 护理 康复 安宁疗护 政策 通知 site:www.gov.cn/zhengce",
-          "hits": 0
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E6%8A%A4%E7%90%86%20%E5%BA%B7%E5%A4%8D%20%E5%AE%89%E5%AE%81%E7%96%97%E6%8A%A4%20%E6%94%BF%E7%AD%96%20%E9%80%9A%E7%9F%A5%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E6%8A%A4%E7%90%86%20%E5%BA%B7%E5%A4%8D%20%E5%AE%89%E5%AE%81%E7%96%97%E6%8A%A4%20%E6%94%BF%E7%AD%96%20%E9%80%9A%E7%9F%A5%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E6%8A%A4%E7%90%86%20%E5%BA%B7%E5%A4%8D%20%E5%AE%89%E5%AE%81%E7%96%97%E6%8A%A4%20%E6%94%BF%E7%AD%96%20%E9%80%9A%E7%9F%A5%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "hits": 0
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 0,
+          "status": "failed"
         }
       ],
+      "requests": {
+        "attempted": 5,
+        "succeeded": 0,
+        "failed": 5
+      },
       "candidates": 0,
       "added": 0,
       "skippedExisting": 0,
+      "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
+      "duplicateReasons": {},
       "errors": [
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E6%8A%A4%E7%90%86%20%E5%BA%B7%E5%A4%8D%20%E5%AE%89%E5%AE%81%E7%96%97%E6%8A%A4%20%E6%94%BF%E7%AD%96%20%E9%80%9A%E7%9F%A5%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E6%8A%A4%E7%90%86%20%E5%BA%B7%E5%A4%8D%20%E5%AE%89%E5%AE%81%E7%96%97%E6%8A%A4%20%E6%94%BF%E7%AD%96%20%E9%80%9A%E7%9F%A5%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E6%8A%A4%E7%90%86%20%E5%BA%B7%E5%A4%8D%20%E5%AE%89%E5%AE%81%E7%96%97%E6%8A%A4%20%E6%94%BF%E7%AD%96%20%E9%80%9A%E7%9F%A5%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
           "error": "412 Precondition Failed"

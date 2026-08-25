@@ -20,6 +20,7 @@
         <a href="#overview" class="is-active">政策知识库</a>
         <a href="#map">政策图谱</a>
         <a href="#continuity">连续性分析</a>
+        <a href="#structure">效力与关系</a>
         <a href="#plan-tasks">十五五任务</a>
         <a href="#milestones">政策脉络</a>
         <a href="#sources">文件清单</a>
@@ -29,9 +30,17 @@
     </aside>
 
     <header class="topbar">
-      <div>
+      <div class="topbar-title">
         <p class="eyebrow">卫生健康信息平台模拟 / 政策知识库</p>
         <h1>卫生健康政策智能分析</h1>
+      </div>
+      <div class="top-search" role="search" aria-label="政策知识库搜索">
+        <label for="searchInput">搜索政策知识库</label>
+        <div class="top-search-control">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="搜索标题、文号、机构或关键词" autocomplete="off" />
+          <output id="topSearchResult" aria-live="polite">全部政策</output>
+        </div>
       </div>
       <div class="top-actions">
         <span class="platform-status">数据服务运行中</span>
@@ -138,19 +147,30 @@
             </div>
           </div>
           <div class="interface-status">
+            <span>数据更新至</span>
+            <strong id="governanceDataThrough">-</strong>
+          </div>
+          <div class="interface-status">
+            <span>最近人工核验</span>
+            <strong id="governanceReviewedAt">-</strong>
+          </div>
+          <div class="interface-status">
+            <span>候选审核</span>
+            <a id="governanceCandidateCount" href="policy-review-queue.md">0 条待审核</a>
+          </div>
+          <div class="interface-status">
             <span>自动更新日志</span>
             <a href="policy-update-log.json">policy-update-log.json</a>
+          </div>
+          <div class="interface-status">
+            <span>优先复核</span>
+            <a href="policy-priority-review.csv">50 条高影响记录</a>
           </div>
         </article>
       </section>
 
       <section class="workspace">
         <aside class="filters" aria-label="筛选器">
-          <label>
-            <span>关键词</span>
-            <input id="searchInput" type="search" placeholder="搜索：医保、疾控、基层..." />
-          </label>
-
           <label>
             <span>司局</span>
             <select id="topicFilter"></select>
@@ -172,8 +192,18 @@
           </label>
 
           <label>
-            <span>文件类型</span>
+            <span>文件层级</span>
             <select id="levelFilter"></select>
+          </label>
+
+          <label>
+            <span>效力状态</span>
+            <select id="validityFilter"></select>
+          </label>
+
+          <label>
+            <span>资料类型</span>
+            <select id="documentTypeFilter"></select>
           </label>
 
           <label>
@@ -250,6 +280,22 @@
         <div class="continuity-list" id="continuityList"></div>
       </section>
 
+      <section class="policy-structure-section" id="structure">
+        <div class="section-head">
+          <h2>政策效力与修订关系</h2>
+          <p>结构化展示文号、联合发文机关、施行日期及废止/修订关系；机器提取结果保留核验状态，未确认的历史效力明确标记为“待核验”。</p>
+        </div>
+        <div class="structure-metrics" id="structureMetrics"></div>
+        <div class="relation-list" id="relationList"></div>
+        <div class="material-library">
+          <div class="section-head compact-head">
+            <h3>关联资料分库</h3>
+            <p id="materialSummary">政策解读、统计、公示和征求意见资料不计入正式政策数量。</p>
+          </div>
+          <div class="material-list" id="materialList"></div>
+        </div>
+      </section>
+
       <section class="taxonomy-section">
         <div class="section-head">
           <h2>机构分类依据</h2>
@@ -261,7 +307,7 @@
       <section class="plan-task-section" id="plan-tasks">
         <div class="section-head">
           <h2>国民健康“十五五”规划任务分解</h2>
-          <p>将规划中的重点任务拆为可执行事项，并按部委、司局、处室映射到落实责任、政策抓手和已有文件证据。</p>
+          <p>将规划中的重点任务拆为可执行事项，按部委、司局、处室映射政策证据，并展示证据覆盖率、缺口和最近更新时间。</p>
         </div>
         <div class="task-overview" id="taskOverview"></div>
         <div class="task-board" id="taskBoard"></div>
@@ -291,13 +337,14 @@
           </article>
           <article>
             <h3>自动任务</h3>
-            <p>GitHub Actions 每日定时运行更新脚本，生成日志并在发现变化时提交入库。</p>
+            <p>GitHub Actions 每日定时生成候选和审核清单，通过 Pull Request 审核与质量门禁后入库。</p>
           </article>
           <article>
             <h3>追溯能力</h3>
             <p>每张卡片保留文件名、文号、摘要和官方全文链接，可导出 CSV 进行二次分析。</p>
           </article>
         </div>
+        <div class="source-health-list" id="sourceHealthList" aria-label="官方来源健康状态"></div>
       </section>
 
       <section class="timeline-section">
@@ -321,8 +368,9 @@
       </section>
     </main>
 
-    <script src="policy-data.js"></script>
-    <script src="policy-supplement.js"></script>
+    <script src="policy-reviewed.js"></script>
+    <script src="policy-materials.js"></script>
+    <script src="policy-governance.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

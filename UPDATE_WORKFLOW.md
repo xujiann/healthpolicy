@@ -1,92 +1,94 @@
-# 政策文件自动补充工作流
+# 政策文件可审计更新工作流
 
-这个静态网站的数据分三层：
+## 1. 三层数据
 
-- `policy-data.js`：基础政策库，保留原始采集结果。
-- `policy-supplement.js`：人工审核后的补充政策，页面会自动加载。
-- `policy-auto-draft.js`：自动更新脚本生成的候选草稿，不会被页面自动加载。
+P1 以 `policy-lifecycle` 目录作为更新链路的唯一审核账本：
 
-## 1. 生成候选草稿
+- `candidates.json`：自动发现、尚未作出审核决定的候选。
+- `reviewed.json`：已允许发布的记录，保留采集批次、来源、审核人、审核时间和归口依据。
+- `rejected.json`：已驳回记录，保留审核人、时间和驳回原因，避免重复采集。
+- `source-health.json`：官方来源最近检测时间、可用状态和最新已知政策日期。
+
+`policy-reviewed.js` 和 `policy-governance.js` 是供静态页面加载的生成文件，不应直接编辑。历史 `policy-data.js`、`policy-supplement.js` 仅作为 P1 迁移输入保留。
+
+P2 增加 `policy-lifecycle/materials.json`，用于保存政策解读、统计、公示和征求意见资料；这些资料由 `policy-materials.js` 单独加载，不计入正式政策数量。
+
+## 2. 发现候选
 
 ```powershell
 node tools/update-policies.mjs --draft --max=8
+node tools/generate-review-queue.mjs
 ```
 
-脚本会读取 `policy-update-seeds.json` 中的主题种子，到中国政府网相关搜索页抓取候选政策链接，抽取标题、日期、发文机关、摘要和链接，并按种子给出候选司局/处室。
+更新脚本优先使用国家医保局、国家疾控局来源适配器，同时保留国务院政策检索与主题种子作为补充。每个候选使用官方 URL、文号和标题生成稳定 ID，并按 ID、URL、文号、标题去重。
 
-生成结果写入：
+运行状态：
 
-```text
-policy-auto-draft.js
-```
+- `completed_with_candidates`：发现新候选并追加到候选层。
+- `no_new_policy`：至少一个来源成功，但没有新候选；现有审核队列不会被清空。
+- `source_failure`：所有来源失败；正式库与候选队列均保持不变。
+- `deadline_reached`：达到时限；正式库与候选队列均保持不变。
 
-同时会生成运行日志：
+## 3. 审核候选
 
-```text
-policy-update-log.json
-```
+审核前检查标题、文号、官方原文、发文机关、摘要、司局和处室归口。
 
-日志会记录每个种子词访问了哪些搜索页和栏目页、命中多少链接、去重多少条，以及网络或解析失败原因。如果日志里出现 `fetch failed`，通常表示当前运行环境无法访问外网；换到可联网环境运行同一命令即可。
-
-## 2. 人工审核归口
-
-逐条检查 `policy-auto-draft.js`。只有审核通过的候选才应复制或合并到 `policy-supplement.js`：
-
-- `title` 是否为具体政策文件。
-- `url` 是否为国务院政策库、部委官网或官方 PDF。
-- `topic` 是否对应正确司局。
-- `secondary` 是否对应正确处室或业务处室。
-- `agency` 是否与发文机关一致。
-- `reviewStatus` 审核后可改为 `已审核`。
-
-司局处室口径以页面“机构分类依据”中的官方链接为准。
-
-## 3. 审核旧数据规则归口
-
-旧基础库中仍有一批政策由规则自动归口。可运行：
+通过：
 
 ```powershell
-node tools/generate-assignment-audit.mjs
+node tools/review-candidates.mjs --approve=<候选ID> --reviewer=<姓名> --basis=<归口依据>
 ```
 
-生成：
-
-```text
-policy-assignment-audit.csv
-```
-
-该表列出所有 `规则归口` 文件，并预留“审核状态、建议司局、建议处室”字段。审核后可把确认无误的归口补写到 `policy-supplement.js` 或后续拆分出的人工归口表中。
-
-## 4. 数据质量校验
-
-发布前运行：
+如需调整建议归口，可附加：
 
 ```powershell
+--topic=<司局ID> --secondary=<处室名称>
+```
+
+驳回：
+
+```powershell
+node tools/review-candidates.mjs --reject=<候选ID> --reviewer=<姓名> --reason=<驳回原因>
+```
+
+审核命令会在一次操作中把记录从 candidates 移动至 reviewed 或 rejected；缺少审核人、归口依据或驳回原因时拒绝执行。
+
+## 4. 构建与发布校验
+
+```powershell
+node tools/build-policy-artifacts.mjs
+node tools/generate-review-queue.mjs
+node tools/test-policy-update.mjs
 node tools/verify-policy-site.mjs
 ```
 
-该脚本会加载页面真实数据，检查是否仍有解读页、图表页、新闻化页面、数字发文机关或把“官网/中国政府网”误当作发文机关的记录进入展示库。每日自动更新工作流也会执行该校验，确保政策清单只展示具体政策文件。
+质量门禁检查三层结构、审核字段、官方 HTTPS 链接、重复 ID、待审核数据泄漏、空摘要、非法机关、列表页链接和无效归口。历史重复 URL 作为警告继续进入优先复核清单。
 
-## 5. 合并进补充库
+P2 还检查文号、联合发文机关、资料类型、效力对象和关系数组五组核心结构化字段，整体完整率不得低于 95%。效力状态分为现行有效、尚未施行、已废止、已失效、征求意见、待核验和不适用；机器提取结果必须保留依据与核验状态。
 
-审核无误后，可手工复制到 `policy-supplement.js`，或运行：
+## 5. Pull Request 流程
+
+每日 GitHub Actions 在 `automation/policy-candidates` 分支生成或更新候选审核 Pull Request，不再直接向主分支提交。Pull Request 触发独立的 `Policy quality gate`，重新生成页面数据并运行全部质量测试。
+
+人工审核候选、执行构建并通过门禁后才能合并。页面展示“数据更新至”“最近人工核验”“待审核数量”和每个官方来源的健康状态。
+
+## 6. 历史归口抽检
 
 ```powershell
-node tools/update-policies.mjs --apply --max=8
+node tools/generate-assignment-audit.mjs
+node tools/generate-priority-review.mjs --max=50
 ```
 
-建议先使用 `--draft`，确认无误后再合并。合并后刷新 `index.html`，页面会自动去重并重新归口。
+P1 迁移时，原有人工核验记录标记为 `approved`；历史规则归口标记为 `legacy_imported`，明确表示其通过发布质量门禁但仍需按优先清单抽检，不冒充人工复核。
 
-## 6. 关键词连续性研究
+## 7. P2 结构化与资料分库
 
-页面中的“关键词连续性”模块会在完整政策库中搜索标题、摘要、关键词、发文机关、司局和处室。
+一次性迁移或规则升级后运行：
 
-例如输入：
+```powershell
+node tools/enrich-p2-data.mjs
+node tools/build-policy-artifacts.mjs
+node tools/verify-policy-site.mjs
+```
 
-- `护理`
-- `医保目录`
-- `医养结合`
-- `基层`
-- `飞行检查`
-
-即可看到对应文件在 2016-2026 年之间的数量变化、归口处室分布和具体政策清单。
+`enrich-p2-data.mjs` 会提取文号、拆分联合发文机关、识别明确施行日期，并从摘要中提取废止、修订和沿用关系。只有能够从库内唯一关联的废止关系才会交叉更新旧文件状态；其余效力状态保持“待核验”。
