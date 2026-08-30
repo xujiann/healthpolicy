@@ -140,6 +140,12 @@ for (const requiredAsset of ["policy-reviewed.js", "policy-materials.js", "polic
   }
 }
 
+const indexHtml = await fs.readFile(path.join(root, "index.html"), "utf8");
+if (!indexHtml.includes('href="policy.html"') || indexHtml.includes("xujiann.github.io/health-policy/policy.html")) {
+  console.error("index.html 的政策汇总入口未指向当前站点 policy.html");
+  process.exitCode = 1;
+}
+
 function compactPolicies(policies) {
   return policies.map((policy) => ({
     id: policy.id,
