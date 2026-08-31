@@ -28,6 +28,9 @@ jobs:
       - name: Fetch policy candidates (draft only)
         run: node tools/update-policies.mjs --draft --max=8 --deadline-ms=420000
 
+      - name: Rotate official link health checks
+        run: node tools/check-policy-links.mjs --max=40 --concurrency=8 --timeout-ms=8000
+
       - name: Build reviewed data and review queue
         run: |
           node tools/build-policy-artifacts.mjs
@@ -45,14 +48,16 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add policy-update-log.json policy-lifecycle/candidates.json policy-lifecycle/source-health.json policy-governance.js policy-review-queue.md
+          git add policy-update-log.json policy-lifecycle/candidates.json policy-lifecycle/source-health.json policy-lifecycle/link-health.json policy-governance.js policy-review-queue.md
           if git diff --cached --quiet; then
             echo "No candidate updates."
           else
-            git fetch origin automation/policy-candidates || true
+            git fetch origin automation/policy-candidates:refs/remotes/origin/automation/policy-candidates || true
             git commit -m "Daily policy candidate review"
             git push origin HEAD:automation/policy-candidates --force-with-lease
-            if ! gh pr view automation/policy-candidates --json number >/dev/null 2>&1; then
+            if gh pr view automation/policy-candidates --json number >/dev/null 2>&1; then
+              echo "Candidate review pull request updated."
+            else
               gh pr create --base "${GITHUB_REF_NAME}" --head automation/policy-candidates --title "每日政策候选审核" --body-file policy-review-queue.md
             fi
           fi

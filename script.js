@@ -394,6 +394,8 @@ const els = {
   governanceDataThrough: document.querySelector("#governanceDataThrough"),
   governanceReviewedAt: document.querySelector("#governanceReviewedAt"),
   governanceCandidateCount: document.querySelector("#governanceCandidateCount"),
+  observabilityUpdated: document.querySelector("#observabilityUpdated"),
+  observabilityMetrics: document.querySelector("#observabilityMetrics"),
   sourceHealthList: document.querySelector("#sourceHealthList"),
   filterCount: document.querySelector("#filterCount"),
   mapStatus: document.querySelector("#mapStatus"),
@@ -574,6 +576,7 @@ function renderGovernanceStatus(fallbackDate) {
     const count = governance?.counts?.candidates || 0;
     els.governanceCandidateCount.textContent = `${count} 条待审核`;
   }
+  renderObservabilityMetrics(governance);
   if (!els.sourceHealthList) return;
   const sources = governance?.sourceHealth?.sources || [];
   const statusLabels = {
@@ -597,6 +600,56 @@ function renderGovernanceStatus(fallbackDate) {
       <a href="${source.policyList || source.homepage}" target="_blank" rel="noreferrer">查看官方政策源</a>
     </article>
   `).join("") || '<p class="empty-note">暂无来源健康记录。</p>';
+}
+
+function renderObservabilityMetrics(governance) {
+  if (!els.observabilityMetrics) return;
+  const metrics = governance?.p3;
+  const link = metrics?.linkHealth || {};
+  const collection = metrics?.collection || {};
+  const review = metrics?.review || {};
+  const cards = [
+    {
+      value: formatPercent(link.availabilityRate),
+      label: "官方链接可达率",
+      detail: `${link.reachable || 0}/${link.decisive || 0} 条有明确结果的链接可达${link.inconclusive ? `，${link.inconclusive} 条待复测` : ""}${link.unchecked ? `，${link.unchecked} 条待轮检` : ""}`,
+      tone: Number(link.unavailable || 0) > 0 || Number(link.inconclusive || 0) > 0 ? "warning" : "healthy",
+      href: "policy-lifecycle/link-health.json"
+    },
+    {
+      value: formatPercent(collection.successRate),
+      label: "最近采集成功率",
+      detail: `${collection.succeeded || 0}/${collection.attempted || 0} 个请求成功${collection.generatedAt ? ` · ${String(collection.generatedAt).slice(0, 10)}` : ""}`,
+      tone: Number(collection.failed || 0) > 0 ? "warning" : "healthy"
+    },
+    {
+      value: formatPercent(review.approvalRate),
+      label: "候选审核通过率",
+      detail: `${review.approved || 0} 条通过 / ${review.decided || 0} 条已决`,
+      tone: "neutral"
+    },
+    {
+      value: String(review.backlog ?? governance?.counts?.candidates ?? 0),
+      label: "审核积压",
+      detail: "待处理候选记录",
+      tone: Number(review.backlog || 0) > 0 ? "warning" : "healthy",
+      href: "policy-review-queue.md"
+    }
+  ];
+  const checkedAt = link.generatedAt || collection.generatedAt || governance?.generatedAt;
+  if (els.observabilityUpdated) {
+    els.observabilityUpdated.textContent = `指标更新：${checkedAt ? String(checkedAt).slice(0, 10) : "待检测"}；链接被官方站点拦截时记为“可达但受限”，不误判为失效。`;
+  }
+  els.observabilityMetrics.innerHTML = cards.map((card) => {
+    const body = `<strong>${card.value}</strong><span>${card.label}</span><em>${card.detail}</em>`;
+    return card.href
+      ? `<a class="observability-card observability-card--${card.tone}" href="${card.href}">${body}</a>`
+      : `<article class="observability-card observability-card--${card.tone}">${body}</article>`;
+  }).join("");
+}
+
+function formatPercent(value) {
+  return value !== null && value !== undefined && value !== "" && Number.isFinite(Number(value)) ? `${Number(value).toFixed(1)}%` : "-";
 }
 
 function getFilteredPolicies() {

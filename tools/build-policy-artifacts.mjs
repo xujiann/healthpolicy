@@ -53,6 +53,18 @@ try {
 } catch {
   // Source health is allowed to be absent during the initial migration.
 }
+let linkHealth = { generatedAt: null, overallStatus: "unknown", summary: { total: 0, checked: 0, decisive: 0, reachable: 0, unavailable: 0, inconclusive: 0, unchecked: 0, coverageRate: null, availabilityRate: null }, items: [] };
+try {
+  linkHealth = JSON.parse(await fs.readFile(path.join(lifecycleDir, "link-health.json"), "utf8"));
+} catch {
+  // Link health is allowed to be absent before P3 observability is initialized.
+}
+let updateLog = { generatedAt: null, seeds: [], status: "unknown" };
+try {
+  updateLog = JSON.parse(await fs.readFile(path.join(root, "policy-update-log.json"), "utf8"));
+} catch {
+  // Collection metrics remain unknown when no run log is present.
+}
 sourceHealth.sources = (sourceHealth.sources || []).map((source) => {
   const sourcePolicies = reviewedDocuments.filter((policy) => policy.audit.sourceId === source.id);
   const sourceDates = sourcePolicies.map((policy) => policy.date).filter(Boolean).sort();
@@ -72,10 +84,16 @@ const p2FieldChecks = reviewedDocuments.flatMap((policy) => [
   Array.isArray(policy.relations)
 ]);
 const groupCount = (values) => Object.fromEntries(Object.entries(Object.groupBy(values, (value) => value)).map(([key, items]) => [key, items.length]));
+const collectionMetrics = summarizeCollectionRun(updateLog);
+const approvedDecisions = layers.reviewed.items.filter((item) => item.review.status === "approved").length;
+const rejectedDecisions = layers.rejected.items.length;
+const decidedCandidates = approvedDecisions + rejectedDecisions;
 const governance = {
   generatedAt: [
     ...Object.values(layers).map((layer) => layer.updatedAt),
-    sourceHealth.generatedAt
+    sourceHealth.generatedAt,
+    linkHealth.generatedAt,
+    updateLog.generatedAt
   ].filter(Boolean).sort().at(-1) || null,
   dataThrough: policyDates.at(-1) || null,
   lastReviewedAt: reviewDates.at(-1) || null,
@@ -95,6 +113,21 @@ const governance = {
     documentTypes: groupCount(reviewedDocuments.map((policy) => policy.documentType || "其他资料")),
     materialTypes: groupCount(relatedMaterials.map((material) => material.documentType || "其他资料"))
   },
+  p3: {
+    collection: collectionMetrics,
+    review: {
+      backlog: layers.candidates.items.length,
+      approved: approvedDecisions,
+      rejected: rejectedDecisions,
+      decided: decidedCandidates,
+      approvalRate: percentage(approvedDecisions, decidedCandidates)
+    },
+    linkHealth: {
+      generatedAt: linkHealth.generatedAt || null,
+      overallStatus: linkHealth.overallStatus || "unknown",
+      ...linkHealth.summary
+    }
+  },
   sourceHealth
 };
 await fs.writeFile(
@@ -103,3 +136,42 @@ await fs.writeFile(
   "utf8"
 );
 console.log(`Built ${reviewedDocuments.length} reviewed policies and governance metadata.`);
+
+function summarizeCollectionRun(log) {
+  const seeds = Array.isArray(log?.seeds) ? log.seeds : [];
+  let attempted = 0;
+  let succeeded = 0;
+  let failed = 0;
+  let candidatesAdded = 0;
+  for (const seed of seeds) {
+    const searched = Array.isArray(seed.searched) ? seed.searched : [];
+    const errors = new Set((seed.errors || []).map((item) => item.url));
+    const seedAttempted = Number.isFinite(seed.requests?.attempted) ? seed.requests.attempted : searched.length;
+    const seedSucceeded = Number.isFinite(seed.requests?.succeeded)
+      ? seed.requests.succeeded
+      : searched.filter((item) => item.status === "ok" || (!item.status && !errors.has(item.source))).length;
+    attempted += seedAttempted;
+    succeeded += seedSucceeded;
+    failed += Number.isFinite(seed.requests?.failed) ? seed.requests.failed : Math.max(0, seedAttempted - seedSucceeded);
+    candidatesAdded += Number(seed.added || 0);
+  }
+  if (log?.summary) {
+    attempted = Number(log.summary.attempted ?? attempted);
+    succeeded = Number(log.summary.succeeded ?? succeeded);
+    failed = Number(log.summary.failed ?? failed);
+    candidatesAdded = Number(log.summary.candidates ?? candidatesAdded);
+  }
+  return {
+    generatedAt: log?.generatedAt || null,
+    status: log?.status || "unknown",
+    attempted,
+    succeeded,
+    failed,
+    candidatesAdded,
+    successRate: percentage(succeeded, attempted)
+  };
+}
+
+function percentage(value, total) {
+  return total ? Number((value / total * 100).toFixed(1)) : null;
+}

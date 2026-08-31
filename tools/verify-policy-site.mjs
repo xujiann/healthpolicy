@@ -3,8 +3,11 @@ import path from "node:path";
 import vm from "node:vm";
 import { duplicateValues, normalizePolicyUrl } from "./policy-quality.mjs";
 import { validateLayerSnapshot } from "./lifecycle-core.mjs";
+import { validateLinkHealthReport } from "./link-health.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
+const linkHealthReport = JSON.parse(await fs.readFile(path.join(root, "policy-lifecycle", "link-health.json"), "utf8"));
+const linkHealthErrors = validateLinkHealthReport(linkHealthReport);
 const context = createBrowserLikeContext();
 vm.createContext(context);
 
@@ -93,6 +96,11 @@ if (!context.document.querySelector("#materialSummary").textContent.includes(exp
 }
 if (!context.document.querySelector("#taskBoard").innerHTML.includes("证据覆盖")) p2UiErrors.push("十五五任务未渲染证据覆盖率");
 if (!context.document.querySelector("#validityFilter").innerHTML.includes("已废止")) p2UiErrors.push("页面未提供效力状态筛选");
+const p3UiErrors = [];
+if (!context.document.querySelector("#observabilityMetrics").innerHTML.includes("官方链接可达率")) p3UiErrors.push("页面未渲染官方链接可达率");
+if (!context.document.querySelector("#observabilityMetrics").innerHTML.includes("最近采集成功率")) p3UiErrors.push("页面未渲染采集成功率");
+if (!context.document.querySelector("#observabilityMetrics").innerHTML.includes("审核积压")) p3UiErrors.push("页面未渲染审核积压指标");
+if (!context.governance?.p3?.linkHealth) p3UiErrors.push("治理数据缺少 P3 链接健康指标");
 const errors = {
   lifecycleErrors,
   duplicateIds,
@@ -106,6 +114,8 @@ const errors = {
   invalidRelations,
   p2CompletenessErrors,
   p2UiErrors,
+  linkHealthErrors,
+  p3UiErrors,
   invalidMaterials: invalidMaterials.map((material) => ({ id: material.id, title: material.title, url: material.url, documentType: material.documentType }))
 };
 const errorCount = Object.values(errors).reduce((count, items) => count + items.length, 0);

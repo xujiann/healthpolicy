@@ -92,3 +92,14 @@ node tools/verify-policy-site.mjs
 ```
 
 `enrich-p2-data.mjs` 会提取文号、拆分联合发文机关、识别明确施行日期，并从摘要中提取废止、修订和沿用关系。只有能够从库内唯一关联的废止关系才会交叉更新旧文件状态；其余效力状态保持“待核验”。
+
+## 8. P3 链接轮检与运行指标
+
+```powershell
+node tools/check-policy-links.mjs --max=40 --concurrency=8 --timeout-ms=8000
+node tools/build-policy-artifacts.mjs
+```
+
+链接检查按游标分批轮换，结果写入 `policy-lifecycle/link-health.json`。`healthy` 表示 HTTP 明确可达，`blocked` 表示官方站点返回访问限制但服务可达，`unavailable` 表示明确的无效响应，`inconclusive` 表示超时等暂时无法判断的结果；后两者不会自动修改正式政策记录。
+
+治理页面展示链接可达率、最近采集成功率、候选审核通过率和审核积压。每日候选工作流同时更新链接报告，并通过 `automation/policy-candidates` 分支维护候选审核 Pull Request。

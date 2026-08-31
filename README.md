@@ -19,6 +19,7 @@
 - 文号、效力状态、施行日期、联合发文机关和废止/修订关系筛选
 - 正式政策与政策解读资料分库展示
 - “十五五”任务政策证据覆盖率、缺口及最近更新时间
+- 官方链接分批轮检、采集成功率、候选审核通过率和审核积压指标
 - 卫生健康信息平台模拟导航、数据治理状态和政策知识库模块入口
 - 手机优先的三项目总入口，连接政策汇总、数据可视化和健康平台
 
@@ -81,6 +82,15 @@ node tools/test-policy-update.mjs
 node tools/build-policy-artifacts.mjs
 node tools/verify-policy-site.mjs
 ```
+
+分批检查官方链接并刷新治理指标：
+
+```powershell
+node tools/check-policy-links.mjs --max=40 --concurrency=8 --timeout-ms=8000
+node tools/build-policy-artifacts.mjs
+```
+
+轮检报告位于 `policy-lifecycle/link-health.json`。超时或站点拦截会单列为待复测，不会直接判定为失效链接。
 
 P2 结构化字段由 `tools/policy-schema.mjs` 统一生成和校验。当前机器提取无法确认效力状态的历史文件显示为“待核验”，不会自动标记为现行有效。
 

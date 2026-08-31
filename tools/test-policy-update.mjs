@@ -26,6 +26,7 @@ import {
   splitAgencies,
   validateP2PolicyFields
 } from "./policy-schema.mjs";
+import { classifyLinkResult, summarizeLinkHealth, validateLinkHealthReport } from "./link-health.mjs";
 
 const existing = {
   id: "supp-001",
@@ -113,5 +114,23 @@ assert.equal(deriveValidity({ title: "测试", summary: "自2026年9月1日起�
 assert.equal(inferPolicyRelations({ summary: "新版自2026年1月1日起执行，《旧版目录》同时废止。" })[0].type, "废止");
 const enriched = enrichPolicySchema({ ...fresh, summary: "自2026年1月2日起施行。" }, { enrichedAt: "2026-08-19T11:00:00+08:00" });
 assert.deepEqual(validateP2PolicyFields(enriched), []);
+
+assert.equal(classifyLinkResult({ httpStatus: 200 }), "healthy");
+assert.equal(classifyLinkResult({ httpStatus: 403 }), "blocked");
+assert.equal(classifyLinkResult({ httpStatus: 404 }), "unavailable");
+assert.equal(classifyLinkResult({ error: "TimeoutError" }), "inconclusive");
+const linkSummary = summarizeLinkHealth([
+  { status: "healthy" },
+  { status: "blocked" },
+  { status: "unavailable" },
+  { status: "inconclusive" },
+  { status: "not_checked" }
+]);
+assert.equal(linkSummary.coverageRate, 80);
+assert.equal(linkSummary.availabilityRate, 66.7);
+assert.deepEqual(validateLinkHealthReport({
+  schemaVersion: 1,
+  items: [{ url: existing.url, status: "healthy", recordIds: [existing.id] }]
+}), []);
 
 console.log("Policy update quality tests passed.");

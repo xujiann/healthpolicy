@@ -1,6 +1,6 @@
 // 由 tools/build-policy-artifacts.mjs 生成，请勿直接编辑。
 const policyGovernance = {
-  "generatedAt": "2026-08-25T18:00:00+08:00",
+  "generatedAt": "2026-08-31T02:08:14.849Z",
   "dataThrough": "2026-08-19",
   "lastReviewedAt": "2026-08-25T18:00:00+08:00",
   "counts": {
@@ -26,6 +26,39 @@ const policyGovernance = {
     },
     "materialTypes": {
       "政策解读": 6
+    }
+  },
+  "p3": {
+    "collection": {
+      "generatedAt": "2026-08-18T17:55:49.882Z",
+      "status": "unknown",
+      "attempted": 26,
+      "succeeded": 11,
+      "failed": 15,
+      "candidatesAdded": 0,
+      "successRate": 42.3
+    },
+    "review": {
+      "backlog": 0,
+      "approved": 18,
+      "rejected": 0,
+      "decided": 18,
+      "approvalRate": 100
+    },
+    "linkHealth": {
+      "generatedAt": "2026-08-31T02:08:14.849Z",
+      "overallStatus": "partial",
+      "total": 352,
+      "checked": 80,
+      "decisive": 62,
+      "reachable": 62,
+      "healthy": 62,
+      "blocked": 0,
+      "unavailable": 0,
+      "inconclusive": 18,
+      "unchecked": 272,
+      "coverageRate": 22.7,
+      "availabilityRate": 100
     }
   },
   "sourceHealth": {
