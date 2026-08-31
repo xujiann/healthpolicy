@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T02:08:14.849Z",
+  "generatedAt": "2026-08-31T02:14:21.263Z",
   "checkedThisRun": 40,
-  "nextCursor": 80,
+  "nextCursor": 120,
   "overallStatus": "partial",
   "summary": {
     "total": 352,
-    "checked": 80,
-    "decisive": 62,
-    "reachable": 62,
-    "healthy": 62,
+    "checked": 120,
+    "decisive": 102,
+    "reachable": 102,
+    "healthy": 102,
     "blocked": 0,
     "unavailable": 0,
     "inconclusive": 18,
-    "unchecked": 272,
-    "coverageRate": 22.7,
+    "unchecked": 232,
+    "coverageRate": 34.1,
     "availabilityRate": 100
   },
   "items": [
@@ -1229,10 +1229,10 @@
         "《关于印发麻疹风疹防控方案（2024年版）的通知》"
       ],
       "latestDate": "2024-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 587,
       "error": ""
     },
     {
@@ -1244,10 +1244,10 @@
         "《国家卫生健康委 民政部 国家医保局 国家中医药局 国家疾控局关于促进医养结合服务高质量发展的指导意见》"
       ],
       "latestDate": "2024-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 674,
       "error": ""
     },
     {
@@ -1261,10 +1261,10 @@
         "《关于印发〈职业病分类和目录〉的通知》"
       ],
       "latestDate": "2024-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 467,
       "error": ""
     },
     {
@@ -1276,10 +1276,10 @@
         "《国家中医药管理局关于印发《中医医院信息与数字化建设规范（2024版）》的通知》"
       ],
       "latestDate": "2024-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 547,
       "error": ""
     },
     {
@@ -1291,10 +1291,10 @@
         "《关于推介2024年度全国农村公共服务典型案例的通知》"
       ],
       "latestDate": "2024-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 523,
       "error": ""
     },
     {
@@ -1306,10 +1306,10 @@
         "《关于国家免疫规划百白破疫苗和白破疫苗免疫程序调整相关工作的通知》"
       ],
       "latestDate": "2024-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 534,
       "error": ""
     },
     {
@@ -1321,10 +1321,10 @@
         "《国家金融监督管理总局关于印发银行保险机构数据安全管理办法的通知》"
       ],
       "latestDate": "2024-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 451,
       "error": ""
     },
     {
@@ -1336,10 +1336,10 @@
         "《2024年版国家医保药品目录出炉，新增91种药品——让参保人用上更多新药好药》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 510,
       "error": ""
     },
     {
@@ -1351,10 +1351,10 @@
         "《关于印发紧密型县域医疗卫生共同体监测指标体系的通知》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 539,
       "error": ""
     },
     {
@@ -1366,10 +1366,10 @@
         "《国家卫生健康委办公厅关于提升老年医学医疗服务能力的通知》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 569,
       "error": ""
     },
     {
@@ -1381,10 +1381,10 @@
         "《关于印发《关于进一步促进养老服务消费 提升老年人生活品质的若干措施》的通知》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 520,
       "error": ""
     },
     {
@@ -1397,10 +1397,10 @@
         "《国家卫生健康委办公厅关于印发继续医学教育学分管理办法（试行）的通知》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 518,
       "error": ""
     },
     {
@@ -1412,10 +1412,10 @@
         "《教育部办公厅 国家卫生健康委办公厅 国家疾控局综合司关于切实抓牢幼儿园和小学近视防控关键阶段防控工作的通知》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 566,
       "error": ""
     },
     {
@@ -1427,10 +1427,10 @@
         "《商务部关于印发《支持苏州工业园区深化开放创新综合试验的若干措施》的通知》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 492,
       "error": ""
     },
     {
@@ -1442,10 +1442,10 @@
         "《教育部办公厅关于印发《中小学校园食品安全和膳食经费管理工作指引》的通知》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 512,
       "error": ""
     },
     {
@@ -1457,10 +1457,10 @@
         "《关于加强首诊和转诊服务 提升医疗服务连续性的通知》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 631,
       "error": ""
     },
     {
@@ -1472,10 +1472,10 @@
         "《关于进一步推进医疗机构检查检验结果互认的指导意见》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 565,
       "error": ""
     },
     {
@@ -1487,10 +1487,10 @@
         "《国家医保局 人力资源社会保障部关于印发《国家基本医疗保险、工伤保险和生育保险药品目录（2024年）》的通知》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 559,
       "error": ""
     },
     {
@@ -1502,10 +1502,10 @@
         "《关于印发独资医院领域扩大开放试点工作方案的通知》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 506,
       "error": ""
     },
     {
@@ -1517,10 +1517,10 @@
         "《国家疾控局综合司关于印发学校等重点场所诺如病毒感染防控消毒技术指南的通知》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 589,
       "error": ""
     },
     {
@@ -1532,10 +1532,10 @@
         "《财政部 国家医保局关于提前下达2025年中央财政城乡居民基本医疗保险补助预算的通知》"
       ],
       "latestDate": "2024-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 498,
       "error": ""
     },
     {
@@ -1547,10 +1547,10 @@
         "《关于印发医学人文关怀提升行动方案（2024-2027年）的通知》"
       ],
       "latestDate": "2024-10",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 583,
       "error": ""
     },
     {
@@ -1562,10 +1562,10 @@
         "《国家医疗保障局办公室关于规范医保药品外配处方管理的通知》"
       ],
       "latestDate": "2024-10",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 511,
       "error": ""
     },
     {
@@ -1577,10 +1577,10 @@
         "《国家卫生健康委办公厅关于开展2024年世界卒中日主题宣传活动的通知》"
       ],
       "latestDate": "2024-10",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 602,
       "error": ""
     },
     {
@@ -1592,10 +1592,10 @@
         "《国家卫生健康委办公厅关于印发门（急）诊诊疗信息页质量管理规定（试行）的通知》"
       ],
       "latestDate": "2024-09",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 582,
       "error": ""
     },
     {
@@ -1607,10 +1607,10 @@
         "《关于开展2024年“服务百姓健康行动”全国大型义诊活动周的通知》"
       ],
       "latestDate": "2024-09",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 548,
       "error": ""
     },
     {
@@ -1622,10 +1622,10 @@
         "《国家卫生健康委办公厅关于印发慢性阻塞性肺疾病患者健康服务规范（试行）的通知》"
       ],
       "latestDate": "2024-09",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 508,
       "error": ""
     },
     {
@@ -1637,10 +1637,10 @@
         "《商务部等11部门办公厅（室）关于公布城市一刻钟便民生活圈第四批全国试点及首批全域推进先行区试点名单的通知》"
       ],
       "latestDate": "2024-09",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 503,
       "error": ""
     },
     {
@@ -1652,10 +1652,10 @@
         "《关于印发疾病预防控制机构食品安全和营养健康工作细则的通知》"
       ],
       "latestDate": "2024-09",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 585,
       "error": ""
     },
     {
@@ -1668,10 +1668,10 @@
         "《关于做好2024年基本公共卫生服务工作的通知》"
       ],
       "latestDate": "2024-09",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 575,
       "error": ""
     },
     {
@@ -1683,10 +1683,10 @@
         "《关于印发综合医院中医药工作指南（2024版）的通知》"
       ],
       "latestDate": "2024-09",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 510,
       "error": ""
     },
     {
@@ -1698,10 +1698,10 @@
         "《国家卫生健康委办公厅关于进一步推进临床营养工作的通知》"
       ],
       "latestDate": "2024-09",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 512,
       "error": ""
     },
     {
@@ -1713,10 +1713,10 @@
         "《关于印发医疗卫生机构开展研究者发起的临床研究管理办法的通知》"
       ],
       "latestDate": "2024-09",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 549,
       "error": ""
     },
     {
@@ -1728,10 +1728,10 @@
         "《国家医疗保障局办公室关于印发按病组（DRG）和病种分值（DIP）付费2.0版分组方案并深入推进相关工作的通知》"
       ],
       "latestDate": "2024-07",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 491,
       "error": ""
     },
     {
@@ -1743,10 +1743,10 @@
         "《国家卫生健康委办公厅关于印发急诊医学等6个专业医疗质量控制指标（2024年版）的通知》"
       ],
       "latestDate": "2024-05",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 500,
       "error": ""
     },
     {
@@ -1758,10 +1758,10 @@
         "《国家医疗保障局办公室关于加强区域协同 做好2024年医药集中采购提质扩面的通知》"
       ],
       "latestDate": "2024-05",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 477,
       "error": ""
     },
     {
@@ -1773,10 +1773,10 @@
         "《职业病危害项目申报扩面行动（2024—2025年）工作方案》等职业病防治三项行动文件"
       ],
       "latestDate": "2024-04",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 576,
       "error": ""
     },
     {
@@ -1788,10 +1788,10 @@
         "《国家医保局 财政部 国家卫生健康委 国家中医药局关于开展2024年医疗保障基金飞行检查工作的通知》"
       ],
       "latestDate": "2024-04",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 512,
       "error": ""
     },
     {
@@ -1803,10 +1803,10 @@
         "《2024年中医医政工作要点》"
       ],
       "latestDate": "2024-04",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 523,
       "error": ""
     },
     {
@@ -1818,10 +1818,10 @@
         "《2024年国家医疗质量安全改进目标》"
       ],
       "latestDate": "2024-02",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-08-31T02:14:21.263Z",
+      "responseMs": 663,
       "error": ""
     },
     {

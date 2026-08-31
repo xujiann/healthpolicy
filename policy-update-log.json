@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T17:55:49.882Z",
+  "generatedAt": "2026-08-31T02:13:46.887Z",
   "manualReview": {
     "reviewedAt": "2026-08-25",
     "status": "completed",
@@ -10,11 +10,70 @@
     "newDocumentsAdded": 8,
     "notes": "截至2026-08-25复核国家医保局、国家卫生健康委和国家疾控局官方公开来源；本轮新增国家医保局《全民医疗保障“十五五”规划》1份正式政策，并将官方解读纳入关联资料分库。8月20日至25日的动态、政策解读、公示、征集、建议答复和统计数据未作为正式政策入库。"
   },
-  "mode": "apply",
+  "mode": "draft",
   "maxPerSeed": 8,
   "seedLimit": 9,
+  "adapters": [
+    "nhsa",
+    "ndcpa"
+  ],
   "deadlineMs": 420000,
   "seeds": [
+    {
+      "name": "官方来源：国家医疗保障局",
+      "query": "",
+      "searched": [
+        {
+          "type": "source",
+          "source": "https://www.nhsa.gov.cn/col/col104/index.html",
+          "hits": 45,
+          "status": "ok"
+        }
+      ],
+      "requests": {
+        "attempted": 1,
+        "succeeded": 1,
+        "failed": 0
+      },
+      "candidates": 8,
+      "added": 2,
+      "skippedExisting": 6,
+      "skippedRejected": 0,
+      "skippedDuplicate": 0,
+      "skippedNonPolicy": 0,
+      "duplicateReasons": {},
+      "errors": []
+    },
+    {
+      "name": "官方来源：国家疾病预防控制局",
+      "query": "",
+      "searched": [
+        {
+          "type": "source",
+          "source": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
+          "hits": 1,
+          "status": "ok"
+        }
+      ],
+      "requests": {
+        "attempted": 1,
+        "succeeded": 1,
+        "failed": 0
+      },
+      "candidates": 1,
+      "added": 0,
+      "skippedExisting": 0,
+      "skippedRejected": 0,
+      "skippedDuplicate": 0,
+      "skippedNonPolicy": 1,
+      "duplicateReasons": {},
+      "errors": [
+        {
+          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100071/common/content/content_1656508289844580352.html",
+          "error": "跳过非具体政策文件页面"
+        }
+      ]
+    },
     {
       "name": "护理与康复",
       "query": "国家卫生健康委 护理 康复 安宁疗护 政策 通知 site:www.gov.cn/zhengce",
@@ -58,6 +117,7 @@
       "candidates": 0,
       "added": 0,
       "skippedExisting": 0,
+      "skippedRejected": 0,
       "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
       "duplicateReasons": {},
@@ -90,25 +150,60 @@
       "searched": [
         {
           "type": "search",
-          "source": "国家卫生健康委 医疗质量 医疗安全 质控指标 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E5%8C%BB%E7%96%97%E8%B4%A8%E9%87%8F%20%E5%8C%BB%E7%96%97%E5%AE%89%E5%85%A8%20%E8%B4%A8%E6%8E%A7%E6%8C%87%E6%A0%87%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E5%8C%BB%E7%96%97%E8%B4%A8%E9%87%8F%20%E5%8C%BB%E7%96%97%E5%AE%89%E5%85%A8%20%E8%B4%A8%E6%8E%A7%E6%8C%87%E6%A0%87%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E5%8C%BB%E7%96%97%E8%B4%A8%E9%87%8F%20%E5%8C%BB%E7%96%97%E5%AE%89%E5%85%A8%20%E8%B4%A8%E6%8E%A7%E6%8C%87%E6%A0%87%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "hits": 0
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 0,
+          "status": "failed"
         }
       ],
+      "requests": {
+        "attempted": 5,
+        "succeeded": 0,
+        "failed": 5
+      },
       "candidates": 0,
       "added": 0,
       "skippedExisting": 0,
+      "skippedRejected": 0,
+      "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
+      "duplicateReasons": {},
       "errors": [
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E5%8C%BB%E7%96%97%E8%B4%A8%E9%87%8F%20%E5%8C%BB%E7%96%97%E5%AE%89%E5%85%A8%20%E8%B4%A8%E6%8E%A7%E6%8C%87%E6%A0%87%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E5%8C%BB%E7%96%97%E8%B4%A8%E9%87%8F%20%E5%8C%BB%E7%96%97%E5%AE%89%E5%85%A8%20%E8%B4%A8%E6%8E%A7%E6%8C%87%E6%A0%87%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E5%8C%BB%E7%96%97%E8%B4%A8%E9%87%8F%20%E5%8C%BB%E7%96%97%E5%AE%89%E5%85%A8%20%E8%B4%A8%E6%8E%A7%E6%8C%87%E6%A0%87%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
           "error": "412 Precondition Failed"
@@ -125,25 +220,60 @@
       "searched": [
         {
           "type": "search",
-          "source": "国家卫生健康委 基层卫生 家庭医生 基本公共卫生 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E5%9F%BA%E5%B1%82%E5%8D%AB%E7%94%9F%20%E5%AE%B6%E5%BA%AD%E5%8C%BB%E7%94%9F%20%E5%9F%BA%E6%9C%AC%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E5%9F%BA%E5%B1%82%E5%8D%AB%E7%94%9F%20%E5%AE%B6%E5%BA%AD%E5%8C%BB%E7%94%9F%20%E5%9F%BA%E6%9C%AC%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E5%9F%BA%E5%B1%82%E5%8D%AB%E7%94%9F%20%E5%AE%B6%E5%BA%AD%E5%8C%BB%E7%94%9F%20%E5%9F%BA%E6%9C%AC%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.nhc.gov.cn/jws/s7874/new_list.shtml",
-          "hits": 0
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 0,
+          "status": "failed"
         }
       ],
+      "requests": {
+        "attempted": 5,
+        "succeeded": 0,
+        "failed": 5
+      },
       "candidates": 0,
       "added": 0,
       "skippedExisting": 0,
+      "skippedRejected": 0,
+      "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
+      "duplicateReasons": {},
       "errors": [
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E5%9F%BA%E5%B1%82%E5%8D%AB%E7%94%9F%20%E5%AE%B6%E5%BA%AD%E5%8C%BB%E7%94%9F%20%E5%9F%BA%E6%9C%AC%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E5%9F%BA%E5%B1%82%E5%8D%AB%E7%94%9F%20%E5%AE%B6%E5%BA%AD%E5%8C%BB%E7%94%9F%20%E5%9F%BA%E6%9C%AC%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E5%9F%BA%E5%B1%82%E5%8D%AB%E7%94%9F%20%E5%AE%B6%E5%BA%AD%E5%8C%BB%E7%94%9F%20%E5%9F%BA%E6%9C%AC%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
         {
           "url": "https://www.nhc.gov.cn/jws/s7874/new_list.shtml",
           "error": "412 Precondition Failed"
@@ -160,20 +290,57 @@
       "searched": [
         {
           "type": "search",
-          "source": "国家医保局 医保目录 支付方式 DRG DIP 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E7%9B%AE%E5%BD%95%20%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F%20DRG%20DIP%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E7%9B%AE%E5%BD%95%20%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F%20DRG%20DIP%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E7%9B%AE%E5%BD%95%20%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F%20DRG%20DIP%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 45
+          "hits": 45,
+          "status": "ok"
         }
       ],
+      "requests": {
+        "attempted": 4,
+        "succeeded": 1,
+        "failed": 3
+      },
       "candidates": 8,
       "added": 0,
-      "skippedExisting": 8,
+      "skippedExisting": 6,
+      "skippedRejected": 0,
+      "skippedDuplicate": 2,
       "skippedNonPolicy": 0,
-      "errors": []
+      "duplicateReasons": {
+        "id": 2
+      },
+      "errors": [
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E7%9B%AE%E5%BD%95%20%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F%20DRG%20DIP%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E7%9B%AE%E5%BD%95%20%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F%20DRG%20DIP%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E7%9B%AE%E5%BD%95%20%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F%20DRG%20DIP%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        }
+      ]
     },
     {
       "name": "价格招采",
@@ -181,20 +348,57 @@
       "searched": [
         {
           "type": "search",
-          "source": "国家医保局 医药集中采购 医疗服务价格 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E8%8D%AF%E9%9B%86%E4%B8%AD%E9%87%87%E8%B4%AD%20%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E4%BB%B7%E6%A0%BC%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E8%8D%AF%E9%9B%86%E4%B8%AD%E9%87%87%E8%B4%AD%20%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E4%BB%B7%E6%A0%BC%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E8%8D%AF%E9%9B%86%E4%B8%AD%E9%87%87%E8%B4%AD%20%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E4%BB%B7%E6%A0%BC%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 45
+          "hits": 45,
+          "status": "ok"
         }
       ],
+      "requests": {
+        "attempted": 4,
+        "succeeded": 1,
+        "failed": 3
+      },
       "candidates": 8,
       "added": 0,
-      "skippedExisting": 8,
+      "skippedExisting": 6,
+      "skippedRejected": 0,
+      "skippedDuplicate": 2,
       "skippedNonPolicy": 0,
-      "errors": []
+      "duplicateReasons": {
+        "id": 2
+      },
+      "errors": [
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E8%8D%AF%E9%9B%86%E4%B8%AD%E9%87%87%E8%B4%AD%20%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E4%BB%B7%E6%A0%BC%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E8%8D%AF%E9%9B%86%E4%B8%AD%E9%87%87%E8%B4%AD%20%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E4%BB%B7%E6%A0%BC%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E8%8D%AF%E9%9B%86%E4%B8%AD%E9%87%87%E8%B4%AD%20%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E4%BB%B7%E6%A0%BC%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        }
+      ]
     },
     {
       "name": "基金监管",
@@ -202,20 +406,57 @@
       "searched": [
         {
           "type": "search",
-          "source": "国家医保局 医保基金监管 飞行检查 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E5%9F%BA%E9%87%91%E7%9B%91%E7%AE%A1%20%E9%A3%9E%E8%A1%8C%E6%A3%80%E6%9F%A5%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E5%9F%BA%E9%87%91%E7%9B%91%E7%AE%A1%20%E9%A3%9E%E8%A1%8C%E6%A3%80%E6%9F%A5%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E5%9F%BA%E9%87%91%E7%9B%91%E7%AE%A1%20%E9%A3%9E%E8%A1%8C%E6%A3%80%E6%9F%A5%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 45
+          "hits": 45,
+          "status": "ok"
         }
       ],
+      "requests": {
+        "attempted": 4,
+        "succeeded": 1,
+        "failed": 3
+      },
       "candidates": 8,
       "added": 0,
-      "skippedExisting": 8,
+      "skippedExisting": 6,
+      "skippedRejected": 0,
+      "skippedDuplicate": 2,
       "skippedNonPolicy": 0,
-      "errors": []
+      "duplicateReasons": {
+        "id": 2
+      },
+      "errors": [
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E5%9F%BA%E9%87%91%E7%9B%91%E7%AE%A1%20%E9%A3%9E%E8%A1%8C%E6%A3%80%E6%9F%A5%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E5%9F%BA%E9%87%91%E7%9B%91%E7%AE%A1%20%E9%A3%9E%E8%A1%8C%E6%A3%80%E6%9F%A5%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E5%9F%BA%E9%87%91%E7%9B%91%E7%AE%A1%20%E9%A3%9E%E8%A1%8C%E6%A3%80%E6%9F%A5%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        }
+      ]
     },
     {
       "name": "疾控监测预警",
@@ -223,32 +464,67 @@
       "searched": [
         {
           "type": "search",
-          "source": "国家疾控局 监测预警 传染病 疫情 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E7%96%BE%E6%8E%A7%E5%B1%80%20%E7%9B%91%E6%B5%8B%E9%A2%84%E8%AD%A6%20%E4%BC%A0%E6%9F%93%E7%97%85%20%E7%96%AB%E6%83%85%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E7%96%BE%E6%8E%A7%E5%B1%80%20%E7%9B%91%E6%B5%8B%E9%A2%84%E8%AD%A6%20%E4%BC%A0%E6%9F%93%E7%97%85%20%E7%96%AB%E6%83%85%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E7%96%BE%E6%8E%A7%E5%B1%80%20%E7%9B%91%E6%B5%8B%E9%A2%84%E8%AD%A6%20%E4%BC%A0%E6%9F%93%E7%97%85%20%E7%96%AB%E6%83%85%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "hits": 0
+          "hits": 1,
+          "status": "ok"
         },
         {
           "type": "source",
           "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 0,
+          "status": "failed"
         }
       ],
-      "candidates": 0,
+      "requests": {
+        "attempted": 5,
+        "succeeded": 1,
+        "failed": 4
+      },
+      "candidates": 1,
       "added": 0,
       "skippedExisting": 0,
-      "skippedNonPolicy": 0,
+      "skippedRejected": 0,
+      "skippedDuplicate": 0,
+      "skippedNonPolicy": 1,
+      "duplicateReasons": {},
       "errors": [
         {
-          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "error": "fetch failed"
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E7%96%BE%E6%8E%A7%E5%B1%80%20%E7%9B%91%E6%B5%8B%E9%A2%84%E8%AD%A6%20%E4%BC%A0%E6%9F%93%E7%97%85%20%E7%96%AB%E6%83%85%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E7%96%BE%E6%8E%A7%E5%B1%80%20%E7%9B%91%E6%B5%8B%E9%A2%84%E8%AD%A6%20%E4%BC%A0%E6%9F%93%E7%97%85%20%E7%96%AB%E6%83%85%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E7%96%BE%E6%8E%A7%E5%B1%80%20%E7%9B%91%E6%B5%8B%E9%A2%84%E8%AD%A6%20%E4%BC%A0%E6%9F%93%E7%97%85%20%E7%96%AB%E6%83%85%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
           "error": "403 Forbidden"
+        },
+        {
+          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100071/common/content/content_1656508289844580352.html",
+          "error": "跳过非具体政策文件页面"
         }
       ]
     },
@@ -258,25 +534,60 @@
       "searched": [
         {
           "type": "search",
-          "source": "国家卫生健康委 食品安全国家标准 风险监测 评估 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E9%A3%9F%E5%93%81%E5%AE%89%E5%85%A8%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86%20%E9%A3%8E%E9%99%A9%E7%9B%91%E6%B5%8B%20%E8%AF%84%E4%BC%B0%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E9%A3%9F%E5%93%81%E5%AE%89%E5%85%A8%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86%20%E9%A3%8E%E9%99%A9%E7%9B%91%E6%B5%8B%20%E8%AF%84%E4%BC%B0%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E9%A3%9F%E5%93%81%E5%AE%89%E5%85%A8%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86%20%E9%A3%8E%E9%99%A9%E7%9B%91%E6%B5%8B%20%E8%AF%84%E4%BC%B0%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
-          "hits": 0
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 0,
+          "status": "failed"
         }
       ],
+      "requests": {
+        "attempted": 5,
+        "succeeded": 0,
+        "failed": 5
+      },
       "candidates": 0,
       "added": 0,
       "skippedExisting": 0,
+      "skippedRejected": 0,
+      "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
+      "duplicateReasons": {},
       "errors": [
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E9%A3%9F%E5%93%81%E5%AE%89%E5%85%A8%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86%20%E9%A3%8E%E9%99%A9%E7%9B%91%E6%B5%8B%20%E8%AF%84%E4%BC%B0%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E9%A3%9F%E5%93%81%E5%AE%89%E5%85%A8%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86%20%E9%A3%8E%E9%99%A9%E7%9B%91%E6%B5%8B%20%E8%AF%84%E4%BC%B0%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E9%A3%9F%E5%93%81%E5%AE%89%E5%85%A8%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86%20%E9%A3%8E%E9%99%A9%E7%9B%91%E6%B5%8B%20%E8%AF%84%E4%BC%B0%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
         {
           "url": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
           "error": "412 Precondition Failed"
@@ -293,25 +604,60 @@
       "searched": [
         {
           "type": "search",
-          "source": "国家卫生健康委 生育支持 人口监测 家庭发展 政策 site:www.gov.cn/zhengce",
-          "hits": 0
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E7%94%9F%E8%82%B2%E6%94%AF%E6%8C%81%20%E4%BA%BA%E5%8F%A3%E7%9B%91%E6%B5%8B%20%E5%AE%B6%E5%BA%AD%E5%8F%91%E5%B1%95%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E7%94%9F%E8%82%B2%E6%94%AF%E6%8C%81%20%E4%BA%BA%E5%8F%A3%E7%9B%91%E6%B5%8B%20%E5%AE%B6%E5%BA%AD%E5%8F%91%E5%B1%95%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "search",
+          "source": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E7%94%9F%E8%82%B2%E6%94%AF%E6%8C%81%20%E4%BA%BA%E5%8F%A3%E7%9B%91%E6%B5%8B%20%E5%AE%B6%E5%BA%AD%E5%8F%91%E5%B1%95%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
-          "hits": 0
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
           "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0
+          "hits": 0,
+          "status": "failed"
         }
       ],
+      "requests": {
+        "attempted": 5,
+        "succeeded": 0,
+        "failed": 5
+      },
       "candidates": 0,
       "added": 0,
       "skippedExisting": 0,
+      "skippedRejected": 0,
+      "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
+      "duplicateReasons": {},
       "errors": [
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E7%94%9F%E8%82%B2%E6%94%AF%E6%8C%81%20%E4%BA%BA%E5%8F%A3%E7%9B%91%E6%B5%8B%20%E5%AE%B6%E5%BA%AD%E5%8F%91%E5%B1%95%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E7%94%9F%E8%82%B2%E6%94%AF%E6%8C%81%20%E4%BA%BA%E5%8F%A3%E7%9B%91%E6%B5%8B%20%E5%AE%B6%E5%BA%AD%E5%8F%91%E5%B1%95%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
+        {
+          "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E7%94%9F%E8%82%B2%E6%94%AF%E6%8C%81%20%E4%BA%BA%E5%8F%A3%E7%9B%91%E6%B5%8B%20%E5%AE%B6%E5%BA%AD%E5%8F%91%E5%B1%95%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
+          "error": "404 Not Found"
+        },
         {
           "url": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
           "error": "412 Precondition Failed"
@@ -322,5 +668,14 @@
         }
       ]
     }
-  ]
+  ],
+  "summary": {
+    "attempted": 44,
+    "succeeded": 6,
+    "failed": 38,
+    "candidates": 2,
+    "pendingCandidates": 2,
+    "deadlineReached": false
+  },
+  "status": "completed_with_candidates"
 }
