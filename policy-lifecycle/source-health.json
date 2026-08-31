@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T02:13:46.887Z",
+  "generatedAt": "2026-08-31T22:00:31.092Z",
   "overallStatus": "healthy",
   "sources": [
     {
@@ -9,14 +9,14 @@
       "homepage": "https://www.nhsa.gov.cn/",
       "policyList": "https://www.nhsa.gov.cn/col/col104/index.html",
       "status": "healthy",
-      "checkedAt": "2026-08-31T02:13:46.887Z",
+      "checkedAt": "2026-08-31T22:00:31.092Z",
       "requests": {
         "attempted": 1,
         "succeeded": 1,
         "failed": 0
       },
       "documentsDiscovered": 8,
-      "newCandidates": 2,
+      "newCandidates": 0,
       "latestKnownPolicyDate": "2026-08-19",
       "reviewedDocuments": 11
     },
@@ -26,7 +26,7 @@
       "homepage": "https://www.ndcpa.gov.cn/",
       "policyList": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
       "status": "healthy",
-      "checkedAt": "2026-08-31T02:13:46.887Z",
+      "checkedAt": "2026-08-31T22:00:31.092Z",
       "requests": {
         "attempted": 1,
         "succeeded": 1,
