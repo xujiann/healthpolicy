@@ -99,7 +99,8 @@ if (!context.document.querySelector("#validityFilter").innerHTML.includes("已�
 const p3UiErrors = [];
 if (!context.document.querySelector("#observabilityMetrics").innerHTML.includes("官方链接可达率")) p3UiErrors.push("页面未渲染官方链接可达率");
 if (!context.document.querySelector("#observabilityMetrics").innerHTML.includes("最近采集成功率")) p3UiErrors.push("页面未渲染采集成功率");
-if (!context.document.querySelector("#observabilityMetrics").innerHTML.includes("审核积压")) p3UiErrors.push("页面未渲染审核积压指标");
+if (!context.document.querySelector("#observabilityMetrics").innerHTML.includes("隔离队列")) p3UiErrors.push("页面未渲染自动发布隔离队列指标");
+if (!context.document.querySelector("#observabilityMetrics").innerHTML.includes("本轮自动发布")) p3UiErrors.push("页面未渲染自动发布指标");
 if (!context.governance?.p3?.linkHealth) p3UiErrors.push("治理数据缺少 P3 链接健康指标");
 const errors = {
   lifecycleErrors,

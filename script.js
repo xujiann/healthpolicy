@@ -608,6 +608,7 @@ function renderObservabilityMetrics(governance) {
   const link = metrics?.linkHealth || {};
   const collection = metrics?.collection || {};
   const review = metrics?.review || {};
+  const automatic = metrics?.autoPublication || {};
   const cards = [
     {
       value: formatPercent(link.availabilityRate),
@@ -623,15 +624,15 @@ function renderObservabilityMetrics(governance) {
       tone: Number(collection.failed || 0) > 0 ? "warning" : "healthy"
     },
     {
-      value: formatPercent(review.approvalRate),
-      label: "候选审核通过率",
-      detail: `${review.approved || 0} 条通过 / ${review.decided || 0} 条已决`,
+      value: String(automatic.published ?? 0),
+      label: "本轮自动发布",
+      detail: `${automatic.evaluated || 0} 条复核，${automatic.quarantined || 0} 条隔离${automatic.generatedAt ? ` · ${String(automatic.generatedAt).slice(0, 10)}` : ""}`,
       tone: "neutral"
     },
     {
       value: String(review.backlog ?? governance?.counts?.candidates ?? 0),
-      label: "审核积压",
-      detail: "待处理候选记录",
+      label: "隔离队列",
+      detail: `未满足自动发布门禁的候选；累计 ${review.automaticApprovals || 0} 条由自动门禁发布`,
       tone: Number(review.backlog || 0) > 0 ? "warning" : "healthy",
       href: "policy-review-queue.md"
     }

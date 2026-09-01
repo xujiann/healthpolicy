@@ -44,16 +44,28 @@ export function createCandidateItem(policy, collection = {}) {
   };
 }
 
-export function approveCandidate(item, { reviewer, reviewedAt, basis, topic, secondary } = {}) {
+export function approveCandidate(item, {
+  reviewer,
+  reviewedAt,
+  basis,
+  topic,
+  secondary,
+  method = "manual",
+  confidence,
+  evidence
+} = {}) {
   requireText(reviewer, "审核人");
   requireText(basis, "归口依据");
+  if (!["manual", "automatic"].includes(method)) throw new Error(`未知审核方式：${method}`);
+  if (method === "automatic" && confidence !== "high") throw new Error("自动发布仅允许 high 置信度候选");
   const timestamp = reviewedAt || new Date().toISOString();
+  const automatic = method === "automatic";
   const policy = {
     ...item.policy,
     ...(topic ? { topic } : {}),
     ...(secondary ? { secondary } : {}),
-    reviewStatus: "已人工核验",
-    assignment: "人工归口"
+    reviewStatus: automatic ? "已自动核验" : "已人工核验",
+    assignment: automatic ? "规则归口" : "人工归口"
   };
   requireText(policy.topic, "司局归口");
   requireText(policy.secondary, "处室归口");
@@ -64,7 +76,10 @@ export function approveCandidate(item, { reviewer, reviewedAt, basis, topic, sec
       status: "approved",
       reviewer,
       reviewedAt: timestamp,
-      basis
+      basis,
+      method,
+      ...(confidence ? { confidence } : {}),
+      ...(evidence ? { evidence } : {})
     }
   };
 }
@@ -111,6 +126,13 @@ export function validateLayerSnapshot(snapshot, expectedLayer) {
       if (!String(item?.review?.reviewer || "").trim()) errors.push(`${prefix}.review.reviewer 缺失`);
       if (!isIsoDate(item?.review?.reviewedAt)) errors.push(`${prefix}.review.reviewedAt 无效`);
       if (!String(item?.review?.basis || "").trim()) errors.push(`${prefix}.review.basis 缺失`);
+      if (item?.review?.method === "automatic") {
+        if (item?.review?.confidence !== "high") errors.push(`${prefix}.review.confidence 应为 high`);
+        if (!isIsoDate(item?.review?.evidence?.verifiedAt)) errors.push(`${prefix}.review.evidence.verifiedAt 无效`);
+        if (!isOfficialUrl(item?.review?.evidence?.sourceUrl)) errors.push(`${prefix}.review.evidence.sourceUrl 不是官方 HTTPS 链接`);
+        if (!String(item?.review?.evidence?.pageTitle || "").trim()) errors.push(`${prefix}.review.evidence.pageTitle 缺失`);
+        if (!String(item?.review?.evidence?.documentNo || "").trim()) errors.push(`${prefix}.review.evidence.documentNo 缺失`);
+      }
     }
     if (expectedLayer === "rejected") {
       if (item?.review?.status !== "rejected") errors.push(`${prefix}.review.status 应为 rejected`);

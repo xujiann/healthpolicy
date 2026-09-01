@@ -8,11 +8,20 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: unattended-policy-publication
+  cancel-in-progress: false
 
 jobs:
   update-policies:
+    if: github.ref_name == github.event.repository.default_branch
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,8 +34,11 @@ jobs:
       - name: Test policy update quality rules
         run: node tools/test-policy-update.mjs
 
-      - name: Fetch policy candidates (draft only)
+      - name: Fetch policy candidates
         run: node tools/update-policies.mjs --draft --max=8 --deadline-ms=420000
+
+      - name: Publish high-confidence official policies
+        run: node tools/auto-publish-candidates.mjs --max=20 --timeout-ms=12000
 
       - name: Rotate official link health checks
         run: node tools/check-policy-links.mjs --max=40 --concurrency=8 --timeout-ms=8000
@@ -42,22 +54,26 @@ jobs:
       - name: Verify policy-only site data
         run: node tools/verify-policy-site.mjs
 
-      - name: Open or update candidate review pull request
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Publish verified data to the default branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add policy-update-log.json policy-lifecycle/candidates.json policy-lifecycle/source-health.json policy-lifecycle/link-health.json policy-governance.js policy-review-queue.md
+          git add policy-update-log.json policy-lifecycle policy-reviewed.js policy-materials.js policy-governance.js policy-review-queue.md policy-assignment-audit.csv
           if git diff --cached --quiet; then
-            echo "No candidate updates."
+            echo "No policy or governance updates."
           else
-            git fetch origin automation/policy-candidates:refs/remotes/origin/automation/policy-candidates || true
-            git commit -m "Daily policy candidate review"
-            git push origin HEAD:automation/policy-candidates --force-with-lease
-            if gh pr view automation/policy-candidates --json number >/dev/null 2>&1; then
-              echo "Candidate review pull request updated."
-            else
-              gh pr create --base "${GITHUB_REF_NAME}" --head automation/policy-candidates --title "每日政策候选审核" --body-file policy-review-queue.md
-            fi
+            git commit -m "Publish verified policy updates"
+            git push origin HEAD:"${GITHUB_REF_NAME}"
           fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload verified site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: "."
+
+      - name: Deploy verified site
+        id: deployment
+        uses: actions/deploy-pages@v4

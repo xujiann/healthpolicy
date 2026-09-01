@@ -22,7 +22,7 @@ const logPath = path.join(root, "policy-update-log.json");
 
 const args = new Set(process.argv.slice(2));
 if (args.has("--apply")) {
-  console.error("--apply 已禁用：自动任务只能生成候选草稿，人工审核后才能更新正式库。");
+  console.error("--apply 已禁用：请使用独立的高置信自动发布门禁处理候选。");
   process.exit(64);
 }
 const mode = "draft";
@@ -283,8 +283,10 @@ async function fetchPolicy(url, seed) {
     || firstParagraph(html)
     || title
   ).slice(0, 260);
-  const summary = /^(?:来源|文件下载链接)[:：]/.test(extractedSummary) ? title : extractedSummary;
   const documentNo = extractDocumentNo(`${html} ${title}`);
+  const summary = !extractedSummary || /^(?:来源|文件下载链接)[:：]/.test(extractedSummary)
+    ? `${agency}发布${documentNo ? `${documentNo}，` : ""}${wrapTitle(title)}；详细内容以官方原文为准。`
+    : extractedSummary;
   return {
     year: Number(date.slice(0, 4)),
     date,

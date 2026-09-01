@@ -13,9 +13,9 @@
 - 页面顶部全库搜索，并可联动司局、处室、年份、机关、文件类型等筛选
 - 关键词连续性分析，例如查看“护理”“医保目录”“医养结合”等政策变化
 - 政策清单与官方链接
-- candidates / reviewed / rejected 三层审核账本和逐条追溯信息
+- candidates / reviewed / rejected 三层发布账本和逐条追溯信息
 - 国家医保局、国家疾控局来源健康状态与自动补充候选流程
-- GitHub Actions 每日生成候选 Pull Request，通过质量门禁后发布
+- GitHub Actions 每日自动采集；高置信官方政策通过质量门禁后直接发布，异常候选自动隔离
 - 文号、效力状态、施行日期、联合发文机关和废止/修订关系筛选
 - 正式政策与政策解读资料分库展示
 - “十五五”任务政策证据覆盖率、缺口及最近更新时间
@@ -33,12 +33,13 @@ index.html
 
 ## GitHub Pages 部署
 
-推送到 GitHub 仓库后，在仓库设置中启用 Pages：
+仓库使用 GitHub Actions 自定义工作流发布 Pages：
 
 1. Settings → Pages
-2. Source 选择 `Deploy from a branch`
-3. Branch 选择 `main`
-4. Folder 选择 `/root`
+2. Source 选择 `GitHub Actions`
+3. 每日政策工作流通过全部质量门后上传静态站点制品并执行部署
+
+工作流在同一次运行中直接部署 Pages，因为 GitHub 的内置 `GITHUB_TOKEN` 推送不会再次触发分支式 Pages 构建。
 
 启用后访问：
 
@@ -52,7 +53,7 @@ index.html
 .github/workflows/daily-policy-update.yml
 ```
 
-该工作流每天北京时间 01:30 运行，也可在 GitHub Actions 页面手动触发。
+该工作流计划每天北京时间 01:30 运行（GitHub 托管队列可能延迟），也可在 GitHub Actions 页面手动触发。它会依次采集、复核官方证据、自动归口、构建正式数据、运行质量门禁并推送 `main`；GitHub Pages 随后自动发布。
 
 生成自动补充候选：
 
@@ -60,9 +61,17 @@ index.html
 node tools/update-policies.mjs --draft --max=8
 ```
 
-自动任务只更新 `policy-lifecycle/candidates.json` 候选队列，不会直接修改正式政策库。审核清单位于 `policy-review-queue.md`。
+自动发布仅接受国家医保局、国家疾控局已适配的 HTTPS 正式政策页面，并同时校验标题、发布日期、文号、发文机关、官方正文摘要、重复项和归口规则。全部通过后写入正式库；任一条件不确定时保留在 `policy-lifecycle/candidates.json`，原因记录在 `policy-review-queue.md` 和 `policy-lifecycle/auto-publication.json`，不会误发。
 
-通过候选：
+本地执行同一自动发布门禁：
+
+```powershell
+node tools/auto-publish-candidates.mjs --max=20 --timeout-ms=12000
+node tools/build-policy-artifacts.mjs
+node tools/verify-policy-site.mjs
+```
+
+隔离候选仍可人工复核后通过：
 
 ```powershell
 node tools/review-candidates.mjs --approve=<候选ID> --reviewer=<姓名> --basis=<归口依据>

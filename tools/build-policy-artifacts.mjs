@@ -65,6 +65,12 @@ try {
 } catch {
   // Collection metrics remain unknown when no run log is present.
 }
+let autoPublication = { generatedAt: null, mode: "unknown", summary: { evaluated: 0, published: 0, quarantined: 0, deferred: 0, remaining: 0 } };
+try {
+  autoPublication = JSON.parse(await fs.readFile(path.join(lifecycleDir, "auto-publication.json"), "utf8"));
+} catch {
+  // Automatic publication metrics remain unknown before the first unattended run.
+}
 sourceHealth.sources = (sourceHealth.sources || []).map((source) => {
   const sourcePolicies = reviewedDocuments.filter((policy) => policy.audit.sourceId === source.id);
   const sourceDates = sourcePolicies.map((policy) => policy.date).filter(Boolean).sort();
@@ -86,6 +92,7 @@ const p2FieldChecks = reviewedDocuments.flatMap((policy) => [
 const groupCount = (values) => Object.fromEntries(Object.entries(Object.groupBy(values, (value) => value)).map(([key, items]) => [key, items.length]));
 const collectionMetrics = summarizeCollectionRun(updateLog);
 const approvedDecisions = layers.reviewed.items.filter((item) => item.review.status === "approved").length;
+const automaticApprovals = layers.reviewed.items.filter((item) => item.review.method === "automatic").length;
 const rejectedDecisions = layers.rejected.items.length;
 const decidedCandidates = approvedDecisions + rejectedDecisions;
 const governance = {
@@ -93,7 +100,8 @@ const governance = {
     ...Object.values(layers).map((layer) => layer.updatedAt),
     sourceHealth.generatedAt,
     linkHealth.generatedAt,
-    updateLog.generatedAt
+    updateLog.generatedAt,
+    autoPublication.generatedAt
   ].filter(Boolean).sort().at(-1) || null,
   dataThrough: policyDates.at(-1) || null,
   lastReviewedAt: reviewDates.at(-1) || null,
@@ -118,9 +126,15 @@ const governance = {
     review: {
       backlog: layers.candidates.items.length,
       approved: approvedDecisions,
+      automaticApprovals,
       rejected: rejectedDecisions,
       decided: decidedCandidates,
       approvalRate: percentage(approvedDecisions, decidedCandidates)
+    },
+    autoPublication: {
+      generatedAt: autoPublication.generatedAt || null,
+      mode: autoPublication.mode || "unknown",
+      ...autoPublication.summary
     },
     linkHealth: {
       generatedAt: linkHealth.generatedAt || null,

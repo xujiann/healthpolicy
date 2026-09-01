@@ -41,9 +41,19 @@ const policyGovernance = {
     "review": {
       "backlog": 2,
       "approved": 18,
+      "automaticApprovals": 0,
       "rejected": 0,
       "decided": 18,
       "approvalRate": 100
+    },
+    "autoPublication": {
+      "generatedAt": null,
+      "mode": "unknown",
+      "evaluated": 0,
+      "published": 0,
+      "quarantined": 0,
+      "deferred": 0,
+      "remaining": 0
     },
     "linkHealth": {
       "generatedAt": "2026-08-31T02:14:21.263Z",

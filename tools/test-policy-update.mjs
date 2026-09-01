@@ -27,6 +27,14 @@ import {
   validateP2PolicyFields
 } from "./policy-schema.mjs";
 import { classifyLinkResult, summarizeLinkHealth, validateLinkHealthReport } from "./link-health.mjs";
+import {
+  classifyTrustedPolicy,
+  evaluateCandidateForAutoPublication,
+  extractOfficialTextDownload,
+  fetchOfficialPolicyEvidence,
+  prepareAutoApprovedPolicy,
+  summarizePolicyText
+} from "./auto-publication-core.mjs";
 
 const existing = {
   id: "supp-001",
@@ -132,5 +140,93 @@ assert.deepEqual(validateLinkHealthReport({
   schemaVersion: 1,
   items: [{ url: existing.url, status: "healthy", recordIds: [existing.id] }]
 }), []);
+
+const autoCandidate = createCandidateItem({
+  year: 2026,
+  date: "2026-08-26",
+  topic: "nhsa_services",
+  secondary: "医保目录处",
+  title: "《国家医疗保障局关于做好长期护理保险支付管理工作的指导意见》",
+  agency: "国家医疗保障局",
+  level: "意见",
+  summary: "候选摘要",
+  url: "https://www.nhsa.gov.cn/art/2026/8/26/art_104_21907.html",
+  keywords: "长期护理保险支付管理",
+  documentNo: "医保发〔2026〕19号"
+}, {
+  batchId: "policy-scan-2026-08-31",
+  sourceId: "nhsa",
+  sourceUrl: "https://www.nhsa.gov.cn/art/2026/8/26/art_104_21907.html",
+  collectedAt: "2026-08-31T02:13:46.887Z"
+});
+const autoEvidence = {
+  ok: true,
+  sourceUrl: autoCandidate.policy.url,
+  resolvedUrl: autoCandidate.policy.url,
+  pageTitle: "国家医疗保障局关于做好长期护理保险支付管理工作的指导意见",
+  publishDate: "2026-08-26",
+  documentNo: "医保发〔2026〕19号",
+  summary: "为深入贯彻有关制度要求，建立健全长期护理保险支付管理机制，现就做好长期护理保险支付管理工作提出指导意见。",
+  summarySource: "official-download",
+  contentUrl: "https://www.nhsa.gov.cn/module/download/downfile.jsp?filename=test.txt",
+  verifiedAt: "2026-08-31T03:00:00.000Z"
+};
+const autoEvaluation = evaluateCandidateForAutoPublication(autoCandidate, autoEvidence, { now: new Date("2026-08-31T03:00:00.000Z") });
+assert.equal(autoEvaluation.eligible, true);
+assert.deepEqual(classifyTrustedPolicy({ ...autoCandidate.policy, sourceId: "nhsa" }), {
+  topic: "nhsa_benefits",
+  secondary: "长期护理保险处",
+  rule: "长期护理保险"
+});
+const autoPolicy = prepareAutoApprovedPolicy(autoCandidate, autoEvidence, autoEvaluation.classification, autoEvidence.verifiedAt);
+const automaticApproval = approveCandidate({ ...autoCandidate, policy: autoPolicy }, {
+  reviewer: "GitHub Actions 自动发布器",
+  reviewedAt: autoEvidence.verifiedAt,
+  basis: "自动发布门禁测试。",
+  topic: autoEvaluation.classification.topic,
+  secondary: autoEvaluation.classification.secondary,
+  method: "automatic",
+  confidence: "high",
+  evidence: autoEvidence
+});
+assert.equal(automaticApproval.policy.reviewStatus, "已自动核验");
+assert.equal(automaticApproval.policy.assignment, "规则归口");
+assert.equal(automaticApproval.review.method, "automatic");
+const automaticLayer = createEmptyLayer("reviewed", autoEvidence.verifiedAt);
+automaticLayer.items.push(automaticApproval);
+assert.deepEqual(validateLayerSnapshot(automaticLayer, "reviewed"), []);
+assert.equal(
+  evaluateCandidateForAutoPublication(autoCandidate, { ...autoEvidence, documentNo: "医保发〔2026〕99号" }).eligible,
+  false
+);
+assert.equal(
+  summarizePolicyText("国家医疗保障局关于某工作的通知各省医疗保障局：为推进测试工作，现印发有关规范，请认真贯彻执行。", "国家医疗保障局关于某工作的通知"),
+  "为推进测试工作，现印发有关规范，请认真贯彻执行。"
+);
+const mockOfficialHtml = `
+  <meta name="ArticleTitle" content="国家医疗保障局关于做好长期护理保险支付管理工作的指导意见">
+  <meta name="PubDate" content="2026-08-26 12:00">
+  <div>发文字号：医保发〔2026〕19号</div>
+  <meta name="ContentStart"><p>文件下载链接：<a href="/module/download/downfile.jsp?filename=test.txt">正文</a></p><meta name="ContentEnd">
+`;
+const mockOfficialText = "国家医疗保障局关于做好长期护理保险支付管理工作的指导意见各省医疗保障局：为深入贯彻有关制度要求，建立健全长期护理保险支付管理机制，在总结前期试点经验基础上，现提出以下意见。";
+assert.match(summarizePolicyText(mockOfficialText, autoEvidence.pageTitle), /^为深入贯彻/);
+const mockedEvidence = await fetchOfficialPolicyEvidence(autoCandidate, {
+  fetchImpl: async (url) => new Response(
+    String(url).includes("downfile.jsp")
+      ? mockOfficialText
+      : mockOfficialHtml,
+    { status: 200 }
+  )
+});
+assert.equal(
+  extractOfficialTextDownload(mockOfficialHtml, autoCandidate.policy.url),
+  "https://www.nhsa.gov.cn/module/download/downfile.jsp?filename=test.txt"
+);
+assert.equal(mockedEvidence.ok, true);
+assert.equal(mockedEvidence.documentNo, "医保发〔2026〕19号");
+assert.equal(mockedEvidence.publishDate, "2026-08-26");
+assert.deepEqual(mockedEvidence.warnings, []);
+assert.match(mockedEvidence.summary, /^为深入贯彻/);
 
 console.log("Policy update quality tests passed.");
