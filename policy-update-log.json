@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T02:13:46.887Z",
+  "generatedAt": "2026-09-01T03:53:58.798Z",
   "manualReview": {
     "reviewedAt": "2026-08-25",
     "status": "completed",
@@ -36,12 +36,14 @@
         "failed": 0
       },
       "candidates": 8,
-      "added": 2,
+      "added": 0,
       "skippedExisting": 6,
       "skippedRejected": 0,
-      "skippedDuplicate": 0,
+      "skippedDuplicate": 2,
       "skippedNonPolicy": 0,
-      "duplicateReasons": {},
+      "duplicateReasons": {
+        "id": 2
+      },
       "errors": []
     },
     {
@@ -51,26 +53,26 @@
         {
           "type": "source",
           "source": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
-          "hits": 1,
-          "status": "ok"
+          "hits": 0,
+          "status": "failed"
         }
       ],
       "requests": {
         "attempted": 1,
-        "succeeded": 1,
-        "failed": 0
+        "succeeded": 0,
+        "failed": 1
       },
-      "candidates": 1,
+      "candidates": 0,
       "added": 0,
       "skippedExisting": 0,
       "skippedRejected": 0,
       "skippedDuplicate": 0,
-      "skippedNonPolicy": 1,
+      "skippedNonPolicy": 0,
       "duplicateReasons": {},
       "errors": [
         {
-          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100071/common/content/content_1656508289844580352.html",
-          "error": "跳过非具体政策文件页面"
+          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
+          "error": "fetch failed"
         }
       ]
     },
@@ -136,7 +138,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "fetch failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -206,7 +208,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "fetch failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -276,7 +278,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/jws/s7874/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "fetch failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -483,8 +485,8 @@
         {
           "type": "source",
           "source": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "hits": 1,
-          "status": "ok"
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
@@ -495,15 +497,15 @@
       ],
       "requests": {
         "attempted": 5,
-        "succeeded": 1,
-        "failed": 4
+        "succeeded": 0,
+        "failed": 5
       },
-      "candidates": 1,
+      "candidates": 0,
       "added": 0,
       "skippedExisting": 0,
       "skippedRejected": 0,
       "skippedDuplicate": 0,
-      "skippedNonPolicy": 1,
+      "skippedNonPolicy": 0,
       "duplicateReasons": {},
       "errors": [
         {
@@ -519,12 +521,12 @@
           "error": "404 Not Found"
         },
         {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "403 Forbidden"
+          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
+          "error": "fetch failed"
         },
         {
-          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100071/common/content/content_1656508289844580352.html",
-          "error": "跳过非具体政策文件页面"
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "403 Forbidden"
         }
       ]
     },
@@ -590,7 +592,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "fetch failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -660,7 +662,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "fetch failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -671,11 +673,11 @@
   ],
   "summary": {
     "attempted": 44,
-    "succeeded": 6,
-    "failed": 38,
-    "candidates": 2,
+    "succeeded": 4,
+    "failed": 40,
+    "candidates": 0,
     "pendingCandidates": 2,
     "deadlineReached": false
   },
-  "status": "completed_with_candidates"
+  "status": "no_new_policy"
 }

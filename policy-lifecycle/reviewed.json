@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "reviewed",
-  "updatedAt": "2026-08-25T18:00:00+08:00",
+  "updatedAt": "2026-09-01T03:54:32.630Z",
   "items": [
     {
       "policy": {
@@ -16441,6 +16441,124 @@
         "reviewer": "政策库维护组",
         "reviewedAt": "2026-08-25T18:00:00+08:00",
         "basis": "已核对国家医疗保障局政策原文、文号及官方解读，并依据规划主题人工归口至规划统计处。"
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-08-26",
+        "topic": "nhsa_benefits",
+        "secondary": "长期护理保险处",
+        "title": "《国家医疗保障局关于做好长期护理保险支付管理工作的指导意见》",
+        "agency": "国家医疗保障局",
+        "level": "意见",
+        "summary": "为深入贯彻党的二十大和二十届历次全会精神，落实《关于加快建立长期护理保险制度的意见》，建立健全长期护理保险支付管理机制，在总结前期试点经验基础上，经商财政部，现就做好长期护理保险支付管理工作提出以下意见： 一、总体要求 长期护理保险支付管理是保障参保人员获得优质服务、基金安全平稳运行的关键环节，对长护服务市场健康发展具有重要牵引作用。",
+        "url": "https://www.nhsa.gov.cn/art/2026/8/26/art_104_21907.html",
+        "keywords": "官方来源：国家医疗保障局 ",
+        "documentNo": "医保发〔2026〕19号",
+        "reviewStatus": "已自动核验",
+        "id": "candidate-26c4113e50d13e12",
+        "assignment": "规则归口",
+        "agencies": [
+          "国家医疗保障局"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-09-01T03:54:32.630Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-08-31",
+        "sourceId": "nhsa",
+        "sourceUrl": "https://www.nhsa.gov.cn/art/2026/8/26/art_104_21907.html",
+        "collectedAt": "2026-08-31T02:13:46.887Z"
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "GitHub Actions 自动发布器",
+        "reviewedAt": "2026-09-01T03:54:32.630Z",
+        "basis": "自动发布门禁：国家医疗保障局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“长期护理保险”规则；摘要来自官方正文。",
+        "method": "automatic",
+        "confidence": "high",
+        "evidence": {
+          "sourceUrl": "https://www.nhsa.gov.cn/art/2026/8/26/art_104_21907.html",
+          "resolvedUrl": "https://www.nhsa.gov.cn/art/2026/8/26/art_104_21907.html",
+          "pageTitle": "国家医疗保障局关于做好长期护理保险支付管理工作的指导意见",
+          "publishDate": "2026-08-26",
+          "documentNo": "医保发〔2026〕19号",
+          "summarySource": "official-download",
+          "contentUrl": "https://www.nhsa.gov.cn/module/download/downfile.jsp?classid=0&filename=46ddcb466a184f00a8f1a75330493305.txt",
+          "verifiedAt": "2026-09-01T03:54:35.633Z"
+        }
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-08-25",
+        "topic": "nhsa_benefits",
+        "secondary": "筹资待遇处",
+        "title": "《国家医疗保障局办公室关于印发《“医保病理云索引”编码规范》的通知》",
+        "agency": "国家医疗保障局",
+        "level": "通知",
+        "summary": "为推进医保病理云建设，实现病理检查数据“患者本人可阅、医疗机构可调、医保部门可核”，我局研究制定了《“医保病理云索引”编码规范》，对参保人员单次病理检查产生的相关数据赋予统一索引、实现唯一溯源标识。",
+        "url": "https://www.nhsa.gov.cn/art/2026/8/25/art_104_21894.html",
+        "keywords": "官方来源：国家医疗保障局 ",
+        "documentNo": "医保办发〔2026〕10号",
+        "reviewStatus": "已自动核验",
+        "id": "candidate-032ae206ecfa2a0f",
+        "assignment": "规则归口",
+        "agencies": [
+          "国家医疗保障局"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-09-01T03:54:32.630Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-08-31",
+        "sourceId": "nhsa",
+        "sourceUrl": "https://www.nhsa.gov.cn/art/2026/8/25/art_104_21894.html",
+        "collectedAt": "2026-08-31T02:13:46.887Z"
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "GitHub Actions 自动发布器",
+        "reviewedAt": "2026-09-01T03:54:32.630Z",
+        "basis": "自动发布门禁：国家医疗保障局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“筹资待遇”规则；摘要来自官方正文。",
+        "method": "automatic",
+        "confidence": "high",
+        "evidence": {
+          "sourceUrl": "https://www.nhsa.gov.cn/art/2026/8/25/art_104_21894.html",
+          "resolvedUrl": "https://www.nhsa.gov.cn/art/2026/8/25/art_104_21894.html",
+          "pageTitle": "国家医疗保障局办公室关于印发《“医保病理云索引”编码规范》的通知",
+          "publishDate": "2026-08-25",
+          "documentNo": "医保办发〔2026〕10号",
+          "summarySource": "official-download",
+          "contentUrl": "https://www.nhsa.gov.cn/module/download/downfile.jsp?classid=0&filename=93ebd53751dc40669f4c977781904f8b.txt",
+          "verifiedAt": "2026-09-01T03:54:36.325Z"
+        }
       }
     }
   ]
