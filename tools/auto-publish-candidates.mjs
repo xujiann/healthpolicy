@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import {
+  classifyTrustedPolicy,
   evaluateCandidateForAutoPublication,
   fetchOfficialPolicyEvidence,
   prepareAutoApprovedPolicy
@@ -26,11 +27,62 @@ for (const layer of ["candidates", "reviewed", "rejected"]) {
   if (errors.length) throw new Error(`${layer} 层校验失败：\n${errors.join("\n")}`);
 }
 
-const reviewedIndexes = createPolicyIndexes(snapshots.reviewed.items.map((item) => item.policy));
+const queuedBefore = snapshots.candidates.items.length;
 const retained = [];
 const reportItems = [];
 let evaluated = 0;
 let published = 0;
+let reclassified = 0;
+let classificationRefreshed = 0;
+
+snapshots.reviewed.items = snapshots.reviewed.items.map((item) => {
+  if (item.review?.method !== "automatic") return item;
+  const classification = classifyTrustedPolicy({
+    ...item.policy,
+    sourceId: item.collection.sourceId
+  });
+  if (!classification) return item;
+  const classificationChanged = item.policy.topic !== classification.topic || item.policy.secondary !== classification.secondary;
+  const classificationRecorded = item.review.classification?.rule === classification.rule
+    && item.review.classification?.topic === classification.topic
+    && item.review.classification?.secondary === classification.secondary;
+  if (!classificationChanged && classificationRecorded) return item;
+  if (classificationChanged) reclassified += 1;
+  else classificationRefreshed += 1;
+  reportItems.push({
+    id: item.policy.id,
+    title: item.policy.title,
+    status: classificationChanged ? "reclassified" : "classification_refreshed",
+    sourceId: item.collection.sourceId,
+    sourceUrl: item.policy.url,
+    previousTopic: item.policy.topic,
+    previousSecondary: item.policy.secondary,
+    topic: classification.topic,
+    secondary: classification.secondary,
+    rule: classification.rule
+  });
+  return {
+    ...item,
+    policy: {
+      ...item.policy,
+      topic: classification.topic,
+      secondary: classification.secondary,
+      assignment: "规则归口"
+    },
+    review: {
+      ...item.review,
+      basis: String(item.review.basis || "").replace(/归口命中“[^”]+”规则/, `归口命中“${classification.rule}”规则`),
+      classification: {
+        rule: classification.rule,
+        topic: classification.topic,
+        secondary: classification.secondary,
+        evaluatedAt: timestamp
+      }
+    }
+  };
+});
+
+const reviewedIndexes = createPolicyIndexes(snapshots.reviewed.items.map((item) => item.policy));
 
 for (const item of snapshots.candidates.items) {
   if (evaluated >= maxCandidates) {
@@ -111,7 +163,7 @@ for (const item of snapshots.candidates.items) {
 
 snapshots.candidates.items = retained;
 snapshots.candidates.updatedAt = timestamp;
-if (published) snapshots.reviewed.updatedAt = timestamp;
+if (published || reclassified || classificationRefreshed) snapshots.reviewed.updatedAt = timestamp;
 for (const layer of ["candidates", "reviewed", "rejected"]) {
   const errors = validateLayerSnapshot(snapshots[layer], layer);
   if (errors.length) throw new Error(`${layer} 层自动发布后校验失败：\n${errors.join("\n")}`);
@@ -122,9 +174,11 @@ const report = {
   generatedAt: timestamp,
   mode: "unattended-high-confidence",
   summary: {
-    queuedBefore: snapshots.candidates.items.length + published,
+    queuedBefore,
     evaluated,
     published,
+    reclassified,
+    classificationRefreshed,
     quarantined: reportItems.filter((item) => item.status === "quarantined").length,
     deferred: reportItems.filter((item) => item.status === "deferred").length,
     remaining: retained.length
@@ -138,7 +192,7 @@ await Promise.all([
   fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, "utf8")
 ]);
 
-console.log(`自动发布完成：复核 ${evaluated} 条，发布 ${published} 条，隔离 ${report.summary.quarantined} 条，剩余 ${retained.length} 条。`);
+console.log(`自动发布完成：复核 ${evaluated} 条，发布 ${published} 条，重算归口 ${reclassified} 条，补齐归口证据 ${classificationRefreshed} 条，隔离 ${report.summary.quarantined} 条，剩余 ${retained.length} 条。`);
 
 function positiveInteger(value, fallback) {
   const parsed = Number(value);

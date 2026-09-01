@@ -1,6 +1,6 @@
 // 由 tools/build-policy-artifacts.mjs 生成，请勿直接编辑。
 const policyGovernance = {
-  "generatedAt": "2026-09-01T03:54:36.389Z",
+  "generatedAt": "2026-09-01T03:57:11.251Z",
   "dataThrough": "2026-08-26",
   "lastReviewedAt": "2026-09-01T03:54:32.630Z",
   "counts": {
@@ -47,11 +47,13 @@ const policyGovernance = {
       "approvalRate": 100
     },
     "autoPublication": {
-      "generatedAt": "2026-09-01T03:54:32.630Z",
+      "generatedAt": "2026-09-01T03:57:11.251Z",
       "mode": "unattended-high-confidence",
-      "queuedBefore": 2,
-      "evaluated": 2,
-      "published": 2,
+      "queuedBefore": 0,
+      "evaluated": 0,
+      "published": 0,
+      "reclassified": 0,
+      "classificationRefreshed": 1,
       "quarantined": 0,
       "deferred": 0,
       "remaining": 0

@@ -178,6 +178,17 @@ assert.deepEqual(classifyTrustedPolicy({ ...autoCandidate.policy, sourceId: "nhs
   secondary: "长期护理保险处",
   rule: "长期护理保险"
 });
+assert.deepEqual(classifyTrustedPolicy({
+  ...autoCandidate.policy,
+  sourceId: "nhsa",
+  title: "《国家医疗保障局办公室关于印发《“医保病理云索引”编码规范》的通知》",
+  summary: "为推进医保病理云建设，对参保人员病理检查数据赋予统一索引。",
+  keywords: ""
+}), {
+  topic: "nhsa_planning",
+  secondary: "信息化处",
+  rule: "医保信息化"
+});
 const autoPolicy = prepareAutoApprovedPolicy(autoCandidate, autoEvidence, autoEvaluation.classification, autoEvidence.verifiedAt);
 const automaticApproval = approveCandidate({ ...autoCandidate, policy: autoPolicy }, {
   reviewer: "GitHub Actions 自动发布器",

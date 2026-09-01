@@ -14710,8 +14710,8 @@ const policyReviewedDocuments = [
   {
     "year": 2026,
     "date": "2026-08-25",
-    "topic": "nhsa_benefits",
-    "secondary": "筹资待遇处",
+    "topic": "nhsa_planning",
+    "secondary": "信息化处",
     "title": "《国家医疗保障局办公室关于印发《“医保病理云索引”编码规范》的通知》",
     "agency": "国家医疗保障局",
     "level": "通知",
@@ -14745,7 +14745,7 @@ const policyReviewedDocuments = [
       "collectedAt": "2026-08-31T02:13:46.887Z",
       "reviewer": "GitHub Actions 自动发布器",
       "reviewedAt": "2026-09-01T03:54:32.630Z",
-      "basis": "自动发布门禁：国家医疗保障局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“筹资待遇”规则；摘要来自官方正文。",
+      "basis": "自动发布门禁：国家医疗保障局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“医保信息化”规则；摘要来自官方正文。",
       "status": "approved"
     }
   }
