@@ -1,16 +1,27 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-01T20:06:53.281Z",
+  "generatedAt": "2026-09-02T20:03:00.441Z",
   "mode": "unattended-high-confidence",
   "summary": {
-    "queuedBefore": 0,
-    "evaluated": 0,
-    "published": 0,
+    "queuedBefore": 1,
+    "evaluated": 1,
+    "published": 1,
     "reclassified": 0,
     "classificationRefreshed": 0,
     "quarantined": 0,
     "deferred": 0,
     "remaining": 0
   },
-  "items": []
+  "items": [
+    {
+      "id": "candidate-a062f843d6cec2c0",
+      "title": "《国家医疗保障局关于印发按病组和病种分值付费3.0版分组方案并做好落地实施相关工作的通知》",
+      "status": "published",
+      "sourceId": "nhsa",
+      "sourceUrl": "https://www.nhsa.gov.cn/art/2026/9/2/art_104_21975.html",
+      "topic": "nhsa_services",
+      "secondary": "支付方式改革处",
+      "verifiedAt": "2026-09-02T20:03:01.653Z"
+    }
+  ]
 }

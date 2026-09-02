@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "reviewed",
-  "updatedAt": "2026-09-01T03:57:11.251Z",
+  "updatedAt": "2026-09-02T20:03:00.441Z",
   "items": [
     {
       "policy": {
@@ -16570,6 +16570,65 @@
           "topic": "nhsa_planning",
           "secondary": "信息化处",
           "evaluatedAt": "2026-09-01T03:56:41.845Z"
+        }
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-09-02",
+        "topic": "nhsa_services",
+        "secondary": "支付方式改革处",
+        "title": "《国家医疗保障局关于印发按病组和病种分值付费3.0版分组方案并做好落地实施相关工作的通知》",
+        "agency": "国家医疗保障局",
+        "level": "通知",
+        "summary": "国家医疗保障局关于印发按病组和病种 分值付费30版分组方案并做好 落地实施相关工作的通知各省、自治区、直辖市及新疆生产建设兵团医疗保障局： 为深入贯彻落实党中央、国务院决策部署，持续深化医保支付方式改革，推进按病种付费分组方案动态调整，更好回应临床和患者需求，促进医疗医保相向而行，国家医疗保障局组织专家研究形成了《按病组（DRG）付费30版分组方案》和《按病种分值（DIP）付费30版分组方案》（以下统称为“30版分组”），现印发给你们，请遵照执行。",
+        "url": "https://www.nhsa.gov.cn/art/2026/9/2/art_104_21975.html",
+        "keywords": "官方来源：国家医疗保障局 ",
+        "documentNo": "医保发〔2026〕22号",
+        "reviewStatus": "已自动核验",
+        "id": "candidate-a062f843d6cec2c0",
+        "assignment": "规则归口",
+        "agencies": [
+          "国家医疗保障局"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-09-02T20:03:00.441Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-09-02",
+        "sourceId": "nhsa",
+        "sourceUrl": "https://www.nhsa.gov.cn/art/2026/9/2/art_104_21975.html",
+        "collectedAt": "2026-09-02T20:02:28.679Z"
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "GitHub Actions 自动发布器",
+        "reviewedAt": "2026-09-02T20:03:00.441Z",
+        "basis": "自动发布门禁：国家医疗保障局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“医保支付方式”规则；摘要来自官方正文。",
+        "method": "automatic",
+        "confidence": "high",
+        "evidence": {
+          "sourceUrl": "https://www.nhsa.gov.cn/art/2026/9/2/art_104_21975.html",
+          "resolvedUrl": "https://www.nhsa.gov.cn/art/2026/9/2/art_104_21975.html",
+          "pageTitle": "国家医疗保障局关于印发按病组和病种分值付费3.0版分组方案并做好落地实施相关工作的通知",
+          "publishDate": "2026-09-02",
+          "documentNo": "医保发〔2026〕22号",
+          "summarySource": "official-download",
+          "contentUrl": "https://www.nhsa.gov.cn/module/download/downfile.jsp?classid=0&filename=62fef3f04e664dd388bacf18c893b035.txt",
+          "verifiedAt": "2026-09-02T20:03:01.653Z"
         }
       }
     }
