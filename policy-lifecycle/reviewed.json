@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "reviewed",
-  "updatedAt": "2026-09-02T20:03:00.441Z",
+  "updatedAt": "2026-09-03T20:04:49.664Z",
   "items": [
     {
       "policy": {
@@ -16629,6 +16629,12 @@
           "summarySource": "official-download",
           "contentUrl": "https://www.nhsa.gov.cn/module/download/downfile.jsp?classid=0&filename=62fef3f04e664dd388bacf18c893b035.txt",
           "verifiedAt": "2026-09-02T20:03:01.653Z"
+        },
+        "classification": {
+          "rule": "医保支付方式",
+          "topic": "nhsa_services",
+          "secondary": "支付方式改革处",
+          "evaluatedAt": "2026-09-03T20:04:49.664Z"
         }
       }
     }

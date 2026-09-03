@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-02T20:03:01.704Z",
+  "generatedAt": "2026-09-03T20:04:49.735Z",
   "checkedThisRun": 40,
-  "nextCursor": 280,
+  "nextCursor": 320,
   "overallStatus": "partial",
   "summary": {
     "total": 355,
-    "checked": 277,
-    "decisive": 259,
-    "reachable": 259,
-    "healthy": 259,
+    "checked": 317,
+    "decisive": 299,
+    "reachable": 299,
+    "healthy": 299,
     "blocked": 0,
     "unavailable": 0,
     "inconclusive": 18,
-    "unchecked": 78,
-    "coverageRate": 78,
+    "unchecked": 38,
+    "coverageRate": 89.3,
     "availabilityRate": 100
   },
   "items": [
@@ -4240,10 +4240,10 @@
         "《关于印发遏制艾滋病传播实施方案（2019—2022年）的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 585,
       "error": ""
     },
     {
@@ -4255,10 +4255,10 @@
         "《国家卫生健康委办公厅关于进一步加强秋冬季重点传染病防控工作的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 543,
       "error": ""
     },
     {
@@ -4270,10 +4270,10 @@
         "《关于做好农村订单定向免费培养医学生就业安置和履约管理工作的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 538,
       "error": ""
     },
     {
@@ -4285,10 +4285,10 @@
         "《关于进一步加强医疗机构、医师、护士电子化注册信息核查和管理工作的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 549,
       "error": ""
     },
     {
@@ -4300,10 +4300,10 @@
         "《关于做好2019年基本公共卫生服务项目工作的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 545,
       "error": ""
     },
     {
@@ -4315,10 +4315,10 @@
         "《关于加强医疗护理员培训和规范管理工作的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 575,
       "error": ""
     },
     {
@@ -4330,10 +4330,10 @@
         "《关于开展儿童血液病、恶性肿瘤医疗救治及保障管理工作的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 544,
       "error": ""
     },
     {
@@ -4345,10 +4345,10 @@
         "《关于做好今冬明春流行性感冒医疗工作的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 540,
       "error": ""
     },
     {
@@ -4360,10 +4360,10 @@
         "《国家卫生健康委办公厅关于印发医疗机构短缺药品分类分级与替代使用技术指南的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 528,
       "error": ""
     },
     {
@@ -4375,10 +4375,10 @@
         "《关于印发尘肺病防治攻坚行动方案的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 537,
       "error": ""
     },
     {
@@ -4390,10 +4390,10 @@
         "《关于印发解决贫困人口基本医疗有保障突出问题工作方案的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 518,
       "error": ""
     },
     {
@@ -4405,10 +4405,10 @@
         "《关于印发疾病诊断相关分组（DRG）付费国家试点技术规范和分组方案的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 582,
       "error": ""
     },
     {
@@ -4420,10 +4420,10 @@
         "《关于印发全面提升县级医院综合能力第二阶段县级医院名单的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 551,
       "error": ""
     },
     {
@@ -4435,10 +4435,10 @@
         "《关于印发促进社会办医持续健康规范发展意见的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 634,
       "error": ""
     },
     {
@@ -4450,10 +4450,10 @@
         "《国家卫生健康委办公厅关于贯彻落实职业健康检查管理办法的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 549,
       "error": ""
     },
     {
@@ -4465,10 +4465,10 @@
         "《国家卫生健康委办公厅关于县级疾病预防控制等专业公共卫生机构指导基层开展基本公共卫生服务的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 587,
       "error": ""
     },
     {
@@ -4480,10 +4480,10 @@
         "《国家卫生健康委办公厅关于印发大型医院巡查工作方案（2019—2022年度）的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 551,
       "error": ""
     },
     {
@@ -4495,10 +4495,10 @@
         "《国家医保局人力资源社会保障部关于将2019年谈判药品纳入《国家基本医疗保险、工伤保险和生育保险药品目录》乙类范围的通知》"
       ],
       "latestDate": "2019-11",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 524,
       "error": ""
     },
     {
@@ -4510,10 +4510,10 @@
         "《国家医疗保障局关于国家组织药品集中采购和使用试点医保配套措施的意见》"
       ],
       "latestDate": "2019-10",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 583,
       "error": ""
     },
     {
@@ -4525,10 +4525,10 @@
         "《国家医疗保障局 财政部关于做好2019年城乡居民基本医疗保障工作的通知》"
       ],
       "latestDate": "2019-10",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 521,
       "error": ""
     },
     {
@@ -4540,10 +4540,10 @@
         "《国家医保局 财政部 国家卫生健康委 国家中医药局关于印发按疾病诊断相关分组付费国家试点城市名单的通知》"
       ],
       "latestDate": "2019-10",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 548,
       "error": ""
     },
     {
@@ -4555,10 +4555,10 @@
         "《国家医保局 财政部关于切实做好2019年跨省异地就医住院费用直接结算工作的通知》"
       ],
       "latestDate": "2019-10",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 514,
       "error": ""
     },
     {
@@ -4570,10 +4570,10 @@
         "《国家医疗保障局关于印发医疗保障标准化工作指导意见的通知》"
       ],
       "latestDate": "2019-10",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 590,
       "error": ""
     },
     {
@@ -4585,10 +4585,10 @@
         "《民政部 国家卫生健康委 应急管理部 市场监管总局关于做好2019年养老院服务质量建设专项行动工作的通知》"
       ],
       "latestDate": "2019-10",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 519,
       "error": ""
     },
     {
@@ -4600,10 +4600,10 @@
         "《国家医疗保障局、财政部、国家卫生健康委、国务院扶贫办关于坚决完成医疗保障脱贫攻坚硬任务的指导意见》"
       ],
       "latestDate": "2019-10",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 539,
       "error": ""
     },
     {
@@ -4615,10 +4615,10 @@
         "《教育部关于取消一批证明事项的通知》"
       ],
       "latestDate": "2019-10",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 538,
       "error": ""
     },
     {
@@ -4630,10 +4630,10 @@
         "《国家中医药管理局 科技部 工业和信息化部 国家卫生健康委员会关于印发《关于加强中医医疗器械科技创新的指导意见》的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 545,
       "error": ""
     },
     {
@@ -4645,10 +4645,10 @@
         "《关于学习贯彻习近平总书记重要指示精神 进一步加强医务人员队伍建设的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 520,
       "error": ""
     },
     {
@@ -4660,10 +4660,10 @@
         "《国家卫生健康委员会 国家中医药管理局关于印发全面提升县级医院综合能力工作方案（2018-2020年）的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 508,
       "error": ""
     },
     {
@@ -4675,10 +4675,10 @@
         "《国家中医药管理局办公室关于开展中医医疗机构传染病防治和感染防控监督执法专项检查督查工作的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 571,
       "error": ""
     },
     {
@@ -4690,10 +4690,10 @@
         "《关于优化社会办医疗机构跨部门审批工作的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 599,
       "error": ""
     },
     {
@@ -4705,10 +4705,10 @@
         "《国家药监局关于加强药品集中采购和使用试点期间药品监管工作的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 532,
       "error": ""
     },
     {
@@ -4720,10 +4720,10 @@
         "《印发《关于对严重危害正常医疗秩序的失信行为责任人实施联合惩戒合作备忘录》的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 527,
       "error": ""
     },
     {
@@ -4735,10 +4735,10 @@
         "《关于进一步加强患者安全管理工作的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 540,
       "error": ""
     },
     {
@@ -4750,10 +4750,10 @@
         "《关于印发健康扶贫领域作风问题专项治理实施方案的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 534,
       "error": ""
     },
     {
@@ -4765,10 +4765,10 @@
         "《关于做好春夏季重点传染病防控工作的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 528,
       "error": ""
     },
     {
@@ -4780,10 +4780,10 @@
         "《关于进一步提升创伤救治能力的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 524,
       "error": ""
     },
     {
@@ -4795,10 +4795,10 @@
         "《关于印发促进护理服务业改革与发展指导意见的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 566,
       "error": ""
     },
     {
@@ -4810,10 +4810,10 @@
         "《关于深入开展“互联网+医疗健康”便民惠民活动的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 579,
       "error": ""
     },
     {
@@ -4825,10 +4825,10 @@
         "《关于进一步做好分级诊疗制度建设有关重点工作的通知》"
       ],
       "latestDate": "2018-12",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-03T20:04:49.735Z",
+      "responseMs": 530,
       "error": ""
     },
     {
