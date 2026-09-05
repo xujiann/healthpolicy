@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T19:48:37.698Z",
+  "generatedAt": "2026-09-05T19:20:32.499Z",
   "manualReview": {
     "reviewedAt": "2026-08-25",
     "status": "completed",
@@ -26,6 +26,31 @@
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
+          "hits": 45,
+          "status": "ok"
+        }
+      ],
+      "requests": {
+        "attempted": 1,
+        "succeeded": 1,
+        "failed": 0
+      },
+      "candidates": 8,
+      "added": 0,
+      "skippedExisting": 8,
+      "skippedRejected": 0,
+      "skippedDuplicate": 0,
+      "skippedNonPolicy": 0,
+      "duplicateReasons": {},
+      "errors": []
+    },
+    {
+      "name": "官方来源：国家疾病预防控制局",
+      "query": "",
+      "searched": [
+        {
+          "type": "source",
+          "source": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
           "hits": 0,
           "status": "failed"
         }
@@ -44,38 +69,8 @@
       "duplicateReasons": {},
       "errors": [
         {
-          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "error": "This operation was aborted"
-        }
-      ]
-    },
-    {
-      "name": "官方来源：国家疾病预防控制局",
-      "query": "",
-      "searched": [
-        {
-          "type": "source",
-          "source": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
-          "hits": 1,
-          "status": "ok"
-        }
-      ],
-      "requests": {
-        "attempted": 1,
-        "succeeded": 1,
-        "failed": 0
-      },
-      "candidates": 1,
-      "added": 0,
-      "skippedExisting": 0,
-      "skippedRejected": 0,
-      "skippedDuplicate": 0,
-      "skippedNonPolicy": 1,
-      "duplicateReasons": {},
-      "errors": [
-        {
-          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100071/common/content/content_1656508289844580352.html",
-          "error": "跳过非具体政策文件页面"
+          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
+          "error": "fetch failed"
         }
       ]
     },
@@ -314,24 +309,18 @@
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 0,
-          "status": "failed"
-        },
-        {
-          "type": "source",
-          "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0,
-          "status": "failed"
+          "hits": 45,
+          "status": "ok"
         }
       ],
       "requests": {
-        "attempted": 5,
-        "succeeded": 0,
-        "failed": 5
+        "attempted": 4,
+        "succeeded": 1,
+        "failed": 3
       },
-      "candidates": 0,
+      "candidates": 8,
       "added": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 8,
       "skippedRejected": 0,
       "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
@@ -348,14 +337,6 @@
         {
           "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E7%9B%AE%E5%BD%95%20%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F%20DRG%20DIP%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
           "error": "404 Not Found"
-        },
-        {
-          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "error": "This operation was aborted"
-        },
-        {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "403 Forbidden"
         }
       ]
     },
@@ -384,24 +365,18 @@
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 0,
-          "status": "failed"
-        },
-        {
-          "type": "source",
-          "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0,
-          "status": "failed"
+          "hits": 45,
+          "status": "ok"
         }
       ],
       "requests": {
-        "attempted": 5,
-        "succeeded": 0,
-        "failed": 5
+        "attempted": 4,
+        "succeeded": 1,
+        "failed": 3
       },
-      "candidates": 0,
+      "candidates": 8,
       "added": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 8,
       "skippedRejected": 0,
       "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
@@ -418,14 +393,6 @@
         {
           "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E8%8D%AF%E9%9B%86%E4%B8%AD%E9%87%87%E8%B4%AD%20%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E4%BB%B7%E6%A0%BC%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
           "error": "404 Not Found"
-        },
-        {
-          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "error": "This operation was aborted"
-        },
-        {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "403 Forbidden"
         }
       ]
     },
@@ -454,24 +421,18 @@
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 0,
-          "status": "failed"
-        },
-        {
-          "type": "source",
-          "source": "https://www.gov.cn/zhengce/zhengceku/",
-          "hits": 0,
-          "status": "failed"
+          "hits": 45,
+          "status": "ok"
         }
       ],
       "requests": {
-        "attempted": 5,
-        "succeeded": 0,
-        "failed": 5
+        "attempted": 4,
+        "succeeded": 1,
+        "failed": 3
       },
-      "candidates": 0,
+      "candidates": 8,
       "added": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 8,
       "skippedRejected": 0,
       "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
@@ -488,14 +449,6 @@
         {
           "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E5%9F%BA%E9%87%91%E7%9B%91%E7%AE%A1%20%E9%A3%9E%E8%A1%8C%E6%A3%80%E6%9F%A5%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
           "error": "404 Not Found"
-        },
-        {
-          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "error": "This operation was aborted"
-        },
-        {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "403 Forbidden"
         }
       ]
     },
@@ -524,8 +477,8 @@
         {
           "type": "source",
           "source": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "hits": 1,
-          "status": "ok"
+          "hits": 0,
+          "status": "failed"
         },
         {
           "type": "source",
@@ -536,15 +489,15 @@
       ],
       "requests": {
         "attempted": 5,
-        "succeeded": 1,
-        "failed": 4
+        "succeeded": 0,
+        "failed": 5
       },
-      "candidates": 1,
+      "candidates": 0,
       "added": 0,
       "skippedExisting": 0,
       "skippedRejected": 0,
       "skippedDuplicate": 0,
-      "skippedNonPolicy": 1,
+      "skippedNonPolicy": 0,
       "duplicateReasons": {},
       "errors": [
         {
@@ -560,12 +513,12 @@
           "error": "404 Not Found"
         },
         {
-          "url": "https://www.gov.cn/zhengce/zhengceku/",
-          "error": "403 Forbidden"
+          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
+          "error": "fetch failed"
         },
         {
-          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100071/common/content/content_1656508289844580352.html",
-          "error": "跳过非具体政策文件页面"
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "403 Forbidden"
         }
       ]
     },
@@ -711,9 +664,9 @@
     }
   ],
   "summary": {
-    "attempted": 47,
-    "succeeded": 2,
-    "failed": 45,
+    "attempted": 44,
+    "succeeded": 4,
+    "failed": 40,
     "candidates": 0,
     "pendingCandidates": 0,
     "deadlineReached": false
