@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T19:20:32.499Z",
+  "generatedAt": "2026-09-06T19:26:21.438Z",
   "manualReview": {
     "reviewedAt": "2026-08-25",
     "status": "completed",
@@ -51,26 +51,26 @@
         {
           "type": "source",
           "source": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
-          "hits": 0,
-          "status": "failed"
+          "hits": 1,
+          "status": "ok"
         }
       ],
       "requests": {
         "attempted": 1,
-        "succeeded": 0,
-        "failed": 1
+        "succeeded": 1,
+        "failed": 0
       },
-      "candidates": 0,
+      "candidates": 1,
       "added": 0,
       "skippedExisting": 0,
       "skippedRejected": 0,
       "skippedDuplicate": 0,
-      "skippedNonPolicy": 0,
+      "skippedNonPolicy": 1,
       "duplicateReasons": {},
       "errors": [
         {
-          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
-          "error": "fetch failed"
+          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100071/common/content/content_1656508289844580352.html",
+          "error": "跳过非具体政策文件页面"
         }
       ]
     },
@@ -477,8 +477,8 @@
         {
           "type": "source",
           "source": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "hits": 0,
-          "status": "failed"
+          "hits": 1,
+          "status": "ok"
         },
         {
           "type": "source",
@@ -489,15 +489,15 @@
       ],
       "requests": {
         "attempted": 5,
-        "succeeded": 0,
-        "failed": 5
+        "succeeded": 1,
+        "failed": 4
       },
-      "candidates": 0,
+      "candidates": 1,
       "added": 0,
       "skippedExisting": 0,
       "skippedRejected": 0,
       "skippedDuplicate": 0,
-      "skippedNonPolicy": 0,
+      "skippedNonPolicy": 1,
       "duplicateReasons": {},
       "errors": [
         {
@@ -513,12 +513,12 @@
           "error": "404 Not Found"
         },
         {
-          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100012/common/list.html",
-          "error": "fetch failed"
-        },
-        {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
           "error": "403 Forbidden"
+        },
+        {
+          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100071/common/content/content_1656508289844580352.html",
+          "error": "跳过非具体政策文件页面"
         }
       ]
     },
@@ -665,8 +665,8 @@
   ],
   "summary": {
     "attempted": 44,
-    "succeeded": 4,
-    "failed": 40,
+    "succeeded": 6,
+    "failed": 38,
     "candidates": 0,
     "pendingCandidates": 0,
     "deadlineReached": false
