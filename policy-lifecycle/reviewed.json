@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "reviewed",
-  "updatedAt": "2026-09-03T20:04:49.664Z",
+  "updatedAt": "2026-09-08T20:10:18.524Z",
   "items": [
     {
       "policy": {
@@ -16635,6 +16635,65 @@
           "topic": "nhsa_services",
           "secondary": "支付方式改革处",
           "evaluatedAt": "2026-09-03T20:04:49.664Z"
+        }
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-09-08",
+        "topic": "nhsa_benefits",
+        "secondary": "筹资待遇处",
+        "title": "《关于开展灵活就业人员、农民工、新就业形态人员参加基本医疗保险提质专项行动的通知》",
+        "agency": "国家医疗保障局",
+        "level": "通知",
+        "summary": "国家医保局办公室财政部办公厅交通运输部办公厅 商务部办公厅国家税务总局办公厅国家邮政局办公室 中华全国总工会办公厅关于开展灵活就业人员、农民工、 新就业形态人员参加基本医疗保险提质专项行动的通知各省、自治区、直辖市及新疆生产建设兵团医疗保障局、财政厅（局）、交通运输厅（局、委）、商务主管部门、邮政管理局、总工会，国家税务总局各省、自治区、直辖市税务局： 为深入落实“十五五”规划《纲要》关于提高灵活就业人员、农民工、新就业形态人员（以下统称为“灵活就业人员等”）参保率的工作要求，鼓励相关人员参加职工医保，决定开展专项",
+        "url": "https://www.nhsa.gov.cn/art/2026/9/8/art_104_22045.html",
+        "keywords": "官方来源：国家医疗保障局 ",
+        "documentNo": "医保办发〔2026〕11号",
+        "reviewStatus": "已自动核验",
+        "id": "candidate-1c6b7560b37bd70b",
+        "assignment": "规则归口",
+        "agencies": [
+          "国家医疗保障局"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-09-08T20:10:18.524Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-09-08",
+        "sourceId": "nhsa",
+        "sourceUrl": "https://www.nhsa.gov.cn/art/2026/9/8/art_104_22045.html",
+        "collectedAt": "2026-09-08T20:09:45.810Z"
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "GitHub Actions 自动发布器",
+        "reviewedAt": "2026-09-08T20:10:18.524Z",
+        "basis": "自动发布门禁：国家医疗保障局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“筹资待遇”规则；摘要来自官方正文。",
+        "method": "automatic",
+        "confidence": "high",
+        "evidence": {
+          "sourceUrl": "https://www.nhsa.gov.cn/art/2026/9/8/art_104_22045.html",
+          "resolvedUrl": "https://www.nhsa.gov.cn/art/2026/9/8/art_104_22045.html",
+          "pageTitle": "关于开展灵活就业人员、农民工、新就业形态人员参加基本医疗保险提质专项行动的通知",
+          "publishDate": "2026-09-08",
+          "documentNo": "医保办发〔2026〕11号",
+          "summarySource": "official-download",
+          "contentUrl": "https://www.nhsa.gov.cn/module/download/downfile.jsp?classid=0&filename=e26206d72fa1490ca6003fd0687c76eb.txt",
+          "verifiedAt": "2026-09-08T20:10:19.756Z"
         }
       }
     }
