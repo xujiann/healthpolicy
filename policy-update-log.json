@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T20:09:45.810Z",
+  "generatedAt": "2026-09-09T19:58:29.237Z",
   "manualReview": {
     "reviewedAt": "2026-08-25",
     "status": "completed",
@@ -36,8 +36,8 @@
         "failed": 0
       },
       "candidates": 8,
-      "added": 1,
-      "skippedExisting": 7,
+      "added": 0,
+      "skippedExisting": 8,
       "skippedRejected": 0,
       "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
@@ -320,13 +320,11 @@
       },
       "candidates": 8,
       "added": 0,
-      "skippedExisting": 7,
+      "skippedExisting": 8,
       "skippedRejected": 0,
-      "skippedDuplicate": 1,
+      "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
-      "duplicateReasons": {
-        "id": 1
-      },
+      "duplicateReasons": {},
       "errors": [
         {
           "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E7%9B%AE%E5%BD%95%20%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F%20DRG%20DIP%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
@@ -378,13 +376,11 @@
       },
       "candidates": 8,
       "added": 0,
-      "skippedExisting": 7,
+      "skippedExisting": 8,
       "skippedRejected": 0,
-      "skippedDuplicate": 1,
+      "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
-      "duplicateReasons": {
-        "id": 1
-      },
+      "duplicateReasons": {},
       "errors": [
         {
           "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E8%8D%AF%E9%9B%86%E4%B8%AD%E9%87%87%E8%B4%AD%20%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E4%BB%B7%E6%A0%BC%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
@@ -436,13 +432,11 @@
       },
       "candidates": 8,
       "added": 0,
-      "skippedExisting": 7,
+      "skippedExisting": 8,
       "skippedRejected": 0,
-      "skippedDuplicate": 1,
+      "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
-      "duplicateReasons": {
-        "id": 1
-      },
+      "duplicateReasons": {},
       "errors": [
         {
           "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E5%9F%BA%E9%87%91%E7%9B%91%E7%AE%A1%20%E9%A3%9E%E8%A1%8C%E6%A3%80%E6%9F%A5%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
@@ -673,9 +667,9 @@
     "attempted": 44,
     "succeeded": 6,
     "failed": 38,
-    "candidates": 1,
-    "pendingCandidates": 1,
+    "candidates": 0,
+    "pendingCandidates": 0,
     "deadlineReached": false
   },
-  "status": "completed_with_candidates"
+  "status": "no_new_policy"
 }

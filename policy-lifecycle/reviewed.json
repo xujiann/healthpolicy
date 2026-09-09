@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "reviewed",
-  "updatedAt": "2026-09-08T20:10:18.524Z",
+  "updatedAt": "2026-09-09T19:58:59.897Z",
   "items": [
     {
       "policy": {
@@ -16694,6 +16694,12 @@
           "summarySource": "official-download",
           "contentUrl": "https://www.nhsa.gov.cn/module/download/downfile.jsp?classid=0&filename=e26206d72fa1490ca6003fd0687c76eb.txt",
           "verifiedAt": "2026-09-08T20:10:19.756Z"
+        },
+        "classification": {
+          "rule": "筹资待遇",
+          "topic": "nhsa_benefits",
+          "secondary": "筹资待遇处",
+          "evaluatedAt": "2026-09-09T19:58:59.897Z"
         }
       }
     }
