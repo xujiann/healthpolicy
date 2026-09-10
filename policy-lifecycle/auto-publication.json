@@ -1,29 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-09T19:58:59.897Z",
+  "generatedAt": "2026-09-10T19:59:35.822Z",
   "mode": "unattended-high-confidence",
   "summary": {
     "queuedBefore": 0,
     "evaluated": 0,
     "published": 0,
     "reclassified": 0,
-    "classificationRefreshed": 1,
+    "classificationRefreshed": 0,
     "quarantined": 0,
     "deferred": 0,
     "remaining": 0
   },
-  "items": [
-    {
-      "id": "candidate-1c6b7560b37bd70b",
-      "title": "《关于开展灵活就业人员、农民工、新就业形态人员参加基本医疗保险提质专项行动的通知》",
-      "status": "classification_refreshed",
-      "sourceId": "nhsa",
-      "sourceUrl": "https://www.nhsa.gov.cn/art/2026/9/8/art_104_22045.html",
-      "previousTopic": "nhsa_benefits",
-      "previousSecondary": "筹资待遇处",
-      "topic": "nhsa_benefits",
-      "secondary": "筹资待遇处",
-      "rule": "筹资待遇"
-    }
-  ]
+  "items": []
 }
