@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T19:59:05.318Z",
+  "generatedAt": "2026-09-11T19:58:13.334Z",
   "manualReview": {
     "reviewedAt": "2026-08-25",
     "status": "completed",
@@ -136,7 +136,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "502 Bad Gateway"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -206,7 +206,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "502 Bad Gateway"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -276,7 +276,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/jws/s7874/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "502 Bad Gateway"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -584,7 +584,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "502 Bad Gateway"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -654,7 +654,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "502 Bad Gateway"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
