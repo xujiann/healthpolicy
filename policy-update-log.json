@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T19:58:13.334Z",
+  "generatedAt": "2026-09-12T19:35:54.360Z",
   "manualReview": {
     "reviewedAt": "2026-08-25",
     "status": "completed",
@@ -26,23 +26,28 @@
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 45,
-          "status": "ok"
+          "hits": 0,
+          "status": "failed"
         }
       ],
       "requests": {
         "attempted": 1,
-        "succeeded": 1,
-        "failed": 0
+        "succeeded": 0,
+        "failed": 1
       },
-      "candidates": 8,
+      "candidates": 0,
       "added": 0,
-      "skippedExisting": 8,
+      "skippedExisting": 0,
       "skippedRejected": 0,
       "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
       "duplicateReasons": {},
-      "errors": []
+      "errors": [
+        {
+          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
+          "error": "This operation was aborted"
+        }
+      ]
     },
     {
       "name": "官方来源：国家疾病预防控制局",
@@ -124,7 +129,7 @@
       "errors": [
         {
           "url": "https://sousuo.www.gov.cn/s.htm?t=zhengceku&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E6%8A%A4%E7%90%86%20%E5%BA%B7%E5%A4%8D%20%E5%AE%89%E5%AE%81%E7%96%97%E6%8A%A4%20%E6%94%BF%E7%AD%96%20%E9%80%9A%E7%9F%A5%20site%3Awww.gov.cn%2Fzhengce",
-          "error": "404 Not Found"
+          "error": "This operation was aborted"
         },
         {
           "url": "https://sousuo.www.gov.cn/s.htm?t=zhengcelibrary&q=%E5%9B%BD%E5%AE%B6%E5%8D%AB%E7%94%9F%E5%81%A5%E5%BA%B7%E5%A7%94%20%E6%8A%A4%E7%90%86%20%E5%BA%B7%E5%A4%8D%20%E5%AE%89%E5%AE%81%E7%96%97%E6%8A%A4%20%E6%94%BF%E7%AD%96%20%E9%80%9A%E7%9F%A5%20site%3Awww.gov.cn%2Fzhengce",
@@ -136,7 +141,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "502 Bad Gateway"
+          "error": "This operation was aborted"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -309,18 +314,24 @@
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 45,
-          "status": "ok"
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0,
+          "status": "failed"
         }
       ],
       "requests": {
-        "attempted": 4,
-        "succeeded": 1,
-        "failed": 3
+        "attempted": 5,
+        "succeeded": 0,
+        "failed": 5
       },
-      "candidates": 8,
+      "candidates": 0,
       "added": 0,
-      "skippedExisting": 8,
+      "skippedExisting": 0,
       "skippedRejected": 0,
       "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
@@ -337,6 +348,14 @@
         {
           "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E4%BF%9D%E7%9B%AE%E5%BD%95%20%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F%20DRG%20DIP%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
           "error": "404 Not Found"
+        },
+        {
+          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
+          "error": "This operation was aborted"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "403 Forbidden"
         }
       ]
     },
@@ -365,18 +384,24 @@
         {
           "type": "source",
           "source": "https://www.nhsa.gov.cn/col/col104/index.html",
-          "hits": 45,
-          "status": "ok"
+          "hits": 0,
+          "status": "failed"
+        },
+        {
+          "type": "source",
+          "source": "https://www.gov.cn/zhengce/zhengceku/",
+          "hits": 0,
+          "status": "failed"
         }
       ],
       "requests": {
-        "attempted": 4,
-        "succeeded": 1,
-        "failed": 3
+        "attempted": 5,
+        "succeeded": 0,
+        "failed": 5
       },
-      "candidates": 8,
+      "candidates": 0,
       "added": 0,
-      "skippedExisting": 8,
+      "skippedExisting": 0,
       "skippedRejected": 0,
       "skippedDuplicate": 0,
       "skippedNonPolicy": 0,
@@ -393,6 +418,14 @@
         {
           "url": "https://www.gov.cn/so/s?tab=all&qt=%E5%9B%BD%E5%AE%B6%E5%8C%BB%E4%BF%9D%E5%B1%80%20%E5%8C%BB%E8%8D%AF%E9%9B%86%E4%B8%AD%E9%87%87%E8%B4%AD%20%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E4%BB%B7%E6%A0%BC%20%E6%94%BF%E7%AD%96%20site%3Awww.gov.cn%2Fzhengce",
           "error": "404 Not Found"
+        },
+        {
+          "url": "https://www.nhsa.gov.cn/col/col104/index.html",
+          "error": "This operation was aborted"
+        },
+        {
+          "url": "https://www.gov.cn/zhengce/zhengceku/",
+          "error": "403 Forbidden"
         }
       ]
     },
@@ -664,9 +697,9 @@
     }
   ],
   "summary": {
-    "attempted": 44,
-    "succeeded": 6,
-    "failed": 38,
+    "attempted": 46,
+    "succeeded": 3,
+    "failed": 43,
     "candidates": 0,
     "pendingCandidates": 0,
     "deadlineReached": false
