@@ -1,6 +1,6 @@
 // 由 tools/build-policy-artifacts.mjs 生成，请勿直接编辑。
 const policyGovernance = {
-  "generatedAt": "2026-09-12T19:37:32.264Z",
+  "generatedAt": "2026-09-13T19:42:46.542Z",
   "dataThrough": "2026-09-08",
   "lastReviewedAt": "2026-09-08T20:10:18.524Z",
   "counts": {
@@ -30,7 +30,7 @@ const policyGovernance = {
   },
   "p3": {
     "collection": {
-      "generatedAt": "2026-09-12T19:35:54.360Z",
+      "generatedAt": "2026-09-13T19:41:21.697Z",
       "status": "no_new_policy",
       "attempted": 46,
       "succeeded": 3,
@@ -47,7 +47,7 @@ const policyGovernance = {
       "approvalRate": 100
     },
     "autoPublication": {
-      "generatedAt": "2026-09-12T19:37:32.185Z",
+      "generatedAt": "2026-09-13T19:42:46.467Z",
       "mode": "unattended-high-confidence",
       "queuedBefore": 0,
       "evaluated": 0,
@@ -59,24 +59,24 @@ const policyGovernance = {
       "remaining": 0
     },
     "linkHealth": {
-      "generatedAt": "2026-09-12T19:37:32.264Z",
+      "generatedAt": "2026-09-13T19:42:46.542Z",
       "overallStatus": "partial",
       "total": 356,
-      "checked": 355,
-      "decisive": 352,
-      "reachable": 352,
-      "healthy": 351,
+      "checked": 356,
+      "decisive": 354,
+      "reachable": 354,
+      "healthy": 353,
       "blocked": 1,
       "unavailable": 0,
-      "inconclusive": 3,
-      "unchecked": 1,
-      "coverageRate": 99.7,
+      "inconclusive": 2,
+      "unchecked": 0,
+      "coverageRate": 100,
       "availabilityRate": 100
     }
   },
   "sourceHealth": {
     "schemaVersion": 1,
-    "generatedAt": "2026-09-12T19:35:54.360Z",
+    "generatedAt": "2026-09-13T19:41:21.697Z",
     "overallStatus": "degraded",
     "sources": [
       {
@@ -85,7 +85,7 @@ const policyGovernance = {
         "homepage": "https://www.nhsa.gov.cn/",
         "policyList": "https://www.nhsa.gov.cn/col/col104/index.html",
         "status": "unavailable",
-        "checkedAt": "2026-09-12T19:35:54.360Z",
+        "checkedAt": "2026-09-13T19:41:21.697Z",
         "requests": {
           "attempted": 1,
           "succeeded": 0,
@@ -102,7 +102,7 @@ const policyGovernance = {
         "homepage": "https://www.ndcpa.gov.cn/",
         "policyList": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
         "status": "healthy",
-        "checkedAt": "2026-09-12T19:35:54.360Z",
+        "checkedAt": "2026-09-13T19:41:21.697Z",
         "requests": {
           "attempted": 1,
           "succeeded": 1,
