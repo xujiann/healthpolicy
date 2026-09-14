@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-13T19:42:46.542Z",
+  "generatedAt": "2026-09-14T21:02:39.943Z",
   "checkedThisRun": 40,
-  "nextCursor": 9,
-  "overallStatus": "partial",
+  "nextCursor": 49,
+  "overallStatus": "healthy",
   "summary": {
     "total": 356,
     "checked": 356,
-    "decisive": 354,
-    "reachable": 354,
-    "healthy": 353,
+    "decisive": 356,
+    "reachable": 356,
+    "healthy": 355,
     "blocked": 1,
     "unavailable": 0,
-    "inconclusive": 2,
+    "inconclusive": 0,
     "unchecked": 0,
     "coverageRate": 100,
     "availabilityRate": 100
@@ -162,11 +162,11 @@
         "《关于印发〈国家免疫规划疫苗儿童免疫程序及说明（2026年版）〉的通知》"
       ],
       "latestDate": "2026-07-03",
-      "status": "inconclusive",
-      "httpStatus": null,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 309,
-      "error": "ETIMEDOUT"
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 561,
+      "error": ""
     },
     {
       "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2066765358108676096.html",
@@ -179,8 +179,8 @@
       "latestDate": "2026-06-16",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 836,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 510,
       "error": ""
     },
     {
@@ -194,8 +194,8 @@
       "latestDate": "2026-06-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 1019,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 822,
       "error": ""
     },
     {
@@ -209,8 +209,8 @@
       "latestDate": "2026-06-05",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 2405,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 901,
       "error": ""
     },
     {
@@ -224,8 +224,8 @@
       "latestDate": "2026-06",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 657,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 751,
       "error": ""
     },
     {
@@ -239,8 +239,8 @@
       "latestDate": "2026-05-27",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 2250,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 914,
       "error": ""
     },
     {
@@ -254,8 +254,8 @@
       "latestDate": "2026-05-19",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 1785,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 894,
       "error": ""
     },
     {
@@ -269,8 +269,8 @@
       "latestDate": "2026-05-15",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 2194,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 1097,
       "error": ""
     },
     {
@@ -284,8 +284,8 @@
       "latestDate": "2026-05-15",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 1883,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 855,
       "error": ""
     },
     {
@@ -297,11 +297,11 @@
         "《国家疾控局关于印发〈传染病疫情信息公布管理办法〉的通知》"
       ],
       "latestDate": "2026-05-14",
-      "status": "inconclusive",
-      "httpStatus": null,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 252,
-      "error": "ETIMEDOUT"
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 511,
+      "error": ""
     },
     {
       "url": "https://www.nhsa.gov.cn/art/2026/5/13/art_104_20494.html",
@@ -314,8 +314,8 @@
       "latestDate": "2026-05-13",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 964,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 878,
       "error": ""
     },
     {
@@ -329,8 +329,8 @@
       "latestDate": "2026-05-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 1702,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 810,
       "error": ""
     },
     {
@@ -344,8 +344,8 @@
       "latestDate": "2026-05",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 632,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 613,
       "error": ""
     },
     {
@@ -359,8 +359,8 @@
       "latestDate": "2026-05",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 2423,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 533,
       "error": ""
     },
     {
@@ -374,8 +374,8 @@
       "latestDate": "2026-04-21",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 767,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 515,
       "error": ""
     },
     {
@@ -389,8 +389,8 @@
       "latestDate": "2026-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 473,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 521,
       "error": ""
     },
     {
@@ -404,8 +404,8 @@
       "latestDate": "2026-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 732,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 293,
       "error": ""
     },
     {
@@ -419,8 +419,8 @@
       "latestDate": "2026-03",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 572,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 909,
       "error": ""
     },
     {
@@ -434,8 +434,8 @@
       "latestDate": "2026-03",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 786,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 833,
       "error": ""
     },
     {
@@ -449,8 +449,8 @@
       "latestDate": "2026-03",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 470,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 821,
       "error": ""
     },
     {
@@ -464,8 +464,8 @@
       "latestDate": "2026-02-27",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 755,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 810,
       "error": ""
     },
     {
@@ -479,8 +479,8 @@
       "latestDate": "2026-02-27",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 764,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 728,
       "error": ""
     },
     {
@@ -494,8 +494,8 @@
       "latestDate": "2026-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 555,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 731,
       "error": ""
     },
     {
@@ -509,8 +509,8 @@
       "latestDate": "2026-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 459,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 614,
       "error": ""
     },
     {
@@ -524,8 +524,8 @@
       "latestDate": "2026-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 547,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 659,
       "error": ""
     },
     {
@@ -539,8 +539,8 @@
       "latestDate": "2026-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 453,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 495,
       "error": ""
     },
     {
@@ -554,8 +554,8 @@
       "latestDate": "2026-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 493,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 567,
       "error": ""
     },
     {
@@ -569,8 +569,8 @@
       "latestDate": "2026-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 497,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 713,
       "error": ""
     },
     {
@@ -584,8 +584,8 @@
       "latestDate": "2025-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 503,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 521,
       "error": ""
     },
     {
@@ -599,8 +599,8 @@
       "latestDate": "2025-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 514,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 669,
       "error": ""
     },
     {
@@ -614,8 +614,8 @@
       "latestDate": "2025-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 398,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 654,
       "error": ""
     },
     {
@@ -629,8 +629,8 @@
       "latestDate": "2025-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 468,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 544,
       "error": ""
     },
     {
@@ -644,8 +644,8 @@
       "latestDate": "2025-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 1448,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 845,
       "error": ""
     },
     {
@@ -659,8 +659,8 @@
       "latestDate": "2025-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 482,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 533,
       "error": ""
     },
     {
@@ -674,8 +674,8 @@
       "latestDate": "2025-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 464,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 485,
       "error": ""
     },
     {
@@ -689,8 +689,8 @@
       "latestDate": "2025-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 540,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 649,
       "error": ""
     },
     {
@@ -704,8 +704,8 @@
       "latestDate": "2025-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-05T19:21:03.082Z",
-      "responseMs": 500,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 553,
       "error": ""
     },
     {
@@ -719,8 +719,8 @@
       "latestDate": "2025-10",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 494,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 550,
       "error": ""
     },
     {
@@ -734,8 +734,8 @@
       "latestDate": "2025-10",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 444,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 571,
       "error": ""
     },
     {
@@ -749,8 +749,8 @@
       "latestDate": "2025-09",
       "status": "blocked",
       "httpStatus": 403,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 1711,
+      "checkedAt": "2026-09-14T21:02:39.943Z",
+      "responseMs": 888,
       "error": ""
     },
     {
