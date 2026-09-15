@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-14T21:02:39.943Z",
+  "generatedAt": "2026-09-15T20:24:33.865Z",
   "checkedThisRun": 40,
-  "nextCursor": 49,
+  "nextCursor": 89,
   "overallStatus": "healthy",
   "summary": {
-    "total": 356,
+    "total": 357,
     "checked": 356,
     "decisive": 356,
     "reachable": 356,
@@ -13,11 +13,26 @@
     "blocked": 1,
     "unavailable": 0,
     "inconclusive": 0,
-    "unchecked": 0,
-    "coverageRate": 100,
+    "unchecked": 1,
+    "coverageRate": 99.7,
     "availabilityRate": 100
   },
   "items": [
+    {
+      "url": "https://www.nhsa.gov.cn/art/2026/9/15/art_104_22141.html",
+      "recordIds": [
+        "candidate-dfa6d6e329171a1f"
+      ],
+      "titles": [
+        "《国家医疗保障局关于试行高水平新技术新产品医疗服务价格项目预立项制度的通知》"
+      ],
+      "latestDate": "2026-09-15",
+      "status": "not_checked",
+      "httpStatus": null,
+      "checkedAt": null,
+      "responseMs": null,
+      "error": ""
+    },
     {
       "url": "https://www.nhsa.gov.cn/art/2026/9/8/art_104_22045.html",
       "recordIds": [
@@ -749,8 +764,8 @@
       "latestDate": "2025-09",
       "status": "blocked",
       "httpStatus": 403,
-      "checkedAt": "2026-09-14T21:02:39.943Z",
-      "responseMs": 888,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 1675,
       "error": ""
     },
     {
@@ -764,8 +779,8 @@
       "latestDate": "2025-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 394,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 283,
       "error": ""
     },
     {
@@ -779,8 +794,8 @@
       "latestDate": "2025-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 417,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 323,
       "error": ""
     },
     {
@@ -794,8 +809,8 @@
       "latestDate": "2025-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 610,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 391,
       "error": ""
     },
     {
@@ -809,8 +824,8 @@
       "latestDate": "2025-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 445,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 358,
       "error": ""
     },
     {
@@ -824,8 +839,8 @@
       "latestDate": "2025-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 405,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 399,
       "error": ""
     },
     {
@@ -839,8 +854,8 @@
       "latestDate": "2025-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 402,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 396,
       "error": ""
     },
     {
@@ -854,8 +869,8 @@
       "latestDate": "2025-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 387,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 427,
       "error": ""
     },
     {
@@ -869,8 +884,8 @@
       "latestDate": "2025-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 1022,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 311,
       "error": ""
     },
     {
@@ -884,8 +899,8 @@
       "latestDate": "2025-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 436,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 445,
       "error": ""
     },
     {
@@ -899,8 +914,8 @@
       "latestDate": "2025-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 468,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 318,
       "error": ""
     },
     {
@@ -915,8 +930,8 @@
       "latestDate": "2025-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 416,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 345,
       "error": ""
     },
     {
@@ -930,8 +945,8 @@
       "latestDate": "2025-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 411,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 387,
       "error": ""
     },
     {
@@ -945,8 +960,8 @@
       "latestDate": "2025-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 460,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 327,
       "error": ""
     },
     {
@@ -960,8 +975,8 @@
       "latestDate": "2025-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 466,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 407,
       "error": ""
     },
     {
@@ -975,8 +990,8 @@
       "latestDate": "2025-07",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 487,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 311,
       "error": ""
     },
     {
@@ -991,8 +1006,8 @@
       "latestDate": "2025-07",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 429,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 281,
       "error": ""
     },
     {
@@ -1006,8 +1021,8 @@
       "latestDate": "2025-07",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 437,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 315,
       "error": ""
     },
     {
@@ -1021,8 +1036,8 @@
       "latestDate": "2025-06",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 470,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 463,
       "error": ""
     },
     {
@@ -1036,8 +1051,8 @@
       "latestDate": "2025-06",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 377,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 390,
       "error": ""
     },
     {
@@ -1051,8 +1066,8 @@
       "latestDate": "2025-06",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 513,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 406,
       "error": ""
     },
     {
@@ -1066,8 +1081,8 @@
       "latestDate": "2025-05",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 433,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 492,
       "error": ""
     },
     {
@@ -1081,8 +1096,8 @@
       "latestDate": "2025-05",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 425,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 314,
       "error": ""
     },
     {
@@ -1096,8 +1111,8 @@
       "latestDate": "2025-05",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 526,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 317,
       "error": ""
     },
     {
@@ -1111,8 +1126,8 @@
       "latestDate": "2025-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 438,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 652,
       "error": ""
     },
     {
@@ -1126,8 +1141,8 @@
       "latestDate": "2025-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 448,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 374,
       "error": ""
     },
     {
@@ -1141,8 +1156,8 @@
       "latestDate": "2025-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 417,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 403,
       "error": ""
     },
     {
@@ -1156,8 +1171,8 @@
       "latestDate": "2025-03",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 386,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 399,
       "error": ""
     },
     {
@@ -1171,8 +1186,8 @@
       "latestDate": "2025-03",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 430,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 343,
       "error": ""
     },
     {
@@ -1186,8 +1201,8 @@
       "latestDate": "2025-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 392,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 386,
       "error": ""
     },
     {
@@ -1201,8 +1216,8 @@
       "latestDate": "2025-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 430,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 352,
       "error": ""
     },
     {
@@ -1216,8 +1231,8 @@
       "latestDate": "2025-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 416,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 274,
       "error": ""
     },
     {
@@ -1231,8 +1246,8 @@
       "latestDate": "2024-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 390,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 296,
       "error": ""
     },
     {
@@ -1246,8 +1261,8 @@
       "latestDate": "2024-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 424,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 104,
       "error": ""
     },
     {
@@ -1261,8 +1276,8 @@
       "latestDate": "2024-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 468,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 482,
       "error": ""
     },
     {
@@ -1276,8 +1291,8 @@
       "latestDate": "2024-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 420,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 274,
       "error": ""
     },
     {
@@ -1291,8 +1306,8 @@
       "latestDate": "2024-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 447,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 444,
       "error": ""
     },
     {
@@ -1306,8 +1321,8 @@
       "latestDate": "2024-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-06T19:26:51.611Z",
-      "responseMs": 439,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 318,
       "error": ""
     },
     {
@@ -1323,8 +1338,8 @@
       "latestDate": "2024-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-07T20:45:10.871Z",
-      "responseMs": 354,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 379,
       "error": ""
     },
     {
@@ -1338,8 +1353,8 @@
       "latestDate": "2024-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-07T20:45:10.871Z",
-      "responseMs": 325,
+      "checkedAt": "2026-09-15T20:24:33.865Z",
+      "responseMs": 376,
       "error": ""
     },
     {
