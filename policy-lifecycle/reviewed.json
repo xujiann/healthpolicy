@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "reviewed",
-  "updatedAt": "2026-09-15T20:24:31.728Z",
+  "updatedAt": "2026-09-16T20:22:26.408Z",
   "items": [
     {
       "policy": {
@@ -16759,6 +16759,12 @@
           "summarySource": "official-download",
           "contentUrl": "https://www.nhsa.gov.cn/module/download/downfile.jsp?classid=0&filename=9c6e5c5cfacf46f8b8e33664e61ce3b2.wps",
           "verifiedAt": "2026-09-15T20:24:33.804Z"
+        },
+        "classification": {
+          "rule": "医疗服务价格",
+          "topic": "nhsa_price",
+          "secondary": "医疗服务价格处",
+          "evaluatedAt": "2026-09-16T20:22:26.408Z"
         }
       }
     }
