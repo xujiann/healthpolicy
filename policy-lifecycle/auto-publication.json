@@ -1,29 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-16T20:22:26.408Z",
+  "generatedAt": "2026-09-17T20:30:29.761Z",
   "mode": "unattended-high-confidence",
   "summary": {
     "queuedBefore": 0,
     "evaluated": 0,
     "published": 0,
     "reclassified": 0,
-    "classificationRefreshed": 1,
+    "classificationRefreshed": 0,
     "quarantined": 0,
     "deferred": 0,
     "remaining": 0
   },
-  "items": [
-    {
-      "id": "candidate-dfa6d6e329171a1f",
-      "title": "《国家医疗保障局关于试行高水平新技术新产品医疗服务价格项目预立项制度的通知》",
-      "status": "classification_refreshed",
-      "sourceId": "nhsa",
-      "sourceUrl": "https://www.nhsa.gov.cn/art/2026/9/15/art_104_22141.html",
-      "previousTopic": "nhsa_price",
-      "previousSecondary": "医疗服务价格处",
-      "topic": "nhsa_price",
-      "secondary": "医疗服务价格处",
-      "rule": "医疗服务价格"
-    }
-  ]
+  "items": []
 }
