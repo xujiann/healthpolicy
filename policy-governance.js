@@ -1,6 +1,6 @@
 // 由 tools/build-policy-artifacts.mjs 生成，请勿直接编辑。
 const policyGovernance = {
-  "generatedAt": "2026-09-24T20:42:04.623Z",
+  "generatedAt": "2026-09-25T20:41:31.263Z",
   "dataThrough": "2026-09-15",
   "lastReviewedAt": "2026-09-15T20:24:31.728Z",
   "counts": {
@@ -30,7 +30,7 @@ const policyGovernance = {
   },
   "p3": {
     "collection": {
-      "generatedAt": "2026-09-24T20:41:32.938Z",
+      "generatedAt": "2026-09-25T20:40:59.829Z",
       "status": "no_new_policy",
       "attempted": 44,
       "succeeded": 4,
@@ -47,7 +47,7 @@ const policyGovernance = {
       "approvalRate": 100
     },
     "autoPublication": {
-      "generatedAt": "2026-09-24T20:42:04.558Z",
+      "generatedAt": "2026-09-25T20:41:31.209Z",
       "mode": "unattended-high-confidence",
       "queuedBefore": 0,
       "evaluated": 0,
@@ -59,7 +59,7 @@ const policyGovernance = {
       "remaining": 0
     },
     "linkHealth": {
-      "generatedAt": "2026-09-24T20:42:04.623Z",
+      "generatedAt": "2026-09-25T20:41:31.263Z",
       "overallStatus": "partial",
       "total": 357,
       "checked": 357,
@@ -76,7 +76,7 @@ const policyGovernance = {
   },
   "sourceHealth": {
     "schemaVersion": 1,
-    "generatedAt": "2026-09-24T20:41:32.938Z",
+    "generatedAt": "2026-09-25T20:40:59.829Z",
     "overallStatus": "degraded",
     "sources": [
       {
@@ -85,7 +85,7 @@ const policyGovernance = {
         "homepage": "https://www.nhsa.gov.cn/",
         "policyList": "https://www.nhsa.gov.cn/col/col104/index.html",
         "status": "healthy",
-        "checkedAt": "2026-09-24T20:41:32.938Z",
+        "checkedAt": "2026-09-25T20:40:59.829Z",
         "requests": {
           "attempted": 1,
           "succeeded": 1,
@@ -102,7 +102,7 @@ const policyGovernance = {
         "homepage": "https://www.ndcpa.gov.cn/",
         "policyList": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
         "status": "unavailable",
-        "checkedAt": "2026-09-24T20:41:32.938Z",
+        "checkedAt": "2026-09-25T20:40:59.829Z",
         "requests": {
           "attempted": 1,
           "succeeded": 0,
