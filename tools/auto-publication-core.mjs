@@ -213,7 +213,7 @@ function extractTagText(html, tag) {
   return stripHtml(String(html || "").match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, "i"))?.[1] || "").trim();
 }
 
-function extractPageBody(html) {
+export function extractPageBody(html) {
   return String(html || "").match(/<meta\s+name=["']ContentStart["'][^>]*>([\s\S]*?)<meta\s+name=["']ContentEnd["'][^>]*>/i)?.[1]
     || String(html || "").match(/<div[^>]+id=["']zoom["'][^>]*>([\s\S]*?)<\/div>/i)?.[1]
     || String(html || "").match(/<div[^>]+id=["']detailContent["'][^>]*>([\s\S]*?)<\/div>/i)?.[1]

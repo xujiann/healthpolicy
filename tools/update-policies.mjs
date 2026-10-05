@@ -10,6 +10,7 @@ import {
 } from "./policy-quality.mjs";
 import { createCandidateItem, inferSourceId } from "./lifecycle-core.mjs";
 import { fetchOfficialText } from "./official-fetch.mjs";
+import { extractPageBody, summarizePolicyText } from "./auto-publication-core.mjs";
 import { policySources } from "./sources/registry.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
@@ -282,7 +283,10 @@ async function fetchPolicy(url, seed) {
     : !extractedAgency || invalidAgencyPattern.test(extractedAgency)
       ? inferAgency(title, seed)
       : extractedAgency;
-  const extractedSummary = cleanText(
+  const officialBodySummary = seed.sourceAdapter?.id === "ndcpa"
+    ? summarizePolicyText(extractPageBody(html), title)
+    : "";
+  const extractedSummary = officialBodySummary || cleanText(
     firstMatch(html, /<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i)
     || firstParagraph(html)
     || title

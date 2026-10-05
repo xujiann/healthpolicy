@@ -30,6 +30,7 @@ import { classifyLinkResult, summarizeLinkHealth, validateLinkHealthReport } fro
 import {
   classifyTrustedPolicy,
   evaluateCandidateForAutoPublication,
+  extractPageBody,
   extractOfficialTextDownload,
   fetchOfficialPolicyEvidence,
   prepareAutoApprovedPolicy,
@@ -116,6 +117,7 @@ const ndcpaHtml = '<a href="/jbkzzx/c100014/common/content/content_2074752747875
 assert.deepEqual(ndcpaSource.extractUrls(ndcpaHtml, ndcpaSource.homepage), ["https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2074752747875766272.html"]);
 const ndcpaEmbedded = 'var noticeItem = [{"aU":"{\\"common\\":\\"/jbkzzx/c100014/common/content/content_2101474914952712192.html\\"}"}];';
 assert.deepEqual(ndcpaSource.extractUrls(ndcpaEmbedded, ndcpaSource.listUrls[0]), ["https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101474914952712192.html"]);
+assert.equal(summarizePolicyText(extractPageBody('<p><a>政务公开</a></p><div id="detailContent" class="detailContent"><p>为贯彻落实疾控体系改革要求，国家疾控局制定卫生健康监督规范化建设指导意见，现印发各地认真落实。</p></div>'), "测试政策"), "为贯彻落实疾控体系改革要求，国家疾控局制定卫生健康监督规范化建设指导意见，现印发各地认真落实。");
 assert.equal(ndcpaSource.accepts(new URL("https://www.ndcpa.gov.cn/jbkzzx/c100071/common/content/content_1656508289844580352.html")), false);
 assert.deepEqual(classifyTrustedPolicy({ sourceId: "ndcpa", sourceDepartment: "综合监督二司", title: "关于印发卫生健康监督规范化建设指导意见的通知" }), {
   topic: "cdc_supervision_2", secondary: "司局统筹", rule: "官方来源：综合监督二司"
