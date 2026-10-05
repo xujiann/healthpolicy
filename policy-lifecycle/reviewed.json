@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "reviewed",
-  "updatedAt": "2026-10-05T02:14:03.361Z",
+  "updatedAt": "2026-10-05T23:19:57.963Z",
   "items": [
     {
       "policy": {
@@ -16825,6 +16825,12 @@
           "summarySource": "official-page",
           "contentUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2103083565823987712.html",
           "verifiedAt": "2026-10-05T02:14:04.415Z"
+        },
+        "classification": {
+          "rule": "官方来源：传染病防控司",
+          "topic": "cdc_prevention",
+          "secondary": "司局统筹",
+          "evaluatedAt": "2026-10-05T23:19:57.963Z"
         }
       }
     },
@@ -16885,6 +16891,12 @@
           "summarySource": "official-page",
           "contentUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101473343535747072.html",
           "verifiedAt": "2026-10-05T02:14:04.683Z"
+        },
+        "classification": {
+          "rule": "官方来源：综合监督二司",
+          "topic": "cdc_supervision_2",
+          "secondary": "司局统筹",
+          "evaluatedAt": "2026-10-05T23:19:57.963Z"
         }
       }
     },
@@ -16945,6 +16957,12 @@
           "summarySource": "official-page",
           "contentUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101474914952712192.html",
           "verifiedAt": "2026-10-05T02:14:04.946Z"
+        },
+        "classification": {
+          "rule": "官方来源：综合监督二司",
+          "topic": "cdc_supervision_2",
+          "secondary": "司局统筹",
+          "evaluatedAt": "2026-10-05T23:19:57.963Z"
         }
       }
     },
@@ -17005,6 +17023,12 @@
           "summarySource": "official-page",
           "contentUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2081594149653876736.html",
           "verifiedAt": "2026-10-05T02:14:06.000Z"
+        },
+        "classification": {
+          "rule": "官方来源：规划财务与法规司",
+          "topic": "cdc_planning",
+          "secondary": "司局统筹",
+          "evaluatedAt": "2026-10-05T23:19:57.963Z"
         }
       }
     }
