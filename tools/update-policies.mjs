@@ -9,6 +9,7 @@ import {
   normalizePolicyUrl
 } from "./policy-quality.mjs";
 import { createCandidateItem, inferSourceId } from "./lifecycle-core.mjs";
+import { fetchOfficialText } from "./official-fetch.mjs";
 import { policySources } from "./sources/registry.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
@@ -275,15 +276,17 @@ async function fetchPolicy(url, seed) {
     firstMatch(html, /来源：\s*([^<\n]+)/)
     || firstMatch(html, /发布机构：\s*([^<\n]+)/)
   );
-  const agency = !extractedAgency || invalidAgencyPattern.test(extractedAgency)
-    ? inferAgency(title, seed)
-    : extractedAgency;
+  const documentNo = extractDocumentNo(`${html} ${title}`);
+  const agency = seed.sourceAdapter?.id === "ndcpa"
+    ? /^国卫/.test(documentNo) ? "国家卫生健康委员会" : "国家疾病预防控制局"
+    : !extractedAgency || invalidAgencyPattern.test(extractedAgency)
+      ? inferAgency(title, seed)
+      : extractedAgency;
   const extractedSummary = cleanText(
     firstMatch(html, /<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i)
     || firstParagraph(html)
     || title
   ).slice(0, 260);
-  const documentNo = extractDocumentNo(`${html} ${title}`);
   const summary = !extractedSummary || /^(?:来源|文件下载链接)[:：]/.test(extractedSummary)
     ? `${agency}发布${documentNo ? `${documentNo}，` : ""}${wrapTitle(title)}；详细内容以官方原文为准。`
     : extractedSummary;
@@ -304,21 +307,7 @@ async function fetchPolicy(url, seed) {
 }
 
 async function fetchText(url) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 8000);
-  try {
-    const response = await fetch(url, {
-    headers: {
-      "user-agent": "Mozilla/5.0 policy-updater"
-    },
-    signal: controller.signal
-    });
-    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-    const arrayBuffer = await response.arrayBuffer();
-    return new TextDecoder("utf-8").decode(arrayBuffer);
-  } finally {
-    clearTimeout(timeout);
-  }
+  return (await fetchOfficialText(url)).text;
 }
 
 function isPastDeadline() {

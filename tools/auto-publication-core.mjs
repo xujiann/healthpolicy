@@ -1,11 +1,23 @@
 import { normalizeDocumentNo, normalizePolicyTitle, normalizePolicyUrl } from "./policy-quality.mjs";
 import { enrichPolicySchema, extractStructuredDocumentNo } from "./policy-schema.mjs";
 import { policySources } from "./sources/registry.mjs";
+import { fetchOfficialText } from "./official-fetch.mjs";
 
 const sourceAgencies = {
   nhsa: "国家医疗保障局",
   ndcpa: "国家疾病预防控制局"
 };
+
+const ndcpaDepartments = new Map([
+  ["传染病防控司", { topic: "cdc_prevention", secondary: "司局统筹", rule: "官方来源：传染病防控司" }],
+  ["综合监督二司", { topic: "cdc_supervision_2", secondary: "司局统筹", rule: "官方来源：综合监督二司" }],
+  ["规划财务与法规司", { topic: "cdc_planning", secondary: "司局统筹", rule: "官方来源：规划财务与法规司" }]
+]);
+const ndcpaDepartmentDocumentNoPrefixes = new Map([
+  ["传染病防控司", /^国疾控(?:综)?传防/],
+  ["综合监督二司", /^国疾控(?:综)?监督二/],
+  ["规划财务与法规司", /^国疾控规财/]
+]);
 
 const classificationRules = [
   ["nhsa_benefits", "长期护理保险处", "长期护理保险", /长期护理|长护险/],
@@ -40,6 +52,9 @@ const classificationRules = [
 
 export function classifyTrustedPolicy(policy) {
   const sourceId = String(policy?.sourceId || "");
+  if (sourceId === "ndcpa" && ndcpaDepartments.has(String(policy?.sourceDepartment || "").trim())) {
+    return ndcpaDepartments.get(String(policy.sourceDepartment).trim());
+  }
   const text = `${policy?.title || ""} ${policy?.summary || ""} ${policy?.keywords || ""}`;
   const allowedPrefix = sourceId === "nhsa" ? "nhsa_" : sourceId === "ndcpa" ? "cdc_" : "";
   if (!allowedPrefix) return null;
@@ -64,7 +79,11 @@ export function evaluateCandidateForAutoPublication(item, evidence, { now = new 
   if (normalizePolicyUrl(item?.collection?.sourceUrl) !== normalizePolicyUrl(policy.url)) errors.push("采集来源与政策链接不一致");
   if (item?.review?.status !== "pending") errors.push("候选状态不是 pending");
   if (policy.documentType !== "正式政策") errors.push("仅允许正式政策自动发布");
+  if (/宣传活动|活动周|课题征集|工作会议/.test(String(policy.title || ""))) errors.push("活动或征集类通知不自动发布");
   if (String(policy.agency || "").trim() !== sourceAgencies[sourceId]) errors.push("发文机关与官方来源不一致");
+  if (sourceId === "ndcpa" && !/^国疾控/.test(normalizeDocumentNo(policy.documentNo))) errors.push("疾控局政策文号与来源不一致");
+  const departmentNoPrefix = ndcpaDepartmentDocumentNoPrefixes.get(String(evidence?.sourceDepartment || "").trim());
+  if (departmentNoPrefix && !departmentNoPrefix.test(normalizeDocumentNo(policy.documentNo))) errors.push("文号与官方发布司局不一致");
   if (!/^\d{4}-\d{2}-\d{2}$/.test(String(policy.date || ""))) errors.push("发布日期不完整");
   if (Number(policy.year) !== Number(String(policy.date || "").slice(0, 4))) errors.push("年份与发布日期不一致");
   if (normalizeDocumentNo(policy.documentNo) === "") errors.push("文号缺失或为占位值");
@@ -83,7 +102,7 @@ export function evaluateCandidateForAutoPublication(item, evidence, { now = new 
   }
   const publishTime = Date.parse(`${policy.date}T23:59:59+08:00`);
   if (Number.isFinite(publishTime) && publishTime > now.getTime() + 24 * 60 * 60 * 1000) errors.push("发布日期超出允许的未来时间窗口");
-  const classification = classifyTrustedPolicy({ ...policy, sourceId, summary: evidence?.summary || policy.summary });
+  const classification = classifyTrustedPolicy({ ...policy, sourceId, sourceDepartment: evidence?.sourceDepartment, summary: evidence?.summary || policy.summary });
   if (!classification) errors.push("未命中可信归口规则");
   return { eligible: errors.length === 0, errors: [...new Set(errors)], classification, source };
 }
@@ -117,6 +136,7 @@ export async function fetchOfficialPolicyEvidence(item, { fetchImpl = fetch, tim
       || cleanPageTitle(extractTagText(page.text, "title"), source.name);
     const publishDate = normalizeDate(extractMeta(page.text, "PubDate") || page.text.match(/(?:日期|发布时间)[：:]?\s*(\d{4}[-年]\d{1,2}[-月]\d{1,2})/)?.[1]);
     const documentNo = extractStructuredDocumentNo({ summary: stripHtml(page.text) });
+    const sourceDepartment = decodeHtml(String(page.text.match(/<span[^>]*class=["']ly["'][^>]*>\s*来源[：:]\s*([^<]+)/i)?.[1] || "")).trim();
     let summaryText = summarizePolicyText(extractPageBody(page.text), pageTitle);
     let contentUrl = resolvedUrl;
     let summarySource = "official-page";
@@ -144,6 +164,7 @@ export async function fetchOfficialPolicyEvidence(item, { fetchImpl = fetch, tim
       pageTitle: decodeHtml(pageTitle),
       publishDate,
       documentNo,
+      sourceDepartment,
       summary: summaryText,
       summarySource,
       contentUrl,
@@ -177,20 +198,7 @@ export function summarizePolicyText(value, title = "", maxLength = 260) {
 }
 
 async function fetchText(url, { fetchImpl, timeoutMs }) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    const response = await fetchImpl(url, {
-      headers: { "user-agent": "Mozilla/5.0 policy-auto-publisher" },
-      redirect: "follow",
-      signal: controller.signal
-    });
-    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-    const data = await response.arrayBuffer();
-    return { text: new TextDecoder("utf-8").decode(data), url: response.url || url };
-  } finally {
-    clearTimeout(timer);
-  }
+  return fetchOfficialText(url, { fetchImpl, timeoutMs, userAgent: "Mozilla/5.0 policy-auto-publisher" });
 }
 
 function extractMeta(html, name) {
@@ -208,6 +216,7 @@ function extractTagText(html, tag) {
 function extractPageBody(html) {
   return String(html || "").match(/<meta\s+name=["']ContentStart["'][^>]*>([\s\S]*?)<meta\s+name=["']ContentEnd["'][^>]*>/i)?.[1]
     || String(html || "").match(/<div[^>]+id=["']zoom["'][^>]*>([\s\S]*?)<\/div>/i)?.[1]
+    || String(html || "").match(/<div[^>]+id=["']detailContent["'][^>]*>([\s\S]*?)<\/div>/i)?.[1]
     || extractMeta(html, "description")
     || "";
 }

@@ -114,6 +114,35 @@ const nhsaHtml = '<a href="/art/2026/7/17/art_104_21472.html">政策</a><a href=
 assert.deepEqual(nhsaSource.extractUrls(nhsaHtml, nhsaSource.homepage), ["https://www.nhsa.gov.cn/art/2026/7/17/art_104_21472.html"]);
 const ndcpaHtml = '<a href="/jbkzzx/c100014/common/content/content_2074752747875766272.html">政策</a>';
 assert.deepEqual(ndcpaSource.extractUrls(ndcpaHtml, ndcpaSource.homepage), ["https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2074752747875766272.html"]);
+const ndcpaEmbedded = 'var noticeItem = [{"aU":"{\\"common\\":\\"/jbkzzx/c100014/common/content/content_2101474914952712192.html\\"}"}];';
+assert.deepEqual(ndcpaSource.extractUrls(ndcpaEmbedded, ndcpaSource.listUrls[0]), ["https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101474914952712192.html"]);
+assert.equal(ndcpaSource.accepts(new URL("https://www.ndcpa.gov.cn/jbkzzx/c100071/common/content/content_1656508289844580352.html")), false);
+assert.deepEqual(classifyTrustedPolicy({ sourceId: "ndcpa", sourceDepartment: "综合监督二司", title: "关于印发卫生健康监督规范化建设指导意见的通知" }), {
+  topic: "cdc_supervision_2", secondary: "司局统筹", rule: "官方来源：综合监督二司"
+});
+const ndcpaNotice = createCandidateItem({
+  year: 2026,
+  date: "2026-09-21",
+  topic: "cdc_monitoring",
+  secondary: "传染病监测处",
+  title: "《关于印发《关于加强卫生健康监督规范化建设的指导意见》的通知》",
+  agency: "国家疾病预防控制局",
+  level: "通知",
+  summary: "关于加强卫生健康监督规范化建设的指导意见",
+  url: "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101474914952712192.html",
+  documentNo: "国疾控监督二发〔2026〕22号"
+}, { sourceId: "ndcpa", collectedAt: "2026-10-05T02:00:00.000Z" });
+const ndcpaEvidence = {
+  ok: true,
+  pageTitle: "关于印发《关于加强卫生健康监督规范化建设的指导意见》的通知",
+  publishDate: "2026-09-21",
+  documentNo: "国疾控监督二发〔2026〕22号",
+  sourceDepartment: "综合监督二司",
+  summary: "为贯彻落实中央关于疾控体系改革精神，国家疾控局联合国家卫生健康委、国家中医药局制定了关于加强卫生健康监督规范化建设的指导意见。",
+  resolvedUrl: ndcpaNotice.policy.url
+};
+assert.equal(evaluateCandidateForAutoPublication(ndcpaNotice, ndcpaEvidence).eligible, true);
+assert.equal(evaluateCandidateForAutoPublication(ndcpaNotice, { ...ndcpaEvidence, sourceDepartment: "传染病防控司" }).eligible, false);
 
 assert.deepEqual(splitAgencies("国家医疗保障局,财政部、国家卫生健康委员会"), ["国家医疗保障局", "财政部", "国家卫生健康委员会"]);
 assert.equal(classifyDocumentType({ title: "《行政执法公示制度实施办法》" }), "正式政策");

@@ -8,9 +8,15 @@ export const ndcpaSource = {
   defaultTopic: "cdc_monitoring",
   defaultSecondary: "传染病监测处",
   accepts(url) {
-    return /(?:^|\.)ndcpa\.gov\.cn$/i.test(url.hostname) && /\/common\/content\/content_\d+\.html$/i.test(url.pathname);
+    return /(?:^|\.)ndcpa\.gov\.cn$/i.test(url.hostname) && /\/jbkzzx\/c100014\/common\/content\/content_\d+\.html$/i.test(url.pathname);
   },
   extractUrls(html, baseUrl) {
-    return extractOfficialLinks(html, baseUrl, this.accepts);
+    const urls = new Set(extractOfficialLinks(html, baseUrl, this.accepts));
+    // The official listing embeds entries in JavaScript data, not anchor tags.
+    for (const match of String(html || "").matchAll(/\/jbkzzx\/c100014\/common\/content\/content_\d+\.html/g)) {
+      const url = new URL(match[0], baseUrl);
+      if (this.accepts(url)) urls.add(url.href);
+    }
+    return [...urls];
   }
 };

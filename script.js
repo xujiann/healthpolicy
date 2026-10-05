@@ -20,6 +20,9 @@ const topics = [
   { id: "cdc_monitoring", name: "疾控局-监测预警司", color: "#bf6a4a", children: ["传染病监测处", "预警处", "信息平台处", "风险评估处"] },
   { id: "cdc_emergency", name: "疾控局-应急处置司", color: "#a94e4e", children: ["应急综合处", "应急处置处", "队伍装备处", "演练评估处"] },
   { id: "cdc_immunization", name: "疾控局-卫生与免疫规划司", color: "#8f7a35", children: ["免疫规划处", "健康危害因素处", "学校卫生处", "环境卫生处"] },
+  { id: "cdc_prevention", name: "疾控局-传染病防控司", color: "#9b594f", children: ["司局统筹"] },
+  { id: "cdc_supervision_2", name: "疾控局-综合监督二司", color: "#986b50", children: ["司局统筹"] },
+  { id: "cdc_planning", name: "疾控局-规划财务与法规司", color: "#667793", children: ["司局统筹"] },
   { id: "tcm_admin", name: "中医药局-医政管理", color: "#84624a", children: ["中医医院管理处", "中药管理处", "中医药服务处", "传承创新处"] },
   { id: "nhsa_benefits", name: "医保局-待遇保障司", color: "#b17c1a", children: ["筹资待遇处", "医疗救助处", "长期护理保险处", "生育保障处"] },
   { id: "nhsa_services", name: "医保局-医药服务管理司", color: "#8a6d3b", children: ["医保目录处", "支付方式改革处", "定点协议管理处", "异地就医结算处", "经济性评价处"] },
@@ -298,7 +301,7 @@ const categoryRules = [
 function classifyPolicy(policy) {
   const explicitTopic = topics.find((topic) => topic.id === policy.topic);
   if (explicitTopic && explicitTopic.children.includes(policy.secondary)) {
-    return { topic: policy.topic, secondary: policy.secondary, assignment: "人工归口" };
+    return { topic: policy.topic, secondary: policy.secondary, assignment: policy.assignment || "人工归口" };
   }
   const text = `${policy.title} ${policy.summary} ${policy.agency} ${policy.level} ${policy.keywords}`;
   const match = categoryRules.find(([, , pattern]) => pattern.test(text));

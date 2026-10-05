@@ -39,7 +39,8 @@ snapshots.reviewed.items = snapshots.reviewed.items.map((item) => {
   if (item.review?.method !== "automatic") return item;
   const classification = classifyTrustedPolicy({
     ...item.policy,
-    sourceId: item.collection.sourceId
+    sourceId: item.collection.sourceId,
+    sourceDepartment: item.review.evidence?.sourceDepartment
   });
   if (!classification) return item;
   const classificationChanged = item.policy.topic !== classification.topic || item.policy.secondary !== classification.secondary;
@@ -119,6 +120,7 @@ for (const item of snapshots.candidates.items) {
           pageTitle: evidence.pageTitle,
           publishDate: evidence.publishDate,
           documentNo: evidence.documentNo,
+          sourceDepartment: evidence.sourceDepartment,
           summarySource: evidence.summarySource,
           contentUrl: evidence.contentUrl,
           verifiedAt: evidence.verifiedAt
