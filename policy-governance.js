@@ -1,28 +1,28 @@
 // 由 tools/build-policy-artifacts.mjs 生成，请勿直接编辑。
 const policyGovernance = {
-  "generatedAt": "2026-10-05T02:11:23.430Z",
-  "dataThrough": "2026-09-15",
-  "lastReviewedAt": "2026-09-15T20:24:31.728Z",
+  "generatedAt": "2026-10-05T02:14:06.328Z",
+  "dataThrough": "2026-09-24",
+  "lastReviewedAt": "2026-10-05T02:14:03.361Z",
   "counts": {
-    "candidates": 0,
-    "reviewed": 360,
+    "candidates": 4,
+    "reviewed": 364,
     "rejected": 0
   },
   "p2": {
     "coreFieldCompleteness": 95.2,
-    "documentNumbersStructured": 273,
+    "documentNumbersStructured": 277,
     "explicitEffectiveDates": 8,
     "jointDocuments": 172,
     "relations": 6,
     "resolvedRelations": 2,
     "validityStatuses": {
-      "待核验": 351,
+      "待核验": 355,
       "现行有效": 7,
       "已废止": 1,
       "尚未施行": 1
     },
     "documentTypes": {
-      "正式政策": 360
+      "正式政策": 364
     },
     "materialTypes": {
       "政策解读": 6
@@ -30,38 +30,38 @@ const policyGovernance = {
   },
   "p3": {
     "collection": {
-      "generatedAt": "2026-10-05T02:10:04.195Z",
-      "status": "no_new_policy",
-      "attempted": 46,
-      "succeeded": 3,
-      "failed": 43,
-      "candidatesAdded": 0,
-      "successRate": 6.5
+      "generatedAt": "2026-10-05T02:13:32.514Z",
+      "status": "completed_with_candidates",
+      "attempted": 44,
+      "succeeded": 6,
+      "failed": 38,
+      "candidatesAdded": 8,
+      "successRate": 13.6
     },
     "review": {
-      "backlog": 0,
-      "approved": 23,
-      "automaticApprovals": 5,
+      "backlog": 4,
+      "approved": 27,
+      "automaticApprovals": 9,
       "rejected": 0,
-      "decided": 23,
+      "decided": 27,
       "approvalRate": 100
     },
     "autoPublication": {
-      "generatedAt": "2026-10-05T02:11:23.373Z",
+      "generatedAt": "2026-10-05T02:14:03.361Z",
       "mode": "unattended-high-confidence",
-      "queuedBefore": 0,
-      "evaluated": 0,
-      "published": 0,
+      "queuedBefore": 8,
+      "evaluated": 8,
+      "published": 4,
       "reclassified": 0,
       "classificationRefreshed": 0,
-      "quarantined": 0,
+      "quarantined": 4,
       "deferred": 0,
-      "remaining": 0
+      "remaining": 4
     },
     "linkHealth": {
-      "generatedAt": "2026-10-05T02:11:23.430Z",
+      "generatedAt": "2026-10-05T02:14:06.328Z",
       "overallStatus": "partial",
-      "total": 357,
+      "total": 361,
       "checked": 357,
       "decisive": 348,
       "reachable": 348,
@@ -69,29 +69,29 @@ const policyGovernance = {
       "blocked": 1,
       "unavailable": 0,
       "inconclusive": 9,
-      "unchecked": 0,
-      "coverageRate": 100,
+      "unchecked": 4,
+      "coverageRate": 98.9,
       "availabilityRate": 100
     }
   },
   "sourceHealth": {
     "schemaVersion": 1,
-    "generatedAt": "2026-10-05T02:10:04.195Z",
-    "overallStatus": "degraded",
+    "generatedAt": "2026-10-05T02:13:32.514Z",
+    "overallStatus": "healthy",
     "sources": [
       {
         "id": "nhsa",
         "name": "国家医疗保障局",
         "homepage": "https://www.nhsa.gov.cn/",
         "policyList": "https://www.nhsa.gov.cn/col/col104/index.html",
-        "status": "unavailable",
-        "checkedAt": "2026-10-05T02:10:04.195Z",
+        "status": "healthy",
+        "checkedAt": "2026-10-05T02:13:32.514Z",
         "requests": {
           "attempted": 1,
-          "succeeded": 0,
-          "failed": 1
+          "succeeded": 1,
+          "failed": 0
         },
-        "documentsDiscovered": 0,
+        "documentsDiscovered": 8,
         "newCandidates": 0,
         "latestKnownPolicyDate": "2026-09-15",
         "reviewedDocuments": 16
@@ -102,16 +102,16 @@ const policyGovernance = {
         "homepage": "https://www.ndcpa.gov.cn/",
         "policyList": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
         "status": "healthy",
-        "checkedAt": "2026-10-05T02:10:04.195Z",
+        "checkedAt": "2026-10-05T02:13:32.514Z",
         "requests": {
           "attempted": 1,
           "succeeded": 1,
           "failed": 0
         },
         "documentsDiscovered": 8,
-        "newCandidates": 0,
-        "latestKnownPolicyDate": "2026-07-08",
-        "reviewedDocuments": 7
+        "newCandidates": 8,
+        "latestKnownPolicyDate": "2026-09-24",
+        "reviewedDocuments": 11
       }
     ]
   }

@@ -1,16 +1,105 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T02:11:23.373Z",
+  "generatedAt": "2026-10-05T02:14:03.361Z",
   "mode": "unattended-high-confidence",
   "summary": {
-    "queuedBefore": 0,
-    "evaluated": 0,
-    "published": 0,
+    "queuedBefore": 8,
+    "evaluated": 8,
+    "published": 4,
     "reclassified": 0,
     "classificationRefreshed": 0,
-    "quarantined": 0,
+    "quarantined": 4,
     "deferred": 0,
-    "remaining": 0
+    "remaining": 4
   },
-  "items": []
+  "items": [
+    {
+      "id": "candidate-39cff10033199ff4",
+      "title": "《关于做好2026年中秋、国庆假期前后及秋冬季重点传染病防治工作的通知》",
+      "status": "published",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2103083565823987712.html",
+      "topic": "cdc_prevention",
+      "secondary": "司局统筹",
+      "verifiedAt": "2026-10-05T02:14:04.415Z"
+    },
+    {
+      "id": "candidate-38c049cce5491d63",
+      "title": "《关于印发《卫生健康行政执法文书规范》的通知》",
+      "status": "published",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101473343535747072.html",
+      "topic": "cdc_supervision_2",
+      "secondary": "司局统筹",
+      "verifiedAt": "2026-10-05T02:14:04.683Z"
+    },
+    {
+      "id": "candidate-a62e07bccb069d3b",
+      "title": "《关于印发《关于加强卫生健康监督规范化建设的指导意见》的通知》",
+      "status": "published",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101474914952712192.html",
+      "topic": "cdc_supervision_2",
+      "secondary": "司局统筹",
+      "verifiedAt": "2026-10-05T02:14:04.946Z"
+    },
+    {
+      "id": "candidate-a6a2079ac9de89f4",
+      "title": "《国家疾控局综合司关于组织开展2026年世界狂犬病日宣传活动的通知》",
+      "status": "quarantined",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2099421141589725184.html",
+      "reasons": [
+        "活动或征集类通知不自动发布"
+      ]
+    },
+    {
+      "id": "candidate-cabc88c4f4966a41",
+      "title": "《关于开展2026年“服务百姓健康行动”全国大型义诊活动周的通知》",
+      "status": "quarantined",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2098003738939002880.html",
+      "reasons": [
+        "活动或征集类通知不自动发布",
+        "发文机关与官方来源不一致",
+        "疾控局政策文号与来源不一致",
+        "文号与官方发布司局不一致"
+      ]
+    },
+    {
+      "id": "candidate-7a6f6ec79de1febb",
+      "title": "《关于发布《感染性腹泻诊断标准》等4项法定传染病诊断标准的通告》",
+      "status": "quarantined",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2083089089290473472.html",
+      "reasons": [
+        "疾控局政策文号与来源不一致",
+        "文号与官方发布司局不一致",
+        "文号缺失或为占位值"
+      ]
+    },
+    {
+      "id": "candidate-d57128c1531f614a",
+      "title": "《关于印发《疾病预防控制 “十五五”规划》的通知》",
+      "status": "published",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2081594149653876736.html",
+      "topic": "cdc_planning",
+      "secondary": "司局统筹",
+      "verifiedAt": "2026-10-05T02:14:06.000Z"
+    },
+    {
+      "id": "candidate-37a9cf2def70d619",
+      "title": "《国家疾控局综合司疾控政策研究课题征集公告》",
+      "status": "quarantined",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2077188423837716480.html",
+      "reasons": [
+        "活动或征集类通知不自动发布",
+        "疾控局政策文号与来源不一致",
+        "文号缺失或为占位值",
+        "未命中可信归口规则"
+      ]
+    }
+  ]
 }

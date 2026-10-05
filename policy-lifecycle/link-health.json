@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T02:11:23.430Z",
+  "generatedAt": "2026-10-05T02:14:06.328Z",
   "checkedThisRun": 40,
-  "nextCursor": 95,
+  "nextCursor": 135,
   "overallStatus": "partial",
   "summary": {
-    "total": 357,
+    "total": 361,
     "checked": 357,
     "decisive": 348,
     "reachable": 348,
@@ -13,11 +13,56 @@
     "blocked": 1,
     "unavailable": 0,
     "inconclusive": 9,
-    "unchecked": 0,
-    "coverageRate": 100,
+    "unchecked": 4,
+    "coverageRate": 98.9,
     "availabilityRate": 100
   },
   "items": [
+    {
+      "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2103083565823987712.html",
+      "recordIds": [
+        "candidate-39cff10033199ff4"
+      ],
+      "titles": [
+        "《关于做好2026年中秋、国庆假期前后及秋冬季重点传染病防治工作的通知》"
+      ],
+      "latestDate": "2026-09-24",
+      "status": "not_checked",
+      "httpStatus": null,
+      "checkedAt": null,
+      "responseMs": null,
+      "error": ""
+    },
+    {
+      "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101473343535747072.html",
+      "recordIds": [
+        "candidate-38c049cce5491d63"
+      ],
+      "titles": [
+        "《关于印发《卫生健康行政执法文书规范》的通知》"
+      ],
+      "latestDate": "2026-09-22",
+      "status": "not_checked",
+      "httpStatus": null,
+      "checkedAt": null,
+      "responseMs": null,
+      "error": ""
+    },
+    {
+      "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101474914952712192.html",
+      "recordIds": [
+        "candidate-a62e07bccb069d3b"
+      ],
+      "titles": [
+        "《关于印发《关于加强卫生健康监督规范化建设的指导意见》的通知》"
+      ],
+      "latestDate": "2026-09-21",
+      "status": "not_checked",
+      "httpStatus": null,
+      "checkedAt": null,
+      "responseMs": null,
+      "error": ""
+    },
     {
       "url": "https://www.nhsa.gov.cn/art/2026/9/15/art_104_22141.html",
       "recordIds": [
@@ -121,6 +166,21 @@
       "httpStatus": 200,
       "checkedAt": "2026-10-04T20:23:48.957Z",
       "responseMs": 1002,
+      "error": ""
+    },
+    {
+      "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2081594149653876736.html",
+      "recordIds": [
+        "candidate-d57128c1531f614a"
+      ],
+      "titles": [
+        "《关于印发《疾病预防控制 “十五五”规划》的通知》"
+      ],
+      "latestDate": "2026-07-27",
+      "status": "not_checked",
+      "httpStatus": null,
+      "checkedAt": null,
+      "responseMs": null,
       "error": ""
     },
     {
@@ -1398,8 +1458,8 @@
       "latestDate": "2024-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-05T02:11:23.430Z",
-      "responseMs": 447,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 153,
       "error": ""
     },
     {
@@ -1413,8 +1473,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-05T02:11:23.430Z",
-      "responseMs": 383,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 118,
       "error": ""
     },
     {
@@ -1428,8 +1488,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-05T02:11:23.430Z",
-      "responseMs": 437,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 74,
       "error": ""
     },
     {
@@ -1443,8 +1503,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-05T02:11:23.430Z",
-      "responseMs": 471,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 77,
       "error": ""
     },
     {
@@ -1458,8 +1518,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 519,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 508,
       "error": ""
     },
     {
@@ -1474,8 +1534,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 507,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 416,
       "error": ""
     },
     {
@@ -1489,8 +1549,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 563,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 356,
       "error": ""
     },
     {
@@ -1504,8 +1564,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 525,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 406,
       "error": ""
     },
     {
@@ -1519,8 +1579,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 545,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 466,
       "error": ""
     },
     {
@@ -1534,8 +1594,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 596,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 393,
       "error": ""
     },
     {
@@ -1549,8 +1609,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 557,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 477,
       "error": ""
     },
     {
@@ -1564,8 +1624,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 502,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 429,
       "error": ""
     },
     {
@@ -1579,8 +1639,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 512,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 326,
       "error": ""
     },
     {
@@ -1594,8 +1654,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 560,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 371,
       "error": ""
     },
     {
@@ -1609,8 +1669,8 @@
       "latestDate": "2024-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 512,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 362,
       "error": ""
     },
     {
@@ -1624,8 +1684,8 @@
       "latestDate": "2024-10",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 503,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 374,
       "error": ""
     },
     {
@@ -1639,8 +1699,8 @@
       "latestDate": "2024-10",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 517,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 379,
       "error": ""
     },
     {
@@ -1654,8 +1714,8 @@
       "latestDate": "2024-10",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 599,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 407,
       "error": ""
     },
     {
@@ -1669,8 +1729,8 @@
       "latestDate": "2024-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 580,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 396,
       "error": ""
     },
     {
@@ -1684,8 +1744,8 @@
       "latestDate": "2024-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 531,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 352,
       "error": ""
     },
     {
@@ -1699,8 +1759,8 @@
       "latestDate": "2024-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 514,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 569,
       "error": ""
     },
     {
@@ -1714,8 +1774,8 @@
       "latestDate": "2024-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 496,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 393,
       "error": ""
     },
     {
@@ -1729,8 +1789,8 @@
       "latestDate": "2024-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 539,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 438,
       "error": ""
     },
     {
@@ -1745,8 +1805,8 @@
       "latestDate": "2024-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 556,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 474,
       "error": ""
     },
     {
@@ -1760,8 +1820,8 @@
       "latestDate": "2024-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 490,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 323,
       "error": ""
     },
     {
@@ -1775,8 +1835,8 @@
       "latestDate": "2024-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 492,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 330,
       "error": ""
     },
     {
@@ -1790,8 +1850,8 @@
       "latestDate": "2024-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 566,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 452,
       "error": ""
     },
     {
@@ -1805,8 +1865,8 @@
       "latestDate": "2024-07",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 505,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 433,
       "error": ""
     },
     {
@@ -1820,8 +1880,8 @@
       "latestDate": "2024-05",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 505,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 334,
       "error": ""
     },
     {
@@ -1835,8 +1895,8 @@
       "latestDate": "2024-05",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 464,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 332,
       "error": ""
     },
     {
@@ -1850,8 +1910,8 @@
       "latestDate": "2024-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 471,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 425,
       "error": ""
     },
     {
@@ -1865,8 +1925,8 @@
       "latestDate": "2024-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 539,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 358,
       "error": ""
     },
     {
@@ -1880,8 +1940,8 @@
       "latestDate": "2024-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 496,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 337,
       "error": ""
     },
     {
@@ -1895,8 +1955,8 @@
       "latestDate": "2024-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 546,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 432,
       "error": ""
     },
     {
@@ -1910,8 +1970,8 @@
       "latestDate": "2024-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 1720,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 1505,
       "error": ""
     },
     {
@@ -1925,8 +1985,8 @@
       "latestDate": "2024-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 488,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 356,
       "error": ""
     },
     {
@@ -1940,8 +2000,8 @@
       "latestDate": "2024-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 712,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 457,
       "error": ""
     },
     {
@@ -1955,8 +2015,8 @@
       "latestDate": "2024-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 575,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 427,
       "error": ""
     },
     {
@@ -1970,8 +2030,8 @@
       "latestDate": "2023-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 502,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 379,
       "error": ""
     },
     {
@@ -1985,8 +2045,8 @@
       "latestDate": "2023-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-09-25T20:41:31.263Z",
-      "responseMs": 535,
+      "checkedAt": "2026-10-05T02:14:06.328Z",
+      "responseMs": 417,
       "error": ""
     },
     {

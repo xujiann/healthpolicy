@@ -14874,5 +14874,173 @@ const policyReviewedDocuments = [
       "basis": "自动发布门禁：国家医疗保障局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“医疗服务价格”规则；摘要来自官方正文。",
       "status": "approved"
     }
+  },
+  {
+    "year": 2026,
+    "date": "2026-09-24",
+    "topic": "cdc_prevention",
+    "secondary": "司局统筹",
+    "title": "《关于做好2026年中秋、国庆假期前后及秋冬季重点传染病防治工作的通知》",
+    "agency": "国家疾病预防控制局",
+    "level": "通知",
+    "summary": "国疾控综传防发〔2026〕27号 各省、自治区、直辖市及新疆生产建设兵团疾控局、卫生健康委、中医药主管部门，中国疾控中心（中国预科院）： 为贯彻落实党中央、国务院决策部署，进一步做好2026年中秋、国庆假期前后及秋冬季重点传染病防治工作，保持全国疫情形势总体平稳，确保人民群众健康平安过节，现将有关要求通知如下： 一、高度重视中秋、国庆假期前后及秋冬季重点传染病防治工作 当前，我国传染病疫情形势总体平稳。",
+    "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2103083565823987712.html",
+    "keywords": "官方来源：国家疾病预防控制局 ",
+    "documentNo": "国疾控综传防发〔2026〕27号",
+    "reviewStatus": "已自动核验",
+    "id": "candidate-39cff10033199ff4",
+    "assignment": "规则归口",
+    "agencies": [
+      "国家疾病预防控制局"
+    ],
+    "documentType": "正式政策",
+    "validity": {
+      "status": "待核验",
+      "effectiveDate": null,
+      "expiryDate": null,
+      "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+      "verification": "pending"
+    },
+    "relations": [],
+    "structure": {
+      "schemaVersion": 2,
+      "enrichedAt": "2026-10-05T02:14:03.361Z",
+      "status": "machine_extracted"
+    },
+    "audit": {
+      "batchId": "policy-scan-2026-10-05",
+      "sourceId": "ndcpa",
+      "collectedAt": "2026-10-05T02:13:32.514Z",
+      "reviewer": "GitHub Actions 自动发布器",
+      "reviewedAt": "2026-10-05T02:14:03.361Z",
+      "basis": "自动发布门禁：国家疾病预防控制局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“官方来源：传染病防控司”规则；摘要来自官方正文。",
+      "status": "approved"
+    }
+  },
+  {
+    "year": 2026,
+    "date": "2026-09-22",
+    "topic": "cdc_supervision_2",
+    "secondary": "司局统筹",
+    "title": "《关于印发《卫生健康行政执法文书规范》的通知》",
+    "agency": "国家疾病预防控制局",
+    "level": "通知",
+    "summary": "国疾控监督二发〔2026〕21号 各省、自治区、直辖市及新疆生产建设兵团疾控局、卫生健康委、中医药局： 为贯彻落实《中华人民共和国行政处罚法》相关要求，进一步规范卫生健康行政执法工作，结合司法部办公厅《行政检查文书基本格式文本（试行）》规定，国家疾控局联合国家卫生健康委、国家中医药局修订了《卫生行政执法文书规范》（2012年版）。",
+    "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101473343535747072.html",
+    "keywords": "官方来源：国家疾病预防控制局 ",
+    "documentNo": "国疾控监督二发〔2026〕21号",
+    "reviewStatus": "已自动核验",
+    "id": "candidate-38c049cce5491d63",
+    "assignment": "规则归口",
+    "agencies": [
+      "国家疾病预防控制局"
+    ],
+    "documentType": "正式政策",
+    "validity": {
+      "status": "待核验",
+      "effectiveDate": null,
+      "expiryDate": null,
+      "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+      "verification": "pending"
+    },
+    "relations": [],
+    "structure": {
+      "schemaVersion": 2,
+      "enrichedAt": "2026-10-05T02:14:03.361Z",
+      "status": "machine_extracted"
+    },
+    "audit": {
+      "batchId": "policy-scan-2026-10-05",
+      "sourceId": "ndcpa",
+      "collectedAt": "2026-10-05T02:13:32.514Z",
+      "reviewer": "GitHub Actions 自动发布器",
+      "reviewedAt": "2026-10-05T02:14:03.361Z",
+      "basis": "自动发布门禁：国家疾病预防控制局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“官方来源：综合监督二司”规则；摘要来自官方正文。",
+      "status": "approved"
+    }
+  },
+  {
+    "year": 2026,
+    "date": "2026-09-21",
+    "topic": "cdc_supervision_2",
+    "secondary": "司局统筹",
+    "title": "《关于印发《关于加强卫生健康监督规范化建设的指导意见》的通知》",
+    "agency": "国家疾病预防控制局",
+    "level": "通知",
+    "summary": "国疾控监督二发〔2026〕22号 各省、自治区、直辖市及新疆生产建设兵团疾控局、卫生健康委、中医药局： 为贯彻落实中央关于疾控体系改革精神，结合《国务院办公厅关于推动疾病预防控制事业高质量发展的指导意见》有关要求，国家疾控局联合国家卫生健康委、国家中医药局制定了《关于加强卫生健康监督规范化建设的指导意见》。",
+    "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101474914952712192.html",
+    "keywords": "官方来源：国家疾病预防控制局 ",
+    "documentNo": "国疾控监督二发〔2026〕22号",
+    "reviewStatus": "已自动核验",
+    "id": "candidate-a62e07bccb069d3b",
+    "assignment": "规则归口",
+    "agencies": [
+      "国家疾病预防控制局"
+    ],
+    "documentType": "正式政策",
+    "validity": {
+      "status": "待核验",
+      "effectiveDate": null,
+      "expiryDate": null,
+      "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+      "verification": "pending"
+    },
+    "relations": [],
+    "structure": {
+      "schemaVersion": 2,
+      "enrichedAt": "2026-10-05T02:14:03.361Z",
+      "status": "machine_extracted"
+    },
+    "audit": {
+      "batchId": "policy-scan-2026-10-05",
+      "sourceId": "ndcpa",
+      "collectedAt": "2026-10-05T02:13:32.514Z",
+      "reviewer": "GitHub Actions 自动发布器",
+      "reviewedAt": "2026-10-05T02:14:03.361Z",
+      "basis": "自动发布门禁：国家疾病预防控制局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“官方来源：综合监督二司”规则；摘要来自官方正文。",
+      "status": "approved"
+    }
+  },
+  {
+    "year": 2026,
+    "date": "2026-07-27",
+    "topic": "cdc_planning",
+    "secondary": "司局统筹",
+    "title": "《关于印发《疾病预防控制 “十五五”规划》的通知》",
+    "agency": "国家疾病预防控制局",
+    "level": "通知",
+    "summary": "国疾控规财发〔2026〕17号 各省、自治区、直辖市人民政府，新疆生产建设兵团，国务院各部委、各直属机构： 《疾病预防控制“十五五”规划》已经国务院批复同意（国函〔2026〕69号），现印发给你们，请按照国务院批复精神，认真组织实施。",
+    "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2081594149653876736.html",
+    "keywords": "官方来源：国家疾病预防控制局 ",
+    "documentNo": "国疾控规财发〔2026〕17号",
+    "reviewStatus": "已自动核验",
+    "id": "candidate-d57128c1531f614a",
+    "assignment": "规则归口",
+    "agencies": [
+      "国家疾病预防控制局"
+    ],
+    "documentType": "正式政策",
+    "validity": {
+      "status": "待核验",
+      "effectiveDate": null,
+      "expiryDate": null,
+      "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+      "verification": "pending"
+    },
+    "relations": [],
+    "structure": {
+      "schemaVersion": 2,
+      "enrichedAt": "2026-10-05T02:14:03.361Z",
+      "status": "machine_extracted"
+    },
+    "audit": {
+      "batchId": "policy-scan-2026-10-05",
+      "sourceId": "ndcpa",
+      "collectedAt": "2026-10-05T02:13:32.514Z",
+      "reviewer": "GitHub Actions 自动发布器",
+      "reviewedAt": "2026-10-05T02:14:03.361Z",
+      "basis": "自动发布门禁：国家疾病预防控制局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“官方来源：规划财务与法规司”规则；摘要来自官方正文。",
+      "status": "approved"
+    }
   }
 ];

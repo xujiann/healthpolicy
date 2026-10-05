@@ -1,6 +1,219 @@
 {
   "schemaVersion": 1,
   "layer": "candidates",
-  "updatedAt": "2026-10-05T02:11:23.373Z",
-  "items": []
+  "updatedAt": "2026-10-05T02:14:03.361Z",
+  "items": [
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-09-14",
+        "topic": "cdc_monitoring",
+        "secondary": "传染病监测处",
+        "title": "《国家疾控局综合司关于组织开展2026年世界狂犬病日宣传活动的通知》",
+        "agency": "国家疾病预防控制局",
+        "level": "通知",
+        "summary": "国疾控综传防函〔2026〕225号 各省、自治区、直辖市及新疆生产建设兵团疾控局，中国疾控中心（中国预科院）： 2026年9月28日是第20个“世界狂犬病日”。",
+        "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2099421141589725184.html",
+        "keywords": "官方来源：国家疾病预防控制局 ",
+        "documentNo": "国疾控综传防函〔2026〕225号",
+        "reviewStatus": "待人工审核",
+        "id": "candidate-a6a2079ac9de89f4",
+        "assignment": "人工归口候选",
+        "agencies": [
+          "国家疾病预防控制局"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-10-05T02:13:32.514Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-10-05",
+        "sourceId": "ndcpa",
+        "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2099421141589725184.html",
+        "collectedAt": "2026-10-05T02:13:32.514Z"
+      },
+      "review": {
+        "status": "pending",
+        "automation": {
+          "evaluatedAt": "2026-10-05T02:14:03.361Z",
+          "eligible": false,
+          "reasons": [
+            "活动或征集类通知不自动发布"
+          ]
+        }
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-09-10",
+        "topic": "cdc_monitoring",
+        "secondary": "传染病监测处",
+        "title": "《关于开展2026年“服务百姓健康行动”全国大型义诊活动周的通知》",
+        "agency": "国家卫生健康委员会",
+        "level": "通知",
+        "summary": "国卫办医政函〔2026〕297号 各省、自治区、直辖市及新疆生产建设兵团卫生健康委、中医药局、疾控局，军队有关卫生部门，国家卫生健康委、国家中医药局属（管）医院： 根据有关工作安排，国家卫生健康委、国家中医药局、国家疾控局、中央军委后勤保障部卫生局决定组织开展2026年“服务百姓健康行动”全国大型义诊活动周。",
+        "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2098003738939002880.html",
+        "keywords": "官方来源：国家疾病预防控制局 ",
+        "documentNo": "国卫办医政函〔2026〕297号",
+        "reviewStatus": "待人工审核",
+        "id": "candidate-cabc88c4f4966a41",
+        "assignment": "人工归口候选",
+        "agencies": [
+          "国家卫生健康委员会"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-10-05T02:13:32.514Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-10-05",
+        "sourceId": "ndcpa",
+        "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2098003738939002880.html",
+        "collectedAt": "2026-10-05T02:13:32.514Z"
+      },
+      "review": {
+        "status": "pending",
+        "automation": {
+          "evaluatedAt": "2026-10-05T02:14:03.361Z",
+          "eligible": false,
+          "reasons": [
+            "活动或征集类通知不自动发布",
+            "发文机关与官方来源不一致",
+            "疾控局政策文号与来源不一致",
+            "文号与官方发布司局不一致"
+          ]
+        }
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-07-31",
+        "topic": "cdc_monitoring",
+        "secondary": "传染病监测处",
+        "title": "《关于发布《感染性腹泻诊断标准》等4项法定传染病诊断标准的通告》",
+        "agency": "国家疾病预防控制局",
+        "level": "标准",
+        "summary": "国卫通〔2026〕10 号 现发布《感染性腹泻诊断标准》等4项法定传染病诊断标准，编号和名称如下： 1.WS 271-2026 感染性腹泻诊断标准（代替WS 271-2007） 2.WS 278-2026 流行性出血热诊断标准（代替WS 278-2008） 3.WS 280-2026 伤寒、副伤寒诊断标准（代替WS 280-2008） 4.WS 290-2026 钩端螺旋体病诊断标准（代替WS 290-2008） 上述标准自2027年6月1日起施行，被代替标准同时废止。",
+        "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2083089089290473472.html",
+        "keywords": "官方来源：国家疾病预防控制局 ",
+        "documentNo": "文号待核",
+        "reviewStatus": "待人工审核",
+        "id": "candidate-7a6f6ec79de1febb",
+        "assignment": "人工归口候选",
+        "agencies": [
+          "国家疾病预防控制局"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "尚未施行",
+          "effectiveDate": "2027-06-01",
+          "expiryDate": null,
+          "basis": "摘要明确自 2027-06-01 起施行。",
+          "verification": "machine_extracted"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-10-05T02:13:32.514Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-10-05",
+        "sourceId": "ndcpa",
+        "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2083089089290473472.html",
+        "collectedAt": "2026-10-05T02:13:32.514Z"
+      },
+      "review": {
+        "status": "pending",
+        "automation": {
+          "evaluatedAt": "2026-10-05T02:14:03.361Z",
+          "eligible": false,
+          "reasons": [
+            "疾控局政策文号与来源不一致",
+            "文号与官方发布司局不一致",
+            "文号缺失或为占位值"
+          ]
+        }
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-07-15",
+        "topic": "cdc_monitoring",
+        "secondary": "传染病监测处",
+        "title": "《国家疾控局综合司疾控政策研究课题征集公告》",
+        "agency": "国家疾病预防控制局",
+        "level": "公告",
+        "summary": "为深入贯彻落实党中央、国务院关于推动疾病预防控制事业高质量发展的决策部署，进一步加强疾控领域政策研究，现就部分研究课题向社会公开征集承担单位。",
+        "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2077188423837716480.html",
+        "keywords": "官方来源：国家疾病预防控制局 ",
+        "documentNo": "文号待核",
+        "reviewStatus": "待人工审核",
+        "id": "candidate-37a9cf2def70d619",
+        "assignment": "人工归口候选",
+        "agencies": [
+          "国家疾病预防控制局"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-10-05T02:13:32.514Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-10-05",
+        "sourceId": "ndcpa",
+        "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2077188423837716480.html",
+        "collectedAt": "2026-10-05T02:13:32.514Z"
+      },
+      "review": {
+        "status": "pending",
+        "automation": {
+          "evaluatedAt": "2026-10-05T02:14:03.361Z",
+          "eligible": false,
+          "reasons": [
+            "活动或征集类通知不自动发布",
+            "疾控局政策文号与来源不一致",
+            "文号缺失或为占位值",
+            "未命中可信归口规则"
+          ]
+        }
+      }
+    }
+  ]
 }
