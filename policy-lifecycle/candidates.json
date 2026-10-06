@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "candidates",
-  "updatedAt": "2026-10-05T23:19:57.963Z",
+  "updatedAt": "2026-10-06T21:51:15.870Z",
   "items": [
     {
       "policy": {
@@ -46,7 +46,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-05T23:19:57.963Z",
+          "evaluatedAt": "2026-10-06T21:51:15.870Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布"
@@ -97,7 +97,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-05T23:19:57.963Z",
+          "evaluatedAt": "2026-10-06T21:51:15.870Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布",
@@ -151,7 +151,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-05T23:19:57.963Z",
+          "evaluatedAt": "2026-10-06T21:51:15.870Z",
           "eligible": false,
           "reasons": [
             "疾控局政策文号与来源不一致",
@@ -204,7 +204,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-05T23:19:57.963Z",
+          "evaluatedAt": "2026-10-06T21:51:15.870Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布",

@@ -1,66 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T23:19:57.963Z",
+  "generatedAt": "2026-10-06T21:51:15.870Z",
   "mode": "unattended-high-confidence",
   "summary": {
     "queuedBefore": 4,
     "evaluated": 4,
     "published": 0,
     "reclassified": 0,
-    "classificationRefreshed": 4,
+    "classificationRefreshed": 0,
     "quarantined": 4,
     "deferred": 0,
     "remaining": 4
   },
   "items": [
-    {
-      "id": "candidate-39cff10033199ff4",
-      "title": "《关于做好2026年中秋、国庆假期前后及秋冬季重点传染病防治工作的通知》",
-      "status": "classification_refreshed",
-      "sourceId": "ndcpa",
-      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2103083565823987712.html",
-      "previousTopic": "cdc_prevention",
-      "previousSecondary": "司局统筹",
-      "topic": "cdc_prevention",
-      "secondary": "司局统筹",
-      "rule": "官方来源：传染病防控司"
-    },
-    {
-      "id": "candidate-38c049cce5491d63",
-      "title": "《关于印发《卫生健康行政执法文书规范》的通知》",
-      "status": "classification_refreshed",
-      "sourceId": "ndcpa",
-      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101473343535747072.html",
-      "previousTopic": "cdc_supervision_2",
-      "previousSecondary": "司局统筹",
-      "topic": "cdc_supervision_2",
-      "secondary": "司局统筹",
-      "rule": "官方来源：综合监督二司"
-    },
-    {
-      "id": "candidate-a62e07bccb069d3b",
-      "title": "《关于印发《关于加强卫生健康监督规范化建设的指导意见》的通知》",
-      "status": "classification_refreshed",
-      "sourceId": "ndcpa",
-      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2101474914952712192.html",
-      "previousTopic": "cdc_supervision_2",
-      "previousSecondary": "司局统筹",
-      "topic": "cdc_supervision_2",
-      "secondary": "司局统筹",
-      "rule": "官方来源：综合监督二司"
-    },
-    {
-      "id": "candidate-d57128c1531f614a",
-      "title": "《关于印发《疾病预防控制 “十五五”规划》的通知》",
-      "status": "classification_refreshed",
-      "sourceId": "ndcpa",
-      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2081594149653876736.html",
-      "previousTopic": "cdc_planning",
-      "previousSecondary": "司局统筹",
-      "topic": "cdc_planning",
-      "secondary": "司局统筹",
-      "rule": "官方来源：规划财务与法规司"
-    },
     {
       "id": "candidate-a6a2079ac9de89f4",
       "title": "《国家疾控局综合司关于组织开展2026年世界狂犬病日宣传活动的通知》",
