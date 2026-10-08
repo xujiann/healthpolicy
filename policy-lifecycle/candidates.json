@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "candidates",
-  "updatedAt": "2026-10-07T22:13:44.162Z",
+  "updatedAt": "2026-10-08T22:20:56.461Z",
   "items": [
     {
       "policy": {
@@ -46,7 +46,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-07T22:13:44.162Z",
+          "evaluatedAt": "2026-10-08T22:20:56.461Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布"
@@ -97,7 +97,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-07T22:13:44.162Z",
+          "evaluatedAt": "2026-10-08T22:20:56.461Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布",
@@ -151,7 +151,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-07T22:13:44.162Z",
+          "evaluatedAt": "2026-10-08T22:20:56.461Z",
           "eligible": false,
           "reasons": [
             "疾控局政策文号与来源不一致",
@@ -204,12 +204,65 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-07T22:13:44.162Z",
+          "evaluatedAt": "2026-10-08T22:20:56.461Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布",
             "疾控局政策文号与来源不一致",
             "文号缺失或为占位值",
+            "未命中可信归口规则"
+          ]
+        }
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-10-08",
+        "topic": "cdc_monitoring",
+        "secondary": "传染病监测处",
+        "title": "《国家卫生健康委科教司 国家疾控局科教国际司关于公布2026年度继续医学教育推广项目的通知》",
+        "agency": "国家卫生健康委员会",
+        "level": "通知",
+        "summary": "国卫科教教育便函〔2026〕102号 各省、自治区、直辖市及新疆生产建设兵团卫生健康委科教处，各省、自治区、直辖市及新疆生产建设兵团疾控局相关处室，有关直属和联系单位，委属（管）医院，国家医学中心依托单位： 2026年度继续医学教育推广项目（以下简称项目）征集工作已完成。",
+        "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2108085508787048448.html",
+        "keywords": "官方来源：国家疾病预防控制局 ",
+        "documentNo": "国卫科教教育便函〔2026〕102号",
+        "reviewStatus": "待人工审核",
+        "id": "candidate-fb24b882d751a344",
+        "assignment": "人工归口候选",
+        "agencies": [
+          "国家卫生健康委员会"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-10-08T22:20:13.036Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-10-08",
+        "sourceId": "ndcpa",
+        "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2108085508787048448.html",
+        "collectedAt": "2026-10-08T22:20:13.036Z"
+      },
+      "review": {
+        "status": "pending",
+        "automation": {
+          "evaluatedAt": "2026-10-08T22:20:56.461Z",
+          "eligible": false,
+          "reasons": [
+            "发文机关与官方来源不一致",
+            "疾控局政策文号与来源不一致",
             "未命中可信归口规则"
           ]
         }
