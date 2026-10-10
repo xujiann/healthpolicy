@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T21:51:21.853Z",
+  "generatedAt": "2026-10-10T20:39:31.758Z",
   "checkedThisRun": 40,
-  "nextCursor": 335,
+  "nextCursor": 14,
   "overallStatus": "partial",
   "summary": {
     "total": 361,
-    "checked": 357,
-    "decisive": 348,
-    "reachable": 348,
-    "healthy": 347,
+    "checked": 361,
+    "decisive": 353,
+    "reachable": 353,
+    "healthy": 352,
     "blocked": 1,
     "unavailable": 0,
-    "inconclusive": 9,
-    "unchecked": 4,
-    "coverageRate": 98.9,
+    "inconclusive": 8,
+    "unchecked": 0,
+    "coverageRate": 100,
     "availabilityRate": 100
   },
   "items": [
@@ -27,10 +27,10 @@
         "《关于做好2026年中秋、国庆假期前后及秋冬季重点传染病防治工作的通知》"
       ],
       "latestDate": "2026-09-24",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 704,
       "error": ""
     },
     {
@@ -42,10 +42,10 @@
         "《关于印发《卫生健康行政执法文书规范》的通知》"
       ],
       "latestDate": "2026-09-22",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 696,
       "error": ""
     },
     {
@@ -57,10 +57,10 @@
         "《关于印发《关于加强卫生健康监督规范化建设的指导意见》的通知》"
       ],
       "latestDate": "2026-09-21",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 675,
       "error": ""
     },
     {
@@ -74,8 +74,8 @@
       "latestDate": "2026-09-15",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 1006,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 820,
       "error": ""
     },
     {
@@ -89,8 +89,8 @@
       "latestDate": "2026-09-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 969,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 803,
       "error": ""
     },
     {
@@ -104,8 +104,8 @@
       "latestDate": "2026-09-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 871,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 759,
       "error": ""
     },
     {
@@ -119,8 +119,8 @@
       "latestDate": "2026-08-26",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 1245,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 805,
       "error": ""
     },
     {
@@ -134,8 +134,8 @@
       "latestDate": "2026-08-25",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 1098,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 774,
       "error": ""
     },
     {
@@ -149,8 +149,8 @@
       "latestDate": "2026-08-19",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 872,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 806,
       "error": ""
     },
     {
@@ -164,8 +164,8 @@
       "latestDate": "2026-08-19",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 1002,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 792,
       "error": ""
     },
     {
@@ -177,10 +177,10 @@
         "《关于印发《疾病预防控制 “十五五”规划》的通知》"
       ],
       "latestDate": "2026-07-27",
-      "status": "not_checked",
-      "httpStatus": null,
-      "checkedAt": null,
-      "responseMs": null,
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 678,
       "error": ""
     },
     {
@@ -194,8 +194,8 @@
       "latestDate": "2026-07-17",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 1220,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 957,
       "error": ""
     },
     {
@@ -207,11 +207,11 @@
         "《关于印发〈布鲁氏菌病防控方案〉的通知》"
       ],
       "latestDate": "2026-07-08",
-      "status": "inconclusive",
-      "httpStatus": 405,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 257,
-      "error": "ETIMEDOUT"
+      "status": "healthy",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 666,
+      "error": ""
     },
     {
       "url": "https://www.mee.gov.cn/zcwj/gwywj/202607/t20260714_1161753.shtml",
@@ -224,8 +224,8 @@
       "latestDate": "2026-07-07",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 731,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 1113,
       "error": ""
     },
     {
@@ -5067,8 +5067,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-03T20:07:38.059Z",
-      "responseMs": 379,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 403,
       "error": ""
     },
     {
@@ -5082,8 +5082,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 383,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 426,
       "error": ""
     },
     {
@@ -5097,8 +5097,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 400,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 113,
       "error": ""
     },
     {
@@ -5112,8 +5112,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 429,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 356,
       "error": ""
     },
     {
@@ -5127,8 +5127,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 287,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 295,
       "error": ""
     },
     {
@@ -5142,8 +5142,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 411,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 482,
       "error": ""
     },
     {
@@ -5157,8 +5157,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 475,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 414,
       "error": ""
     },
     {
@@ -5172,8 +5172,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 536,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 288,
       "error": ""
     },
     {
@@ -5187,8 +5187,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 380,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 313,
       "error": ""
     },
     {
@@ -5202,8 +5202,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 318,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 406,
       "error": ""
     },
     {
@@ -5217,8 +5217,8 @@
       "latestDate": "2018-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 437,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 446,
       "error": ""
     },
     {
@@ -5232,8 +5232,8 @@
       "latestDate": "2017-05",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 447,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 413,
       "error": ""
     },
     {
@@ -5247,8 +5247,8 @@
       "latestDate": "2017-03",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 279,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 301,
       "error": ""
     },
     {
@@ -5262,8 +5262,8 @@
       "latestDate": "2017-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 431,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 451,
       "error": ""
     },
     {
@@ -5277,8 +5277,8 @@
       "latestDate": "2017-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 333,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 423,
       "error": ""
     },
     {
@@ -5292,8 +5292,8 @@
       "latestDate": "2017-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 295,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 391,
       "error": ""
     },
     {
@@ -5307,8 +5307,8 @@
       "latestDate": "2017-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 333,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 388,
       "error": ""
     },
     {
@@ -5322,8 +5322,8 @@
       "latestDate": "2017-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 298,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 446,
       "error": ""
     },
     {
@@ -5337,8 +5337,8 @@
       "latestDate": "2017-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 432,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 343,
       "error": ""
     },
     {
@@ -5352,8 +5352,8 @@
       "latestDate": "2016-10",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 322,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 335,
       "error": ""
     },
     {
@@ -5367,8 +5367,8 @@
       "latestDate": "2016-10",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 330,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 327,
       "error": ""
     },
     {
@@ -5382,8 +5382,8 @@
       "latestDate": "2016-06",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 392,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 313,
       "error": ""
     },
     {
@@ -5397,8 +5397,8 @@
       "latestDate": "2016-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 295,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 411,
       "error": ""
     },
     {
@@ -5412,8 +5412,8 @@
       "latestDate": "2016-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 415,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 420,
       "error": ""
     },
     {
@@ -5427,8 +5427,8 @@
       "latestDate": "2016-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 398,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 552,
       "error": ""
     },
     {
@@ -5442,8 +5442,8 @@
       "latestDate": "2016-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-04T20:23:48.957Z",
-      "responseMs": 414,
+      "checkedAt": "2026-10-10T20:39:31.758Z",
+      "responseMs": 300,
       "error": ""
     }
   ]
