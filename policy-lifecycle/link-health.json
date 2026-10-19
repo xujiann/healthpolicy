@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-18T19:35:01.147Z",
+  "generatedAt": "2026-10-19T21:43:40.263Z",
   "checkedThisRun": 40,
-  "nextCursor": 334,
-  "overallStatus": "healthy",
+  "nextCursor": 13,
+  "overallStatus": "partial",
   "summary": {
     "total": 361,
     "checked": 361,
-    "decisive": 361,
-    "reachable": 361,
-    "healthy": 360,
+    "decisive": 353,
+    "reachable": 353,
+    "healthy": 352,
     "blocked": 1,
     "unavailable": 0,
-    "inconclusive": 0,
+    "inconclusive": 8,
     "unchecked": 0,
     "coverageRate": 100,
     "availabilityRate": 100
@@ -29,8 +29,8 @@
       "latestDate": "2026-09-24",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 704,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 746,
       "error": ""
     },
     {
@@ -44,8 +44,8 @@
       "latestDate": "2026-09-22",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 696,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 678,
       "error": ""
     },
     {
@@ -59,8 +59,8 @@
       "latestDate": "2026-09-21",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 675,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 669,
       "error": ""
     },
     {
@@ -72,11 +72,11 @@
         "《国家医疗保障局关于试行高水平新技术新产品医疗服务价格项目预立项制度的通知》"
       ],
       "latestDate": "2026-09-15",
-      "status": "healthy",
+      "status": "inconclusive",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 820,
-      "error": ""
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 8001,
+      "error": "TimeoutError"
     },
     {
       "url": "https://www.nhsa.gov.cn/art/2026/9/8/art_104_22045.html",
@@ -87,11 +87,11 @@
         "《关于开展灵活就业人员、农民工、新就业形态人员参加基本医疗保险提质专项行动的通知》"
       ],
       "latestDate": "2026-09-08",
-      "status": "healthy",
+      "status": "inconclusive",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 803,
-      "error": ""
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 8000,
+      "error": "TimeoutError"
     },
     {
       "url": "https://www.nhsa.gov.cn/art/2026/9/2/art_104_21975.html",
@@ -102,11 +102,11 @@
         "《国家医疗保障局关于印发按病组和病种分值付费3.0版分组方案并做好落地实施相关工作的通知》"
       ],
       "latestDate": "2026-09-02",
-      "status": "healthy",
+      "status": "inconclusive",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 759,
-      "error": ""
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 8000,
+      "error": "TimeoutError"
     },
     {
       "url": "https://www.nhsa.gov.cn/art/2026/8/26/art_104_21907.html",
@@ -117,11 +117,11 @@
         "《国家医疗保障局关于做好长期护理保险支付管理工作的指导意见》"
       ],
       "latestDate": "2026-08-26",
-      "status": "healthy",
+      "status": "inconclusive",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 805,
-      "error": ""
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 8000,
+      "error": "TimeoutError"
     },
     {
       "url": "https://www.nhsa.gov.cn/art/2026/8/25/art_104_21894.html",
@@ -132,11 +132,11 @@
         "《国家医疗保障局办公室关于印发《“医保病理云索引”编码规范》的通知》"
       ],
       "latestDate": "2026-08-25",
-      "status": "healthy",
+      "status": "inconclusive",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 774,
-      "error": ""
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 8000,
+      "error": "TimeoutError"
     },
     {
       "url": "https://www.nhsa.gov.cn/art/2026/8/19/art_104_21827.html",
@@ -147,11 +147,11 @@
         "《国家医疗保障局关于印发〈全民医疗保障“十五五”规划〉的通知》"
       ],
       "latestDate": "2026-08-19",
-      "status": "healthy",
+      "status": "inconclusive",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 806,
-      "error": ""
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 8000,
+      "error": "TimeoutError"
     },
     {
       "url": "https://www.nhsa.gov.cn/art/2026/8/19/art_105_21829.html",
@@ -162,11 +162,11 @@
         "《全民医疗保障“十五五”规划》解读"
       ],
       "latestDate": "2026-08-19",
-      "status": "healthy",
+      "status": "inconclusive",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 792,
-      "error": ""
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 8000,
+      "error": "TimeoutError"
     },
     {
       "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2081594149653876736.html",
@@ -179,8 +179,8 @@
       "latestDate": "2026-07-27",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 678,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 690,
       "error": ""
     },
     {
@@ -192,11 +192,11 @@
         "《国家医保局办公室 国家卫生健康委办公厅关于确定医保支持基层医疗卫生服务发展重点联系点的通知》"
       ],
       "latestDate": "2026-07-17",
-      "status": "healthy",
+      "status": "inconclusive",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 957,
-      "error": ""
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 8001,
+      "error": "TimeoutError"
     },
     {
       "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2074752747875766272.html",
@@ -209,8 +209,8 @@
       "latestDate": "2026-07-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 666,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 693,
       "error": ""
     },
     {
@@ -5052,8 +5052,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-09T21:51:21.853Z",
-      "responseMs": 505,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 451,
       "error": ""
     },
     {
@@ -5067,8 +5067,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 403,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 433,
       "error": ""
     },
     {
@@ -5082,8 +5082,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 426,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 416,
       "error": ""
     },
     {
@@ -5097,8 +5097,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 113,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 462,
       "error": ""
     },
     {
@@ -5112,8 +5112,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 356,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 495,
       "error": ""
     },
     {
@@ -5127,8 +5127,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 295,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 425,
       "error": ""
     },
     {
@@ -5142,8 +5142,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 482,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 473,
       "error": ""
     },
     {
@@ -5157,8 +5157,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 414,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 415,
       "error": ""
     },
     {
@@ -5172,8 +5172,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 288,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 412,
       "error": ""
     },
     {
@@ -5187,8 +5187,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 313,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 445,
       "error": ""
     },
     {
@@ -5202,8 +5202,8 @@
       "latestDate": "2018-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 406,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 475,
       "error": ""
     },
     {
@@ -5217,8 +5217,8 @@
       "latestDate": "2018-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 446,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 450,
       "error": ""
     },
     {
@@ -5232,8 +5232,8 @@
       "latestDate": "2017-05",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 413,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 440,
       "error": ""
     },
     {
@@ -5247,8 +5247,8 @@
       "latestDate": "2017-03",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 301,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 425,
       "error": ""
     },
     {
@@ -5262,8 +5262,8 @@
       "latestDate": "2017-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 451,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 461,
       "error": ""
     },
     {
@@ -5277,8 +5277,8 @@
       "latestDate": "2017-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 423,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 429,
       "error": ""
     },
     {
@@ -5292,8 +5292,8 @@
       "latestDate": "2017-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 391,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 413,
       "error": ""
     },
     {
@@ -5307,8 +5307,8 @@
       "latestDate": "2017-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 388,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 509,
       "error": ""
     },
     {
@@ -5322,8 +5322,8 @@
       "latestDate": "2017-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 446,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 439,
       "error": ""
     },
     {
@@ -5337,8 +5337,8 @@
       "latestDate": "2017-01",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 343,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 509,
       "error": ""
     },
     {
@@ -5352,8 +5352,8 @@
       "latestDate": "2016-10",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 335,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 440,
       "error": ""
     },
     {
@@ -5367,8 +5367,8 @@
       "latestDate": "2016-10",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 327,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 453,
       "error": ""
     },
     {
@@ -5382,8 +5382,8 @@
       "latestDate": "2016-06",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 313,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 435,
       "error": ""
     },
     {
@@ -5397,8 +5397,8 @@
       "latestDate": "2016-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 411,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 412,
       "error": ""
     },
     {
@@ -5412,8 +5412,8 @@
       "latestDate": "2016-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 420,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 446,
       "error": ""
     },
     {
@@ -5427,8 +5427,8 @@
       "latestDate": "2016-04",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 552,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 462,
       "error": ""
     },
     {
@@ -5442,8 +5442,8 @@
       "latestDate": "2016-02",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-10-10T20:39:31.758Z",
-      "responseMs": 300,
+      "checkedAt": "2026-10-19T21:43:40.263Z",
+      "responseMs": 449,
       "error": ""
     }
   ]
