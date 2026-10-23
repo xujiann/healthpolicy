@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "candidates",
-  "updatedAt": "2026-10-22T20:44:15.421Z",
+  "updatedAt": "2026-10-23T20:36:38.320Z",
   "items": [
     {
       "policy": {
@@ -46,7 +46,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-22T20:44:15.421Z",
+          "evaluatedAt": "2026-10-23T20:36:38.320Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布"
@@ -97,7 +97,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-22T20:44:15.421Z",
+          "evaluatedAt": "2026-10-23T20:36:38.320Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布",
@@ -151,7 +151,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-22T20:44:15.421Z",
+          "evaluatedAt": "2026-10-23T20:36:38.320Z",
           "eligible": false,
           "reasons": [
             "疾控局政策文号与来源不一致",
@@ -204,7 +204,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-22T20:44:15.421Z",
+          "evaluatedAt": "2026-10-23T20:36:38.320Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布",
@@ -258,12 +258,63 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-22T20:44:15.421Z",
+          "evaluatedAt": "2026-10-23T20:36:38.320Z",
           "eligible": false,
           "reasons": [
             "发文机关与官方来源不一致",
             "疾控局政策文号与来源不一致",
             "未命中可信归口规则"
+          ]
+        }
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-10-23",
+        "topic": "cdc_monitoring",
+        "secondary": "传染病监测处",
+        "title": "《国家疾控局综合司关于印发2026年度疾病预防控制标准项目计划的通知》",
+        "agency": "国家疾病预防控制局",
+        "level": "通知",
+        "summary": "国疾控综法规函〔2026〕250号 局机关各司， 中国 疾控中心 （中国预科院），国家疾病预防控制标准委员会各标准专业委员会，各标准项目负责单位： 现将2026年度疾病预防控制标准项目计划印发给你们，请认真组织落实。",
+        "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2113448759381102592.html",
+        "keywords": "官方来源：国家疾病预防控制局 ",
+        "documentNo": "国疾控综法规函〔2026〕250号",
+        "reviewStatus": "待人工审核",
+        "id": "candidate-c94292dbdd41856a",
+        "assignment": "人工归口候选",
+        "agencies": [
+          "国家疾病预防控制局"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-10-23T20:36:08.233Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-10-23",
+        "sourceId": "ndcpa",
+        "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2113448759381102592.html",
+        "collectedAt": "2026-10-23T20:36:08.233Z"
+      },
+      "review": {
+        "status": "pending",
+        "automation": {
+          "evaluatedAt": "2026-10-23T20:36:38.320Z",
+          "eligible": false,
+          "reasons": [
+            "文号与官方发布司局不一致"
           ]
         }
       }

@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T20:44:15.421Z",
+  "generatedAt": "2026-10-23T20:36:38.320Z",
   "mode": "unattended-high-confidence",
   "summary": {
-    "queuedBefore": 5,
-    "evaluated": 5,
+    "queuedBefore": 6,
+    "evaluated": 6,
     "published": 0,
     "reclassified": 0,
     "classificationRefreshed": 0,
-    "quarantined": 5,
+    "quarantined": 6,
     "deferred": 0,
-    "remaining": 5
+    "remaining": 6
   },
   "items": [
     {
@@ -71,6 +71,16 @@
         "发文机关与官方来源不一致",
         "疾控局政策文号与来源不一致",
         "未命中可信归口规则"
+      ]
+    },
+    {
+      "id": "candidate-c94292dbdd41856a",
+      "title": "《国家疾控局综合司关于印发2026年度疾病预防控制标准项目计划的通知》",
+      "status": "quarantined",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2113448759381102592.html",
+      "reasons": [
+        "文号与官方发布司局不一致"
       ]
     }
   ]

@@ -1,10 +1,10 @@
 // 由 tools/build-policy-artifacts.mjs 生成，请勿直接编辑。
 const policyGovernance = {
-  "generatedAt": "2026-10-22T20:44:17.449Z",
+  "generatedAt": "2026-10-23T20:36:40.273Z",
   "dataThrough": "2026-09-24",
   "lastReviewedAt": "2026-10-05T02:14:03.361Z",
   "counts": {
-    "candidates": 5,
+    "candidates": 6,
     "reviewed": 364,
     "rejected": 0
   },
@@ -30,16 +30,16 @@ const policyGovernance = {
   },
   "p3": {
     "collection": {
-      "generatedAt": "2026-10-22T20:43:44.952Z",
-      "status": "no_new_policy",
+      "generatedAt": "2026-10-23T20:36:08.233Z",
+      "status": "completed_with_candidates",
       "attempted": 44,
       "succeeded": 6,
       "failed": 38,
-      "candidatesAdded": 0,
+      "candidatesAdded": 1,
       "successRate": 13.6
     },
     "review": {
-      "backlog": 5,
+      "backlog": 6,
       "approved": 27,
       "automaticApprovals": 9,
       "rejected": 0,
@@ -47,19 +47,19 @@ const policyGovernance = {
       "approvalRate": 100
     },
     "autoPublication": {
-      "generatedAt": "2026-10-22T20:44:15.421Z",
+      "generatedAt": "2026-10-23T20:36:38.320Z",
       "mode": "unattended-high-confidence",
-      "queuedBefore": 5,
-      "evaluated": 5,
+      "queuedBefore": 6,
+      "evaluated": 6,
       "published": 0,
       "reclassified": 0,
       "classificationRefreshed": 0,
-      "quarantined": 5,
+      "quarantined": 6,
       "deferred": 0,
-      "remaining": 5
+      "remaining": 6
     },
     "linkHealth": {
-      "generatedAt": "2026-10-22T20:44:17.449Z",
+      "generatedAt": "2026-10-23T20:36:40.273Z",
       "overallStatus": "partial",
       "total": 361,
       "checked": 361,
@@ -76,7 +76,7 @@ const policyGovernance = {
   },
   "sourceHealth": {
     "schemaVersion": 1,
-    "generatedAt": "2026-10-22T20:43:44.952Z",
+    "generatedAt": "2026-10-23T20:36:08.233Z",
     "overallStatus": "healthy",
     "sources": [
       {
@@ -85,7 +85,7 @@ const policyGovernance = {
         "homepage": "https://www.nhsa.gov.cn/",
         "policyList": "https://www.nhsa.gov.cn/col/col104/index.html",
         "status": "healthy",
-        "checkedAt": "2026-10-22T20:43:44.952Z",
+        "checkedAt": "2026-10-23T20:36:08.233Z",
         "requests": {
           "attempted": 1,
           "succeeded": 1,
@@ -102,14 +102,14 @@ const policyGovernance = {
         "homepage": "https://www.ndcpa.gov.cn/",
         "policyList": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
         "status": "healthy",
-        "checkedAt": "2026-10-22T20:43:44.952Z",
+        "checkedAt": "2026-10-23T20:36:08.233Z",
         "requests": {
           "attempted": 1,
           "succeeded": 1,
           "failed": 0
         },
         "documentsDiscovered": 8,
-        "newCandidates": 0,
+        "newCandidates": 1,
         "latestKnownPolicyDate": "2026-09-24",
         "reviewedDocuments": 11
       }
