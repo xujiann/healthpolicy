@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T19:53:46.503Z",
+  "generatedAt": "2026-10-26T21:47:27.955Z",
   "manualReview": {
     "reviewedAt": "2026-08-25",
     "status": "completed",
@@ -138,7 +138,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "404 Not Found"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -208,7 +208,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/yzygj/s3593g/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "404 Not Found"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -278,7 +278,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/jws/s7874/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "404 Not Found"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -586,7 +586,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "404 Not Found"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -656,7 +656,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "404 Not Found"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
