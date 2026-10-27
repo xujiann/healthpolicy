@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "candidates",
-  "updatedAt": "2026-10-26T21:48:02.957Z",
+  "updatedAt": "2026-10-27T21:27:15.495Z",
   "items": [
     {
       "policy": {
@@ -46,7 +46,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-26T21:48:02.957Z",
+          "evaluatedAt": "2026-10-27T21:27:15.495Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布"
@@ -97,7 +97,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-26T21:48:02.957Z",
+          "evaluatedAt": "2026-10-27T21:27:15.495Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布",
@@ -151,7 +151,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-26T21:48:02.957Z",
+          "evaluatedAt": "2026-10-27T21:27:15.495Z",
           "eligible": false,
           "reasons": [
             "疾控局政策文号与来源不一致",
@@ -204,7 +204,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-26T21:48:02.957Z",
+          "evaluatedAt": "2026-10-27T21:27:15.495Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布",
@@ -258,7 +258,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-26T21:48:02.957Z",
+          "evaluatedAt": "2026-10-27T21:27:15.495Z",
           "eligible": false,
           "reasons": [
             "发文机关与官方来源不一致",
@@ -311,10 +311,63 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-26T21:48:02.957Z",
+          "evaluatedAt": "2026-10-27T21:27:15.495Z",
           "eligible": false,
           "reasons": [
             "文号与官方发布司局不一致"
+          ]
+        }
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-10-27",
+        "topic": "cdc_monitoring",
+        "secondary": "传染病监测处",
+        "title": "《国家疾控局综合司关于疾控政策研究课题入选单位的公告》",
+        "agency": "国家疾病预防控制局",
+        "level": "公告",
+        "summary": "2026年7月15日，我司向社会发布了《国家疾控局综合司疾控政策研究课题征集公告》。本次征集工作得到全国多家公共卫生机构、高等院校、科研院所等单位的积极响应与大力支持。",
+        "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2114922629405511680.html",
+        "keywords": "官方来源：国家疾病预防控制局 ",
+        "documentNo": "文号待核",
+        "reviewStatus": "待人工审核",
+        "id": "candidate-c3910072df5280d5",
+        "assignment": "人工归口候选",
+        "agencies": [
+          "国家疾病预防控制局"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-10-27T21:26:47.016Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-10-27",
+        "sourceId": "ndcpa",
+        "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2114922629405511680.html",
+        "collectedAt": "2026-10-27T21:26:47.016Z"
+      },
+      "review": {
+        "status": "pending",
+        "automation": {
+          "evaluatedAt": "2026-10-27T21:27:15.495Z",
+          "eligible": false,
+          "reasons": [
+            "疾控局政策文号与来源不一致",
+            "文号缺失或为占位值",
+            "未命中可信归口规则"
           ]
         }
       }

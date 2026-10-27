@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T21:48:02.957Z",
+  "generatedAt": "2026-10-27T21:27:15.495Z",
   "mode": "unattended-high-confidence",
   "summary": {
-    "queuedBefore": 6,
-    "evaluated": 6,
+    "queuedBefore": 7,
+    "evaluated": 7,
     "published": 0,
     "reclassified": 0,
     "classificationRefreshed": 0,
-    "quarantined": 6,
+    "quarantined": 7,
     "deferred": 0,
-    "remaining": 6
+    "remaining": 7
   },
   "items": [
     {
@@ -81,6 +81,18 @@
       "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2113448759381102592.html",
       "reasons": [
         "文号与官方发布司局不一致"
+      ]
+    },
+    {
+      "id": "candidate-c3910072df5280d5",
+      "title": "《国家疾控局综合司关于疾控政策研究课题入选单位的公告》",
+      "status": "quarantined",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2114922629405511680.html",
+      "reasons": [
+        "疾控局政策文号与来源不一致",
+        "文号缺失或为占位值",
+        "未命中可信归口规则"
       ]
     }
   ]
