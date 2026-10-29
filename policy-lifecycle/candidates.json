@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "candidates",
-  "updatedAt": "2026-10-28T21:53:24.347Z",
+  "updatedAt": "2026-10-29T21:57:30.047Z",
   "items": [
     {
       "policy": {
@@ -46,7 +46,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-28T21:53:24.347Z",
+          "evaluatedAt": "2026-10-29T21:57:30.047Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布"
@@ -97,7 +97,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-28T21:53:24.347Z",
+          "evaluatedAt": "2026-10-29T21:57:30.047Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布",
@@ -151,7 +151,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-28T21:53:24.347Z",
+          "evaluatedAt": "2026-10-29T21:57:30.047Z",
           "eligible": false,
           "reasons": [
             "疾控局政策文号与来源不一致",
@@ -204,7 +204,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-28T21:53:24.347Z",
+          "evaluatedAt": "2026-10-29T21:57:30.047Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布",
@@ -258,7 +258,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-28T21:53:24.347Z",
+          "evaluatedAt": "2026-10-29T21:57:30.047Z",
           "eligible": false,
           "reasons": [
             "发文机关与官方来源不一致",
@@ -311,7 +311,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-28T21:53:24.347Z",
+          "evaluatedAt": "2026-10-29T21:57:30.047Z",
           "eligible": false,
           "reasons": [
             "文号与官方发布司局不一致"
@@ -362,7 +362,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-10-28T21:53:24.347Z",
+          "evaluatedAt": "2026-10-29T21:57:30.047Z",
           "eligible": false,
           "reasons": [
             "疾控局政策文号与来源不一致",
