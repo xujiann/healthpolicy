@@ -1,6 +1,6 @@
 // 由 tools/build-policy-artifacts.mjs 生成，请勿直接编辑。
 const policyGovernance = {
-  "generatedAt": "2026-10-29T21:57:32.696Z",
+  "generatedAt": "2026-10-30T21:40:24.555Z",
   "dataThrough": "2026-09-24",
   "lastReviewedAt": "2026-10-05T02:14:03.361Z",
   "counts": {
@@ -30,7 +30,7 @@ const policyGovernance = {
   },
   "p3": {
     "collection": {
-      "generatedAt": "2026-10-29T21:56:55.683Z",
+      "generatedAt": "2026-10-30T21:39:52.890Z",
       "status": "no_new_policy",
       "attempted": 44,
       "succeeded": 6,
@@ -47,7 +47,7 @@ const policyGovernance = {
       "approvalRate": 100
     },
     "autoPublication": {
-      "generatedAt": "2026-10-29T21:57:30.047Z",
+      "generatedAt": "2026-10-30T21:40:22.462Z",
       "mode": "unattended-high-confidence",
       "queuedBefore": 7,
       "evaluated": 7,
@@ -59,7 +59,7 @@ const policyGovernance = {
       "remaining": 7
     },
     "linkHealth": {
-      "generatedAt": "2026-10-29T21:57:32.696Z",
+      "generatedAt": "2026-10-30T21:40:24.555Z",
       "overallStatus": "partial",
       "total": 361,
       "checked": 361,
@@ -76,7 +76,7 @@ const policyGovernance = {
   },
   "sourceHealth": {
     "schemaVersion": 1,
-    "generatedAt": "2026-10-29T21:56:55.683Z",
+    "generatedAt": "2026-10-30T21:39:52.890Z",
     "overallStatus": "healthy",
     "sources": [
       {
@@ -85,7 +85,7 @@ const policyGovernance = {
         "homepage": "https://www.nhsa.gov.cn/",
         "policyList": "https://www.nhsa.gov.cn/col/col104/index.html",
         "status": "healthy",
-        "checkedAt": "2026-10-29T21:56:55.683Z",
+        "checkedAt": "2026-10-30T21:39:52.890Z",
         "requests": {
           "attempted": 1,
           "succeeded": 1,
@@ -102,7 +102,7 @@ const policyGovernance = {
         "homepage": "https://www.ndcpa.gov.cn/",
         "policyList": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
         "status": "healthy",
-        "checkedAt": "2026-10-29T21:56:55.683Z",
+        "checkedAt": "2026-10-30T21:39:52.890Z",
         "requests": {
           "attempted": 1,
           "succeeded": 1,
