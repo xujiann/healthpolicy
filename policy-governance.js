@@ -1,6 +1,6 @@
 // 由 tools/build-policy-artifacts.mjs 生成，请勿直接编辑。
 const policyGovernance = {
-  "generatedAt": "2026-10-30T21:40:24.555Z",
+  "generatedAt": "2026-10-31T20:38:56.967Z",
   "dataThrough": "2026-09-24",
   "lastReviewedAt": "2026-10-05T02:14:03.361Z",
   "counts": {
@@ -30,13 +30,13 @@ const policyGovernance = {
   },
   "p3": {
     "collection": {
-      "generatedAt": "2026-10-30T21:39:52.890Z",
+      "generatedAt": "2026-10-31T20:37:35.250Z",
       "status": "no_new_policy",
-      "attempted": 44,
-      "succeeded": 6,
-      "failed": 38,
+      "attempted": 46,
+      "succeeded": 3,
+      "failed": 43,
       "candidatesAdded": 0,
-      "successRate": 13.6
+      "successRate": 6.5
     },
     "review": {
       "backlog": 7,
@@ -47,7 +47,7 @@ const policyGovernance = {
       "approvalRate": 100
     },
     "autoPublication": {
-      "generatedAt": "2026-10-30T21:40:22.462Z",
+      "generatedAt": "2026-10-31T20:38:54.553Z",
       "mode": "unattended-high-confidence",
       "queuedBefore": 7,
       "evaluated": 7,
@@ -59,7 +59,7 @@ const policyGovernance = {
       "remaining": 7
     },
     "linkHealth": {
-      "generatedAt": "2026-10-30T21:40:24.555Z",
+      "generatedAt": "2026-10-31T20:38:56.967Z",
       "overallStatus": "partial",
       "total": 361,
       "checked": 361,
@@ -76,22 +76,22 @@ const policyGovernance = {
   },
   "sourceHealth": {
     "schemaVersion": 1,
-    "generatedAt": "2026-10-30T21:39:52.890Z",
-    "overallStatus": "healthy",
+    "generatedAt": "2026-10-31T20:37:35.250Z",
+    "overallStatus": "degraded",
     "sources": [
       {
         "id": "nhsa",
         "name": "国家医疗保障局",
         "homepage": "https://www.nhsa.gov.cn/",
         "policyList": "https://www.nhsa.gov.cn/col/col104/index.html",
-        "status": "healthy",
-        "checkedAt": "2026-10-30T21:39:52.890Z",
+        "status": "unavailable",
+        "checkedAt": "2026-10-31T20:37:35.250Z",
         "requests": {
           "attempted": 1,
-          "succeeded": 1,
-          "failed": 0
+          "succeeded": 0,
+          "failed": 1
         },
-        "documentsDiscovered": 8,
+        "documentsDiscovered": 0,
         "newCandidates": 0,
         "latestKnownPolicyDate": "2026-09-15",
         "reviewedDocuments": 16
@@ -102,7 +102,7 @@ const policyGovernance = {
         "homepage": "https://www.ndcpa.gov.cn/",
         "policyList": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
         "status": "healthy",
-        "checkedAt": "2026-10-30T21:39:52.890Z",
+        "checkedAt": "2026-10-31T20:37:35.250Z",
         "requests": {
           "attempted": 1,
           "succeeded": 1,
