@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-01T21:21:12.826Z",
+  "generatedAt": "2026-11-03T00:00:47.943Z",
   "mode": "unattended-high-confidence",
   "summary": {
-    "queuedBefore": 7,
-    "evaluated": 7,
+    "queuedBefore": 8,
+    "evaluated": 8,
     "published": 0,
     "reclassified": 0,
     "classificationRefreshed": 0,
-    "quarantined": 7,
+    "quarantined": 8,
     "deferred": 0,
-    "remaining": 7
+    "remaining": 8
   },
   "items": [
     {
@@ -92,6 +92,17 @@
       "reasons": [
         "疾控局政策文号与来源不一致",
         "文号缺失或为占位值",
+        "未命中可信归口规则"
+      ]
+    },
+    {
+      "id": "candidate-02333fbd1997429a",
+      "title": "《国家疾控局人事司关于2026年度局直属和联系单位专业技术资格评审结果公示的通知》",
+      "status": "quarantined",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2117167798762770432.html",
+      "reasons": [
+        "仅允许正式政策自动发布",
         "未命中可信归口规则"
       ]
     }
