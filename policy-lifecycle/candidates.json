@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "candidates",
-  "updatedAt": "2026-11-05T22:48:11.791Z",
+  "updatedAt": "2026-11-06T22:17:50.737Z",
   "items": [
     {
       "policy": {
@@ -46,7 +46,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-11-05T22:48:11.791Z",
+          "evaluatedAt": "2026-11-06T22:17:50.737Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布"
@@ -97,7 +97,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-11-05T22:48:11.791Z",
+          "evaluatedAt": "2026-11-06T22:17:50.737Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布",
@@ -151,7 +151,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-11-05T22:48:11.791Z",
+          "evaluatedAt": "2026-11-06T22:17:50.737Z",
           "eligible": false,
           "reasons": [
             "疾控局政策文号与来源不一致",
@@ -204,7 +204,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-11-05T22:48:11.791Z",
+          "evaluatedAt": "2026-11-06T22:17:50.737Z",
           "eligible": false,
           "reasons": [
             "活动或征集类通知不自动发布",
@@ -258,7 +258,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-11-05T22:48:11.791Z",
+          "evaluatedAt": "2026-11-06T22:17:50.737Z",
           "eligible": false,
           "reasons": [
             "发文机关与官方来源不一致",
@@ -311,7 +311,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-11-05T22:48:11.791Z",
+          "evaluatedAt": "2026-11-06T22:17:50.737Z",
           "eligible": false,
           "reasons": [
             "文号与官方发布司局不一致"
@@ -362,7 +362,7 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-11-05T22:48:11.791Z",
+          "evaluatedAt": "2026-11-06T22:17:50.737Z",
           "eligible": false,
           "reasons": [
             "疾控局政策文号与来源不一致",
@@ -415,11 +415,64 @@
       "review": {
         "status": "pending",
         "automation": {
-          "evaluatedAt": "2026-11-05T22:48:11.791Z",
+          "evaluatedAt": "2026-11-06T22:17:50.737Z",
           "eligible": false,
           "reasons": [
             "仅允许正式政策自动发布",
             "未命中可信归口规则"
+          ]
+        }
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-11-06",
+        "topic": "cdc_monitoring",
+        "secondary": "传染病监测处",
+        "title": "《国务院防治艾滋病工作委员会办公室关于做好2026年“世界艾滋病日”主题活动的通知》",
+        "agency": "国家疾病预防控制局",
+        "level": "通知",
+        "summary": "国艾办函〔2026〕2号 各省、自治区、直辖市及新疆生产建设兵团防治艾滋病工作委员会（协调机制），国务院防治艾滋病工作委员会部委成员单位： 2026年12月1日是第39个“世界艾滋病日”。",
+        "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2118651607693824000.html",
+        "keywords": "官方来源：国家疾病预防控制局 ",
+        "documentNo": "文号待核",
+        "reviewStatus": "待人工审核",
+        "id": "candidate-1d55483d10bc00af",
+        "assignment": "人工归口候选",
+        "agencies": [
+          "国家疾病预防控制局"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-11-06T22:17:21.482Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-11-06",
+        "sourceId": "ndcpa",
+        "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2118651607693824000.html",
+        "collectedAt": "2026-11-06T22:17:21.482Z"
+      },
+      "review": {
+        "status": "pending",
+        "automation": {
+          "evaluatedAt": "2026-11-06T22:17:50.737Z",
+          "eligible": false,
+          "reasons": [
+            "疾控局政策文号与来源不一致",
+            "文号与官方发布司局不一致",
+            "文号缺失或为占位值"
           ]
         }
       }

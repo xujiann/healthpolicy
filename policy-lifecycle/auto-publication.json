@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T22:48:11.791Z",
+  "generatedAt": "2026-11-06T22:17:50.737Z",
   "mode": "unattended-high-confidence",
   "summary": {
-    "queuedBefore": 8,
-    "evaluated": 8,
+    "queuedBefore": 9,
+    "evaluated": 9,
     "published": 0,
     "reclassified": 0,
     "classificationRefreshed": 0,
-    "quarantined": 8,
+    "quarantined": 9,
     "deferred": 0,
-    "remaining": 8
+    "remaining": 9
   },
   "items": [
     {
@@ -104,6 +104,18 @@
       "reasons": [
         "仅允许正式政策自动发布",
         "未命中可信归口规则"
+      ]
+    },
+    {
+      "id": "candidate-1d55483d10bc00af",
+      "title": "《国务院防治艾滋病工作委员会办公室关于做好2026年“世界艾滋病日”主题活动的通知》",
+      "status": "quarantined",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2118651607693824000.html",
+      "reasons": [
+        "疾控局政策文号与来源不一致",
+        "文号与官方发布司局不一致",
+        "文号缺失或为占位值"
       ]
     }
   ]
