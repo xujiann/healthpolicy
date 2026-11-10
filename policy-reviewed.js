@@ -15042,5 +15042,47 @@ const policyReviewedDocuments = [
       "basis": "自动发布门禁：国家疾病预防控制局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“官方来源：规划财务与法规司”规则；摘要来自官方正文。",
       "status": "approved"
     }
+  },
+  {
+    "year": 2026,
+    "date": "2026-11-09",
+    "topic": "cdc_supervision_2",
+    "secondary": "司局统筹",
+    "title": "《关于印发《医疗机构放射卫生监督执法工作规范》的通知》",
+    "agency": "国家疾病预防控制局",
+    "level": "通知",
+    "summary": "国疾控监督二发〔2026〕25号 各省、自治区、直辖市及新疆生产建设兵团疾控局、卫生健康委、中医药局： 为进一步规范医疗机构放射卫生监督执法工作，国家疾控局联合国家卫生健康委、国家中医药局制定了《医疗机构放射卫生监督执法工作规范》。",
+    "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2119703324044726272.html",
+    "keywords": "官方来源：国家疾病预防控制局 ",
+    "documentNo": "国疾控监督二发〔2026〕25号",
+    "reviewStatus": "已自动核验",
+    "id": "candidate-2537af2048e75d9c",
+    "assignment": "规则归口",
+    "agencies": [
+      "国家疾病预防控制局"
+    ],
+    "documentType": "正式政策",
+    "validity": {
+      "status": "待核验",
+      "effectiveDate": null,
+      "expiryDate": null,
+      "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+      "verification": "pending"
+    },
+    "relations": [],
+    "structure": {
+      "schemaVersion": 2,
+      "enrichedAt": "2026-11-10T00:49:50.403Z",
+      "status": "machine_extracted"
+    },
+    "audit": {
+      "batchId": "policy-scan-2026-11-10",
+      "sourceId": "ndcpa",
+      "collectedAt": "2026-11-10T00:49:20.571Z",
+      "reviewer": "GitHub Actions 自动发布器",
+      "reviewedAt": "2026-11-10T00:49:50.403Z",
+      "basis": "自动发布门禁：国家疾病预防控制局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“官方来源：综合监督二司”规则；摘要来自官方正文。",
+      "status": "approved"
+    }
   }
 ];

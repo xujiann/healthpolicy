@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T21:20:16.627Z",
+  "generatedAt": "2026-11-10T00:49:50.403Z",
   "mode": "unattended-high-confidence",
   "summary": {
-    "queuedBefore": 9,
-    "evaluated": 9,
-    "published": 0,
+    "queuedBefore": 10,
+    "evaluated": 10,
+    "published": 1,
     "reclassified": 0,
     "classificationRefreshed": 0,
     "quarantined": 9,
@@ -117,6 +117,16 @@
         "文号与官方发布司局不一致",
         "文号缺失或为占位值"
       ]
+    },
+    {
+      "id": "candidate-2537af2048e75d9c",
+      "title": "《关于印发《医疗机构放射卫生监督执法工作规范》的通知》",
+      "status": "published",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2119703324044726272.html",
+      "topic": "cdc_supervision_2",
+      "secondary": "司局统筹",
+      "verifiedAt": "2026-11-10T00:49:52.489Z"
     }
   ]
 }
