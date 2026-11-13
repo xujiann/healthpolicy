@@ -15084,5 +15084,47 @@ const policyReviewedDocuments = [
       "basis": "自动发布门禁：国家疾病预防控制局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“官方来源：综合监督二司”规则；摘要来自官方正文。",
       "status": "approved"
     }
+  },
+  {
+    "year": 2026,
+    "date": "2026-11-13",
+    "topic": "cdc_supervision_2",
+    "secondary": "司局统筹",
+    "title": "《国家疾控局关于印发《公共场所卫生监督量化分级管理指南》的通知》",
+    "agency": "国家疾病预防控制局",
+    "level": "通知",
+    "summary": "国疾控监督二发〔2026〕26号 各省、自治区、直辖市及新疆生产建设兵团疾控局： 为进一步加强公共场所卫生监督量化分级管理工作，提升事中事后监管的科学性、精准性，根据公共场所卫生管理相关法律法规要求，我局组织修订了《公共场所卫生监督量化分级管理指南》，现印发给你们，请遵照执行，并就有关事项通知如下： 一、本文件实施前，已确定卫生信誉度等级的公共场所，继续沿用原卫生信誉度等级；原卫生信誉度等级为不予评级的公共场所，其卫生信誉度等级直接转为D级。",
+    "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2121053923252277248.html",
+    "keywords": "官方来源：国家疾病预防控制局 ",
+    "documentNo": "国疾控监督二发〔2026〕26号",
+    "reviewStatus": "已自动核验",
+    "id": "candidate-12af8ac84cdd6dbd",
+    "assignment": "规则归口",
+    "agencies": [
+      "国家疾病预防控制局"
+    ],
+    "documentType": "正式政策",
+    "validity": {
+      "status": "待核验",
+      "effectiveDate": null,
+      "expiryDate": null,
+      "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+      "verification": "pending"
+    },
+    "relations": [],
+    "structure": {
+      "schemaVersion": 2,
+      "enrichedAt": "2026-11-13T22:49:08.597Z",
+      "status": "machine_extracted"
+    },
+    "audit": {
+      "batchId": "policy-scan-2026-11-13",
+      "sourceId": "ndcpa",
+      "collectedAt": "2026-11-13T22:47:33.382Z",
+      "reviewer": "GitHub Actions 自动发布器",
+      "reviewedAt": "2026-11-13T22:49:08.597Z",
+      "basis": "自动发布门禁：国家疾病预防控制局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“官方来源：综合监督二司”规则；摘要来自官方正文。",
+      "status": "approved"
+    }
   }
 ];

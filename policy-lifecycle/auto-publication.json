@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T22:50:38.067Z",
+  "generatedAt": "2026-11-13T22:49:08.597Z",
   "mode": "unattended-high-confidence",
   "summary": {
-    "queuedBefore": 9,
-    "evaluated": 9,
-    "published": 0,
+    "queuedBefore": 10,
+    "evaluated": 10,
+    "published": 1,
     "reclassified": 0,
     "classificationRefreshed": 0,
     "quarantined": 9,
@@ -117,6 +117,16 @@
         "文号与官方发布司局不一致",
         "文号缺失或为占位值"
       ]
+    },
+    {
+      "id": "candidate-12af8ac84cdd6dbd",
+      "title": "《国家疾控局关于印发《公共场所卫生监督量化分级管理指南》的通知》",
+      "status": "published",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2121053923252277248.html",
+      "topic": "cdc_supervision_2",
+      "secondary": "司局统筹",
+      "verifiedAt": "2026-11-13T22:49:10.879Z"
     }
   ]
 }
