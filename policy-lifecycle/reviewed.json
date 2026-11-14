@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "reviewed",
-  "updatedAt": "2026-11-13T22:49:08.597Z",
+  "updatedAt": "2026-11-14T21:39:38.912Z",
   "items": [
     {
       "policy": {
@@ -17155,6 +17155,72 @@
           "summarySource": "official-page",
           "contentUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2121053923252277248.html",
           "verifiedAt": "2026-11-13T22:49:10.879Z"
+        },
+        "classification": {
+          "rule": "官方来源：综合监督二司",
+          "topic": "cdc_supervision_2",
+          "secondary": "司局统筹",
+          "evaluatedAt": "2026-11-14T21:39:38.912Z"
+        }
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-11-14",
+        "topic": "nhsa_benefits",
+        "secondary": "生育保障处",
+        "title": "《国家医保局 人力资源社会保障部关于印发《国家基本医疗保险、生育保险和工伤保险药品目录》以及《商业健康保险创新药品目录》（2026年）的通知》",
+        "agency": "国家医疗保障局",
+        "level": "通知",
+        "summary": "%PDF-1.7 %���� 6 0 obj >stream x���k�0 ��\u0007�\u001f� ��sU��M8�l����U�z��D{�]�|\u0001#���w�_D� �(s#���Z9r�ۇ�i\u0012�\u000f^��������L,�huM���L�X�v�\u0004P\u0005�k�ݡ\u0015Jh�\u001c�B�W� cEíb9Z��%.\u0007���*\u001cW�1Z\\�>ڛ��>��\"Bh\u0013�B�(��.#ؼ��/k&8\u0018����b��`���Q!Q?MT)0�0Z+�S>\u0006W\u0000�դ\u00047�0x�\u0002�VbTv�\u001b��h W\u0017P\u0018Xޣ*�\"�\u0015�A�B�� \\",
+        "url": "https://www.nhsa.gov.cn/art/2026/11/14/art_104_23384.html",
+        "keywords": "官方来源：国家医疗保障局 ",
+        "documentNo": "医保发〔2026〕29号",
+        "reviewStatus": "已自动核验",
+        "id": "candidate-09af465de8b25278",
+        "assignment": "规则归口",
+        "agencies": [
+          "国家医疗保障局"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-11-14T21:39:38.912Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-11-14",
+        "sourceId": "nhsa",
+        "sourceUrl": "https://www.nhsa.gov.cn/art/2026/11/14/art_104_23384.html",
+        "collectedAt": "2026-11-14T21:39:05.799Z"
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "GitHub Actions 自动发布器",
+        "reviewedAt": "2026-11-14T21:39:38.912Z",
+        "basis": "自动发布门禁：国家医疗保障局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“生育保障”规则；摘要来自官方正文。",
+        "method": "automatic",
+        "confidence": "high",
+        "evidence": {
+          "sourceUrl": "https://www.nhsa.gov.cn/art/2026/11/14/art_104_23384.html",
+          "resolvedUrl": "https://www.nhsa.gov.cn/art/2026/11/14/art_104_23384.html",
+          "pageTitle": "国家医保局 人力资源社会保障部关于印发《国家基本医疗保险、生育保险和工伤保险药品目录》以及《商业健康保险创新药品目录》（2026年）的通知",
+          "publishDate": "2026-11-14",
+          "documentNo": "医保发〔2026〕29号",
+          "sourceDepartment": "",
+          "summarySource": "official-download",
+          "contentUrl": "https://www.nhsa.gov.cn/module/download/downfile.jsp?classid=0&filename=9d2d8daed97e442a8c42f1eb67193c4e.pdf",
+          "verifiedAt": "2026-11-14T21:39:43.660Z"
         }
       }
     }

@@ -1,18 +1,30 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-13T22:49:08.597Z",
+  "generatedAt": "2026-11-14T21:39:38.912Z",
   "mode": "unattended-high-confidence",
   "summary": {
     "queuedBefore": 10,
     "evaluated": 10,
     "published": 1,
     "reclassified": 0,
-    "classificationRefreshed": 0,
+    "classificationRefreshed": 1,
     "quarantined": 9,
     "deferred": 0,
     "remaining": 9
   },
   "items": [
+    {
+      "id": "candidate-12af8ac84cdd6dbd",
+      "title": "《国家疾控局关于印发《公共场所卫生监督量化分级管理指南》的通知》",
+      "status": "classification_refreshed",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2121053923252277248.html",
+      "previousTopic": "cdc_supervision_2",
+      "previousSecondary": "司局统筹",
+      "topic": "cdc_supervision_2",
+      "secondary": "司局统筹",
+      "rule": "官方来源：综合监督二司"
+    },
     {
       "id": "candidate-a6a2079ac9de89f4",
       "title": "《国家疾控局综合司关于组织开展2026年世界狂犬病日宣传活动的通知》",
@@ -119,14 +131,14 @@
       ]
     },
     {
-      "id": "candidate-12af8ac84cdd6dbd",
-      "title": "《国家疾控局关于印发《公共场所卫生监督量化分级管理指南》的通知》",
+      "id": "candidate-09af465de8b25278",
+      "title": "《国家医保局 人力资源社会保障部关于印发《国家基本医疗保险、生育保险和工伤保险药品目录》以及《商业健康保险创新药品目录》（2026年）的通知》",
       "status": "published",
-      "sourceId": "ndcpa",
-      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2121053923252277248.html",
-      "topic": "cdc_supervision_2",
-      "secondary": "司局统筹",
-      "verifiedAt": "2026-11-13T22:49:10.879Z"
+      "sourceId": "nhsa",
+      "sourceUrl": "https://www.nhsa.gov.cn/art/2026/11/14/art_104_23384.html",
+      "topic": "nhsa_benefits",
+      "secondary": "生育保障处",
+      "verifiedAt": "2026-11-14T21:39:43.660Z"
     }
   ]
 }

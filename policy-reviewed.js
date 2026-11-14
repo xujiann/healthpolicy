@@ -15126,5 +15126,47 @@ const policyReviewedDocuments = [
       "basis": "自动发布门禁：国家疾病预防控制局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“官方来源：综合监督二司”规则；摘要来自官方正文。",
       "status": "approved"
     }
+  },
+  {
+    "year": 2026,
+    "date": "2026-11-14",
+    "topic": "nhsa_benefits",
+    "secondary": "生育保障处",
+    "title": "《国家医保局 人力资源社会保障部关于印发《国家基本医疗保险、生育保险和工伤保险药品目录》以及《商业健康保险创新药品目录》（2026年）的通知》",
+    "agency": "国家医疗保障局",
+    "level": "通知",
+    "summary": "%PDF-1.7 %���� 6 0 obj >stream x���k�0 ��\u0007�\u001f� ��sU��M8�l����U�z��D{�]�|\u0001#���w�_D� �(s#���Z9r�ۇ�i\u0012�\u000f^��������L,�huM���L�X�v�\u0004P\u0005�k�ݡ\u0015Jh�\u001c�B�W� cEíb9Z��%.\u0007���*\u001cW�1Z\\�>ڛ��>��\"Bh\u0013�B�(��.#ؼ��/k&8\u0018����b��`���Q!Q?MT)0�0Z+�S>\u0006W\u0000�դ\u00047�0x�\u0002�VbTv�\u001b��h W\u0017P\u0018Xޣ*�\"�\u0015�A�B�� \\",
+    "url": "https://www.nhsa.gov.cn/art/2026/11/14/art_104_23384.html",
+    "keywords": "官方来源：国家医疗保障局 ",
+    "documentNo": "医保发〔2026〕29号",
+    "reviewStatus": "已自动核验",
+    "id": "candidate-09af465de8b25278",
+    "assignment": "规则归口",
+    "agencies": [
+      "国家医疗保障局"
+    ],
+    "documentType": "正式政策",
+    "validity": {
+      "status": "待核验",
+      "effectiveDate": null,
+      "expiryDate": null,
+      "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+      "verification": "pending"
+    },
+    "relations": [],
+    "structure": {
+      "schemaVersion": 2,
+      "enrichedAt": "2026-11-14T21:39:38.912Z",
+      "status": "machine_extracted"
+    },
+    "audit": {
+      "batchId": "policy-scan-2026-11-14",
+      "sourceId": "nhsa",
+      "collectedAt": "2026-11-14T21:39:05.799Z",
+      "reviewer": "GitHub Actions 自动发布器",
+      "reviewedAt": "2026-11-14T21:39:38.912Z",
+      "basis": "自动发布门禁：国家医疗保障局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“生育保障”规则；摘要来自官方正文。",
+      "status": "approved"
+    }
   }
 ];
