@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "reviewed",
-  "updatedAt": "2026-11-14T21:39:38.912Z",
+  "updatedAt": "2026-11-15T22:00:24.398Z",
   "items": [
     {
       "policy": {
@@ -17221,6 +17221,12 @@
           "summarySource": "official-download",
           "contentUrl": "https://www.nhsa.gov.cn/module/download/downfile.jsp?classid=0&filename=9d2d8daed97e442a8c42f1eb67193c4e.pdf",
           "verifiedAt": "2026-11-14T21:39:43.660Z"
+        },
+        "classification": {
+          "rule": "生育保障",
+          "topic": "nhsa_benefits",
+          "secondary": "生育保障处",
+          "evaluatedAt": "2026-11-15T22:00:24.398Z"
         }
       }
     }
