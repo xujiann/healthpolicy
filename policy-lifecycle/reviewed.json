@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "reviewed",
-  "updatedAt": "2026-11-15T22:00:24.398Z",
+  "updatedAt": "2026-11-17T23:56:04.367Z",
   "items": [
     {
       "policy": {
@@ -17227,6 +17227,66 @@
           "topic": "nhsa_benefits",
           "secondary": "生育保障处",
           "evaluatedAt": "2026-11-15T22:00:24.398Z"
+        }
+      }
+    },
+    {
+      "policy": {
+        "year": 2026,
+        "date": "2026-11-17",
+        "topic": "cdc_immunization",
+        "secondary": "免疫规划处",
+        "title": "《关于印发全面推行疫苗处方工作指导意见的通知》",
+        "agency": "国家疾病预防控制局",
+        "level": "通知",
+        "summary": "国疾控卫免发〔2026〕27号 各省、自治区、直 辖市及新疆生产建设兵团疾控局、卫生健康委、中医药局： 为贯彻落实全国卫生与健康大会精神和《疾病预防控制“十五五”规划》推行疫苗处方政策有关要求，深化医防协同、医防融合机制，国家疾控局、国家卫生健康委、国家中医药局等3部门联合制定了《关于全面推行疫苗处方工作的指导意见》，推动各地全面、规范开展疫苗处方工作。",
+        "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2122513349662380032.html",
+        "keywords": "官方来源：国家疾病预防控制局 ",
+        "documentNo": "国疾控卫免发〔2026〕27号",
+        "reviewStatus": "已自动核验",
+        "id": "candidate-1d14c5705cf6bb84",
+        "assignment": "规则归口",
+        "agencies": [
+          "国家疾病预防控制局"
+        ],
+        "documentType": "正式政策",
+        "validity": {
+          "status": "待核验",
+          "effectiveDate": null,
+          "expiryDate": null,
+          "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+          "verification": "pending"
+        },
+        "relations": [],
+        "structure": {
+          "schemaVersion": 2,
+          "enrichedAt": "2026-11-17T23:56:04.367Z",
+          "status": "machine_extracted"
+        }
+      },
+      "collection": {
+        "batchId": "policy-scan-2026-11-17",
+        "sourceId": "ndcpa",
+        "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2122513349662380032.html",
+        "collectedAt": "2026-11-17T23:55:32.560Z"
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "GitHub Actions 自动发布器",
+        "reviewedAt": "2026-11-17T23:56:04.367Z",
+        "basis": "自动发布门禁：国家疾病预防控制局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“免疫规划”规则；摘要来自官方正文。",
+        "method": "automatic",
+        "confidence": "high",
+        "evidence": {
+          "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2122513349662380032.html",
+          "resolvedUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2122513349662380032.html",
+          "pageTitle": "关于印发全面推行疫苗处方工作指导意见的通知",
+          "publishDate": "2026-11-17",
+          "documentNo": "国疾控卫免发〔2026〕27号",
+          "sourceDepartment": "卫生与免疫规划司",
+          "summarySource": "official-page",
+          "contentUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2122513349662380032.html",
+          "verifiedAt": "2026-11-17T23:56:09.236Z"
         }
       }
     }

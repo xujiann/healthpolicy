@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T00:59:24.314Z",
+  "generatedAt": "2026-11-17T23:55:32.560Z",
   "manualReview": {
     "reviewedAt": "2026-08-25",
     "status": "completed",
@@ -61,13 +61,13 @@
         "failed": 0
       },
       "candidates": 8,
-      "added": 0,
+      "added": 1,
       "skippedExisting": 2,
       "skippedRejected": 0,
-      "skippedDuplicate": 5,
+      "skippedDuplicate": 4,
       "skippedNonPolicy": 1,
       "duplicateReasons": {
-        "id": 5
+        "id": 4
       },
       "errors": [
         {
@@ -669,9 +669,9 @@
     "attempted": 44,
     "succeeded": 6,
     "failed": 38,
-    "candidates": 0,
-    "pendingCandidates": 9,
+    "candidates": 1,
+    "pendingCandidates": 10,
     "deadlineReached": false
   },
-  "status": "no_new_policy"
+  "status": "completed_with_candidates"
 }
