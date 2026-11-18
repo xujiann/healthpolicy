@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "layer": "reviewed",
-  "updatedAt": "2026-11-17T23:56:04.367Z",
+  "updatedAt": "2026-11-18T23:30:45.125Z",
   "items": [
     {
       "policy": {
@@ -17287,6 +17287,12 @@
           "summarySource": "official-page",
           "contentUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2122513349662380032.html",
           "verifiedAt": "2026-11-17T23:56:09.236Z"
+        },
+        "classification": {
+          "rule": "免疫规划",
+          "topic": "cdc_immunization",
+          "secondary": "免疫规划处",
+          "evaluatedAt": "2026-11-18T23:30:45.125Z"
         }
       }
     }
