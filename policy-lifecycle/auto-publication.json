@@ -1,30 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T23:30:45.125Z",
+  "generatedAt": "2026-11-19T23:44:37.784Z",
   "mode": "unattended-high-confidence",
   "summary": {
     "queuedBefore": 9,
     "evaluated": 9,
     "published": 0,
     "reclassified": 0,
-    "classificationRefreshed": 1,
+    "classificationRefreshed": 0,
     "quarantined": 9,
     "deferred": 0,
     "remaining": 9
   },
   "items": [
-    {
-      "id": "candidate-1d14c5705cf6bb84",
-      "title": "《关于印发全面推行疫苗处方工作指导意见的通知》",
-      "status": "classification_refreshed",
-      "sourceId": "ndcpa",
-      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2122513349662380032.html",
-      "previousTopic": "cdc_immunization",
-      "previousSecondary": "免疫规划处",
-      "topic": "cdc_immunization",
-      "secondary": "免疫规划处",
-      "rule": "免疫规划"
-    },
     {
       "id": "candidate-a6a2079ac9de89f4",
       "title": "《国家疾控局综合司关于组织开展2026年世界狂犬病日宣传活动的通知》",
