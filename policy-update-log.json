@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T23:44:07.796Z",
+  "generatedAt": "2026-11-20T23:17:18.341Z",
   "manualReview": {
     "reviewedAt": "2026-08-25",
     "status": "completed",
@@ -61,20 +61,15 @@
         "failed": 0
       },
       "candidates": 8,
-      "added": 0,
+      "added": 3,
       "skippedExisting": 3,
       "skippedRejected": 0,
-      "skippedDuplicate": 4,
-      "skippedNonPolicy": 1,
+      "skippedDuplicate": 2,
+      "skippedNonPolicy": 0,
       "duplicateReasons": {
-        "id": 4
+        "id": 2
       },
-      "errors": [
-        {
-          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2110642433462538240.html",
-          "error": "跳过非具体政策文件页面"
-        }
-      ]
+      "errors": []
     },
     {
       "name": "护理与康复",
@@ -669,9 +664,9 @@
     "attempted": 44,
     "succeeded": 6,
     "failed": 38,
-    "candidates": 0,
-    "pendingCandidates": 9,
+    "candidates": 3,
+    "pendingCandidates": 12,
     "deadlineReached": false
   },
-  "status": "no_new_policy"
+  "status": "completed_with_candidates"
 }

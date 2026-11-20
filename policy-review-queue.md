@@ -1,8 +1,8 @@
 # 自动发布隔离队列
 
-生成时间：2026-11-19T23:44:37.784Z
+生成时间：2026-11-20T23:17:57.049Z
 
-未通过自动发布门禁：9 条
+未通过自动发布门禁：12 条
 
 以下记录不会自动上线，可在补充证据后人工处理。
 
@@ -17,6 +17,9 @@
 | `candidate-c3910072df5280d5` | 2026-10-27 | 文号待核 | [《国家疾控局综合司关于疾控政策研究课题入选单位的公告》](https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2114922629405511680.html) | ndcpa | 疾控局政策文号与来源不一致；文号缺失或为占位值；未命中可信归口规则 |
 | `candidate-02333fbd1997429a` | 2026-11-02 | 国疾控人便函〔2026〕22号 | [《国家疾控局人事司关于2026年度局直属和联系单位专业技术资格评审结果公示的通知》](https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2117167798762770432.html) | ndcpa | 仅允许正式政策自动发布；未命中可信归口规则 |
 | `candidate-1d55483d10bc00af` | 2026-11-06 | 文号待核 | [《国务院防治艾滋病工作委员会办公室关于做好2026年“世界艾滋病日”主题活动的通知》](https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2118651607693824000.html) | ndcpa | 疾控局政策文号与来源不一致；文号与官方发布司局不一致；文号缺失或为占位值 |
+| `candidate-17b0de48fa282c6c` | 2026-11-20 | 国疾控监督一发〔2026〕29号 | [《国家疾控局关于印发《消毒剂、消毒器械和抗（抑）菌剂备案管理办法》的通知》](https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2123259423507255296.html) | ndcpa | 未命中可信归口规则 |
+| `candidate-b939a0a113621d83` | 2026-11-20 | 国疾控监督一发〔2026〕28号 | [《国家疾控局关于印发《消毒产品命名指南》的通知》](https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2123258253665538048.html) | ndcpa | 未命中可信归口规则 |
+| `candidate-1e5e6f075d5f995a` | 2026-11-20 | 国疾控通〔2026〕1号 | [《国家疾病预防控制局通告》](https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2123257127150981120.html) | ndcpa | 未命中可信归口规则 |
 
 审核命令示例：
 

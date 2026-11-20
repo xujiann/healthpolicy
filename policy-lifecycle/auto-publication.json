@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T23:44:37.784Z",
+  "generatedAt": "2026-11-20T23:17:57.049Z",
   "mode": "unattended-high-confidence",
   "summary": {
-    "queuedBefore": 9,
-    "evaluated": 9,
+    "queuedBefore": 12,
+    "evaluated": 12,
     "published": 0,
     "reclassified": 0,
     "classificationRefreshed": 0,
-    "quarantined": 9,
+    "quarantined": 12,
     "deferred": 0,
-    "remaining": 9
+    "remaining": 12
   },
   "items": [
     {
@@ -116,6 +116,36 @@
         "疾控局政策文号与来源不一致",
         "文号与官方发布司局不一致",
         "文号缺失或为占位值"
+      ]
+    },
+    {
+      "id": "candidate-17b0de48fa282c6c",
+      "title": "《国家疾控局关于印发《消毒剂、消毒器械和抗（抑）菌剂备案管理办法》的通知》",
+      "status": "quarantined",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2123259423507255296.html",
+      "reasons": [
+        "未命中可信归口规则"
+      ]
+    },
+    {
+      "id": "candidate-b939a0a113621d83",
+      "title": "《国家疾控局关于印发《消毒产品命名指南》的通知》",
+      "status": "quarantined",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2123258253665538048.html",
+      "reasons": [
+        "未命中可信归口规则"
+      ]
+    },
+    {
+      "id": "candidate-1e5e6f075d5f995a",
+      "title": "《国家疾病预防控制局通告》",
+      "status": "quarantined",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2123257127150981120.html",
+      "reasons": [
+        "未命中可信归口规则"
       ]
     }
   ]
