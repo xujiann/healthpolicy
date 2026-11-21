@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-20T23:18:17.338Z",
+  "generatedAt": "2026-11-21T22:18:25.519Z",
   "checkedThisRun": 40,
-  "nextCursor": 247,
+  "nextCursor": 287,
   "overallStatus": "degraded",
   "summary": {
     "total": 365,
@@ -3746,8 +3746,8 @@
       "latestDate": "2021-06",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-11T23:39:43.668Z",
-      "responseMs": 280,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 492,
       "error": ""
     },
     {
@@ -3761,8 +3761,8 @@
       "latestDate": "2020-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-11T23:39:43.668Z",
-      "responseMs": 295,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 380,
       "error": ""
     },
     {
@@ -3776,8 +3776,8 @@
       "latestDate": "2020-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-11T23:39:43.668Z",
-      "responseMs": 395,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 327,
       "error": ""
     },
     {
@@ -3791,8 +3791,8 @@
       "latestDate": "2020-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-11T23:39:43.668Z",
-      "responseMs": 409,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 433,
       "error": ""
     },
     {
@@ -3806,8 +3806,8 @@
       "latestDate": "2020-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-11T23:39:43.668Z",
-      "responseMs": 479,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 446,
       "error": ""
     },
     {
@@ -3821,8 +3821,8 @@
       "latestDate": "2020-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-11T23:39:43.668Z",
-      "responseMs": 421,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 499,
       "error": ""
     },
     {
@@ -3836,8 +3836,8 @@
       "latestDate": "2020-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-11T23:39:43.668Z",
-      "responseMs": 365,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 496,
       "error": ""
     },
     {
@@ -3851,8 +3851,8 @@
       "latestDate": "2020-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 598,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 449,
       "error": ""
     },
     {
@@ -3866,8 +3866,8 @@
       "latestDate": "2020-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 555,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 436,
       "error": ""
     },
     {
@@ -3881,8 +3881,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 562,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 364,
       "error": ""
     },
     {
@@ -3897,8 +3897,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 559,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 374,
       "error": ""
     },
     {
@@ -3912,8 +3912,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 611,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 496,
       "error": ""
     },
     {
@@ -3927,8 +3927,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 554,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 363,
       "error": ""
     },
     {
@@ -3942,8 +3942,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 596,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 401,
       "error": ""
     },
     {
@@ -3957,8 +3957,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 596,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 411,
       "error": ""
     },
     {
@@ -3972,8 +3972,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 538,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 428,
       "error": ""
     },
     {
@@ -3987,8 +3987,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 567,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 464,
       "error": ""
     },
     {
@@ -4002,8 +4002,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 563,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 467,
       "error": ""
     },
     {
@@ -4017,8 +4017,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 559,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 464,
       "error": ""
     },
     {
@@ -4032,8 +4032,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 517,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 450,
       "error": ""
     },
     {
@@ -4047,8 +4047,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 509,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 347,
       "error": ""
     },
     {
@@ -4062,8 +4062,8 @@
       "latestDate": "2020-11",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 539,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 349,
       "error": ""
     },
     {
@@ -4077,8 +4077,8 @@
       "latestDate": "2020-10",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 597,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 353,
       "error": ""
     },
     {
@@ -4092,8 +4092,8 @@
       "latestDate": "2020-10",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 526,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 347,
       "error": ""
     },
     {
@@ -4107,8 +4107,8 @@
       "latestDate": "2020-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 544,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 393,
       "error": ""
     },
     {
@@ -4122,8 +4122,8 @@
       "latestDate": "2020-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 542,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 351,
       "error": ""
     },
     {
@@ -4137,8 +4137,8 @@
       "latestDate": "2020-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 562,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 438,
       "error": ""
     },
     {
@@ -4152,8 +4152,8 @@
       "latestDate": "2020-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 530,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 466,
       "error": ""
     },
     {
@@ -4167,8 +4167,8 @@
       "latestDate": "2020-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 560,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 369,
       "error": ""
     },
     {
@@ -4182,8 +4182,8 @@
       "latestDate": "2020-09",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 600,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 472,
       "error": ""
     },
     {
@@ -4197,8 +4197,8 @@
       "latestDate": "2020-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 563,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 383,
       "error": ""
     },
     {
@@ -4212,8 +4212,8 @@
       "latestDate": "2020-08",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 523,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 505,
       "error": ""
     },
     {
@@ -4227,8 +4227,8 @@
       "latestDate": "2020-07",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 546,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 356,
       "error": ""
     },
     {
@@ -4242,8 +4242,8 @@
       "latestDate": "2020-07",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 513,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 437,
       "error": ""
     },
     {
@@ -4257,8 +4257,8 @@
       "latestDate": "2020-07",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 526,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 392,
       "error": ""
     },
     {
@@ -4272,8 +4272,8 @@
       "latestDate": "2019-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 538,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 456,
       "error": ""
     },
     {
@@ -4287,8 +4287,8 @@
       "latestDate": "2019-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 540,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 445,
       "error": ""
     },
     {
@@ -4302,8 +4302,8 @@
       "latestDate": "2019-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 593,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 501,
       "error": ""
     },
     {
@@ -4317,8 +4317,8 @@
       "latestDate": "2019-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 546,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 435,
       "error": ""
     },
     {
@@ -4332,8 +4332,8 @@
       "latestDate": "2019-12",
       "status": "healthy",
       "httpStatus": 200,
-      "checkedAt": "2026-11-12T22:50:40.668Z",
-      "responseMs": 559,
+      "checkedAt": "2026-11-21T22:18:25.519Z",
+      "responseMs": 483,
       "error": ""
     },
     {
