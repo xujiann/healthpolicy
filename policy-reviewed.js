@@ -15210,5 +15210,47 @@ const policyReviewedDocuments = [
       "basis": "自动发布门禁：国家疾病预防控制局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“免疫规划”规则；摘要来自官方正文。",
       "status": "approved"
     }
+  },
+  {
+    "year": 2026,
+    "date": "2026-11-23",
+    "topic": "cdc_prevention",
+    "secondary": "司局统筹",
+    "title": "《关于印发医防协同高效推动医疗机构传染病防控工作指导意见的通知》",
+    "agency": "国家疾病预防控制局",
+    "level": "通知",
+    "summary": "国疾控传防发〔2026〕30号 各省、自治区、直辖市及新疆生产建设兵团疾控局、卫生健康委、中医药局： 国家疾控局、国家卫生健康委、国家中医药局联合制定了《关于医防协同高效推动医疗机构传染病防控工作的指导意见》。",
+    "url": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2123217892087861248.html",
+    "keywords": "官方来源：国家疾病预防控制局 ",
+    "documentNo": "国疾控传防发〔2026〕30号",
+    "reviewStatus": "已自动核验",
+    "id": "candidate-bc0bf9087fa981e7",
+    "assignment": "规则归口",
+    "agencies": [
+      "国家疾病预防控制局"
+    ],
+    "documentType": "正式政策",
+    "validity": {
+      "status": "待核验",
+      "effectiveDate": null,
+      "expiryDate": null,
+      "basis": "官方原文未在现有摘要中提供可自动确认的施行或废止日期。",
+      "verification": "pending"
+    },
+    "relations": [],
+    "structure": {
+      "schemaVersion": 2,
+      "enrichedAt": "2026-11-24T03:26:35.276Z",
+      "status": "machine_extracted"
+    },
+    "audit": {
+      "batchId": "policy-scan-2026-11-24",
+      "sourceId": "ndcpa",
+      "collectedAt": "2026-11-24T03:26:06.138Z",
+      "reviewer": "GitHub Actions 自动发布器",
+      "reviewedAt": "2026-11-24T03:26:35.276Z",
+      "basis": "自动发布门禁：国家疾病预防控制局正式政策栏目；标题、发布日期、文号和发文机关与官方页面一致；归口命中“官方来源：传染病防控司”规则；摘要来自官方正文。",
+      "status": "approved"
+    }
   }
 ];
