@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T03:26:06.138Z",
+  "generatedAt": "2026-11-25T01:31:08.649Z",
   "manualReview": {
     "reviewedAt": "2026-08-25",
     "status": "completed",
@@ -61,8 +61,8 @@
         "failed": 0
       },
       "candidates": 8,
-      "added": 1,
-      "skippedExisting": 3,
+      "added": 0,
+      "skippedExisting": 4,
       "skippedRejected": 0,
       "skippedDuplicate": 4,
       "skippedNonPolicy": 0,
@@ -581,7 +581,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "fetch failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -651,7 +651,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
-          "error": "412 Precondition Failed"
+          "error": "fetch failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -664,9 +664,9 @@
     "attempted": 44,
     "succeeded": 6,
     "failed": 38,
-    "candidates": 1,
-    "pendingCandidates": 13,
+    "candidates": 0,
+    "pendingCandidates": 12,
     "deadlineReached": false
   },
-  "status": "completed_with_candidates"
+  "status": "no_new_policy"
 }

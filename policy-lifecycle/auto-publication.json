@@ -1,18 +1,30 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T03:26:35.276Z",
+  "generatedAt": "2026-11-25T01:31:39.004Z",
   "mode": "unattended-high-confidence",
   "summary": {
-    "queuedBefore": 13,
-    "evaluated": 13,
-    "published": 1,
+    "queuedBefore": 12,
+    "evaluated": 12,
+    "published": 0,
     "reclassified": 0,
-    "classificationRefreshed": 0,
+    "classificationRefreshed": 1,
     "quarantined": 12,
     "deferred": 0,
     "remaining": 12
   },
   "items": [
+    {
+      "id": "candidate-bc0bf9087fa981e7",
+      "title": "《关于印发医防协同高效推动医疗机构传染病防控工作指导意见的通知》",
+      "status": "classification_refreshed",
+      "sourceId": "ndcpa",
+      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2123217892087861248.html",
+      "previousTopic": "cdc_prevention",
+      "previousSecondary": "司局统筹",
+      "topic": "cdc_prevention",
+      "secondary": "司局统筹",
+      "rule": "官方来源：传染病防控司"
+    },
     {
       "id": "candidate-a6a2079ac9de89f4",
       "title": "《国家疾控局综合司关于组织开展2026年世界狂犬病日宣传活动的通知》",
@@ -147,16 +159,6 @@
       "reasons": [
         "未命中可信归口规则"
       ]
-    },
-    {
-      "id": "candidate-bc0bf9087fa981e7",
-      "title": "《关于印发医防协同高效推动医疗机构传染病防控工作指导意见的通知》",
-      "status": "published",
-      "sourceId": "ndcpa",
-      "sourceUrl": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/content/content_2123217892087861248.html",
-      "topic": "cdc_prevention",
-      "secondary": "司局统筹",
-      "verifiedAt": "2026-11-24T03:26:38.769Z"
     }
   ]
 }
