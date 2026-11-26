@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T01:31:08.649Z",
+  "generatedAt": "2026-11-26T01:05:48.708Z",
   "manualReview": {
     "reviewedAt": "2026-08-25",
     "status": "completed",
@@ -581,7 +581,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/sps/s7891/new_list.shtml",
-          "error": "fetch failed"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",
@@ -651,7 +651,7 @@
         },
         {
           "url": "https://www.nhc.gov.cn/rkjcyjtfzs/s7785/new_list.shtml",
-          "error": "fetch failed"
+          "error": "412 Precondition Failed"
         },
         {
           "url": "https://www.gov.cn/zhengce/zhengceku/",

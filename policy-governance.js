@@ -1,6 +1,6 @@
 // 由 tools/build-policy-artifacts.mjs 生成，请勿直接编辑。
 const policyGovernance = {
-  "generatedAt": "2026-11-25T01:31:42.230Z",
+  "generatedAt": "2026-11-26T01:06:29.960Z",
   "dataThrough": "2026-11-23",
   "lastReviewedAt": "2026-11-24T03:26:35.276Z",
   "counts": {
@@ -30,7 +30,7 @@ const policyGovernance = {
   },
   "p3": {
     "collection": {
-      "generatedAt": "2026-11-25T01:31:08.649Z",
+      "generatedAt": "2026-11-26T01:05:48.708Z",
       "status": "no_new_policy",
       "attempted": 44,
       "succeeded": 6,
@@ -47,19 +47,19 @@ const policyGovernance = {
       "approvalRate": 100
     },
     "autoPublication": {
-      "generatedAt": "2026-11-25T01:31:39.004Z",
+      "generatedAt": "2026-11-26T01:06:26.063Z",
       "mode": "unattended-high-confidence",
       "queuedBefore": 12,
       "evaluated": 12,
       "published": 0,
       "reclassified": 0,
-      "classificationRefreshed": 1,
+      "classificationRefreshed": 0,
       "quarantined": 12,
       "deferred": 0,
       "remaining": 12
     },
     "linkHealth": {
-      "generatedAt": "2026-11-25T01:31:42.230Z",
+      "generatedAt": "2026-11-26T01:06:29.960Z",
       "overallStatus": "degraded",
       "total": 366,
       "checked": 366,
@@ -76,7 +76,7 @@ const policyGovernance = {
   },
   "sourceHealth": {
     "schemaVersion": 1,
-    "generatedAt": "2026-11-25T01:31:08.649Z",
+    "generatedAt": "2026-11-26T01:05:48.708Z",
     "overallStatus": "healthy",
     "sources": [
       {
@@ -85,7 +85,7 @@ const policyGovernance = {
         "homepage": "https://www.nhsa.gov.cn/",
         "policyList": "https://www.nhsa.gov.cn/col/col104/index.html",
         "status": "healthy",
-        "checkedAt": "2026-11-25T01:31:08.649Z",
+        "checkedAt": "2026-11-26T01:05:48.708Z",
         "requests": {
           "attempted": 1,
           "succeeded": 1,
@@ -102,7 +102,7 @@ const policyGovernance = {
         "homepage": "https://www.ndcpa.gov.cn/",
         "policyList": "https://www.ndcpa.gov.cn/jbkzzx/c100014/common/list.html",
         "status": "healthy",
-        "checkedAt": "2026-11-25T01:31:08.649Z",
+        "checkedAt": "2026-11-26T01:05:48.708Z",
         "requests": {
           "attempted": 1,
           "succeeded": 1,
